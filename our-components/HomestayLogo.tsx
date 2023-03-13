@@ -1,6 +1,7 @@
 import React from "react";
 
 const HomestayLogo = () => {
+  // return null;
   return (
     <svg
       width="142"

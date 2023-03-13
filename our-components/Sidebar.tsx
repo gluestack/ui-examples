@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, HStack, Text, VStack } from "../components";
+import { ScrollView } from "react-native";
+import { Box, VStack } from "../components";
 import AmenitiesSection from "./AmenitiesSection";
 import BookingOptions from "./BookingOptions";
 import CustomerRatingSection from "./CustomerRatingSection";
@@ -10,15 +11,17 @@ import SortBySection from "./SortBySection";
 
 const Sidebar = () => {
   return (
-    <VStack w="$72">
-      <FiltersAppliedSection />
-      <SortBySection />
-      <PlaceTypeSection />
-      <AmenitiesSection />
-      <PriceRangeSection />
-      <BookingOptions />
-      <CustomerRatingSection />
-    </VStack>
+    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }}>
+      <VStack space="xl" py="$6" px="$4">
+        <FiltersAppliedSection />
+        <SortBySection />
+        <PlaceTypeSection />
+        <AmenitiesSection />
+        <PriceRangeSection />
+        <BookingOptions />
+        <CustomerRatingSection />
+      </VStack>
+    </ScrollView>
   );
 };
 export default Sidebar;

@@ -10,9 +10,12 @@ const FiltersAppliedSection = ({
   return (
     <Box
       borderWidth={1}
-      borderColor="$borderLight100"
       borderRadius="$md"
       p="$3"
+      sx={{
+        _light: { borderColor: "$borderLight200" },
+        _dark: { borderColor: "$borderDark700" },
+      }}
     >
       <HStack justifyContent="space-between">
         <Text size="sm" fontWeight="$medium" color="black">
@@ -32,9 +35,9 @@ const FiltersAppliedSection = ({
           </Button.Text>
         </Button>
       </HStack>
-      <HStack flexWrap="wrap" space="md">
+      <HStack flexWrap="wrap" space="sm">
         {arr1.map((item) => (
-          <Badge rounded="$full" px="$3" py="$2.5" action="muted" mt="$3">
+          <Badge rounded="$full" px="$2.5" py="$2" action="muted" mt="$2">
             <Badge.Text textTransform="none" color="black">
               {item}
             </Badge.Text>
@@ -46,7 +49,14 @@ const FiltersAppliedSection = ({
               p="$1"
               bg="$backgroundLight400"
             >
-              <CloseIcon h="$3" w="$3" color="$backgroundLight100" />
+              <CloseIcon
+                h="$3"
+                w="$3"
+                sx={{
+                  _light: { color: "$backgroundLight100" },
+                  _dark: { color: "$backgroundDark400" },
+                }}
+              />
             </Button>
           </Badge>
         ))}

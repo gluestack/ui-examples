@@ -39,7 +39,10 @@ const PriceRangeSection = () => {
   ];
 
   return (
-    <Box>
+    <VStack space="md">
+      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
+        Price Range
+      </Text>
       <Slider
         minValue={800}
         maxValue={5000}
@@ -73,14 +76,10 @@ const PriceRangeSection = () => {
           </Tooltip.Content>
         </Tooltip>
       </Slider>
-      <Checkbox.Group value={values} onChange={setValues}>
+      <Checkbox.Group value={values} onChange={setValues} mt="$3">
         {sidebarFiltersPriceRange.map((priceRange: any) => {
           return (
-            <Checkbox
-              value={priceRange.value}
-              justifyContent="flex-start"
-              size="sm"
-            >
+            <Checkbox value={priceRange.value} size="sm" my="$2">
               <Checkbox.Indicator>
                 <Checkbox.Icon>
                   <CheckIcon />
@@ -91,7 +90,7 @@ const PriceRangeSection = () => {
           );
         })}
       </Checkbox.Group>
-    </Box>
+    </VStack>
   );
 };
 export default PriceRangeSection;

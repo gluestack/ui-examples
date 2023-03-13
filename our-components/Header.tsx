@@ -1,26 +1,84 @@
 import React from "react";
-import { Box, Center, HStack } from "../components";
+import { Box, HStack, Input } from "../components";
+import { SearchIcon, FilterIcon } from "../components/core/Icons/Icons";
 import HeaderTabs from "./HeaderTabs";
 import HomestayLogo from "./HomestayLogo";
 import ToggleMode from "./ToggleMode";
 import UserProfile from "./UserProfile";
 
-const Header = () => {
+const Header = ({ colorMode, toggleColorMode }: any) => {
   return (
-    <Box h="$20" w="100%">
-      <HStack
-        alignItems="center"
-        justifyContent="space-between"
-        w="80%"
-        mx="auto"
+    <Box>
+      <Box
+        px="$4"
+        h="$20"
+        w="100%"
+        // position="sticky"
+        // top={0}
+        // zIndex={1}
+        borderBottomWidth={1}
+        sx={{
+          "@base": {
+            display: "none",
+          },
+          "@md": {
+            display: "flex",
+          },
+          _light: { borderColor: "$borderLight200" },
+          _dark: { borderColor: "$borderDark700" },
+        }}
       >
-        <HomestayLogo />
-        <HeaderTabs />
-        <HStack space="md">
-          <ToggleMode />
-          <UserProfile />
+        <HStack
+          alignItems="center"
+          justifyContent="space-between"
+          mx="auto"
+          w="100%"
+          px="$12"
+        >
+          <HomestayLogo />
+          <HeaderTabs />
+          <HStack space="md">
+            <ToggleMode
+              colorMode={colorMode}
+              toggleColorMode={toggleColorMode}
+            />
+            <UserProfile />
+          </HStack>
         </HStack>
-      </HStack>
+      </Box>
+      <Box
+        p="$5"
+        sx={{
+          "@base": {
+            display: "flex",
+          },
+          "@md": {
+            display: "none",
+          },
+        }}
+        h="$20"
+        w="100%"
+        // position="sticky"
+        // top={0}
+        // zIndex={1}
+        borderBottomWidth={1}
+        borderBottomColor="$borderLight100"
+      >
+        <Input variant="rounded" w="100%">
+          <Input.Icon bg="transparent">
+            <SearchIcon
+              sx={{
+                _light: { color: "backgroundLight400" },
+                _dark: { color: "white" },
+              }}
+            />
+          </Input.Icon>
+          <Input.Input placeholder="Anywhere • Any week • Add guests" px="$2" />
+          <Input.Icon bg="$rose500" p="$1" borderRadius="$full">
+            <FilterIcon color="white" w="$4" h="$4" />
+          </Input.Icon>
+        </Input>
+      </Box>
     </Box>
   );
 };

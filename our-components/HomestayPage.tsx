@@ -1,27 +1,51 @@
 import React from "react";
-import { Box, Button, HStack } from "../components";
+import { ScrollView } from "react-native";
+import { Box, HStack } from "../components";
 import Banner from "./Banner";
 import Header from "./Header";
 import MainContent from "./MainContent";
-import Sidebar from "./Sidebar";
+import MobileSidebar from "./MobileSidebar";
+import WebSidebar from "./WebSidebar";
 
-const HomestayPage = () => {
+const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
   return (
-    <Box>
-      <Banner />
-      <Header />
-      <Box w="100%">
-        <HStack
-          alignItems="center"
-          justifyContent="space-between"
-          w="80%"
-          mx="auto"
-        >
-          <Sidebar />
-          <MainContent />
-        </HStack>
+    <ScrollView>
+      <Box
+        sx={{
+          _light: { bg: "white" },
+          _dark: { bg: "$backgroundDark950" },
+        }}
+      >
+        <Banner />
+        <Header
+          colorMode={colorMode}
+          toggleColorMode={toggleColorMode}
+          setSidebarOpen={setSidebarOpen}
+        />
+        <Box w="100%">
+          <MobileSidebar
+            sidebarOpen={sidebarOpen}
+            setSidebarOpen={setSidebarOpen}
+          />
+          <HStack
+            w="100%"
+            px="$12"
+            sx={{
+              "@base": {
+                px: "$5",
+              },
+              "@md": {
+                px: "$12",
+              },
+            }}
+          >
+            <WebSidebar />
+            <MainContent />
+          </HStack>
+        </Box>
       </Box>
-    </Box>
+    </ScrollView>
   );
 };
 export default HomestayPage;

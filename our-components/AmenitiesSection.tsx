@@ -42,8 +42,8 @@ const AmenitiesSection = () => {
   const [viewAllComponents, setViewAllComponents] = React.useState(false);
 
   return (
-    <Box>
-      <Text fontWeight="$semibold" fontSize="$md">
+    <VStack space="sm">
+      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
         Ammenities
       </Text>
       <Checkbox.Group value={values} onChange={setValues}>
@@ -54,6 +54,7 @@ const AmenitiesSection = () => {
               value={ammenity.value}
               justifyContent="flex-start"
               size="sm"
+              my="$2"
             >
               <Checkbox.Indicator>
                 <Checkbox.Icon>
@@ -72,7 +73,7 @@ const AmenitiesSection = () => {
           }}
         >
           <HStack justifyContent="space-between">
-            <Text>Show less</Text>
+            <Text fontSize="$sm">Show less</Text>
             <ChevronUpIcon />
           </HStack>
         </Pressable>
@@ -83,12 +84,19 @@ const AmenitiesSection = () => {
           }}
         >
           <HStack justifyContent="space-between">
-            <Text>Show more</Text>
-            <ChevronDownIcon />
+            <Text fontSize="$sm">Show more</Text>
+            <ChevronDownIcon
+              w="$4"
+              h="$4"
+              sx={{
+                _dark: { color: "$backgroundDark50" },
+                _light: { color: "black" },
+              }}
+            />
           </HStack>
         </Pressable>
       )}
-    </Box>
+    </VStack>
   );
 };
 export default AmenitiesSection;

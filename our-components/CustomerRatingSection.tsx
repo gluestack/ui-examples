@@ -25,18 +25,14 @@ const CustomerRatingSection = () => {
   const [values, setValues] = React.useState(["wifi", "air-conditioning"]);
 
   return (
-    <Box>
-      <Text fontWeight="$semibold" fontSize="$md">
+    <VStack w="100%" space="md">
+      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
         Customer Ratings
       </Text>
       <Checkbox.Group value={values} onChange={setValues}>
         {sidebarFiltersCustomerRatings.map((placeType: any) => {
           return (
-            <Checkbox
-              value={placeType.value}
-              justifyContent="flex-start"
-              size="sm"
-            >
+            <Checkbox value={placeType.value} size="sm" my="$2">
               <Checkbox.Indicator>
                 <Checkbox.Icon>
                   <CheckIcon />
@@ -44,7 +40,14 @@ const CustomerRatingSection = () => {
               </Checkbox.Indicator>
               <Checkbox.Label>
                 <HStack alignItems="center" space="xs">
-                  <StarIcon w="$3" h="$3" color="black" />
+                  <StarIcon
+                    w="$3"
+                    h="$3"
+                    sx={{
+                      _dark: { color: "$backgroundDark50" },
+                      _light: { color: "black" },
+                    }}
+                  />
                   <Text>{placeType.label}</Text>
                 </HStack>
               </Checkbox.Label>
@@ -52,7 +55,7 @@ const CustomerRatingSection = () => {
           );
         })}
       </Checkbox.Group>
-    </Box>
+    </VStack>
   );
 };
 export default CustomerRatingSection;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Center, HStack, Link, Text } from "../components";
+import { HStack, Link, Text } from "../components";
 
 const Banner = () => {
   return (
@@ -8,13 +8,23 @@ const Banner = () => {
       alignItems="center"
       space="sm"
       h="$16"
-      bg="$borderLight200"
+      sx={{
+        _light: { bg: "$backgroundLight100" },
+        _dark: { bg: "$backgroundDark800" },
+      }}
     >
       <Text color="$textLight800" size="sm">
         Show total prices up front
       </Text>
       <Link href="https://hello.com">
-        <Text color="$textLight900" fontWeight="$semibold" size="sm">
+        <Text
+          sx={{
+            _light: { color: "$textLight900" },
+            _dark: { color: "$textDark100" },
+          }}
+          fontWeight="$semibold"
+          size="sm"
+        >
           Learn more
         </Text>
       </Link>

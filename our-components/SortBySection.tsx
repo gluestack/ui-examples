@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Checkbox,
-  HStack,
-  Radio,
-  Switch,
-  Text,
-  VStack,
-} from "../components";
-import { CheckIcon } from "../components/core/Icons/Icons";
-import { StarIcon } from "../components/core/Icons/Icons/Star";
+import { Radio, Text, VStack } from "../components";
 
 const CustomerRatingSection = () => {
   const sidebarFiltersCustomerRatings = [
@@ -33,9 +23,9 @@ const CustomerRatingSection = () => {
   const [values, setValues] = React.useState("Top ratings");
 
   return (
-    <Box>
-      <Text fontWeight="$semibold" fontSize="$md">
-        Customer Ratings
+    <VStack space="sm">
+      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
+        Sort by
       </Text>
       <Radio.Group value={values} onChange={setValues}>
         {sidebarFiltersCustomerRatings.map((placeType: any) => {
@@ -44,6 +34,7 @@ const CustomerRatingSection = () => {
               value={placeType.value}
               justifyContent="flex-start"
               size="sm"
+              my="$2"
             >
               <Radio.Indicator>
                 <Radio.Icon />
@@ -53,7 +44,7 @@ const CustomerRatingSection = () => {
           );
         })}
       </Radio.Group>
-    </Box>
+    </VStack>
   );
 };
 export default CustomerRatingSection;

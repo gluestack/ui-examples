@@ -1,31 +1,27 @@
-import { styled } from '@dank-style/react';
-import { TextInput } from 'react-native';
+import { styled } from "@dank-style/react";
+import { TextInput } from "react-native";
 
 export default styled(
   TextInput,
   {
     // px: '8px',
-
-    color: '$textLight900',
-    w: '$full',
+    color: "$textLight900",
+    w: "$full",
     _ios: {
       mb: 6,
     },
-    defaultProps: {
-      bg: '$red500',
-    },
-    placeholderTextColor: '#FFF',
+    placeholderTextColor: "#FFF",
 
-    fontSize: '$sm',
+    fontSize: "$sm",
 
     _dark: {
-      color: '$textDark50',
+      color: "$textDark50",
     },
   },
-  { ancestorStyle: ['_input'], resolveProps: ['placeholderTextColor'] },
+  { ancestorStyle: ["_input"], resolveProps: ["placeholderTextColor"] },
   {
     propertyTokenMap: {
-      placeholderTextColor: 'colors',
+      placeholderTextColor: "colors",
     },
   }
 );

@@ -21,18 +21,14 @@ const PlaceTypeSection = () => {
   const [values, setValues] = React.useState(["entirePlace"]);
 
   return (
-    <Box>
-      <Text fontWeight="$semibold" fontSize="$md">
+    <VStack space="sm">
+      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
         Type of place
       </Text>
       <Checkbox.Group value={values} onChange={setValues}>
         {sidebarFiltersPlaceType.map((placeType: any) => {
           return (
-            <Checkbox
-              value={placeType.value}
-              justifyContent="flex-start"
-              size="sm"
-            >
+            <Checkbox value={placeType.value} size="sm" my="$2">
               <Checkbox.Indicator>
                 <Checkbox.Icon>
                   <CheckIcon />
@@ -43,7 +39,7 @@ const PlaceTypeSection = () => {
           );
         })}
       </Checkbox.Group>
-    </Box>
+    </VStack>
   );
 };
 export default PlaceTypeSection;
