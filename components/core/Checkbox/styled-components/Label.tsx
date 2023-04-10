@@ -1,62 +1,65 @@
-import { Text } from 'react-native';
-import { styled } from '@dank-style/react';
+import { Text } from "react-native";
+import { styled } from "@dank-style/react";
+import { styledFontsResolver } from "../../../font-resolver/styledFonts";
 
-export default styled(
+export default styledFontsResolver(
   Text,
   {
-    'color': '$textLight600',
-    'ml': '$2',
-    ':checked': {
-      color: '$textLight900',
+    fontWeight: "$normal",
+    fontFamily: "$body",
+    color: "$textLight600",
+    ml: "$2",
+    ":checked": {
+      color: "$textLight900",
     },
-    ':hover': {
-      'color': '$textLight900',
+    ":hover": {
+      color: "$textLight900",
 
-      ':checked': {
-        color: '$textLight900',
+      ":checked": {
+        color: "$textLight900",
       },
     },
-    ':active': {
-      'color': '$textLight900',
+    ":active": {
+      color: "$textLight900",
 
-      ':checked': {
-        color: '$textLight900',
+      ":checked": {
+        color: "$textLight900",
       },
     },
 
-    ':disabled': {
+    ":disabled": {
       opacity: 0.6,
     },
 
-    '_web': {
-      MozUserSelect: 'none',
-      WebkitUserSelect: 'none',
-      msUserSelect: 'none',
+    _web: {
+      MozUserSelect: "none",
+      WebkitUserSelect: "none",
+      msUserSelect: "none",
     },
 
-    '_dark': {
-      'color': '$textDark400',
-      ':checked': {
-        color: '$textDark100',
+    _dark: {
+      color: "$textDark400",
+      ":checked": {
+        color: "$textDark100",
       },
-      ':hover': {
-        'color': '$textDark100',
+      ":hover": {
+        color: "$textDark100",
 
-        ':checked': {
-          color: '$textDark100',
+        ":checked": {
+          color: "$textDark100",
         },
       },
-      ':active': {
-        'color': '$textDark100',
+      ":active": {
+        color: "$textDark100",
 
-        ':checked': {
-          color: '$textDark100',
+        ":checked": {
+          color: "$textDark100",
         },
       },
     },
   },
   {
-    ancestorStyle: ['_text'],
-    DEBUG: 'CHECKBOX_LABEL',
+    ancestorStyle: ["_text"],
+    DEBUG: "CHECKBOX_LABEL",
   }
 );

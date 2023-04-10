@@ -1,7 +1,8 @@
 import { styled } from "@dank-style/react";
 import { TextInput } from "react-native";
+import { styledFontsResolver } from "../../../font-resolver/styledFonts";
 
-export default styled(
+export default styledFontsResolver(
   TextInput,
   {
     // px: '8px',

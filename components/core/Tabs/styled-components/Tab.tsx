@@ -1,49 +1,49 @@
-import { styled } from '@dank-style/react';
-import { Pressable } from 'react-native';
+import { styled } from "@dank-style/react";
+import { Pressable } from "react-native";
 
 export default styled(
   Pressable,
   {
-    'bg': 'transparent',
-    '_web': {
+    bg: "transparent",
+    _web: {
       outlineWidth: 0,
     },
 
-    'variants': {
+    variants: {
       size: {
         md: {
-          px: '$4',
-          py: '$2',
+          px: "$4",
+          py: "$2",
 
           _text: {
-            fontSize: '$md',
-            lineHeight: '$md',
+            fontSize: "$md",
+            lineHeight: "$md",
           },
         },
       },
     },
 
-    'defaultProps': {
-      size: 'md',
+    defaultProps: {
+      size: "md",
     },
 
     //@ts-ignore
-    ':hover': {
-      bg: '$secondary50_alpha_20',
-      borderRadius: '$full',
+    ":hover": {
+      bg: "$secondary50_alpha_20",
+      borderRadius: "$full",
     },
     //@ts-ignore
-    ':active': {
-      bg: '$secondary50_alpha_10',
-      borderRadius: '$full',
+    ":active": {
+      bg: "$secondary50_alpha_10",
+      borderRadius: "$full",
     },
     //@ts-ignore
-    ':focus': {
-      bg: '$secondary50_alpha_20',
-      borderRadius: '$full',
+    ":focus": {
+      bg: "$secondary50_alpha_20",
+      borderRadius: "$full",
     },
     //@ts-ignore
-    ':disabled': {
+    ":disabled": {
       opacity: 0.5,
     },
   },

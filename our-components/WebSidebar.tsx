@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 const WebSidebar = () => {
   return (
     <Box
-      maxWidth={288}
+      maxWidth="$72"
       w="100%"
       flex={1}
       maxHeight="calc(100vh - 144px)"

@@ -1,70 +1,71 @@
-import { styled } from '@dank-style/react';
-import { H1 } from '@expo/html-elements';
+import { styled } from "@dank-style/react";
+import { H1 } from "@expo/html-elements";
+import { styledFontsResolver } from "../../../font-resolver/styledFonts";
 
-export default styled(
+export default styledFontsResolver(
   H1,
   {
-    color: '$textLight900',
-    letterSpacing: '$sm',
-    fontWeight: 'bold',
-    fontFamily: '$heading',
+    color: "$textLight900",
+    letterSpacing: "$sm",
+    fontWeight: "$bold",
+    fontFamily: "$heading",
 
     variants: {
       size: {
-        '5xl': {
-          fontSize: '$7xl',
-          lineHeight: '$7xl',
+        "5xl": {
+          fontSize: "$7xl",
+          lineHeight: "$7xl",
         },
-        '4xl': {
-          fontSize: '$5xl',
-          lineHeight: '$5xl',
-        },
-
-        '3xl': {
-          fontSize: '$4xl',
-          lineHeight: '$5xl',
+        "4xl": {
+          fontSize: "$5xl",
+          lineHeight: "$5xl",
         },
 
-        '2xl': {
-          fontSize: '$3xl',
-          lineHeight: '$3xl',
+        "3xl": {
+          fontSize: "$4xl",
+          lineHeight: "$5xl",
         },
 
-        'xl': {
-          fontSize: '$2xl',
-          lineHeight: '$3xl',
+        "2xl": {
+          fontSize: "$3xl",
+          lineHeight: "$3xl",
         },
 
-        'lg': {
-          fontSize: '$xl',
-          lineHeight: '$2xl',
+        xl: {
+          fontSize: "$2xl",
+          lineHeight: "$3xl",
         },
 
-        'md': {
-          fontSize: '$lg',
-          lineHeight: '$md',
+        lg: {
+          fontSize: "$xl",
+          lineHeight: "$2xl",
         },
 
-        'sm': {
-          fontSize: '$md',
-          lineHeight: '$lg',
+        md: {
+          fontSize: "$lg",
+          lineHeight: "$md",
         },
 
-        'xs': {
-          fontSize: '$sm',
-          lineHeight: '$xs',
+        sm: {
+          fontSize: "$md",
+          lineHeight: "$lg",
+        },
+
+        xs: {
+          fontSize: "$sm",
+          lineHeight: "$xs",
         },
       },
     },
 
     defaultProps: {
-      size: 'lg',
+      size: "lg",
     },
 
     //@ts-ignore
     _dark: {
-      color: '$textDark50',
+      color: "$textDark50",
     },
   },
   {}
-);
+) as any;

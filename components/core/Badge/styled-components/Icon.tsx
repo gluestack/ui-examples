@@ -1,4 +1,5 @@
-import { Text } from 'react-native';
-import { styled } from '@dank-style/react';
+import { Text } from "react-native";
+import { styled } from "@dank-style/react";
+import { styledFontsResolver } from "../../../font-resolver/styledFonts";
 
-export default styled(Text, {}, { ancestorStyle: ['_icon'] });
+export default styledFontsResolver(Text, {}, { ancestorStyle: ["_icon"] });

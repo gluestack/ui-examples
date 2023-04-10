@@ -1,9 +1,12 @@
 import { Text } from "react-native";
 import { styled } from "@dank-style/react";
+import { styledFontsResolver } from "../../../font-resolver/styledFonts";
 
-export default styled(
+export default styledFontsResolver(
   Text,
   {
+    fontWeight: "$normal",
+    fontFamily: "$body",
     color: "$textLight600",
     ml: "$2",
     ":checked": {

@@ -1,10 +1,10 @@
-import { Pressable } from 'react-native';
-import { styled } from '@dank-style/react';
+import { Pressable } from "react-native";
+import { styled } from "@dank-style/react";
 
 export default styled(
   Pressable,
   {
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     bottom: 0,
     left: 0,
