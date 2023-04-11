@@ -9,7 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@dank-style/animation-plugin": "latest",
+    "@dank-style/animation-plugin": "0.0.4",
     "@dank-style/react": "0.3.11",
     "@expo-google-fonts/inter": "^0.2.3",
     "@expo/html-elements": "^0.4.1",

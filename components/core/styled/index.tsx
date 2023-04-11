@@ -5,7 +5,7 @@ import { AnimationResolver } from "@dank-style/animation-plugin";
 // };
 
 export const styled = createStyled([
-  // new AnimationResolver({}),
+  new AnimationResolver({}),
   new FontResolver({
     // mapFonts: fontMapper,
   }),

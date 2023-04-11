@@ -1069,12 +1069,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@dank-style/animation-plugin@latest":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@dank-style/animation-plugin/-/animation-plugin-0.0.3.tgz#c836921275a1f91557265596bd789c43207ec719"
-  integrity sha512-hvYTWJiuLWHgglMkEKlJOxQnUB+wDBKUeB/OLld2r59bLsA95+oVAzObStqUWAyJw/z/czfxZjGeEsnkWkcBHA==
+"@dank-style/animation-plugin@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@dank-style/animation-plugin/-/animation-plugin-0.0.4.tgz#d4ea792defff9501de83348189aaaba533d8f259"
+  integrity sha512-IMqR7vPr8aoKYpjpFb12PvbRjVKDnrLjIMkeyZXUlc4a1ukew2ST2bS2eCk6PxbqS5mzy8AwFK0QxsjuKB/oyw==
   dependencies:
-    "@dank-style/react" "0.3.6"
     "@legendapp/motion" "^2.2.0"
 
 "@dank-style/react@0.3.11":
@@ -1084,11 +1083,6 @@
   dependencies:
     inline-style-prefixer "^6.0.1"
     normalize-css-color "^1.0.2"
-
-"@dank-style/react@0.3.6":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@dank-style/react/-/react-0.3.6.tgz#cb758809b4391ec7bec35d73e0d497eb66e411da"
-  integrity sha512-FNZSsyee6ztOnswMvdAVWI31yIatmb4hXH3FwuiTtemoYWdoTo/JPoOg2TkkDXgdgugG1WVGqn7byqKw++VmwA==
 
 "@expo-google-fonts/inter@^0.2.3":
   version "0.2.3"
