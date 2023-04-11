@@ -1,64 +1,73 @@
-import { Text } from "react-native";
-import { styled } from "@dank-style/react";
-import { styledFontsResolver } from "../../../font-resolver/styledFonts";
+import { Text } from 'react-native';
+import { styled } from '../../styled';
 
-export default styledFontsResolver(
+export default styled(
   Text,
   {
-    fontWeight: "$normal",
-    fontFamily: "$body",
-    color: "$textLight600",
-    ml: "$2",
-    ":checked": {
-      color: "$textLight900",
+    'color': '$textLight600',
+    'fontFamily': '$body',
+    'ml': '$2',
+    ':checked': {
+      color: '$textLight900',
     },
-    ":hover": {
-      color: "$textLight900",
-
-      ":checked": {
-        color: "$textLight900",
+    ':hover': {
+      'color': '$textLight900',
+      ':checked': {
+        color: '$textLight900',
+      },
+      ':disabled': {
+        'color': '$textLight600',
+        ':checked': {
+          color: '$textLight900',
+        },
       },
     },
-    ":active": {
-      color: "$textLight900",
+    ':active': {
+      'color': '$textLight900',
 
-      ":checked": {
-        color: "$textLight900",
+      ':checked': {
+        color: '$textLight900',
       },
     },
 
-    ":disabled": {
+    ':disabled': {
       opacity: 0.6,
     },
 
-    _web: {
-      MozUserSelect: "none",
-      WebkitUserSelect: "none",
-      msUserSelect: "none",
+    '_web': {
+      MozUserSelect: 'none',
+      WebkitUserSelect: 'none',
+      msUserSelect: 'none',
     },
 
-    _dark: {
-      color: "$textDark400",
-      ":checked": {
-        color: "$textDark100",
+    '_dark': {
+      'color': '$textDark400',
+      ':checked': {
+        color: '$textDark100',
       },
-      ":hover": {
-        color: "$textDark100",
+      ':hover': {
+        'color': '$textDark100',
 
-        ":checked": {
-          color: "$textDark100",
+        ':checked': {
+          color: '$textDark100',
+        },
+        ':disabled': {
+          'color': '$textDark400',
+          ':checked': {
+            color: '$textDark100',
+          },
         },
       },
-      ":active": {
-        color: "$textDark100",
+      ':active': {
+        'color': '$textDark100',
 
-        ":checked": {
-          color: "$textDark100",
+        ':checked': {
+          color: '$textDark100',
         },
       },
     },
   },
   {
-    ancestorStyle: ["_text"],
+    ancestorStyle: ['_text'],
   }
 );

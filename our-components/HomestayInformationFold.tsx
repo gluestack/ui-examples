@@ -2,8 +2,9 @@ import React from "react";
 
 import {
   Box,
+  Button,
   HStack,
-  IconButton,
+  // IconButton,
   Image,
   Pressable,
   Tabs,
@@ -11,8 +12,8 @@ import {
   Tooltip,
   VStack,
 } from "../components";
-import { HeartIcon } from "../components/core/Icons/Icons/Heart";
-import { StarIcon } from "../components/core/Icons/Icons/Star";
+// import { HeartIcon } from "../components/core/Icons/Icons/Heart";
+// import { StarIcon } from "../components/core/Icons/Icons/Star";
 const homestayInfoData = [
   {
     title: "ImageView Inn",
@@ -130,9 +131,9 @@ const TabPanelData = () => {
                 // @ts-ignore
                 borderRadius="$xl"
               />
-              <IconButton position="absolute" top="$3" right="$4">
-                <HeartIcon color="black" opacity={0.5} />
-              </IconButton>
+              <Button position="absolute" top="$3" right="$4">
+                {/* <HeartIcon color="black" opacity={0.5} /> */}
+              </Button>
             </Box>
             <VStack space="$sm" py="$2" px="$1">
               <HStack justifyContent="space-between" alignItems="center">
@@ -150,7 +151,7 @@ const TabPanelData = () => {
                     trigger={(triggerProps: any) => {
                       return (
                         <Pressable {...triggerProps}>
-                          <StarIcon
+                          {/* <StarIcon
                             {...triggerProps}
                             h="$3"
                             w="$3"
@@ -158,7 +159,7 @@ const TabPanelData = () => {
                               _dark: { color: "$backgroundDark50" },
                               _light: { color: "black" },
                             }}
-                          />
+                          /> */}
                         </Pressable>
                       );
                     }}

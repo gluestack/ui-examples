@@ -1,4 +1,4 @@
-import { styled } from '@dank-style/react';
+import { styled } from '../../styled';
 
 import { View } from 'react-native';
 
@@ -13,10 +13,6 @@ export default styled(
     // bg: '$amber500',
     // w: 100,
     // h: 100,
-    borderColor: '$blue500',
-    bg: '$amber500',
-    w: 100,
-    h: 100,
   },
   {}
 );

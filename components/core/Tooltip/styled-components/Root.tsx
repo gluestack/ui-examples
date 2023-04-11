@@ -1,4 +1,10 @@
-import { styled } from '@dank-style/react';
+import { styled } from '../../styled';
 import { View } from 'react-native';
 
-export default styled(View, {}, {});
+export default styled(
+  View,
+  {
+    width: '100%',
+  },
+  {}
+);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, HStack, Input } from "../components";
+import { Box, HStack, Icon, Input } from "../components";
 import { SearchIcon, FilterIcon } from "../components/core/Icons/Icons";
 import HeaderTabs from "./HeaderTabs";
 import HomestayLogo from "./HomestayLogo";
@@ -65,8 +65,9 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
         borderBottomColor="$borderLight100"
       >
         <Input variant="rounded" w="100%">
-          <Input.Icon bg="transparent">
-            <SearchIcon
+          <Input.Icon>
+            <Icon
+              as={SearchIcon}
               sx={{
                 _light: { color: "backgroundLight400" },
                 _dark: { color: "white" },
@@ -74,9 +75,17 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
             />
           </Input.Icon>
           <Input.Input placeholder="Anywhere • Any week • Add guests" px="$2" />
-          <Input.Icon bg="$rose500" p="$1" borderRadius="$full">
-            <FilterIcon color="white" w="$4" h="$4" />
-          </Input.Icon>
+          <Box bg="$rose500" p="$1" borderRadius="$full">
+            <Input.Icon>
+              <Icon
+                as={SearchIcon}
+                sx={{
+                  _light: { color: "backgroundLight400" },
+                  _dark: { color: "white" },
+                }}
+              />
+            </Input.Icon>
+          </Box>
         </Input>
       </Box>
     </Box>

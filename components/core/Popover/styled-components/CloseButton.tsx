@@ -1,32 +1,41 @@
 import { Pressable } from 'react-native';
-import { styled } from '@dank-style/react';
+import { styled } from '../../styled';
 
 export default styled(
   Pressable,
   {
-    'position': 'absolute',
-    'right': 10,
-    'top': 10,
+    'right': 8,
     'zIndex': 1,
     'p': '$2',
     'bg': 'transparent',
     'rounded': '$sm',
+    'color': '$backgroundLight400',
 
     ':hover': {
-      bg: '$muted200',
+      color: '$backgroundLight700',
     },
 
     ':active': {
-      bg: '$muted300',
+      color: '$backgroundLight900',
     },
 
     '_dark': {
+      'color': '$backgroundLight400',
       ':hover': {
-        bg: '$muted700',
+        color: '$backgroundLight200',
       },
 
       ':active': {
-        bg: '$muted600',
+        color: '$backgroundLight100',
+      },
+    },
+
+    ':focusVisible': {
+      bg: '$backgroundLight100',
+      color: '$backgroundLight700',
+      _dark: {
+        bg: '$backgroundDark800',
+        color: '$backgroundLight200',
       },
     },
 

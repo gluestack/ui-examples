@@ -1,28 +1,31 @@
-import { styled } from "@dank-style/react";
-import { TextInput } from "react-native";
-import { styledFontsResolver } from "../../../font-resolver/styledFonts";
+import { styled } from '../../styled';
+import { TextInput } from 'react-native';
 
-export default styledFontsResolver(
+export default styled(
   TextInput,
   {
-    // px: '8px',
-    color: "$textLight900",
-    w: "$full",
-    _ios: {
-      mb: 6,
+    flex: 1,
+    color: '$textLight900',
+    props: {
+      placeholderTextColor: '$textLight400',
     },
-    placeholderTextColor: "#FFF",
-
-    fontSize: "$sm",
-
     _dark: {
-      color: "$textDark50",
+      color: '$textDark50',
+      props: {
+        placeholderTextColor: '$textDark600',
+      },
+    },
+    _web: {
+      'cursor': 'pointer',
+      ':disabled': {
+        cursor: 'not-allowed',
+      },
     },
   },
-  { ancestorStyle: ["_input"], resolveProps: ["placeholderTextColor"] },
+  { ancestorStyle: ['_input'], resolveProps: ['placeholderTextColor'] },
   {
     propertyTokenMap: {
-      placeholderTextColor: "colors",
+      placeholderTextColor: 'colors',
     },
   }
 );

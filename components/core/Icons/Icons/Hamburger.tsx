@@ -1,5 +1,6 @@
 import { createIcon } from '@gluestack-ui/icon';
 import { Root } from '../styled-components';
+
 export const HamburgerIcon = createIcon({
   Root,
   viewBox: '0 0 24 24',

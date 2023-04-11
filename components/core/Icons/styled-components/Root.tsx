@@ -1,14 +1,10 @@
-import { styled } from '@dank-style/react';
-import { Svg } from 'react-native-svg';
+import { styled, AsForwarder } from '@dank-style/react';
 
-export default styled(
-  Svg,
+const Comp: any = styled(
+  AsForwarder,
   {
-    w: 20,
-    h: 20,
-    props: {
-      stroke: 'transparent',
-    },
+    h: 18,
+    w: 18,
     variants: {
       size: {
         xs: {
@@ -33,19 +29,12 @@ export default styled(
         },
       },
     },
-
     defaultProps: {
-      viewBox: '0 0 16 16',
-      fill: 'none',
-      strokeWidth: 2,
-      strokeLinecap: 'round',
-      strokeLinejoin: 'round',
+      size: 'md',
     },
   },
   {
     ancestorStyle: ['_icon'],
-    DEBUG: 'STYLED_ICON',
-    resolveProps: ['stroke'],
   },
   {
     propertyTokenMap: {
@@ -53,3 +42,5 @@ export default styled(
     },
   }
 );
+
+export default Comp;

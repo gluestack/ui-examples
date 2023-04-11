@@ -12,7 +12,7 @@ import {
 import {
   CheckCircleIcon,
   CloseIcon,
-  ListIcon,
+  // ListIcon,
 } from "../components/core/Icons/Icons";
 
 const MainContentHeader = () => {
@@ -45,7 +45,7 @@ const MainContentHeader = () => {
               setModalVisible(true);
             }}
           >
-            <ListIcon w="$4" h="$4" />
+            {/* <ListIcon w="$4" h="$4" /> */}
             <Button.Text
               pl="$2"
               sx={{

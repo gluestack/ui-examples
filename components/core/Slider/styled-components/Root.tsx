@@ -1,49 +1,50 @@
-import { styled } from "@dank-style/react";
-import { View } from "react-native";
+import { styled } from '../../styled';
+import { View } from 'react-native';
 
 export default styled(
   View,
   {
-    h: 4,
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    variants: {
+    'h': 4,
+    'alignItems': 'center',
+    'justifyContent': 'center',
+    'position': 'relative',
+
+    'variants': {
       size: {
-        sm: {
+        'sm:': {
           _thumb: {
-            h: "$4",
-            w: "$4",
+            h: '$4',
+            w: '$4',
           },
         },
-        md: {
+        'md': {
           _thumb: {
-            h: "$5",
-            w: "$5",
+            h: '$5',
+            w: '$5',
           },
         },
-        lg: {
+        'lg': {
           _thumb: {
-            h: "$6",
-            w: "$6",
+            h: '$6',
+            w: '$6',
           },
         },
       },
     },
-    defaultProps: {
-      size: "sm",
+    'defaultProps': {
+      size: 'sm:',
     },
-    ":disabled": {
+    ':disabled': {
       opacity: 0.4,
     },
 
-    _web: {
-      ":disabled": {
-        cursor: "not-allowed",
+    '_web': {
+      ':disabled': {
+        cursor: 'not-allowed',
       },
     },
   },
   {
-    descendantStyle: ["_thumb"],
+    descendantStyle: ['_thumb'],
   }
 );

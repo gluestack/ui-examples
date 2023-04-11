@@ -1,40 +1,36 @@
-import { styled } from '@dank-style/react';
+import { styled } from '../../styled';
+import { Motion } from '@legendapp/motion';
 
-import { View } from 'react-native';
 export default styled(
-  View,
+  Motion.View,
   {
-    // py: '$1',
-    // px: '$1',
-    // borderRadius: 4,
-    // bg: '$backgroundLight900',
+    ':initial': {
+      opacity: 0,
+      scale: 0.5,
+    },
+    ':animate': {
+      opacity: 1,
+      scale: 1,
+    },
+    ':exit': {
+      opacity: 0,
+      scale: 0.5,
+    },
 
-    // _text: {
-    //   color: '$red900',
-    // },
-
-    // _web: {
-    //   shadow: '$8',
-    // },
-
-    // _dark: {
-    //   bg: '$backgroundDark800',
-    //   _text: {
-    //     // color: '$textDark50',
-    //   },
-    // },
-
-    py: '$1',
-    px: '$2',
-    borderRadius: 4,
-    bg: '$backgroundLight800',
-
-    _web: {
+    'py': '$1',
+    'px': '$2',
+    'borderRadius': '$sm',
+    'bg': '$backgroundLight800',
+    '_text': {
+      fontSize: '$xs',
+      color: '$textLight50',
+    },
+    '_web': {
       boxShadow: '0px 1px 1.41px rgba(0, 0, 0, 0.2)',
     },
 
-    _dark: {
-      bg: '$backgroundDark50',
+    '_dark': {
+      bg: '$backgroundDark600',
     },
   },
   { descendantStyle: ['_text'] }

@@ -1,5 +1,5 @@
 import { Image } from 'react-native';
-import { styled } from '@dank-style/react';
+import { styled } from '../../styled';
 
 export default styled(
   Image,

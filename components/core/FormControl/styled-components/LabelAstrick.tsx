@@ -1,16 +1,13 @@
 // import { Text } from '@gluestack-ui/ui';
-import { styled } from "@dank-style/react";
-import { Text } from "react-native";
-import { styledFontsResolver } from "../../../font-resolver/styledFonts";
-export default styledFontsResolver(
+import { styled } from '../../styled';
+import { Text } from 'react-native';
+export default styled(
   Text,
   {
-    fontWeight: "$normal",
-    fontFamily: "$body",
-    color: "$error600",
+    color: '$error600',
 
     _dark: {
-      color: "$error500",
+      color: '$error500',
     },
   },
   {}

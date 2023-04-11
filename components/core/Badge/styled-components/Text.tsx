@@ -1,21 +1,20 @@
-import { Text } from "react-native";
-import { styled } from "@dank-style/react";
-import { styledFontsResolver } from "../../../font-resolver/styledFonts";
+import { Text } from 'react-native';
+import { styled } from '../../styled';
 
-export default styledFontsResolver(
+export default styled(
   Text,
   {
-    fontFamily: "$body",
-    justifyContent: "center",
-    alignItems: "center",
-    fontWeight: "$medium",
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontWeight: '$medium',
+    fontFamily: '$body',
     // fontFamily: '$heading',
-    color: "$textLight800",
-    textTransform: "uppercase",
-    letterSpacing: "$md",
+    color: '$textLight800',
+    textTransform: 'uppercase',
+    letterSpacing: '$md',
     _dark: {
-      color: "$textDark100",
+      color: '$textDark100',
     },
   },
-  { ancestorStyle: ["_text"] }
+  { ancestorStyle: ['_text'] }
 );

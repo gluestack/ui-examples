@@ -1,5 +1,6 @@
 import { createIcon } from '@gluestack-ui/icon';
 import { Root } from '../styled-components';
+
 const PluginIcon = createIcon({
   Root,
   viewBox: '0 0 20 20',

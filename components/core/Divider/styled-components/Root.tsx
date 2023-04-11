@@ -1,29 +1,25 @@
 import { View } from 'react-native';
-import { styled } from '@dank-style/react';
+import { styled } from '../../styled';
 
 export default styled(
   View,
   {
     bg: '$borderLight200',
-
     variants: {
-      variant: {
+      orientation: {
         vertical: {
-          width: 1,
+          width: '$px',
           height: '100%',
         },
-
         horizontal: {
-          height: 1,
+          height: '$px',
           width: '100%',
         },
       },
     },
-
     defaultProps: {
-      variant: 'horizontal',
+      orientation: 'horizontal',
     },
-
     _dark: {
       bg: '$borderDark700',
     },

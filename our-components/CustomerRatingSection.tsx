@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Checkbox, HStack, Switch, Text, VStack } from "../components";
 import { CheckIcon } from "../components/core/Icons/Icons";
-import { StarIcon } from "../components/core/Icons/Icons/Star";
+// import { StarIcon } from "../components/core/Icons/Icons/Star";
 
 const CustomerRatingSection = () => {
   const sidebarFiltersCustomerRatings = [
@@ -40,14 +40,14 @@ const CustomerRatingSection = () => {
               </Checkbox.Indicator>
               <Checkbox.Label>
                 <HStack alignItems="center" space="xs">
-                  <StarIcon
+                  {/* <StarIcon
                     w="$3"
                     h="$3"
                     sx={{
                       _dark: { color: "$backgroundDark50" },
                       _light: { color: "black" },
                     }}
-                  />
+                  /> */}
                   <Text>{placeType.label}</Text>
                 </HStack>
               </Checkbox.Label>

@@ -1,79 +1,104 @@
-import { View } from "react-native";
-import { styled } from "@dank-style/react";
+import { View } from 'react-native';
+import { styled } from '../../styled';
 
 export default styled(
   View,
   {
-    justifyContent: "center",
-    alignItems: "center",
-    bg: "transparent",
-    borderColor: "$borderLight400",
-    borderWidth: 2,
-    borderRadius: 999,
-    _web: {
-      ":focusVisible": {
-        outlineWidth: "2px",
-        outlineColor: "$primary700",
-        outlineStyle: "solid",
+    'justifyContent': 'center',
+    'alignItems': 'center',
+    'bg': 'transparent',
+    'borderColor': '$borderLight400',
+    'ml': '$2',
+    'borderWidth': 2,
+    'borderRadius': 999,
+
+    '_web': {
+      ':focusVisible': {
+        outlineWidth: 2,
+        outlineColor: '$primary700',
+        outlineStyle: 'solid',
         _dark: {
-          outlineColor: "$primary400",
+          outlineColor: '$primary400',
         },
       },
     },
 
-    ":checked": {
-      borderColor: "$primary600",
-      bg: "transparent",
+    ':checked': {
+      borderColor: '$primary600',
+      bg: 'transparent',
     },
 
-    ":hover": {
-      borderColor: "$borderLight500",
-      bg: "transparent",
+    ':hover': {
+      'borderColor': '$borderLight500',
+      'bg': 'transparent',
 
-      ":checked": {
-        bg: "transparent",
-        borderColor: "$primary700",
+      ':checked': {
+        bg: 'transparent',
+        borderColor: '$primary700',
+      },
+      ':invalid': {
+        borderColor: '$error600',
+      },
+      ':disabled': {
+        'borderColor': '$borderLight400',
+        ':checked': {
+          bg: 'transparent',
+          borderColor: '$primary600',
+        },
       },
     },
 
-    ":active": {
-      bg: "$primary800",
-      borderColor: "$primary800",
+    ':active': {
+      bg: 'transparent',
+      borderColor: '$primary800',
     },
 
-    _dark: {
-      borderColor: "$borderDark500",
-      bg: "$transparent",
+    '_dark': {
+      'borderColor': '$borderDark500',
+      'bg': '$transparent',
 
-      ":hover": {
-        borderColor: "$borderDark400",
-        bg: "transparent",
+      ':hover': {
+        'borderColor': '$borderDark400',
+        'bg': 'transparent',
 
-        ":checked": {
-          bg: "transparent",
-          borderColor: "$primary400",
+        ':checked': {
+          bg: 'transparent',
+          borderColor: '$primary400',
+        },
+        ':invalid': {
+          borderColor: '$error600',
+        },
+        ':disabled': {
+          'borderColor': '$borderDark500',
+          ':checked': {
+            bg: 'transparent',
+            borderColor: '$primary500',
+          },
         },
       },
 
-      ":checked": {
-        borderColor: "$primary500",
+      ':checked': {
+        borderColor: '$primary500',
       },
 
-      ":active": {
-        bg: "$primary300",
-        borderColor: "$primary300",
+      ':active': {
+        bg: 'transparent',
+        borderColor: '$primary300',
+      },
+      ':invalid': {
+        borderColor: '$error600',
       },
     },
 
-    ":disabled": {
+    ':disabled': {
       opacity: 0.6,
     },
 
-    ":invalid": {
-      borderColor: "$error600",
+    ':invalid': {
+      borderColor: '$error600',
     },
   },
   {
-    ancestorStyle: ["_indicator"],
+    ancestorStyle: ['_indicator'],
   }
 );

@@ -1,79 +1,82 @@
-import { View } from "react-native";
-import { styled } from "@dank-style/react";
+import { View } from 'react-native';
+import { styled } from '../../styled';
 
 export default styled(
   View,
   {
-    flexDirection: "row",
-    alignItems: "center",
-    variants: {
+    'p': 8,
+    'flexDirection': 'row',
+    'justifyContent': 'center',
+    'alignItems': 'center',
+
+    'variants': {
       size: {
         lg: {
           _icon: {
-            height: "$5",
-            width: "$5",
+            height: '$5',
+            width: '$5',
           },
 
           _text: {
-            fontSize: "$lg",
+            fontSize: '$xl',
           },
 
           _indicator: {
-            h: "$6",
-            w: "$6",
+            h: '$6',
+            w: '$6',
           },
         },
 
         md: {
           _icon: {
-            height: "$4",
-            width: "$4",
+            height: '$4',
+            width: '$4',
           },
 
           _text: {
-            fontSize: "$md",
+            fontSize: '$lg',
           },
 
           _indicator: {
-            h: "$5",
-            w: "$5",
+            h: '$5',
+            w: '$5',
           },
         },
 
         sm: {
           _icon: {
-            height: "$3",
-            width: "$3",
+            height: '$3',
+            width: '$3',
           },
 
           _text: {
-            fontSize: "$sm",
+            fontSize: '$md',
           },
 
           _indicator: {
-            h: "$4",
-            w: "$4",
+            h: '$4',
+            w: '$4',
           },
         },
       },
     },
 
-    defaultProps: {
-      size: "md",
+    'defaultProps': {
+      size: 'md',
     },
 
-    //@ts-ignore
-    ":disabled": {
+    ':disabled': {
       opacity: 0.6,
     },
 
-    //@ts-ignore
-    _web: {
-      cursor: "pointer",
+    '_web': {
+      'cursor': 'pointer',
+      ':disabled': {
+        cursor: 'not-allowed',
+      },
     },
   },
   {
-    descendantStyle: ["_icon", "_text", "_indicator"],
-    DEBUG: "CHECKBOX",
+    descendantStyle: ['_icon', '_text', '_indicator'],
   }
 );

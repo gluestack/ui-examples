@@ -1,41 +1,42 @@
-import { styled } from "@dank-style/react";
-import { View } from "react-native";
+import { styled } from '../../styled';
+import { View } from 'react-native';
 
 export default styled(
   View,
   {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     _text: {
-      fontWeight: "$normal",
-      color: "$info600",
-      ":hover": {
-        textDecoration: "underline",
-        color: "$info600",
+      'fontWeight': '$normal',
+      'color': '$info600',
+      ':hover': {
+        textDecorationLine: 'underline',
+        color: '$info600',
       },
-      ":active": {
-        textDecoration: "underline",
-        color: "$info700",
+      ':active': {
+        textDecorationLine: 'underline',
+        color: '$info700',
       },
-      ":pressed": {
-        textDecoration: "underline",
-        color: "$info700",
+      ':pressed': {
+        textDecorationLine: 'underline',
+        color: '$info700',
       },
-      _dark: {
-        color: "$info300",
-        ":hover": {
-          textDecoration: "underline",
-          color: "$info300",
+      '_dark': {
+        'color': '$info300',
+        ':hover': {
+          textDecorationLine: 'underline',
+          color: '$info300',
         },
-        ":active": {
-          textDecoration: "underline",
-          color: "$info200",
+        ':active': {
+          textDecorationLine: 'underline',
+          color: '$info200',
         },
       },
     },
   },
   {
-    descendantStyle: ["_text"],
+    descendantStyle: ['_text'],
   }
 );

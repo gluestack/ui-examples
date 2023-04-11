@@ -1,18 +1,19 @@
-import { styled } from "@dank-style/react";
-import { TextInput } from "react-native";
-import { styledFontsResolver } from "../../../font-resolver/styledFonts";
+import { styled } from '../../styled';
+import { TextInput } from 'react-native';
 
-export default styledFontsResolver(
+export default styled(
   TextInput,
   {
-    p: "$2",
-    // @ts-ignore
+    p: '$2',
     multiline: true,
-    textAlignVertical: "top",
-    h: 100,
-    w: 300,
-    placeholderTextColor: "$red800",
-    outlineColor: "$primary600",
+    textAlignVertical: 'top',
+    h: '100%',
   },
-  { ancestorStyle: ["_input"] }
+  { ancestorStyle: ['_input'], resolveProps: ['placeholderTextColor'] },
+  {
+    propertyTokenMap: {
+      placeholderTextColor: 'colors',
+    },
+    // aliases: {},
+  }
 );

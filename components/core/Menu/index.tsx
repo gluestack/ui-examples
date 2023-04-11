@@ -1,4 +1,4 @@
-import { createMenu } from "@gluestack-ui/menu";
+import { createMenu } from '@gluestack-ui/menu';
 import {
   Root,
   Backdrop,
@@ -6,9 +6,9 @@ import {
   Group,
   GroupTitle,
   MenuItem,
-} from "./styled-components";
+} from './styled-components';
 
-export const Menu = createMenu({
+export const Menu: any = createMenu({
   Root,
   Backdrop,
   Content,

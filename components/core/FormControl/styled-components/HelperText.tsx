@@ -1,17 +1,14 @@
-import { styled } from "@dank-style/react";
-import { Text } from "react-native";
-import { styledFontsResolver } from "../../../font-resolver/styledFonts";
+import { styled } from '../../styled';
+import { Text } from 'react-native';
 
-export default styledFontsResolver(
+export default styled(
   Text,
   {
-    fontWeight: "$normal",
-    fontFamily: "$body",
-    fontSize: "$xs",
-    color: "$text500",
+    fontSize: '$xs',
+    color: '$text500',
 
     _dark: {
-      color: "$txet400",
+      color: '$txet400',
     },
   },
   {}

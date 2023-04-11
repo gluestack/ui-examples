@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import { Provider } from "./components";
+import { Box, GluestackUIProvider } from "./components";
 import { config } from "./gluestack-ui.config";
 import HomestayPage from "./our-components/HomestayPage";
 import { useFonts } from "expo-font";
@@ -12,6 +12,7 @@ import {
   Inter_700Bold,
   Inter_900Black,
 } from "@expo-google-fonts/inter";
+import { StyledProvider } from "@dank-style/react";
 
 export default function App() {
   const [colorMode, setColorMode]: any = React.useState("light");
@@ -33,9 +34,9 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
-      <Provider config={config.theme} colorMode={colorMode}>
+      <GluestackUIProvider config={config.theme} colorMode={colorMode}>
         <HomestayPage colorMode={colorMode} toggleColorMode={toggleColorMode} />
-      </Provider>
+      </GluestackUIProvider>
     </View>
   );
 }

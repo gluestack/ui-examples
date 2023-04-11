@@ -1,18 +1,16 @@
-import { styled } from "@dank-style/react";
-import { Text } from "react-native";
-import { styledFontsResolver } from "../../../font-resolver/styledFonts";
+import { styled } from '../../styled';
+import { Text } from 'react-native';
 
-export default styledFontsResolver(
+export default styled(
   Text,
   {
-    fontFamily: "$body",
     // fontSize: '$sm',
-    fontWeight: "$medium",
-    color: "$textLight500",
+    fontWeight: '$medium',
+    color: '$textLight500',
 
     _dark: {
-      color: "$textDark400",
+      color: '$textDark400',
     },
   },
-  { ancestorStyle: ["_labelText"] }
+  { ancestorStyle: ['_labelText'] }
 );

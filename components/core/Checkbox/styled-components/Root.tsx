@@ -1,79 +1,80 @@
-import { Pressable } from "react-native";
-import { styled } from "@dank-style/react";
+import { Pressable } from 'react-native';
+import { styled } from '../../styled';
 
 export default styled(
   Pressable,
   {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    // alignItems: "center",
-    _icon: {
-      color: "$primary600",
+    'p': 8,
+    'flexDirection': 'row',
+    'justifyContent': 'flex-start',
+    'alignItems': 'center',
+
+    '_icon': {
+      color: '$primary600',
     },
 
-    variants: {
+    'variants': {
       size: {
         lg: {
           _icon: {
-            height: "$5",
-            width: "$5",
+            height: '$5',
+            width: '$5',
           },
 
           _text: {
-            fontSize: "$lg",
+            fontSize: '$lg',
           },
 
           _indicator: {
-            h: "$6",
-            w: "$6",
+            h: '$6',
+            w: '$6',
           },
         },
 
         md: {
           _icon: {
-            height: "$4",
-            width: "$4",
+            height: '$4',
+            width: '$4',
           },
 
           _text: {
-            fontSize: "$md",
+            fontSize: '$md',
           },
 
           _indicator: {
-            h: "$5",
-            w: "$5",
+            h: '$5',
+            w: '$5',
           },
         },
 
         sm: {
           _icon: {
-            height: "$3",
-            width: "$3",
+            height: '$3',
+            width: '$3',
           },
 
           _text: {
-            fontSize: "$sm",
+            fontSize: '$sm',
           },
 
           _indicator: {
             borderRadius: 2,
-            h: "$4",
-            w: "$4",
+            h: '$4',
+            w: '$4',
           },
         },
       },
     },
 
-    defaultProps: {
-      size: "md",
+    'defaultProps': {
+      size: 'md',
     },
 
-    ":disabled": {
+    ':disabled': {
       opacity: 0.5,
     },
   },
   {
-    descendantStyle: ["_icon", "_text", "_indicator"],
-    DEBUG: "CHECKBOX",
+    descendantStyle: ['_icon', '_text', '_indicator'],
   }
 );

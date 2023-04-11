@@ -1,15 +1,15 @@
 import { View } from 'react-native';
-import { styled } from '@dank-style/react';
+import { styled } from '../../styled';
 
 export default styled(
   View,
   {
     'flexDirection': 'row',
     'justifyContent': 'center',
+    'justifySelf': 'center',
     'alignItems': 'center',
+    'alignSelf': 'center',
     'borderRadius': '$xs',
-    // px: '$2',
-    // py: '$1',
 
     'variants': {
       action: {
@@ -125,7 +125,7 @@ export default styled(
       size: {
         sm: {
           px: '$1',
-          py: '2px',
+          py: 2,
           _icon: {
             size: '$xs',
           },
@@ -136,7 +136,7 @@ export default styled(
         },
         md: {
           px: '$1',
-          py: '2px',
+          py: 2,
           _icon: {
             size: '$xs',
           },
@@ -165,7 +165,7 @@ export default styled(
 
     '_web': {
       ':focusVisible': {
-        outlineWidth: '2px',
+        outlineWidth: 2,
         outlineColor: '$primary700',
         outlineStyle: 'solid',
         _dark: {
