@@ -9,8 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@dank-style/animation-plugin": "0.0.4",
-    "@dank-style/react": "0.3.11",
+    "@dank-style/animation-plugin": "latest",
+    "@dank-style/react": "latest",
     "@expo-google-fonts/inter": "^0.2.3",
     "@expo/html-elements": "^0.4.1",
     "@expo/webpack-config": "^18.0.1",

@@ -1,10 +1,10 @@
-import { View } from 'react-native';
-import { styled } from '../../styled';
+import { View } from "react-native";
+import { styled } from "../../styled";
 
 export default styled(
   View,
   {},
   {
-    descendantStyle: ['_text'],
+    descendantStyle: ["_text"],
   }
 );
