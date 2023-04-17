@@ -5,6 +5,7 @@ import {
   Button,
   Heading,
   HStack,
+  Icon,
   Modal,
   Text,
   VStack,
@@ -14,6 +15,7 @@ import {
   CloseIcon,
   // ListIcon,
 } from "../components/core/Icons/Icons";
+import { List } from "lucide-react-native";
 
 const MainContentHeader = () => {
   const [modalVisible, setModalVisible] = React.useState(false);
@@ -38,14 +40,13 @@ const MainContentHeader = () => {
           </Alert>
         ) : (
           <Button
-            // @ts-ignore
             variant="outline"
-            action="secondary"
             onPress={() => {
               setModalVisible(true);
             }}
           >
             {/* <ListIcon w="$4" h="$4" /> */}
+            <Icon as={List} w="$4" h="$4" />
             <Button.Text
               pl="$2"
               sx={{

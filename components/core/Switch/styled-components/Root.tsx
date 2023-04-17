@@ -1,24 +1,24 @@
-import { styled } from '../../styled';
-import { Switch } from 'react-native';
+import { styled } from "../../styled";
+import { Switch } from "react-native";
 
 export default styled(
   Switch,
   {
-    'props': {
+    props: {
       // todo: add support for this in dank.style
       // trackColor: { false: '$backgroundLight300', true: '$primary600' },
 
       // hacky fix for the above
       //@ts-ignore
-      trackColor: { false: '#D4D4D4', true: '#005DB4' },
-      thumbColor: '$backgroundLight50',
-      activeThumbColor: '$backgroundLight50',
+      trackColor: { false: "#D4D4D4", true: "#E11d48" },
+      thumbColor: "$backgroundLight50",
+      activeThumbColor: "$backgroundLight50",
 
       // for ios specifically in unchecked state
-      ios_backgroundColor: '$backgroundLight300',
+      ios_backgroundColor: "$backgroundLight300",
     },
-    'borderRadius': '$full',
-    'variants': {
+    borderRadius: "$full",
+    variants: {
       //@ts-ignore
 
       size: {
@@ -41,18 +41,18 @@ export default styled(
       },
     },
 
-    'defaultProps': {
-      size: 'md',
+    defaultProps: {
+      size: "md",
     },
-    ':disabled': {
+    ":disabled": {
       opacity: 0.4,
     },
-    ':invalid': {
-      borderColor: '$error600',
+    ":invalid": {
+      borderColor: "$error600",
       borderWidth: 2,
       borderRadius: 12,
     },
-    ':hover': {
+    ":hover": {
       props: {
         // todo: add support for this in dank.style
         // trackColor: { false: '$backgroundLight400', true: '$primary700' },
@@ -60,39 +60,39 @@ export default styled(
         // hacky fix for the above
         //@ts-ignore
 
-        trackColor: { false: '#A3A3A3', true: '#004282' },
-        ios_backgroundColor: '$backgroundLight400',
+        trackColor: { false: "#A3A3A3", true: "#BE123C" },
+        ios_backgroundColor: "$backgroundLight400",
       },
     },
-    ':checked': {
+    ":checked": {
       props: {
-        thumbColor: 'backgroundLight50',
+        thumbColor: "backgroundLight50",
       },
     },
   },
   {
     resolveProps: [
-      'thumbColor',
-      'trackColor',
-      'activeThumbColor',
-      'ios_backgroundColor',
+      "thumbColor",
+      "trackColor",
+      "activeThumbColor",
+      "ios_backgroundColor",
     ],
   },
   {
     propertyTokenMap: {
-      thumbColor: 'colors',
+      thumbColor: "colors",
 
       // todo: add support for this in dank.style
-      trackColor: { false: 'colors', true: 'colors' },
-      activeThumbColor: 'colors',
-      ios_backgroundColor: 'colors',
+      trackColor: { false: "colors", true: "colors" },
+      activeThumbColor: "colors",
+      ios_backgroundColor: "colors",
     },
     aliases: {
-      thumbColor: 'thumbColor',
-      activeThumbColor: 'activeThumbColor',
-      activeTrackColor: 'activeTrackColor',
-      trackColor: 'trackColor',
-      ios_backgroundColor: 'ios_backgroundColor',
+      thumbColor: "thumbColor",
+      activeThumbColor: "activeThumbColor",
+      activeTrackColor: "activeTrackColor",
+      trackColor: "trackColor",
+      ios_backgroundColor: "ios_backgroundColor",
     },
   }
 );

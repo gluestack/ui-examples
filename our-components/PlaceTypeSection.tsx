@@ -28,7 +28,12 @@ const PlaceTypeSection = () => {
       <Checkbox.Group value={values} onChange={setValues}>
         {sidebarFiltersPlaceType.map((placeType: any) => {
           return (
-            <Checkbox value={placeType.value} size="sm" my="$2">
+            <Checkbox
+              value={placeType.value}
+              size="sm"
+              my="$2"
+              justifyContent="flex-start"
+            >
               <Checkbox.Indicator>
                 <Checkbox.Icon>
                   <CheckIcon />

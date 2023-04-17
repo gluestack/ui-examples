@@ -1,6 +1,6 @@
 import React from "react";
 import { Pressable } from "react-native";
-import { Avatar, Menu, Text } from "../components";
+import { Avatar, Divider, Menu, Text } from "../components";
 
 const userMenuItems = [
   {
@@ -39,15 +39,18 @@ const UserProfile = () => {
       <Menu.Content>
         {userMenuItems.map((item, index) => {
           return (
-            <Menu.Group>
-              {item.items.map((item, index) => {
-                return (
-                  <Menu.Item>
-                    <Text>{item}</Text>
-                  </Menu.Item>
-                );
-              })}
-            </Menu.Group>
+            <>
+              <Menu.Group>
+                {item.items.map((item, index) => {
+                  return (
+                    <Menu.Item>
+                      <Text>{item}</Text>
+                    </Menu.Item>
+                  );
+                })}
+              </Menu.Group>
+              {index != userMenuItems.length - 1 && <Divider />}
+            </>
           );
         })}
       </Menu.Content>

@@ -21,18 +21,8 @@ const FiltersAppliedSection = ({
         <Text size="sm" fontWeight="$medium" color="black">
           Filters applied
         </Text>
-        <Button
-          // @ts-ignore
-          variant="link"
-          p={0}
-        >
-          <Button.Text
-            color="$primary500"
-            // @ts-ignore
-            fontSize={12}
-          >
-            Clear all
-          </Button.Text>
+        <Button p={0} variant="link" size="sm">
+          <Button.Text>Clear all</Button.Text>
         </Button>
       </HStack>
       <HStack flexWrap="wrap" space="sm">
@@ -44,7 +34,7 @@ const FiltersAppliedSection = ({
             <Button
               // @ts-ignore
               ml="$2"
-              action="secondary"
+              // action="secondary"
               rounded="$full"
               p="$1"
               bg="$backgroundLight400"
@@ -52,9 +42,9 @@ const FiltersAppliedSection = ({
               <CloseIcon
                 h="$3"
                 w="$3"
+                color="$backgroundLight100"
                 sx={{
-                  _light: { color: "$backgroundLight100" },
-                  _dark: { color: "$backgroundDark400" },
+                  _dark: { color: "black" },
                 }}
               />
             </Button>

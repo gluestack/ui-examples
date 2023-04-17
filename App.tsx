@@ -12,6 +12,7 @@ import {
   Inter_700Bold,
   Inter_900Black,
 } from "@expo-google-fonts/inter";
+import { StyledProvider } from "@dank-style/react";
 
 export default function App() {
   const [colorMode, setColorMode]: any = React.useState("light");
@@ -33,9 +34,6 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
-      {/* <Text style={{ fontFamily: "Inter_400Regular", fontSize: 14 }}>
-        Show total prices up front
-      </Text> */}
       <GluestackUIProvider config={config.theme} colorMode={colorMode}>
         <HomestayPage colorMode={colorMode} toggleColorMode={toggleColorMode} />
       </GluestackUIProvider>
