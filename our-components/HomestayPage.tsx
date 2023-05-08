@@ -1,6 +1,14 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { Box, Button, Center, HStack } from "../components";
+import {
+  Alert,
+  Box,
+  Button,
+  Center,
+  HStack,
+  Icon,
+  InfoIcon,
+} from "../components";
 import Banner from "./Banner";
 import Header from "./Header";
 import MainContent from "./MainContent";

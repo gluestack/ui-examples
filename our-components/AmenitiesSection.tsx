@@ -1,9 +1,19 @@
 import React from "react";
-import { Box, Checkbox, HStack, Pressable, Text, VStack } from "../components";
+import {
+  Alert,
+  Box,
+  Checkbox,
+  HStack,
+  Icon,
+  Pressable,
+  Text,
+  VStack,
+} from "../components";
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
+  InfoIcon,
 } from "../components/core/Icons/Icons";
 
 const AmenitiesSection = () => {
@@ -46,6 +56,7 @@ const AmenitiesSection = () => {
       <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
         Ammenities
       </Text>
+
       <Checkbox.Group value={values} onChange={setValues}>
         {sidebarFiltersAmmenities.map((ammenity: any, index: any) => {
           if (index > 4 && !viewAllComponents) return null;
