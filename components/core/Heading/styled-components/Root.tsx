@@ -5,26 +5,29 @@ export default styled(H3, {
   letterSpacing: '$sm',
   fontWeight: 'bold',
   fontFamily: '$heading',
-  margin: 0,
+
+  // Overrides expo-html default styling
+  marginVertical: 0,
+  _dark: {
+    color: '$textDark50',
+  },
   variants: {
     size: {
       '5xl': {
         //@ts-ignore
         props: { as: H1 },
-        fontSize: '$7xl',
+        fontSize: '$6xl',
         lineHeight: '$7xl',
       },
       '4xl': {
         //@ts-ignore
-
         props: { as: H1 },
         fontSize: '$5xl',
-        lineHeight: '$5xl',
+        lineHeight: '$6xl',
       },
 
       '3xl': {
         //@ts-ignore
-
         props: { as: H1 },
         fontSize: '$4xl',
         lineHeight: '$5xl',
@@ -32,7 +35,6 @@ export default styled(H3, {
 
       '2xl': {
         //@ts-ignore
-
         props: { as: H2 },
         fontSize: '$3xl',
         lineHeight: '$3xl',
@@ -40,7 +42,6 @@ export default styled(H3, {
 
       'xl': {
         //@ts-ignore
-
         props: { as: H3 },
         fontSize: '$2xl',
         lineHeight: '$3xl',
@@ -48,7 +49,6 @@ export default styled(H3, {
 
       'lg': {
         //@ts-ignore
-
         props: { as: H4 },
         fontSize: '$xl',
         lineHeight: '$2xl',
@@ -56,15 +56,13 @@ export default styled(H3, {
 
       'md': {
         //@ts-ignore
-
         props: { as: H5 },
         fontSize: '$lg',
-        lineHeight: '$md',
+        lineHeight: '$lg',
       },
 
       'sm': {
         //@ts-ignore
-
         props: { as: H6 },
         fontSize: '$md',
         lineHeight: '$lg',
@@ -72,7 +70,6 @@ export default styled(H3, {
 
       'xs': {
         //@ts-ignore
-
         props: { as: H6 },
         fontSize: '$sm',
         lineHeight: '$xs',
@@ -82,10 +79,5 @@ export default styled(H3, {
 
   defaultProps: {
     size: 'lg',
-  },
-
-  //@ts-ignore
-  _dark: {
-    color: '$textDark50',
   },
 });

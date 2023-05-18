@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@dank-style/animation-plugin": "latest",
-    "@dank-style/react": "0.3.11",
+    "@dank-style/react": "0.4.6",
     "@expo-google-fonts/inter": "^0.2.3",
-    "@expo/html-elements": "^0.4.1",
+    "@expo/html-elements": "latest",
     "@expo/webpack-config": "^18.0.1",
     "@gluestack-ui/actionsheet": "latest",
     "@gluestack-ui/alert-dialog": "latest",
@@ -51,7 +51,10 @@
     "lucide-react-native": "^0.161.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.71.3"
+    "react-native": "0.71.3",
+    "react-native-svg": "latest",
+    "@gluestack-ui/alert": "latest",
+    "@gluestack-ui/form-control": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

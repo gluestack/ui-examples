@@ -1,21 +1,19 @@
 import { Text } from 'react-native';
 import { styled } from '../../styled';
 
-export default styled(
+export const Label = styled(
   Text,
   {
     color: '$textLight700',
     fontWeight: '$normal',
     fontFamily: '$body',
     fontStyle: 'normal',
+    fontSize: '$md',
     letterSpacing: '$md',
+    lineHeight: '$md',
 
     variants: {
       size: {
-        '2xs': {
-          fontSize: '$2xs',
-          lineHeight: '$2xs',
-        },
         'xs': {
           fontSize: '$xs',
           lineHeight: '$sm',

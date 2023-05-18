@@ -34,3 +34,4 @@ export * from './Toast';
 export * from './Tooltip';
 export * from './VStack';
 export * from './gluestack-ui-provider';
+export * from './styled';

@@ -4,18 +4,15 @@ import { styled } from '../../styled';
 export default styled(
   Pressable,
   {
-    'right': 8,
     'zIndex': 1,
-    'pr': '$2',
-    'bg': 'transparent',
     'rounded': '$sm',
+    'p': '$2',
     '_icon': {
       color: '$backgroundLight400',
     },
     '_text': {
       color: '$backgroundLight400',
     },
-
     ':hover': {
       _icon: {
         color: '$backgroundLight700',
@@ -26,6 +23,7 @@ export default styled(
     },
 
     ':active': {
+      bg: '$backgroundLight100',
       _icon: {
         color: '$backgroundLight900',
       },
@@ -51,17 +49,14 @@ export default styled(
       },
 
       ':active': {
+        bg: '$backgroundDark800',
         _icon: {
-          color: '$backgroundLight100',
-        },
-        _text: {
           color: '$backgroundLight100',
         },
       },
     },
 
     ':focusVisible': {
-      p: '$2',
       bg: '$backgroundLight100',
       _icon: {
         color: '$backgroundLight700',

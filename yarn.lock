@@ -1076,10 +1076,10 @@
   dependencies:
     "@legendapp/motion" "^2.2.0"
 
-"@dank-style/react@0.3.11":
-  version "0.3.11"
-  resolved "https://registry.yarnpkg.com/@dank-style/react/-/react-0.3.11.tgz#40fb5ba12d7b257781a9794914545329dfaabb64"
-  integrity sha512-CdJqZ3waOIfAJpOwg2gFutzzieXHTHBrdLTbA9ueuRGCzrKy1m0Y3GqYy2vR21+CLwoZiW9rPRJtcoRnc3KbhQ==
+"@dank-style/react@0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@dank-style/react/-/react-0.4.6.tgz#aff5b882f944d74d73ebd89a7d157684586b5a8a"
+  integrity sha512-4VhQIj7JQiCcsOEa80HqLheFrmtoDLhKaTEG9SZAtY9OuNNOt0WGUhkjxs5XqsE98aKc5vOHKEP0khDm/krwEw==
   dependencies:
     inline-style-prefixer "^6.0.1"
     normalize-css-color "^1.0.2"
@@ -1357,7 +1357,7 @@
     tmp "^0.0.33"
     tslib "^2.4.0"
 
-"@expo/html-elements@^0.4.1":
+"@expo/html-elements@latest":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@expo/html-elements/-/html-elements-0.4.2.tgz#4e9f6b9250af8d0befe3242fd42704cca2421e0e"
   integrity sha512-lNioCgdtOrCMMqzHY+PCTdyuWBTU4yMBlOzPSkS4YFIWt9bq0zexM2ZJkpybTXmowNdE3zHO93xxAmiA2yDi2w==
@@ -1658,6 +1658,20 @@
     "@react-native-aria/focus" "^0.2.7"
     react-native-svg "13.4.0"
 
+"@gluestack-ui/alert@latest":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@gluestack-ui/alert/-/alert-0.1.2.tgz#fe8a6cd93602e9a0da454cdf69ab040249322c97"
+  integrity sha512-S32UPyIm6FBk/4f9wfBjaQOjpyxkmyC4RhKT0hb+3V9U8ldjOq0Jiikj22NCVSCiAkhEvHif0RZeJbe5JB5WWA==
+  dependencies:
+    "@gluestack-ui/hooks" latest
+    "@gluestack-ui/icon" latest
+    "@gluestack-ui/overlay" latest
+    "@gluestack-ui/react-native-aria" latest
+    "@gluestack-ui/transitions" latest
+    "@gluestack-ui/utils" latest
+    "@react-native-aria/focus" "^0.2.7"
+    react-native-svg "13.4.0"
+
 "@gluestack-ui/avatar@latest":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@gluestack-ui/avatar/-/avatar-0.1.0.tgz#b1306c41c799eabb2e2b32daab22253406df1e89"
@@ -1668,13 +1682,13 @@
     "@react-native-aria/focus" "^0.2.7"
     react-native-svg "13.4.0"
 
-"@gluestack-ui/button@0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@gluestack-ui/button/-/button-0.1.8.tgz#c37e17ea242026f55fe32cdb3f518ee83092c1fb"
-  integrity sha512-d+N3zjjwUFAIwhDZkJhELusXpOk0H0qgGBUdmSvOdn+ZMG9nL9Do/+U97dw4wvPh+uo9zBILRbeMozU/eLeg8g==
+"@gluestack-ui/button@latest":
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@gluestack-ui/button/-/button-0.1.12.tgz#45495e92107cb6e9178e56122d2b64fbb71badf3"
+  integrity sha512-kd9+Gahd08p+Lc+aV3We20GzXgbHKl4kBe1iPtB/Bn/Bt6+9oeLvzvtqRkgXlykWrnkHrPWNOaujyrzlkJxKSw==
   dependencies:
     "@gluestack-ui/react-native-aria" "0.1.2"
-    "@gluestack-ui/utils" "0.1.2"
+    "@gluestack-ui/utils" "0.1.3"
     "@react-native-aria/focus" "^0.2.7"
     react-native-svg "13.4.0"
 
@@ -1980,10 +1994,18 @@
     "@react-native-aria/focus" "^0.2.7"
     react-native-svg "13.4.0"
 
-"@gluestack-ui/utils@*", "@gluestack-ui/utils@0.1.2", "@gluestack-ui/utils@latest":
+"@gluestack-ui/utils@*", "@gluestack-ui/utils@latest":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@gluestack-ui/utils/-/utils-0.1.2.tgz#b3c54acf2a5a7c3e8ba822e4b0471d6a71d69862"
   integrity sha512-9lqwUN0iOIJdNp12YPxbtLs1c2in4javA9mp/3Y77CucCSyhsHZU1A2Dq/nnt1TvnlPBho3HtxexxISuOWyybQ==
+  dependencies:
+    "@react-native-aria/focus" "^0.2.7"
+    react-native-svg "13.4.0"
+
+"@gluestack-ui/utils@0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@gluestack-ui/utils/-/utils-0.1.3.tgz#c4bbbb219e75de1f80003534104053f1d92547ec"
+  integrity sha512-4ABwtKHQWl6bx/qkFT2T5kjyYd7iJpNRc32+GEOlwsG0i0ieU89+rZXhNNaGzAP4dhCAww6r9t3fCvRrML5jnw==
   dependencies:
     "@react-native-aria/focus" "^0.2.7"
     react-native-svg "13.4.0"
@@ -8510,6 +8532,14 @@ react-native-svg@13.4.0:
   version "13.4.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.4.0.tgz#82399ba0956c454144618aa581e2d748dd3f010a"
   integrity sha512-B3TwK+H0+JuRhYPzF21AgqMt4fjhCwDZ9QUtwNstT5XcslJBXC0FoTkdZo8IEb1Sv4suSqhZwlAY6lwOv3tHag==
+  dependencies:
+    css-select "^5.1.0"
+    css-tree "^1.1.3"
+
+react-native-svg@latest:
+  version "13.9.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.9.0.tgz#8df8a690dd00362601f074dec5d3a86dd0f99c7f"
+  integrity sha512-Ey18POH0dA0ob/QiwCBVrxIiwflhYuw0P0hBlOHeY4J5cdbs8ngdKHeWC/Kt9+ryP6fNoEQ1PUgPYw2Bs/rp5Q==
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"
