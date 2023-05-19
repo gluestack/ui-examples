@@ -1,7 +1,7 @@
 import React from "react";
 import { Radio, Text, VStack } from "../components";
 
-const CustomerRatingSection = () => {
+const SortBySection = () => {
   const sidebarFiltersCustomerRatings = [
     {
       label: "Top ratings",
@@ -35,6 +35,7 @@ const CustomerRatingSection = () => {
               justifyContent="flex-start"
               size="sm"
               my="$2"
+              key={placeType.value}
             >
               <Radio.Indicator>
                 <Radio.Icon />
@@ -47,4 +48,4 @@ const CustomerRatingSection = () => {
     </VStack>
   );
 };
-export default CustomerRatingSection;
+export default SortBySection;

@@ -29,10 +29,10 @@ const CustomerRatingSection = () => {
       <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
         Customer Ratings
       </Text>
-      <Checkbox.Group value={values} onChange={setValues}>
-        {sidebarFiltersCustomerRatings.map((placeType: any) => {
+      {/* <Checkbox.Group value={values} onChange={setValues}> */}
+      {/* {sidebarFiltersCustomerRatings.map((placeType: any, index: any) => {
           return (
-            <Checkbox value={placeType.value} size="sm" my="$2">
+            <Checkbox value={placeType.value} size="sm" my="$2" key={index}>
               <Checkbox.Indicator>
                 <Checkbox.Icon>
                   <CheckIcon />
@@ -40,21 +40,13 @@ const CustomerRatingSection = () => {
               </Checkbox.Indicator>
               <Checkbox.Label>
                 <HStack alignItems="center" space="xs">
-                  {/* <StarIcon
-                    w="$3"
-                    h="$3"
-                    sx={{
-                      _dark: { color: "$backgroundDark50" },
-                      _light: { color: "black" },
-                    }}
-                  /> */}
                   <Text>{placeType.label}</Text>
                 </HStack>
               </Checkbox.Label>
             </Checkbox>
           );
-        })}
-      </Checkbox.Group>
+        })} */}
+      {/* </Checkbox.Group> */}
     </VStack>
   );
 };

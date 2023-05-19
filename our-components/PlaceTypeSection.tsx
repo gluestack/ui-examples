@@ -33,6 +33,7 @@ const PlaceTypeSection = () => {
               size="sm"
               my="$2"
               justifyContent="flex-start"
+              key={placeType.value}
             >
               <Checkbox.Indicator>
                 <Checkbox.Icon>

@@ -1,5 +1,14 @@
 import React from "react";
-import { Badge, Box, Button, HStack, Text, VStack } from "../components";
+import {
+  Badge,
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Pressable,
+  Text,
+  VStack,
+} from "../components";
 import { CloseIcon } from "../components/core/Icons/Icons";
 
 const FiltersAppliedSection = ({
@@ -18,7 +27,7 @@ const FiltersAppliedSection = ({
       }}
     >
       <HStack justifyContent="space-between">
-        <Text size="sm" fontWeight="$medium" color="black">
+        <Text size="sm" fontWeight="$medium">
           Filters applied
         </Text>
         <Button p={0} variant="link" size="sm">
@@ -27,27 +36,41 @@ const FiltersAppliedSection = ({
       </HStack>
       <HStack flexWrap="wrap" space="sm">
         {arr1.map((item) => (
-          <Badge rounded="$full" px="$2.5" py="$2" action="muted" mt="$2">
-            <Badge.Text textTransform="none" color="black">
+          <Badge
+            rounded="$full"
+            px="$2.5"
+            py="$2"
+            action="muted"
+            mt="$2"
+            key={item}
+          >
+            <Badge.Text
+              textTransform="none"
+              color="black"
+              sx={{ _dark: { color: "$backgroundDark300" } }}
+            >
               {item}
             </Badge.Text>
-            <Button
-              // @ts-ignore
+            <Pressable
               ml="$2"
-              // action="secondary"
               rounded="$full"
               p="$1"
               bg="$backgroundLight400"
+              sx={{
+                _dark: {
+                  bg: "$backgroundDark800",
+                },
+              }}
             >
-              <CloseIcon
-                h="$3"
-                w="$3"
+              <Icon
+                as={CloseIcon}
+                size="xs"
                 color="$backgroundLight100"
                 sx={{
-                  _dark: { color: "black" },
+                  _dark: { color: "$backgroundDark300" },
                 }}
               />
-            </Button>
+            </Pressable>
           </Badge>
         ))}
       </HStack>

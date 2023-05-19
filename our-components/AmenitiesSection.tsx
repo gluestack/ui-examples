@@ -66,6 +66,7 @@ const AmenitiesSection = () => {
               justifyContent="flex-start"
               size="sm"
               my="$2"
+              key={ammenity.value}
             >
               <Checkbox.Indicator>
                 <Checkbox.Icon>

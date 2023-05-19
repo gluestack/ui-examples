@@ -19,43 +19,46 @@ const userMenuItems = [
 
 const UserProfile = () => {
   return (
-    <Menu
-      trigger={(triggerProps: any) => {
-        return (
-          <Pressable {...triggerProps}>
-            <Avatar size="xs" bg="$backgroundLight600">
-              <Avatar.FallbackText>HS</Avatar.FallbackText>
-              <Avatar.Image
-                source={{
-                  uri: "https://images.unsplash.com/photo-1494790108377-be9c29b2933",
-                }}
-              />
-              <Avatar.Badge bg="$primary500" />
-            </Avatar>
-          </Pressable>
-        );
-      }}
-    >
-      <Menu.Content>
-        {userMenuItems.map((item, index) => {
-          return (
-            <>
-              <Menu.Group>
-                {item.items.map((item, index) => {
-                  return (
-                    <Menu.Item>
-                      <Text>{item}</Text>
-                    </Menu.Item>
-                  );
-                })}
-              </Menu.Group>
-              {index != userMenuItems.length - 1 && <Divider />}
-            </>
-          );
-        })}
-      </Menu.Content>
-      <Menu.Backdrop />
-    </Menu>
+    <Pressable>
+      <Avatar size="xs" bg="$backgroundLight600">
+        <Avatar.FallbackText>H S</Avatar.FallbackText>
+        <Avatar.Image
+          source={{
+            uri: "https://images.unsplash.com/photo-1494790108377-be9c29b2933",
+          }}
+        />
+        <Avatar.Badge bg="$primary500" />
+      </Avatar>
+    </Pressable>
+    //   <Menu
+    //   trigger={(triggerProps: any) => {
+    //     return (
+    //       <Pressable {...triggerProps}>
+    //         <Avatar size="xs" bg="$backgroundLight600">
+    //           <Avatar.FallbackText>HS</Avatar.FallbackText>
+    //           <Avatar.Image
+    //             source={{
+    //               uri: "https://images.unsplash.com/photo-1494790108377-be9c29b2933",
+    //             }}
+    //           />
+    //           <Avatar.Badge bg="$primary500" />
+    //         </Avatar>
+    //       </Pressable>
+    //     );
+    //   }}
+    // >
+    //   {userMenuItems.map((item, index) => {
+    //     return
+    //   <Menu.Item key="Item1" textValue="Item1">
+    //     <Menu.ItemLabel>Item1</Menu.ItemLabel>
+    //   </Menu.Item>
+    //   <Menu.Item key="Roboto" textValue="Roboto">
+    //     <Menu.ItemLabel>Roboto</Menu.ItemLabel>
+    //   </Menu.Item>
+    //   <Menu.Item key="Poppins" textValue="Poppins">
+    //     <Menu.ItemLabel>Poppins</Menu.ItemLabel>
+    //   </Menu.Item>
+    // </Menu>
   );
 };
 

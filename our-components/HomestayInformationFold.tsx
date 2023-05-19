@@ -97,16 +97,16 @@ const HomestayInfoTabs = ({ tabsData }: any) => {
         <Tabs.TabList>
           {tabsData.map((tab: any) => {
             return (
-              <Tabs.Tab value={tab.title}>
+              <Tabs.Tab value={tab.title} key={tab.title}>
                 <Tabs.TabTitle>{tab.title}</Tabs.TabTitle>
               </Tabs.Tab>
             );
           })}
         </Tabs.TabList>
         <Tabs.TabPanels mt="$4">
-          {tabsData.map((tab: any) => {
+          {tabsData.map((tab: any, index: any) => {
             return (
-              <Tabs.TabPanel value={tab.title}>
+              <Tabs.TabPanel value={tab.title} key={index}>
                 <TabPanelData />
               </Tabs.TabPanel>
             );
@@ -120,9 +120,9 @@ const HomestayInfoTabs = ({ tabsData }: any) => {
 const TabPanelData = () => {
   return (
     <HStack justifyContent="space-between" flexWrap="wrap" space="md">
-      {homestayInfoData.map((image: any) => {
+      {homestayInfoData.map((image: any, index: any) => {
         return (
-          <VStack flex={1}>
+          <VStack flex={1} key={index}>
             <Box>
               <Image
                 source={image.src}

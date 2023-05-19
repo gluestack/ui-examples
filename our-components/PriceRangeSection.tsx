@@ -47,7 +47,7 @@ const PriceRangeSection = () => {
         minValue={800}
         maxValue={5000}
         w="100%"
-        size="sm"
+        size="sm:"
         value={sliderValue}
         onChange={(value: any) => {
           handleChange(value);
@@ -66,9 +66,7 @@ const PriceRangeSection = () => {
             <Text
               sx={{
                 color: "$white",
-                px: "$2",
-                py: "$1",
-                fontSize: 12,
+                // fontSize: 12,
               }}
             >
               {sliderValue}
@@ -79,7 +77,12 @@ const PriceRangeSection = () => {
       <Checkbox.Group value={values} onChange={setValues} mt="$3">
         {sidebarFiltersPriceRange.map((priceRange: any) => {
           return (
-            <Checkbox value={priceRange.value} size="sm" my="$2">
+            <Checkbox
+              value={priceRange.value}
+              size="sm"
+              my="$2"
+              key={priceRange.value}
+            >
               <Checkbox.Indicator>
                 <Checkbox.Icon>
                   <CheckIcon />

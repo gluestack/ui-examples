@@ -10,27 +10,18 @@ import {
   Text,
   VStack,
 } from "../components";
-import {
-  CheckCircleIcon,
-  CloseIcon,
-  // ListIcon,
-} from "../components/core/Icons/Icons";
+import { CheckCircleIcon, CloseIcon } from "../components/core/Icons/Icons";
 import { List } from "lucide-react-native";
+import { styled } from "@dank-style/react";
+import { Text as RNText } from "react-native";
 
 const MainContentHeader = () => {
   const [modalVisible, setModalVisible] = React.useState(false);
   const [alertVisible, setAlertVisible] = React.useState(false);
   return (
-    <Box>
+    <Box py="$6">
       <HStack alignItems="center" justifyContent="space-between">
-        <Heading
-          fontSize="$2xl"
-          // style={{
-          //   fontFamily: "Inter_700Bold",
-          // }}
-        >
-          New This week
-        </Heading>
+        <Heading>New this week</Heading>
         {alertVisible ? (
           <Alert action="success">
             <Alert.Icon>
@@ -41,21 +32,19 @@ const MainContentHeader = () => {
         ) : (
           <Button
             variant="outline"
+            action="secondary"
             onPress={() => {
               setModalVisible(true);
             }}
           >
-            {/* <ListIcon w="$4" h="$4" /> */}
             <Icon as={List} w="$4" h="$4" />
             <Button.Text
               pl="$2"
               sx={{
                 _light: {
-                  // @ts-ignore
                   color: "$textLight800",
                 },
                 _dark: {
-                  // @ts-ignore
                   color: "$textDark300",
                 },
               }}
@@ -104,7 +93,6 @@ const ListYourPlaceModal = ({
                 <Text>I want to ...</Text>
                 <HStack>
                   <Button
-                    // @ts-ignore
                     variant="outline"
                     rounded="$full"
                     size="sm"
@@ -118,7 +106,6 @@ const ListYourPlaceModal = ({
             </Modal.Body>
             <Modal.Footer>
               <Button
-                // @ts-ignore
                 variant="outline"
                 action="secondary"
                 mr="$3"
@@ -129,8 +116,6 @@ const ListYourPlaceModal = ({
                 <Button.Text>Cancel</Button.Text>
               </Button>
               <Button
-                // style="solid"
-                // @ts-ignore
                 action="primary"
                 onPress={() => {
                   setModalVisible(false);
