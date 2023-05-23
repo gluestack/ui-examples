@@ -5,6 +5,7 @@ import {
   Button,
   HStack,
   Icon,
+  Menu,
   Pressable,
   Text,
   VStack,
@@ -18,19 +19,19 @@ const FiltersAppliedSection = ({
   const arr1 = ["Private room", "Wifi", "Air conditioning"];
   return (
     <Box
-      borderWidth={1}
+      borderWidth="$1"
       borderRadius="$md"
       p="$3"
       sx={{
-        _light: { borderColor: "$borderLight200" },
-        _dark: { borderColor: "$borderDark700" },
+        _light: { borderColor: "$borderLight100" },
+        _dark: { borderColor: "$borderDark900" },
       }}
     >
       <HStack justifyContent="space-between">
         <Text size="sm" fontWeight="$medium">
           Filters applied
         </Text>
-        <Button p={0} variant="link" size="sm">
+        <Button p={0} variant="link" size="xs">
           <Button.Text>Clear all</Button.Text>
         </Button>
       </HStack>

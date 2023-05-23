@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Checkbox, HStack, Switch, Text, VStack } from "../components";
+import { Checkbox, HStack, Icon, Text, VStack } from "../components";
 import { CheckIcon } from "../components/core/Icons/Icons";
-// import { StarIcon } from "../components/core/Icons/Icons/Star";
+import { Star } from "lucide-react-native";
 
 const CustomerRatingSection = () => {
   const sidebarFiltersCustomerRatings = [
@@ -26,11 +26,11 @@ const CustomerRatingSection = () => {
 
   return (
     <VStack w="100%" space="md">
-      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
+      <Text fontWeight="$semibold" size="md">
         Customer Ratings
       </Text>
-      {/* <Checkbox.Group value={values} onChange={setValues}> */}
-      {/* {sidebarFiltersCustomerRatings.map((placeType: any, index: any) => {
+      <Checkbox.Group value={values} onChange={setValues}>
+        {sidebarFiltersCustomerRatings.map((placeType: any, index: any) => {
           return (
             <Checkbox value={placeType.value} size="sm" my="$2" key={index}>
               <Checkbox.Indicator>
@@ -40,13 +40,20 @@ const CustomerRatingSection = () => {
               </Checkbox.Indicator>
               <Checkbox.Label>
                 <HStack alignItems="center" space="xs">
+                  <Icon
+                    as={Star}
+                    size="sm"
+                    color="$black"
+                    sx={{ _dark: { color: "$white" } }}
+                    fill="currentColor"
+                  />
                   <Text>{placeType.label}</Text>
                 </HStack>
               </Checkbox.Label>
             </Checkbox>
           );
-        })} */}
-      {/* </Checkbox.Group> */}
+        })}
+      </Checkbox.Group>
     </VStack>
   );
 };

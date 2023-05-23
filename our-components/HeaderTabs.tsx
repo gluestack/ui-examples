@@ -11,6 +11,7 @@ import {
 } from "../components";
 
 const HeaderTabs = () => {
+  const [selectedTab, setSelectedTab] = React.useState("Anywhere");
   return (
     <HStack h="$20" alignItems="center" justifyContent="space-between">
       <HStack
@@ -23,40 +24,63 @@ const HeaderTabs = () => {
       >
         <Pressable
           rounded="$full"
-          bg="$backgroundLight100"
-          sx={{ _dark: { bg: "$backgroundLight700" } }}
+          bg={
+            selectedTab === "Anywhere" ? "$backgroundLight100" : "transparent"
+          }
+          sx={{
+            _dark: {
+              bg:
+                selectedTab === "Anywhere"
+                  ? "$backgroundDark700"
+                  : "transparent",
+            },
+          }}
+          onPress={() => setSelectedTab("Anywhere")}
           px="$2"
           py="$1"
         >
-          <Text fontSize="$sm">Anywhere</Text>
+          <Text size="sm">Anywhere</Text>
         </Pressable>
-        <Pressable rounded="$full" px="$2" py="$1">
-          <Text fontSize="$sm">Anyweek</Text>
+        <Pressable
+          rounded="$full"
+          px="$2"
+          py="$1"
+          bg={selectedTab === "Anyweek" ? "$backgroundLight100" : "transparent"}
+          sx={{
+            _dark: {
+              bg:
+                selectedTab === "Anyweek"
+                  ? "$backgroundDark700"
+                  : "transparent",
+            },
+          }}
+          onPress={() => setSelectedTab("Anyweek")}
+        >
+          <Text size="sm">Anyweek</Text>
         </Pressable>
-        <Pressable rounded="$full" px="$2" py="$1">
-          <Text fontSize="$sm">Add guests</Text>
+        <Pressable
+          rounded="$full"
+          px="$2"
+          py="$1"
+          bg={
+            selectedTab === "Add guests" ? "$backgroundLight100" : "transparent"
+          }
+          sx={{
+            _dark: {
+              bg:
+                selectedTab === "Add guests"
+                  ? "$backgroundDark700"
+                  : "transparent",
+            },
+          }}
+          onPress={() => setSelectedTab("Add guests")}
+        >
+          <Text size="sm">Add guests</Text>
         </Pressable>
         <Pressable ml="$3" p="$2" bg="$primary500" rounded="$full">
           <Icon as={SearchIcon} color="white" w="$4" h="$4" />
         </Pressable>
       </HStack>
-      {/* <Tabs w="$full" value="tab1">
-        <Tabs.TabList>
-          <Tabs.Tab value="tab1">
-            <Tabs.TabTitle>Anywhere</Tabs.TabTitle>
-          </Tabs.Tab>
-          <Tabs.Tab value="tab2">
-            <Tabs.TabTitle>Anyweek</Tabs.TabTitle>
-          </Tabs.Tab>
-          <Tabs.Tab value="tab3">
-            <Tabs.TabTitle>Add guests</Tabs.TabTitle>
-          </Tabs.Tab>
-          <Pressable bg="$primary500" p="$2" borderRadius="$full">
-            <Icon as={SearchIcon} color="$backgroundLight0" />
-          </Pressable>
-        </Tabs.TabList>
-        <Tabs.TabPanels></Tabs.TabPanels>
-      </Tabs> */}
     </HStack>
   );
 };

@@ -53,7 +53,7 @@ const AmenitiesSection = () => {
 
   return (
     <VStack space="sm">
-      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
+      <Text fontWeight="$semibold" size="md">
         Ammenities
       </Text>
 
@@ -85,8 +85,8 @@ const AmenitiesSection = () => {
           }}
         >
           <HStack justifyContent="space-between">
-            <Text fontSize="$sm">Show less</Text>
-            <ChevronUpIcon />
+            <Text size="sm">Show less</Text>
+            <Icon as={ChevronDownIcon} size="sm" />
           </HStack>
         </Pressable>
       ) : (
@@ -96,15 +96,8 @@ const AmenitiesSection = () => {
           }}
         >
           <HStack justifyContent="space-between">
-            <Text fontSize="$sm">Show more</Text>
-            <ChevronDownIcon
-              w="$4"
-              h="$4"
-              sx={{
-                _dark: { color: "$backgroundDark50" },
-                _light: { color: "black" },
-              }}
-            />
+            <Text size="sm">Show more</Text>
+            <Icon as={ChevronDownIcon} size="sm" />
           </HStack>
         </Pressable>
       )}

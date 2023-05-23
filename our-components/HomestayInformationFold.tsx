@@ -4,7 +4,7 @@ import {
   Box,
   Button,
   HStack,
-  // IconButton,
+  Icon,
   Image,
   Pressable,
   Tabs,
@@ -12,8 +12,8 @@ import {
   Tooltip,
   VStack,
 } from "../components";
-// import { HeartIcon } from "../components/core/Icons/Icons/Heart";
-// import { StarIcon } from "../components/core/Icons/Icons/Star";
+import { Heart, Star } from "lucide-react-native";
+
 const homestayInfoData = [
   {
     title: "ImageView Inn",
@@ -81,43 +81,65 @@ const HomestayInformationFold = () => {
 
 const HomestayInfo = ({ homestayInfoData, tabsData }: any) => {
   return (
-    <Box>
+    <Box pb="$8">
       <HomestayInfoTabs
         homestayInfoData={homestayInfoData}
         tabsData={tabsData}
       />
+      <TabPanelData />
     </Box>
   );
 };
 
 const HomestayInfoTabs = ({ tabsData }: any) => {
+  const [activeTab, setActiveTab] = React.useState(tabsData[0]);
   return (
     <Box py="$6">
-      <Tabs w="$full" value="Tropical">
-        <Tabs.TabList>
-          {tabsData.map((tab: any) => {
-            return (
-              <Tabs.Tab value={tab.title} key={tab.title}>
-                <Tabs.TabTitle>{tab.title}</Tabs.TabTitle>
-              </Tabs.Tab>
-            );
-          })}
-        </Tabs.TabList>
-        <Tabs.TabPanels mt="$4">
-          {tabsData.map((tab: any, index: any) => {
-            return (
-              <Tabs.TabPanel value={tab.title} key={index}>
-                <TabPanelData />
-              </Tabs.TabPanel>
-            );
-          })}
-        </Tabs.TabPanels>
-      </Tabs>
+      <HStack space="lg">
+        {tabsData.map((tab: any) => {
+          return (
+            <Pressable
+              pb="$2"
+              borderBottomWidth={activeTab === tab ? 3 : 0}
+              borderColor="$borderLight900"
+              sx={{
+                ":hover": {
+                  borderBottomWidth: 3,
+                  borderColor:
+                    activeTab === tab ? "$borderLight900" : "$borderLight200",
+                },
+                _dark: {
+                  borderColor: "$borderLight100",
+                  ":hover": {
+                    borderColor:
+                      activeTab === tab ? "$borderLight100" : "$borderDark700",
+                  },
+                },
+              }}
+              onPress={() => setActiveTab(tab)}
+            >
+              <Text
+                size="sm"
+                color={activeTab === tab ? "$textLight900" : "$textLight700"}
+                sx={{
+                  _dark: {
+                    color: activeTab === tab ? "$textDark100" : "$textDark300",
+                  },
+                }}
+                fontWeight="$medium"
+              >
+                {tab.title}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </HStack>
     </Box>
   );
 };
 
 const TabPanelData = () => {
+  const [likes, setLikes]: any = React.useState([]);
   return (
     <HStack justifyContent="space-between" flexWrap="wrap" space="md">
       {homestayInfoData.map((image: any, index: any) => {
@@ -131,12 +153,32 @@ const TabPanelData = () => {
                 // @ts-ignore
                 borderRadius="$xl"
               />
-              <Button position="absolute" top="$3" right="$4">
-                {/* <HeartIcon color="black" opacity={0.5} /> */}
-              </Button>
+              <Pressable
+                position="absolute"
+                top="$3"
+                right="$4"
+                onPress={() => {
+                  if (likes.includes(image.title)) {
+                    const newLikes = likes.filter(
+                      (like: any) => like !== image.title
+                    );
+                    setLikes(newLikes);
+                    return;
+                  } else {
+                    setLikes([...likes, image.title]);
+                  }
+                }}
+              >
+                <Icon
+                  as={Heart}
+                  size="lg"
+                  color={likes.includes(image.title) ? "red" : "white"}
+                  fill={likes.includes(image.title) ? "red" : "gray"}
+                />
+              </Pressable>
             </Box>
-            <VStack space="$sm" py="$2" px="$1">
-              <HStack justifyContent="space-between" alignItems="center">
+            <HStack justifyContent="space-between" py="$2" px="$1">
+              <VStack space="$sm" flex={1}>
                 <Text
                   fontWeight="$semibold"
                   sx={{
@@ -146,82 +188,80 @@ const TabPanelData = () => {
                 >
                   {image.title}
                 </Text>
-                <HStack alignItems="center">
-                  <Tooltip
-                    trigger={(triggerProps: any) => {
-                      return (
-                        <Pressable {...triggerProps}>
-                          {/* <StarIcon
-                            {...triggerProps}
-                            h="$3"
-                            w="$3"
-                            sx={{
-                              _dark: { color: "$backgroundDark50" },
-                              _light: { color: "black" },
-                            }}
-                          /> */}
-                        </Pressable>
-                      );
-                    }}
-                  >
-                    <Tooltip.Content>
-                      <Text
-                        sx={{
-                          color: "$white",
-                          px: "$2",
-                          py: "$1",
-                          fontSize: 12,
-                        }}
-                      >
-                        Ratings
-                      </Text>
-                    </Tooltip.Content>
-                  </Tooltip>
-
+                <Text
+                  size="sm"
+                  sx={{
+                    _light: { color: "$textLight500" },
+                    _dark: { color: "$textDark500" },
+                  }}
+                >
+                  {image.location}
+                </Text>
+                <HStack>
                   <Text
-                    pl="$1"
-                    fontSize="$sm"
+                    size="sm"
+                    fontWeight="$semibold"
                     sx={{
                       _light: { color: "$textLight900" },
                       _dark: { color: "$textDark200" },
                     }}
                   >
-                    {image.rating}
+                    {image.price}
+                  </Text>
+                  <Text
+                    size="sm"
+                    pl="$1"
+                    sx={{
+                      _light: { color: "$black" },
+                      _dark: { color: "$textDark200" },
+                    }}
+                  >
+                    night
                   </Text>
                 </HStack>
-              </HStack>
-              <Text
-                fontSize="$sm"
-                sx={{
-                  _light: { color: "$textLight500" },
-                  _dark: { color: "$textDark500" },
+              </VStack>
+              <Tooltip
+                trigger={(triggerProps: any) => {
+                  return (
+                    <Pressable {...triggerProps}>
+                      <HStack alignItems="center">
+                        <Icon
+                          as={Star}
+                          size="xs"
+                          fill="currentColor"
+                          sx={{
+                            _dark: { color: "$backgroundDark50" },
+                            _light: { color: "black" },
+                          }}
+                        />
+                        <Text
+                          pl="$1"
+                          size="sm"
+                          sx={{
+                            _light: { color: "$textLight900" },
+                            _dark: { color: "$textDark200" },
+                          }}
+                        >
+                          {image.rating}
+                        </Text>
+                      </HStack>
+                    </Pressable>
+                  );
                 }}
               >
-                {image.location}
-              </Text>
-              <HStack>
-                <Text
-                  fontSize="$sm"
-                  fontWeight="$semibold"
-                  sx={{
-                    _light: { color: "$textLight900" },
-                    _dark: { color: "$textDark200" },
-                  }}
-                >
-                  {image.price}
-                </Text>
-                <Text
-                  fontSize="$sm"
-                  pl="$1"
-                  sx={{
-                    _light: { color: "$black" },
-                    _dark: { color: "$textDark200" },
-                  }}
-                >
-                  night
-                </Text>
-              </HStack>
-            </VStack>
+                <Tooltip.Content>
+                  <Text
+                    sx={{
+                      color: "$white",
+                      px: "$2",
+                      py: "$1",
+                    }}
+                  >
+                    Ratings
+                  </Text>
+                </Tooltip.Content>
+              </Tooltip>
+            </HStack>
           </VStack>
         );
       })}

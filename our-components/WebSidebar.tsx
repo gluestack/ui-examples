@@ -9,10 +9,8 @@ const WebSidebar = () => {
       w="100%"
       flex={1}
       maxHeight="calc(100vh - 144px)"
+      display="none"
       sx={{
-        "@base": {
-          display: "none",
-        },
         "@md": {
           display: "flex",
         },

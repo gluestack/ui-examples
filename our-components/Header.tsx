@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, HStack, Icon, Input } from "../components";
-import { SearchIcon, FilterIcon } from "../components/core/Icons/Icons";
+import { SearchIcon } from "../components/core/Icons/Icons";
 import HeaderTabs from "./HeaderTabs";
 import HomestayLogo from "./HomestayLogo";
 import ToggleMode from "./ToggleMode";
@@ -9,23 +9,18 @@ import UserProfile from "./UserProfile";
 const Header = ({ colorMode, toggleColorMode }: any) => {
   return (
     <Box>
+      {/* big screen */}
       <Box
-        px="$4"
-        h="$20"
+        px="$16"
         w="100%"
-        // position="sticky"
-        // top={0}
-        // zIndex={1}
         borderBottomWidth={1}
+        display="none"
         sx={{
-          "@base": {
-            display: "none",
-          },
           "@md": {
             display: "flex",
           },
-          _light: { borderColor: "$borderLight200" },
-          _dark: { borderColor: "$borderDark700" },
+          _light: { borderColor: "$borderLight100" },
+          _dark: { borderColor: "$borderDark900" },
         }}
       >
         <HStack
@@ -33,7 +28,6 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
           justifyContent="space-between"
           mx="auto"
           w="100%"
-          px="$12"
         >
           <HomestayLogo />
           <HeaderTabs />
@@ -46,21 +40,16 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
           </HStack>
         </HStack>
       </Box>
+      {/* small screen */}
       <Box
         p="$5"
         sx={{
-          "@base": {
-            display: "flex",
-          },
           "@md": {
             display: "none",
           },
         }}
         h="$20"
         w="100%"
-        // position="sticky"
-        // top={0}
-        // zIndex={1}
         borderBottomWidth={1}
         borderBottomColor="$borderLight100"
       >

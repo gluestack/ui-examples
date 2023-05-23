@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Box, Button, HStack, Image, Center, Icon } from "../components";
 import { ScrollView } from "react-native";
-import { ChevronRight } from "lucide-react-native";
+import { ChevronLeft, ChevronRight } from "lucide-react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 const data = [
@@ -23,6 +23,15 @@ const data = [
 ];
 
 const NewThisWeekFold = () => {
+  const scrollViewRef = useRef(null);
+
+  const handleScrollRight = () => {
+    scrollViewRef.current?.scrollBy({ top: 0, left: 200, behavior: "smooth" });
+  };
+  const handleScrollLeft = () => {
+    scrollViewRef.current?.scrollBy({ top: 0, left: -200, behavior: "smooth" });
+  };
+
   return (
     <Box>
       <ScrollView
@@ -30,6 +39,8 @@ const NewThisWeekFold = () => {
         style={{ width: "100%" }}
         contentContainerStyle={{ width: "100%" }}
         showsHorizontalScrollIndicator={false}
+        ref={scrollViewRef}
+        scrollEventThrottle={16}
       >
         <HStack space="md" width="100%">
           {data.map((image) => {
@@ -57,7 +68,19 @@ const NewThisWeekFold = () => {
           /> */}
         </HStack>
       </ScrollView>
-
+      <Center position="absolute" left="$0" h="100%">
+        <Button
+          action="secondary"
+          variant="outline"
+          px="$1"
+          py="$1"
+          ml={-12}
+          borderRadius="$full"
+          onPress={handleScrollLeft}
+        >
+          <Icon as={ChevronLeft} size="lg" color="$secondary200" />
+        </Button>
+      </Center>
       <Center position="absolute" right="$0" h="100%">
         <Button
           action="secondary"
@@ -66,8 +89,9 @@ const NewThisWeekFold = () => {
           py="$1"
           mr={-12}
           borderRadius="$full"
+          onPress={handleScrollRight}
         >
-          <Icon as={ChevronRight} size="lg" color="white" />
+          <Icon as={ChevronRight} size="lg" color="$secondary200" />
         </Button>
       </Center>
     </Box>

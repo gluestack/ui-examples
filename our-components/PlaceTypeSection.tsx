@@ -22,7 +22,7 @@ const PlaceTypeSection = () => {
 
   return (
     <VStack space="sm">
-      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
+      <Text fontWeight="$semibold" size="md">
         Type of place
       </Text>
       <Checkbox.Group value={values} onChange={setValues}>

@@ -9,50 +9,43 @@ import {
   Modal,
   Text,
   VStack,
+  Radio,
+  Input,
+  Toast,
+  useToast,
 } from "../components";
 import { CheckCircleIcon, CloseIcon } from "../components/core/Icons/Icons";
 import { List } from "lucide-react-native";
-import { styled } from "@dank-style/react";
-import { Text as RNText } from "react-native";
 
 const MainContentHeader = () => {
   const [modalVisible, setModalVisible] = React.useState(false);
   const [alertVisible, setAlertVisible] = React.useState(false);
   return (
     <Box py="$6">
-      <HStack alignItems="center" justifyContent="space-between">
+      <HStack alignItems="center" justifyContent="space-between" h={40}>
         <Heading>New this week</Heading>
-        {alertVisible ? (
-          <Alert action="success">
-            <Alert.Icon>
-              <CheckCircleIcon />
-            </Alert.Icon>
-            <Alert.Text>Boom! Your property listed.</Alert.Text>
-          </Alert>
-        ) : (
-          <Button
-            variant="outline"
-            action="secondary"
-            onPress={() => {
-              setModalVisible(true);
+        <Button
+          variant="outline"
+          action="secondary"
+          onPress={() => {
+            setModalVisible(true);
+          }}
+        >
+          <Icon as={List} w="$4" h="$4" />
+          <Button.Text
+            pl="$2"
+            sx={{
+              _light: {
+                color: "$textLight800",
+              },
+              _dark: {
+                color: "$textDark300",
+              },
             }}
           >
-            <Icon as={List} w="$4" h="$4" />
-            <Button.Text
-              pl="$2"
-              sx={{
-                _light: {
-                  color: "$textLight800",
-                },
-                _dark: {
-                  color: "$textDark300",
-                },
-              }}
-            >
-              List your place
-            </Button.Text>
-          </Button>
-        )}
+            List your place
+          </Button.Text>
+        </Button>
       </HStack>
 
       <ListYourPlaceModal
@@ -70,61 +63,127 @@ const ListYourPlaceModal = ({
   setModalVisible,
   setAlertVisible,
 }: any) => {
+  const propertyType = [
+    "Flat/Apartment",
+    "Independent House / Villa",
+    "Builder Floor",
+    "Plot / Land",
+  ];
+  const [values, setValues] = React.useState("Residential");
+  const toast = useToast();
   return (
     <Box>
       {modalVisible && (
         <Modal
+          size="sm"
           isOpen={modalVisible}
           onClose={() => {
             setModalVisible(false);
           }}
         >
           <Modal.Backdrop />
-
           <Modal.Content>
             <Modal.Header>
-              <Heading fontSize="$md">List your place</Heading>
+              <Heading size="sm" fontWeight="$semibold">
+                List your place
+              </Heading>
               <Modal.CloseButton>
-                <CloseIcon sx={{ w: 16, h: 16 }} />
+                <Icon as={CloseIcon} sx={{ w: 16, h: 16 }} />
               </Modal.CloseButton>
             </Modal.Header>
             <Modal.Body>
-              <VStack>
-                <Text>I want to ...</Text>
-                <HStack>
+              <VStack space="md">
+                <VStack space="sm">
+                  <Text>I want to ...</Text>
+                  <HStack space="sm">
+                    <Button variant="outline" rounded="$full" size="xs">
+                      <Button.Text>Sell</Button.Text>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      action="secondary"
+                      rounded="$full"
+                      size="xs"
+                    >
+                      <Button.Text>Rent/Lease</Button.Text>
+                    </Button>
+                  </HStack>
+                </VStack>
+                <VStack space="sm">
+                  <Text>Property is...</Text>
+                  <Radio.Group value={values} onChange={setValues}>
+                    <HStack space="sm">
+                      <Radio value="Residential" size="sm">
+                        <Radio.Indicator>
+                          <Radio.Icon />
+                        </Radio.Indicator>
+                        <Radio.Label>Residential</Radio.Label>
+                      </Radio>
+                      <Radio value="Commercial" size="sm">
+                        <Radio.Indicator>
+                          <Radio.Icon />
+                        </Radio.Indicator>
+                        <Radio.Label>Commercial</Radio.Label>
+                      </Radio>
+                    </HStack>
+                  </Radio.Group>
+                  <HStack flexWrap="wrap" space="sm">
+                    {propertyType.map((item, index) => (
+                      <Button
+                        action="secondary"
+                        rounded="$full"
+                        variant="outline"
+                        size="xs"
+                        mb="$2"
+                      >
+                        <Button.Text>{item}</Button.Text>
+                      </Button>
+                    ))}
+                  </HStack>
+                </VStack>
+                <VStack space="sm">
+                  <Text>Contact me...</Text>
+                  <Input>
+                    <Input.Input placeholder="Phone number" />
+                  </Input>
+                </VStack>
+                <VStack space="sm">
                   <Button
-                    variant="outline"
-                    rounded="$full"
-                    size="sm"
-                    px="$5"
-                    py="$2"
+                    onPress={() => {
+                      setModalVisible(false);
+                      setAlertVisible(true);
+                      toast.show({
+                        placement: "top",
+                        render: () => {
+                          return (
+                            <Toast action="success" top={150}>
+                              <HStack alignItems="center" space="xs">
+                                <Icon as={CheckCircleIcon} />
+                                <Toast.Title>Boom!</Toast.Title>
+                                <Toast.Description>
+                                  Your property listed.
+                                </Toast.Description>
+                              </HStack>
+                            </Toast>
+                          );
+                        },
+                      });
+                    }}
                   >
-                    <Button.Text>Sell</Button.Text>
+                    <Button.Text>Post Now</Button.Text>
                   </Button>
-                </HStack>
+                  <Button
+                    action="secondary"
+                    variant="outline"
+                    onPress={() => {
+                      setModalVisible(false);
+                    }}
+                  >
+                    <Button.Text>Save for Later</Button.Text>
+                  </Button>
+                </VStack>
               </VStack>
             </Modal.Body>
-            <Modal.Footer>
-              <Button
-                variant="outline"
-                action="secondary"
-                mr="$3"
-                onPress={() => {
-                  setModalVisible(false);
-                }}
-              >
-                <Button.Text>Cancel</Button.Text>
-              </Button>
-              <Button
-                action="primary"
-                onPress={() => {
-                  setModalVisible(false);
-                  setAlertVisible(true);
-                }}
-              >
-                <Button.Text>Confirm</Button.Text>
-              </Button>
-            </Modal.Footer>
           </Modal.Content>
         </Modal>
       )}

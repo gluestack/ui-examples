@@ -24,7 +24,7 @@ const SortBySection = () => {
 
   return (
     <VStack space="sm">
-      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
+      <Text fontWeight="$semibold" size="md">
         Sort by
       </Text>
       <Radio.Group value={values} onChange={setValues}>

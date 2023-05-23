@@ -38,11 +38,8 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
           />
           <HStack
             w="100%"
-            px="$12"
+            px="$5"
             sx={{
-              "@base": {
-                px: "$5",
-              },
               "@md": {
                 px: "$12",
               },

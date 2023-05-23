@@ -1,15 +1,6 @@
 import React from "react";
 
-import {
-  Box,
-  Button,
-  Checkbox,
-  HStack,
-  Slider,
-  Text,
-  Tooltip,
-  VStack,
-} from "../components";
+import { Checkbox, Slider, Text, Tooltip, VStack } from "../components";
 import { CheckIcon } from "../components/core/Icons/Icons";
 
 const PriceRangeSection = () => {
@@ -40,7 +31,7 @@ const PriceRangeSection = () => {
 
   return (
     <VStack space="md">
-      <Text fontWeight="$semibold" fontSize="$md" color="$textLight900">
+      <Text fontWeight="$semibold" size="md">
         Price Range
       </Text>
       <Slider
@@ -63,14 +54,7 @@ const PriceRangeSection = () => {
           }}
         >
           <Tooltip.Content>
-            <Text
-              sx={{
-                color: "$white",
-                // fontSize: 12,
-              }}
-            >
-              {sliderValue}
-            </Text>
+            <Text color="$white">{sliderValue}</Text>
           </Tooltip.Content>
         </Tooltip>
       </Slider>

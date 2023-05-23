@@ -14,12 +14,14 @@ const Sidebar = () => {
     <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }}>
       <VStack space="xl" py="$6" px="$4">
         <FiltersAppliedSection />
-        <SortBySection />
-        <PlaceTypeSection />
-        <AmenitiesSection />
-        <PriceRangeSection />
-        <BookingOptions />
-        <CustomerRatingSection />
+        <VStack space="xl" px="$2">
+          <SortBySection />
+          <PlaceTypeSection />
+          <AmenitiesSection />
+          <PriceRangeSection />
+          <BookingOptions />
+          <CustomerRatingSection />
+        </VStack>
       </VStack>
     </ScrollView>
   );
