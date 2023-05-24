@@ -11,6 +11,7 @@ import {
   VStack,
 } from "../gluestack-ui-components";
 import { Heart, Star } from "lucide-react-native";
+import { AnimatePresence, Motion } from "@legendapp/motion";
 
 const homestayInfoData = [
   {
@@ -152,9 +153,6 @@ const TabPanelData = () => {
                 borderRadius="$xl"
               />
               <Pressable
-                position="absolute"
-                top="$3"
-                right="$4"
                 onPress={() => {
                   if (likes.includes(image.title)) {
                     const newLikes = likes.filter(
@@ -166,13 +164,46 @@ const TabPanelData = () => {
                     setLikes([...likes, image.title]);
                   }
                 }}
+                position="absolute"
+                top={12}
+                right={32}
               >
-                <Icon
-                  as={Heart}
-                  size="lg"
-                  color={likes.includes(image.title) ? "red" : "white"}
-                  fill={likes.includes(image.title) ? "red" : "gray"}
-                />
+                {/* <Box position="relative"> */}
+                <AnimatePresence>
+                  <Motion.View
+                    key={likes.includes(image.title) ? "liked" : "unliked"}
+                    initial={{
+                      scale: 1.3,
+                    }}
+                    animate={{
+                      scale: 1,
+                    }}
+                    exit={{
+                      scale: 0.9,
+                    }}
+                    transition={{
+                      type: "spring",
+                      mass: 0.9,
+                      damping: 9,
+                      stiffness: 300,
+                    }}
+                    style={{
+                      position: "absolute",
+                    }}
+                  >
+                    <Icon
+                      as={Heart}
+                      size="lg"
+                      color={
+                        likes.includes(image.title) === true ? "red" : "white"
+                      }
+                      fill={
+                        likes.includes(image.title) === true ? "red" : "gray"
+                      }
+                    />
+                  </Motion.View>
+                </AnimatePresence>
+                {/* </Box> */}
               </Pressable>
             </Box>
             <HStack justifyContent="space-between" py="$2" px="$1">

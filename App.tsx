@@ -1,7 +1,13 @@
 import React, { useCallback } from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { Box, Button, GluestackUIProvider } from "./gluestack-ui-components";
+import {
+  Box,
+  Button,
+  GluestackUIProvider,
+  Icon,
+  Pressable,
+} from "./gluestack-ui-components";
 import { config } from "./gluestack-ui.config";
 import HomestayPage from "./kitchensink-components/HomestayPage";
 import { useFonts } from "expo-font";
@@ -12,6 +18,8 @@ import {
   Inter_700Bold,
   Inter_900Black,
 } from "@expo-google-fonts/inter";
+import { Motion } from "@legendapp/motion";
+import { Heart } from "lucide-react-native";
 
 export default function App() {
   const [colorMode, setColorMode]: any = React.useState("light");
@@ -31,7 +39,6 @@ export default function App() {
   const toggleColorMode = async () => {
     colorMode === "light" ? setColorMode("dark") : setColorMode("light");
   };
-
   return (
     <SafeAreaView
       style={{
@@ -49,5 +56,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    overflow: "hidden",
   },
 });

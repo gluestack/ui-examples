@@ -1,14 +1,16 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { Box, HStack } from "../gluestack-ui-components";
+import { Box } from "../gluestack-ui-components";
 import HomestayInformationFold from "./HomestayInformationFold";
 import MainContentHeader from "./MainContentHeader";
 import NewThisWeekFold from "./NewThisWeekFold";
 
 const MainContent = () => {
   return (
-    <Box sx={{ _web: { maxHeight: "calc(100vh - 144px)" } }} flex={1}>
-      <ScrollView>
+    <Box sx={{ "@md": { maxHeight: "calc(100vh - 144px)" } }} flex={1}>
+      <ScrollView
+      // contentContainerStyle={{ width: "100%" }}
+      >
         <Box px="$4">
           <MainContentHeader />
           <NewThisWeekFold />
