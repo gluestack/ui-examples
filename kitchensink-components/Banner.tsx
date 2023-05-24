@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, HStack, InfoIcon, Link, Text } from "../components";
+import { HStack, Link, Text } from "../gluestack-ui-components";
 
 const Banner = () => {
   return (

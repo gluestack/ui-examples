@@ -2,16 +2,14 @@ import React from "react";
 
 import {
   Box,
-  Button,
   HStack,
   Icon,
   Image,
   Pressable,
-  Tabs,
   Text,
   Tooltip,
   VStack,
-} from "../components";
+} from "../gluestack-ui-components";
 import { Heart, Star } from "lucide-react-native";
 
 const homestayInfoData = [

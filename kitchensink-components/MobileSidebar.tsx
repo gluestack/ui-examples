@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "../components";
+import { Box } from "../gluestack-ui-components";
 import Sidebar from "./Sidebar";
 
 const MobileSidebar = ({ sidebarOpen, setSidebarOpen }: any) => {

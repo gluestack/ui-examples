@@ -1,5 +1,5 @@
 import React from "react";
-import { Radio, Text, VStack } from "../components";
+import { Radio, Text, VStack } from "../gluestack-ui-components";
 
 const SortBySection = () => {
   const sidebarFiltersCustomerRatings = [

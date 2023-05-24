@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, HStack, Switch, Text } from "../components";
+import { Box, HStack, Switch, Text } from "../gluestack-ui-components";
 
 const ToggleMode = ({ colorMode, toggleColorMode }: any) => {
   return (

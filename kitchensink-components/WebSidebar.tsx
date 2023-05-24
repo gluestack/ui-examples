@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "../components";
+import { Box } from "../gluestack-ui-components";
 import Sidebar from "./Sidebar";
 
 const WebSidebar = () => {
@@ -8,11 +8,13 @@ const WebSidebar = () => {
       maxWidth="$72"
       w="100%"
       flex={1}
-      maxHeight="calc(100vh - 144px)"
       display="none"
       sx={{
         "@md": {
           display: "flex",
+          _web: {
+            maxHeight: "calc(100vh - 144px)",
+          },
         },
       }}
     >

@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchIcon } from "../components/core/Icons/Icons";
+import { SearchIcon } from "../gluestack-ui-components/core/Icons/Icons";
 import {
   Box,
   Button,
@@ -8,7 +8,7 @@ import {
   Pressable,
   Tabs,
   Text,
-} from "../components";
+} from "../gluestack-ui-components";
 
 const HeaderTabs = () => {
   const [selectedTab, setSelectedTab] = React.useState("Anywhere");

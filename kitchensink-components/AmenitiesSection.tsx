@@ -8,13 +8,13 @@ import {
   Pressable,
   Text,
   VStack,
-} from "../components";
+} from "../gluestack-ui-components";
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
   InfoIcon,
-} from "../components/core/Icons/Icons";
+} from "../gluestack-ui-components/core/Icons/Icons";
 
 const AmenitiesSection = () => {
   const sidebarFiltersAmmenities = [

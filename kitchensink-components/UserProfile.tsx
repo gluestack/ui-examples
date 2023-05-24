@@ -1,6 +1,6 @@
 import React from "react";
 import { Pressable } from "react-native";
-import { Avatar, Divider, Menu, Text } from "../components";
+import { Avatar, Divider, Menu, Text } from "../gluestack-ui-components";
 
 const userMenuItems = [
   "Messages",

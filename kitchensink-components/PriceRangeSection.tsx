@@ -1,7 +1,13 @@
 import React from "react";
 
-import { Checkbox, Slider, Text, Tooltip, VStack } from "../components";
-import { CheckIcon } from "../components/core/Icons/Icons";
+import {
+  Checkbox,
+  Slider,
+  Text,
+  Tooltip,
+  VStack,
+} from "../gluestack-ui-components";
+import { CheckIcon } from "../gluestack-ui-components/core/Icons/Icons";
 
 const PriceRangeSection = () => {
   const [sliderValue, setSliderValue] = React.useState(3500);

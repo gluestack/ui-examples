@@ -9,8 +9,8 @@ import {
   Pressable,
   Text,
   VStack,
-} from "../components";
-import { CloseIcon } from "../components/core/Icons/Icons";
+} from "../gluestack-ui-components";
+import { CloseIcon } from "../gluestack-ui-components/core/Icons/Icons";
 
 const FiltersAppliedSection = ({
   sidebarFiltersChecked,

@@ -1,1 +1,1 @@
-### This repository contains source code of all then examples that are shown on website
+### This repository contains source code of all the examples that are shown on website

@@ -1,5 +1,12 @@
 import React, { useRef } from "react";
-import { Box, Button, HStack, Image, Center, Icon } from "../components";
+import {
+  Box,
+  Button,
+  HStack,
+  Image,
+  Center,
+  Icon,
+} from "../gluestack-ui-components";
 import { ScrollView } from "react-native";
 import { ChevronLeft, ChevronRight } from "lucide-react-native";
 import { LinearGradient } from "expo-linear-gradient";
@@ -26,26 +33,34 @@ const NewThisWeekFold = () => {
   const scrollViewRef = useRef(null);
 
   const handleScrollRight = () => {
-    scrollViewRef.current?.scrollBy({ top: 0, left: 200, behavior: "smooth" });
+    if (scrollViewRef.current) {
+      scrollViewRef.current.scrollBy({
+        left: 100,
+        behavior: "smooth",
+      });
+    }
   };
   const handleScrollLeft = () => {
-    scrollViewRef.current?.scrollBy({ top: 0, left: -200, behavior: "smooth" });
+    if (scrollViewRef.current) {
+      scrollViewRef.current.scrollBy({
+        left: -100,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
     <Box>
       <ScrollView
         horizontal
-        style={{ width: "100%" }}
         contentContainerStyle={{ width: "100%" }}
         showsHorizontalScrollIndicator={false}
         ref={scrollViewRef}
-        scrollEventThrottle={16}
       >
         <HStack space="md" width="100%">
           {data.map((image) => {
             return (
-              <Box width="30%" h="$48" key={image.src}>
+              <Box w="30%" h="$48" key={image.src}>
                 <Image
                   source={image.src}
                   h="$48"

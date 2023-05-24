@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, HStack, Switch, Text, VStack } from "../components";
+import { Box, HStack, Switch, Text, VStack } from "../gluestack-ui-components";
 
 const BookingOptions = () => {
   const [selfCheckIn, setSelfCheckIn] = React.useState(false);

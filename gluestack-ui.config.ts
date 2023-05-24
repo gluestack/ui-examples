@@ -1,5 +1,5 @@
 export const config = {
-  componentPath: "/components",
+  componentPath: "/gluestack-ui-components",
   theme: {
     aliases: {
       bg: "backgroundColor",

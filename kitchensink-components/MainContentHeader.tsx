@@ -13,8 +13,11 @@ import {
   Input,
   Toast,
   useToast,
-} from "../components";
-import { CheckCircleIcon, CloseIcon } from "../components/core/Icons/Icons";
+} from "../gluestack-ui-components";
+import {
+  CheckCircleIcon,
+  CloseIcon,
+} from "../gluestack-ui-components/core/Icons/Icons";
 import { List } from "lucide-react-native";
 
 const MainContentHeader = () => {
