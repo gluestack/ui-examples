@@ -4,6 +4,7 @@ import {
   Box,
   Checkbox,
   HStack,
+  Heading,
   Icon,
   Pressable,
   Text,
@@ -53,10 +54,7 @@ const AmenitiesSection = () => {
 
   return (
     <VStack space="sm">
-      <Text fontWeight="$semibold" size="md">
-        Ammenities
-      </Text>
-
+      <Heading size="sm">Ammenities</Heading>
       <Checkbox.Group value={values} onChange={setValues}>
         {sidebarFiltersAmmenities.map((ammenity: any, index: any) => {
           if (index > 4 && !viewAllComponents) return null;
@@ -69,9 +67,7 @@ const AmenitiesSection = () => {
               key={ammenity.value}
             >
               <Checkbox.Indicator>
-                <Checkbox.Icon>
-                  <CheckIcon />
-                </Checkbox.Icon>
+                <Checkbox.Icon as={CheckIcon} />
               </Checkbox.Indicator>
               <Checkbox.Label>{ammenity.label}</Checkbox.Label>
             </Checkbox>
@@ -85,8 +81,10 @@ const AmenitiesSection = () => {
           }}
         >
           <HStack justifyContent="space-between">
-            <Text size="sm">Show less</Text>
-            <Icon as={ChevronDownIcon} size="sm" />
+            <Text size="sm" fontWeight="$medium">
+              Show less
+            </Text>
+            <Icon as={ChevronUpIcon} size="sm" />
           </HStack>
         </Pressable>
       ) : (
@@ -96,7 +94,9 @@ const AmenitiesSection = () => {
           }}
         >
           <HStack justifyContent="space-between">
-            <Text size="sm">Show more</Text>
+            <Text size="sm" fontWeight="$medium">
+              Show more
+            </Text>
             <Icon as={ChevronDownIcon} size="sm" />
           </HStack>
         </Pressable>

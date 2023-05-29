@@ -6,6 +6,7 @@ import {
   Text,
   Tooltip,
   VStack,
+  Heading,
 } from "../gluestack-ui-components";
 import { CheckIcon } from "../gluestack-ui-components/core/Icons/Icons";
 
@@ -37,14 +38,12 @@ const PriceRangeSection = () => {
 
   return (
     <VStack space="md">
-      <Text fontWeight="$semibold" size="md">
-        Price Range
-      </Text>
+      <Heading size="sm">Price Range</Heading>
       <Slider
         minValue={800}
         maxValue={5000}
         w="100%"
-        size="sm:"
+        size="sm"
         value={sliderValue}
         onChange={(value: any) => {
           handleChange(value);
@@ -60,7 +59,7 @@ const PriceRangeSection = () => {
           }}
         >
           <Tooltip.Content>
-            <Text color="$white">{sliderValue}</Text>
+            <Text color="$white">₹{sliderValue}</Text>
           </Tooltip.Content>
         </Tooltip>
       </Slider>

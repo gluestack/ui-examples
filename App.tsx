@@ -40,16 +40,26 @@ export default function App() {
     colorMode === "light" ? setColorMode("dark") : setColorMode("light");
   };
   return (
-    <SafeAreaView
-      style={{
-        ...styles.container,
-        // backgroundColor: colorMode === "light" ? "#E5E5E5" : "#262626",
-      }}
-    >
-      <GluestackUIProvider config={config.theme} colorMode={colorMode}>
-        <HomestayPage colorMode={colorMode} toggleColorMode={toggleColorMode} />
-      </GluestackUIProvider>
-    </SafeAreaView>
+    <>
+      <SafeAreaView
+        style={{
+          backgroundColor: colorMode === "light" ? "#E5E5E5" : "#262626",
+        }}
+      />
+      <SafeAreaView
+        style={{
+          ...styles.container,
+          backgroundColor: colorMode === "light" ? "white" : "#171717",
+        }}
+      >
+        <GluestackUIProvider config={config.theme} colorMode={colorMode}>
+          <HomestayPage
+            colorMode={colorMode}
+            toggleColorMode={toggleColorMode}
+          />
+        </GluestackUIProvider>
+      </SafeAreaView>
+    </>
   );
 }
 

@@ -4,7 +4,9 @@ import { Box, HStack, Switch, Text } from "../gluestack-ui-components";
 const ToggleMode = ({ colorMode, toggleColorMode }: any) => {
   return (
     <HStack alignItems="center" space="sm">
-      <Text size="sm">dark mode</Text>
+      <Text size="sm" fontWeight="$medium">
+        dark mode
+      </Text>
       <Switch
         size="sm"
         value={colorMode === "dark" ? true : false}

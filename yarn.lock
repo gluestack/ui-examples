@@ -1091,10 +1091,10 @@
     "@babel/traverse" "^7.20.5"
     lodash.merge "^4.6.2"
 
-"@dank-style/react@^0.4.8-alpha.0":
-  version "0.4.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@dank-style/react/-/react-0.4.8-alpha.0.tgz#04114f8fab0b9984a9915b023cc8868569784559"
-  integrity sha512-c+p8SQJmO+5gX1+d5j+ZzIjh7TBnyPamk/lkNgIDdv4SczZAIdvH9CPLIPZBvlD2AK5KbyGGxxjYme5LGVap3g==
+"@dank-style/react@^0.4.9":
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/@dank-style/react/-/react-0.4.9.tgz#7eb58ef952a94a3209db0f308c8afc0648ac274c"
+  integrity sha512-TFisFn/my+4m1AnFdB6Yf1Ywj3PlfFDIYdEB3c6L7WfR1Et9ENu2XnpUrOD94SvyqjLO4tm4Poq/Ey76qdj8wQ==
   dependencies:
     inline-style-prefixer "^6.0.1"
     normalize-css-color "^1.0.2"

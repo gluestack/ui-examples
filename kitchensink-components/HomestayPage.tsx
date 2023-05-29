@@ -1,24 +1,35 @@
 import React, { useEffect } from "react";
-import { SafeAreaView, ScrollView, StatusBar, Platform } from "react-native";
-import {
-  Alert,
-  Box,
-  Button,
-  Center,
-  HStack,
-  Icon,
-  InfoIcon,
-  Pressable,
-  Text,
-} from "../gluestack-ui-components";
-import Banner from "./Banner";
-import Header from "./Header";
-import MainContent from "./MainContent";
-import MobileSidebar from "./MobileSidebar";
-import WebSidebar from "./WebSidebar";
+import { StatusBar, Platform } from "react-native";
+import { Box } from "../gluestack-ui-components";
 import MobileBottomTabs from "./MobileBottomTabs";
-import { Heart } from "lucide-react-native";
-import { AnimatePresence, Motion } from "@legendapp/motion";
+import MobileModeChangeButton from "./MobileModeChangeButton";
+import { Globe, Heart, MessageCircle, Search, User } from "lucide-react-native";
+import MobileProfilePage from "./MobileProfilePage";
+import Explorepage from "./ExplorePage";
+import MobileSidebar from "./MobileSidebar";
+
+const bottomTabs = [
+  {
+    icon: Search,
+    label: "Explore",
+  },
+  {
+    icon: Heart,
+    label: "Wishlist",
+  },
+  {
+    icon: Globe,
+    label: "Trips",
+  },
+  {
+    icon: MessageCircle,
+    label: "Inbox",
+  },
+  {
+    icon: User,
+    label: "Profile",
+  },
+];
 
 const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
   useEffect(() => {
@@ -27,10 +38,17 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
       document.body.style.height = "100%";
     }
   }, []);
-  const [sidebarOpen, setSidebarOpen] = React.useState(false);
-  const [like, setLike] = React.useState(false);
+
+  const [activeTab, setActiveTab] = React.useState("Explore");
+  const [sidebarDrawerOpen, setSidebarDrawerOpen] = React.useState(false);
   return (
-    <Box flex={1}>
+    <Box
+      flex={1}
+      sx={{
+        _light: { bg: "white" },
+        _dark: { bg: "$backgroundDark950" },
+      }}
+    >
       <StatusBar
         style={
           {
@@ -38,46 +56,45 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
           }
         }
       />
-      <Box w="100%">
-        <Banner />
-        <Header
-          colorMode={colorMode}
-          toggleColorMode={toggleColorMode}
-          setSidebarOpen={setSidebarOpen}
+      {sidebarDrawerOpen ? (
+        <MobileSidebar
+          sidebarDrawerOpen={sidebarDrawerOpen}
+          setSidebarDrawerOpen={setSidebarDrawerOpen}
         />
-      </Box>
-      <ScrollView style={{ width: "100%" }}>
-        <Box
-          w="100%"
-          sx={{
-            _light: { bg: "white" },
-            _dark: { bg: "$backgroundDark950" },
-          }}
-        >
-          <Box w="100%">
-            {/* <MobileSidebar
-              sidebarOpen={sidebarOpen}
-              setSidebarOpen={setSidebarOpen}
-            /> */}
-            <HStack
-              w="100%"
-              px="$5"
-              sx={{
-                "@md": {
-                  px: "$12",
-                },
-              }}
-            >
-              <WebSidebar />
-              <MainContent />
-            </HStack>
+      ) : (
+        <>
+          {activeTab === "Explore" && (
+            <Explorepage
+              colorMode={colorMode}
+              toggleColorMode={toggleColorMode}
+              setSidebarDrawerOpen={setSidebarDrawerOpen}
+            />
+          )}
+          {activeTab === "Profile" && <MobileProfilePage />}
+          <MobileModeChangeButton
+            colorMode={colorMode}
+            toggleColorMode={toggleColorMode}
+          />
+          <Box
+            h={80}
+            w="100%"
+            sx={{
+              "@md": {
+                display: "none",
+              },
+              _dark: { borderColor: "$borderDark900" },
+            }}
+            borderTopWidth="$1"
+            borderColor="$borderLight50"
+          >
+            <MobileBottomTabs
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+              bottomTabs={bottomTabs}
+            />
           </Box>
-        </Box>
-      </ScrollView>
-      <Box h={100} w="100%">
-        <Text>Hello</Text>
-      </Box>
-      {/* <MobileBottomTabs /> */}
+        </>
+      )}
     </Box>
   );
 };

@@ -1,44 +1,66 @@
 import React from "react";
-import { HStack, Icon, Text, VStack } from "../gluestack-ui-components";
-import { Globe, Heart, Inbox, Search, User } from "lucide-react-native";
+import {
+  HStack,
+  Icon,
+  Pressable,
+  Text,
+  VStack,
+  Box,
+  Button,
+} from "../gluestack-ui-components";
 
-const MobileBottomTabs = () => {
-  const bottomTabs = [
-    {
-      icon: Search,
-      label: "Explore",
-    },
-    {
-      icon: Heart,
-      label: "Wishlist",
-    },
-    {
-      icon: Globe,
-      label: "Trips",
-    },
-    {
-      icon: Inbox,
-      label: "Inbox",
-    },
-    {
-      icon: User,
-      label: "Profile",
-    },
-  ];
+const MobileBottomTabs = ({ bottomTabs, setActiveTab, activeTab }: any) => {
   return (
     <HStack
       position="absolute"
       bottom={0}
-      sx={{ "@md": { display: "none" } }}
       justifyContent="space-between"
       w="100%"
+      py="$3"
+      px="$4"
+      sx={{
+        "@md": { display: "none" },
+      }}
     >
-      {bottomTabs.map((tab, index) => {
+      {bottomTabs.map((tab: any) => {
         return (
-          <VStack justifyContent="center" alignItems="center">
-            <Icon as={tab.icon} color="$" />
-            <Text>{tab.label}</Text>
-          </VStack>
+          <Pressable
+            key={tab.label}
+            onPress={() => {
+              setActiveTab(tab.label);
+            }}
+          >
+            <VStack alignItems="center">
+              <Icon
+                as={tab.icon}
+                states={{ active: activeTab === tab.label }}
+                color="$textLight400"
+                sx={{
+                  ":active": {
+                    color: "$primary500",
+                  },
+                }}
+                size={20}
+              />
+              <Text
+                color="$textLight400"
+                size="xs"
+                states={{ active: activeTab === tab.label }}
+                sx={{
+                  ":active": {
+                    color: "$textLight900",
+                  },
+                  _dark: {
+                    ":active": {
+                      color: "$textDark100",
+                    },
+                  },
+                }}
+              >
+                {tab.label}
+              </Text>
+            </VStack>
+          </Pressable>
         );
       })}
     </HStack>

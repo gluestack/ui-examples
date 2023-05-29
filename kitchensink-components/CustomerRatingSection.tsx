@@ -2,6 +2,7 @@ import React from "react";
 import {
   Checkbox,
   HStack,
+  Heading,
   Icon,
   Text,
   VStack,
@@ -32,9 +33,7 @@ const CustomerRatingSection = () => {
 
   return (
     <VStack w="100%" space="md">
-      <Text fontWeight="$semibold" size="md">
-        Customer Ratings
-      </Text>
+      <Heading size="sm">Customer Ratings</Heading>
       <Checkbox.Group value={values} onChange={setValues}>
         {sidebarFiltersCustomerRatings.map((placeType: any, index: any) => {
           return (
@@ -45,16 +44,14 @@ const CustomerRatingSection = () => {
                 </Checkbox.Icon>
               </Checkbox.Indicator>
               <Checkbox.Label>
-                <HStack alignItems="center" space="xs">
-                  <Icon
-                    as={Star}
-                    size="sm"
-                    color="$black"
-                    sx={{ _dark: { color: "$white" } }}
-                    fill="currentColor"
-                  />
-                  <Text>{placeType.label}</Text>
-                </HStack>
+                <Icon
+                  as={Star}
+                  size="sm"
+                  color="$black"
+                  sx={{ _dark: { color: "$white" } }}
+                  fill="currentColor"
+                />{" "}
+                {placeType.label}
               </Checkbox.Label>
             </Checkbox>
           );

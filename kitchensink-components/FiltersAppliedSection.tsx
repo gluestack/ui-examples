@@ -1,27 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Badge,
   Box,
   Button,
   HStack,
   Icon,
-  Menu,
   Pressable,
   Text,
-  VStack,
 } from "../gluestack-ui-components";
 import { CloseIcon } from "../gluestack-ui-components/core/Icons/Icons";
 
-const FiltersAppliedSection = ({
-  sidebarFiltersChecked,
-  setSidebarFiltersChecked,
-}: any) => {
-  const arr1 = ["Private room", "Wifi", "Air conditioning"];
+const FiltersAppliedSection = () => {
+  const filters = ["Private room", "Wifi", "Air conditioning"];
+  const [appliedFilters, setAppliedFilters]: any = React.useState(filters);
   return (
     <Box
       borderWidth="$1"
       borderRadius="$md"
-      p="$3"
+      p="$4"
       sx={{
         _light: { borderColor: "$borderLight100" },
         _dark: { borderColor: "$borderDark900" },
@@ -31,18 +27,25 @@ const FiltersAppliedSection = ({
         <Text size="sm" fontWeight="$medium">
           Filters applied
         </Text>
-        <Button p={0} variant="link" size="xs">
+        <Button
+          p={0}
+          variant="link"
+          size="xs"
+          onPress={() => {
+            setAppliedFilters([]);
+          }}
+        >
           <Button.Text>Clear all</Button.Text>
         </Button>
       </HStack>
       <HStack flexWrap="wrap" space="sm">
-        {arr1.map((item) => (
+        {appliedFilters.map((item: any) => (
           <Badge
             rounded="$full"
             px="$2.5"
             py="$2"
             action="muted"
-            mt="$2"
+            mt="$3"
             key={item}
           >
             <Badge.Text
@@ -61,6 +64,12 @@ const FiltersAppliedSection = ({
                 _dark: {
                   bg: "$backgroundDark800",
                 },
+              }}
+              onPress={() => {
+                const newFilters = appliedFilters.filter((item1: any) => {
+                  return item1 !== item;
+                });
+                setAppliedFilters(newFilters);
               }}
             >
               <Icon

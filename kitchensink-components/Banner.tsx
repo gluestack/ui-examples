@@ -14,10 +14,10 @@ const Banner = () => {
       }}
     >
       <Text size="sm">Show total prices up front</Text>
-      <Link href="https://hello.com">
+      <Link href="https://ui.gluestack.io">
         <Text
+          color="$textLight900"
           sx={{
-            _light: { color: "$textLight900" },
             _dark: { color: "$textDark200" },
           }}
           fontWeight="$semibold"

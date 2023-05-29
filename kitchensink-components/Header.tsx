@@ -1,6 +1,9 @@
 import React from "react";
 import { Box, HStack, Icon, Input } from "../gluestack-ui-components";
-import { SearchIcon } from "../gluestack-ui-components/core/Icons/Icons";
+import {
+  HamburgerIcon,
+  SearchIcon,
+} from "../gluestack-ui-components/core/Icons/Icons";
 import HeaderTabs from "./HeaderTabs";
 import HomestayLogo from "./HomestayLogo";
 import ToggleMode from "./ToggleMode";
@@ -8,7 +11,7 @@ import UserProfile from "./UserProfile";
 import { Filter, SlidersHorizontal } from "lucide-react-native";
 import { Pressable } from "react-native";
 
-const Header = ({ colorMode, toggleColorMode }: any) => {
+const Header = ({ colorMode, toggleColorMode, setSidebarDrawerOpen }: any) => {
   return (
     <Box>
       {/* big screen */}
@@ -49,16 +52,24 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
           "@md": {
             display: "none",
           },
+          _dark: {
+            borderColor: "$borderDark900",
+          },
         }}
-        h="$20"
         w="100%"
         borderBottomWidth={1}
-        borderBottomColor="$borderLight100"
+        borderColor="$borderLight100"
       >
         <Input variant="rounded" size="sm">
-          <Input.Icon ml="$2">
+          <Input.Icon
+            ml="$2"
+            onPress={() => {
+              console.log("here");
+              setSidebarDrawerOpen(true);
+            }}
+          >
             <Icon
-              as={SearchIcon}
+              as={HamburgerIcon}
               color="$backgroundLight400"
               sx={{
                 _dark: { color: "white" },

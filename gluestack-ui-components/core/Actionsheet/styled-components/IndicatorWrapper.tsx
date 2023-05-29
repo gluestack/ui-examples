@@ -1,12 +1,12 @@
-import { View } from 'react-native';
-import { styled } from '../../styled';
+import { View, Pressable } from "react-native";
+import { styled } from "../../styled";
 
 export default styled(
-  View,
+  Pressable,
   {
-    py: '$3',
-    w: '100%',
-    alignItems: 'center',
+    py: "$3",
+    w: "100%",
+    alignItems: "center",
   },
   {}
 );

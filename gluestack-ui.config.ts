@@ -693,7 +693,7 @@ export const config = {
         xl: 1280,
       },
       mediaQueries: {
-        base: "@media screen and (min-width: 0)",
+        base: "@media screen and (min-width: 0px)",
         sm: "@media screen and (min-width: 480px)",
         md: "@media screen and (min-width: 768px)",
         lg: "@media screen and (min-width: 992px)",

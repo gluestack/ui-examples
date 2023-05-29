@@ -8,10 +8,8 @@ import NewThisWeekFold from "./NewThisWeekFold";
 const MainContent = () => {
   return (
     <Box sx={{ "@md": { maxHeight: "calc(100vh - 144px)" } }} flex={1}>
-      <ScrollView
-      // contentContainerStyle={{ width: "100%" }}
-      >
-        <Box px="$4">
+      <ScrollView>
+        <Box>
           <MainContentHeader />
           <NewThisWeekFold />
           <HomestayInformationFold />

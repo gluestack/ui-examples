@@ -34,7 +34,7 @@ const UserProfile = () => {
       trigger={({ ...triggerProps }) => {
         return (
           <Pressable {...triggerProps}>
-            <Avatar size="xs" bg="$backgroundLight600">
+            <Avatar size="sm" bg="$backgroundLight600">
               <Avatar.FallbackText>H S</Avatar.FallbackText>
               <Avatar.Image
                 source={{

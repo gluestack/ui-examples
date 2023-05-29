@@ -1,5 +1,5 @@
 import React from "react";
-import { Radio, Text, VStack } from "../gluestack-ui-components";
+import { Heading, Radio, Text, VStack } from "../gluestack-ui-components";
 
 const SortBySection = () => {
   const sidebarFiltersCustomerRatings = [
@@ -24,9 +24,7 @@ const SortBySection = () => {
 
   return (
     <VStack space="sm">
-      <Text fontWeight="$semibold" size="md">
-        Sort by
-      </Text>
+      <Heading size="sm">Sort by</Heading>
       <Radio.Group value={values} onChange={setValues}>
         {sidebarFiltersCustomerRatings.map((placeType: any) => {
           return (

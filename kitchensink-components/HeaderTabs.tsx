@@ -20,7 +20,7 @@ const HeaderTabs = () => {
         alignItems="center"
         borderWidth={1}
         borderColor="$borderLight200"
-        sx={{ _dark: { borderColor: "$borderDark700" } }}
+        sx={{ _dark: { borderColor: "$borderDark900" } }}
       >
         <Pressable
           rounded="$full"
@@ -39,7 +39,9 @@ const HeaderTabs = () => {
           px="$2"
           py="$1"
         >
-          <Text size="sm">Anywhere</Text>
+          <Text size="sm" fontWeight="$medium">
+            Anywhere
+          </Text>
         </Pressable>
         <Pressable
           rounded="$full"
@@ -56,7 +58,9 @@ const HeaderTabs = () => {
           }}
           onPress={() => setSelectedTab("Anyweek")}
         >
-          <Text size="sm">Anyweek</Text>
+          <Text size="sm" fontWeight="$medium">
+            Anyweek
+          </Text>
         </Pressable>
         <Pressable
           rounded="$full"
@@ -75,7 +79,9 @@ const HeaderTabs = () => {
           }}
           onPress={() => setSelectedTab("Add guests")}
         >
-          <Text size="sm">Add guests</Text>
+          <Text size="sm" fontWeight="$medium">
+            Add guests
+          </Text>
         </Pressable>
         <Pressable ml="$3" p="$2" bg="$primary500" rounded="$full">
           <Icon as={SearchIcon} color="white" w="$4" h="$4" />

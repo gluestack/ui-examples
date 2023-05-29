@@ -3,6 +3,7 @@ import {
   Box,
   Checkbox,
   HStack,
+  Heading,
   Text,
   VStack,
 } from "../gluestack-ui-components";
@@ -28,9 +29,7 @@ const PlaceTypeSection = () => {
 
   return (
     <VStack space="sm">
-      <Text fontWeight="$semibold" size="md">
-        Type of place
-      </Text>
+      <Heading size="sm">Type of place</Heading>
       <Checkbox.Group value={values} onChange={setValues}>
         {sidebarFiltersPlaceType.map((placeType: any) => {
           return (

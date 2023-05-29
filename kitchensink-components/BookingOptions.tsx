@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, HStack, Switch, Text, VStack } from "../gluestack-ui-components";
+import {
+  Box,
+  HStack,
+  Heading,
+  Switch,
+  Text,
+  VStack,
+} from "../gluestack-ui-components";
 
 const BookingOptions = () => {
   const [selfCheckIn, setSelfCheckIn] = React.useState(false);
@@ -7,13 +14,17 @@ const BookingOptions = () => {
 
   return (
     <VStack space="md">
-      <Text fontWeight="$semibold" size="md">
-        Booking Options
-      </Text>
+      <Heading size="sm">Booking Options</Heading>
       <VStack w="100%">
         <HStack space="lg" w="100%">
           <VStack flex={1}>
-            <Text size="sm">Self check-in</Text>
+            <Text
+              size="sm"
+              color="$textLight900"
+              sx={{ _dark: { color: "$textDark100" } }}
+            >
+              Self check-in
+            </Text>
             <Text size="xs" color="$textLight500">
               Access a place without needing the Host
             </Text>
@@ -28,7 +39,14 @@ const BookingOptions = () => {
       <VStack w="100%">
         <HStack space="lg" w="100%">
           <VStack flex={1}>
-            <Text size="sm">Meals included</Text>
+            <Text
+              size="sm"
+              size="sm"
+              color="$textLight900"
+              sx={{ _dark: { color: "$textDark100" } }}
+            >
+              Meals included
+            </Text>
             <Text size="xs" color="$textLight500">
               Have a prefered meal for your comfy stay
             </Text>

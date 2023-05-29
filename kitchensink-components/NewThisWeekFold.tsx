@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   Box,
   Button,
@@ -6,12 +6,28 @@ import {
   Image,
   Center,
   Icon,
+  Text,
 } from "../gluestack-ui-components";
 import { ScrollView } from "react-native";
-import { ChevronLeft, ChevronRight } from "lucide-react-native";
+import { ChevronLeft, ChevronRight, Scroll } from "lucide-react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 const data = [
+  {
+    src: require("../assets/display/image1.png"),
+  },
+  {
+    src: require("../assets/display/image2.png"),
+  },
+  {
+    src: require("../assets/display/image3.png"),
+  },
+  {
+    src: require("../assets/display/image1.png"),
+  },
+  {
+    src: require("../assets/display/image2.png"),
+  },
   {
     src: require("../assets/display/image1.png"),
   },
@@ -31,42 +47,49 @@ const data = [
 
 const NewThisWeekFold = () => {
   const scrollViewRef = useRef(null);
+  const scrollAmount = 400;
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleScrollRight = () => {
+  const handleScrollLeft = () => {
+    const newScrollPosition = scrollPosition - scrollAmount;
     if (scrollViewRef.current) {
-      scrollViewRef.current.scrollBy({
-        left: 100,
-        behavior: "smooth",
+      scrollViewRef?.current?.scrollTo({
+        x: newScrollPosition,
+        animated: true,
       });
+      setScrollPosition(newScrollPosition);
     }
   };
-  const handleScrollLeft = () => {
-    if (scrollViewRef.current) {
-      scrollViewRef.current.scrollBy({
-        left: -100,
-        behavior: "smooth",
+
+  const handleScrollRight = () => {
+    const newScrollPosition = scrollPosition + scrollAmount;
+    if (scrollViewRef.current)
+      scrollViewRef?.current?.scrollTo({
+        x: newScrollPosition,
+        animated: true,
       });
-    }
+    setScrollPosition(newScrollPosition);
   };
 
   return (
-    <Box>
+    <Box px="$5" w="100%">
       <ScrollView
         horizontal
-        contentContainerStyle={{ width: "100%" }}
+        style={{ width: "100%" }}
         showsHorizontalScrollIndicator={false}
         ref={scrollViewRef}
       >
         <HStack space="md" width="100%">
           {data.map((image) => {
             return (
-              <Box w="30%" h="$48" key={image.src}>
+              <Box key={image.src} flex={1}>
                 <Image
                   source={image.src}
-                  h="$48"
-                  w="100%"
+                  h="$64"
+                  w="$64"
                   // @ts-ignore
                   borderRadius="$lg"
+                  resizeMode="cover"
                 />
               </Box>
             );
@@ -89,7 +112,7 @@ const NewThisWeekFold = () => {
           variant="outline"
           px="$1"
           py="$1"
-          ml={-12}
+          ml={6}
           borderRadius="$full"
           onPress={handleScrollLeft}
         >
@@ -102,7 +125,7 @@ const NewThisWeekFold = () => {
           variant="outline"
           px="$1"
           py="$1"
-          mr={-12}
+          mr={6}
           borderRadius="$full"
           onPress={handleScrollRight}
         >
