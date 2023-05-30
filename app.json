@@ -5,6 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "jsEngine": "hermes",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -16,16 +17,29 @@
     ],
     "ios": {
       "supportsTablet": true,
+      "jsEngine": "jsc",
       "bundleIdentifier": "com.meenumakkar.cli-test-expo"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.meenumakkar.clitestexpo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a9be6ff8-3243-4ed6-b4fc-2888fd2d743c"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/a9be6ff8-3243-4ed6-b4fc-2888fd2d743c"
     }
   }
 }
