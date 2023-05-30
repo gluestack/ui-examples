@@ -14,14 +14,16 @@ const Explorepage = ({
   return (
     <>
       <Box w="100%">
+        {/* top banner */}
         <Banner />
+        {/* header */}
         <Header
           colorMode={colorMode}
           toggleColorMode={toggleColorMode}
           setSidebarDrawerOpen={setSidebarDrawerOpen}
         />
       </Box>
-
+      {/* explore page content */}
       <ScrollView style={{ width: "100%" }}>
         <Box w="100%">
           <Box w="100%">
@@ -33,7 +35,9 @@ const Explorepage = ({
                 },
               }}
             >
+              {/* sidebar for web */}
               <WebSidebar />
+              {/* main content for explore page */}
               <MainContent />
             </HStack>
           </Box>

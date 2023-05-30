@@ -10,8 +10,11 @@ const MainContent = () => {
     <Box sx={{ "@md": { maxHeight: "calc(100vh - 144px)" } }} flex={1}>
       <ScrollView>
         <Box>
+          {/* explore page main content header */}
           <MainContentHeader />
+          {/* explore page new this week fold 1 */}
           <NewThisWeekFold />
+          {/* explore page homestay info fold 2 */}
           <HomestayInformationFold />
         </Box>
       </ScrollView>

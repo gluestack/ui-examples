@@ -73,19 +73,8 @@ const tabsData = [
 
 const HomestayInformationFold = () => {
   return (
-    <VStack>
-      <HomestayInfo homestayInfoData={homestayInfoData} tabsData={tabsData} />
-    </VStack>
-  );
-};
-
-const HomestayInfo = ({ homestayInfoData, tabsData }: any) => {
-  return (
     <Box pb="$8">
-      <HomestayInfoTabs
-        homestayInfoData={homestayInfoData}
-        tabsData={tabsData}
-      />
+      <HomestayInfoTabs tabsData={tabsData} />
       <TabPanelData />
     </Box>
   );

@@ -18,6 +18,7 @@ const WebSidebar = () => {
         },
       }}
     >
+      {/* common sidebar contents for web and mobile */}
       <Sidebar />
     </Box>
   );

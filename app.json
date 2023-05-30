@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.meenumakkar.cli-test-expo"
     },
     "android": {
       "adaptiveIcon": {

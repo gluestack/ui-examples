@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { Box, VStack } from "../gluestack-ui-components";
+import { VStack } from "../gluestack-ui-components";
 import AmenitiesSection from "./AmenitiesSection";
 import BookingOptions from "./BookingOptions";
 import CustomerRatingSection from "./CustomerRatingSection";

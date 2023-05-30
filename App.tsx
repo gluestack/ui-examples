@@ -41,18 +41,22 @@ export default function App() {
   };
   return (
     <>
+      {/* top SafeAreaView */}
       <SafeAreaView
         style={{
           backgroundColor: colorMode === "light" ? "#E5E5E5" : "#262626",
         }}
       />
+      {/* bottom SafeAreaView */}
       <SafeAreaView
         style={{
           ...styles.container,
           backgroundColor: colorMode === "light" ? "white" : "#171717",
         }}
       >
+        {/* gluestack-ui provider */}
         <GluestackUIProvider config={config.theme} colorMode={colorMode}>
+          {/* main app page */}
           <HomestayPage
             colorMode={colorMode}
             toggleColorMode={toggleColorMode}

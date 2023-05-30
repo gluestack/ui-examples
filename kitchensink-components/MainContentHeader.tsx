@@ -90,6 +90,7 @@ const MainContentHeader = () => {
         </Button>
       </HStack>
       {modalVisible && (
+        // list your place modal
         <ListYourPlaceModal
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
@@ -142,6 +143,7 @@ const ListYourPlaceModal = ({
 
   return (
     <Box>
+      {/* Modal: example */}
       <Modal
         size="md"
         isOpen={modalVisible}
@@ -183,7 +185,7 @@ const ModalBackButton = ({ modalFormStep, setModalFormStep }: any) => {
   return (
     <Pressable
       mr="$2"
-      disabled={modalFormStep === 0 ? "none" : "flex"}
+      disabled={modalFormStep === 0 ? true : false}
       onPress={() => {
         if (modalFormStep > 0) setModalFormStep(modalFormStep - 1);
       }}
@@ -197,6 +199,7 @@ const SaveForLaterButton = ({ setModalVisible, toast }: any) => {
   const [showSpinner, setShowSpinner] = useState(false);
   const handleSaveForLater = () => {
     setModalVisible(false);
+    // toast example
     toast.show({
       placement: "top",
       render: ({ id }: any) => {
@@ -431,6 +434,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
         <FormControl.Label>
           <FormControl.Label.Text>Description</FormControl.Label.Text>
         </FormControl.Label>
+        {/* textarea: example */}
         <TextArea>
           <TextArea.Input placeholder="Provide description" />
         </TextArea>
@@ -438,6 +442,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
       <VStack space="sm">
         <Text>Contact me...</Text>
         <HStack space="sm">
+          {/* select: example */}
           <Select defaultValue="+91" width="$16">
             <Select.Trigger>
               <Select.Input />
@@ -457,6 +462,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
               </Select.Content>
             </Select.Portal>
           </Select>
+          {/* input: example */}
           <Input flex={1}>
             <Input.Input placeholder="Phone number" />
           </Input>

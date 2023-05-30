@@ -50,6 +50,7 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
       }}
     >
       <StatusBar
+        // @ts-ignore
         style={
           {
             // backgroundColor: colorMode === "light" ? "#E5E5E5" : "#262626",
@@ -57,6 +58,7 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
         }
       />
       {sidebarDrawerOpen ? (
+        // sidebar
         <MobileSidebar
           sidebarDrawerOpen={sidebarDrawerOpen}
           setSidebarDrawerOpen={setSidebarDrawerOpen}
@@ -64,17 +66,20 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
       ) : (
         <>
           {activeTab === "Explore" && (
+            // explore page
             <Explorepage
               colorMode={colorMode}
               toggleColorMode={toggleColorMode}
               setSidebarDrawerOpen={setSidebarDrawerOpen}
             />
           )}
+          {/* profile page for mobile */}
           {activeTab === "Profile" && <MobileProfilePage />}
           <MobileModeChangeButton
             colorMode={colorMode}
             toggleColorMode={toggleColorMode}
           />
+          {/* mobile bottom tabs */}
           <Box
             h={80}
             w="100%"
