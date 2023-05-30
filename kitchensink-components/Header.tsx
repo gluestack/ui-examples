@@ -60,7 +60,7 @@ const Header = ({ colorMode, toggleColorMode, setSidebarDrawerOpen }: any) => {
         borderBottomWidth={1}
         borderColor="$borderLight100"
       >
-        <Input variant="rounded" size="sm">
+        <Input variant="rounded" size="sm" w="100%">
           <Input.Icon
             ml="$2"
             onPress={() => {

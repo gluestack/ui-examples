@@ -1,6 +1,12 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { GluestackUIProvider } from "./gluestack-ui-components";
+import {
+  ActivityIndicator,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import { GluestackUIProvider, Spinner } from "./gluestack-ui-components";
 import { config } from "./gluestack-ui.config";
 import HomestayPage from "./kitchensink-components/HomestayPage";
 import { useFonts } from "expo-font";
