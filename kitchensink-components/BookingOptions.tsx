@@ -41,7 +41,6 @@ const BookingOptions = () => {
           <VStack flex={1}>
             <Text
               size="sm"
-              size="sm"
               color="$textLight900"
               sx={{ _dark: { color: "$textDark100" } }}
             >
