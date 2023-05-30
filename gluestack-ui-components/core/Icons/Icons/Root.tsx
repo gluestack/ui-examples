@@ -1,6 +1,6 @@
 // import { styled } from '../../styled';
 // import { Svg } from 'react-native-svg';
-// import { styled } from '@dank-style/react';
+// import { styled } from '@gluestack-style/react';
 // import { Svg } from 'react-native-svg';
 
 // const Root = styled(

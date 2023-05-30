@@ -48,9 +48,11 @@ const ProfileCard = () => {
         <Avatar bg="$blue600">
           <Avatar.FallbackText>Amit Trivedi</Avatar.FallbackText>
           <Avatar.Image
-            source={{
-              uri: "https://images.unsplash.com/photo-1494790108377-be9c29b2933",
-            }}
+            source={
+              {
+                // uri: "https://images.unsplash.com/photo-1494790108377-be9c29b2933",
+              }
+            }
           />
         </Avatar>
         <VStack>

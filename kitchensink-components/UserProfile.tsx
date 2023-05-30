@@ -1,6 +1,6 @@
 import React from "react";
 import { Pressable } from "react-native";
-import { Avatar, Divider, Menu, Text } from "../gluestack-ui-components";
+import { Avatar, Menu } from "../gluestack-ui-components";
 
 const userMenuItems = [
   "Messages",
@@ -13,20 +13,6 @@ const userMenuItems = [
   "Help",
   "Log out",
 ];
-const userMenuItems1 = [
-  {
-    section: "1",
-    items: ["Messages", "Notifications", "Trips", "Wishlists"],
-  },
-  {
-    section: "2",
-    items: ["Post your home", "Host an experience", "Accounts"],
-  },
-  {
-    section: "3",
-    items: ["Help", "Log out"],
-  },
-];
 
 const UserProfile = () => {
   return (
@@ -37,9 +23,11 @@ const UserProfile = () => {
             <Avatar size="sm" bg="$backgroundLight600">
               <Avatar.FallbackText>H S</Avatar.FallbackText>
               <Avatar.Image
-                source={{
-                  uri: "https://images.unsplash.com/photo-1494790108377-be9c29b2933",
-                }}
+                source={
+                  {
+                    // uri: "https://images.unsplash.com/photo-1494790108377-be9c29b2933",
+                  }
+                }
               />
               <Avatar.Badge bg="$primary500" />
             </Avatar>

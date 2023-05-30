@@ -11,7 +11,11 @@ import SortBySection from "./SortBySection";
 
 const Sidebar = () => {
   return (
-    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }}>
+    <ScrollView
+      style={{ flex: 1 }}
+      contentContainerStyle={{ flex: 1 }}
+      // indicatorStyle="yellow"
+    >
       <VStack space="xl" py="$6" px="$4">
         <FiltersAppliedSection />
         <VStack space="xl" px="$2">

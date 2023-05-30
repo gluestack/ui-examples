@@ -6,11 +6,10 @@ import {
   Image,
   Center,
   Icon,
-  Text,
 } from "../gluestack-ui-components";
 import { ScrollView } from "react-native";
 import { ChevronLeft, ChevronRight, Scroll } from "lucide-react-native";
-import { LinearGradient } from "expo-linear-gradient";
+// import { LinearGradient } from "expo-linear-gradient";
 
 const data = [
   {
@@ -53,6 +52,7 @@ const NewThisWeekFold = () => {
   const handleScrollLeft = () => {
     const newScrollPosition = scrollPosition - scrollAmount;
     if (scrollViewRef.current) {
+      // @ts-ignore
       scrollViewRef?.current?.scrollTo({
         x: newScrollPosition,
         animated: true,
@@ -64,6 +64,7 @@ const NewThisWeekFold = () => {
   const handleScrollRight = () => {
     const newScrollPosition = scrollPosition + scrollAmount;
     if (scrollViewRef.current)
+      // @ts-ignore
       scrollViewRef?.current?.scrollTo({
         x: newScrollPosition,
         animated: true,
@@ -80,11 +81,12 @@ const NewThisWeekFold = () => {
         ref={scrollViewRef}
       >
         <HStack space="md" width="100%">
-          {data.map((image) => {
+          {data.map((image, index) => {
             return (
-              <Box key={image.src} flex={1}>
+              <Box key={index} flex={1}>
                 <Image
                   source={image.src}
+                  alt={"place" + index}
                   h="$64"
                   w="$64"
                   // @ts-ignore

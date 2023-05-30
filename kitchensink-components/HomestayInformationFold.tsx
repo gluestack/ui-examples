@@ -97,6 +97,7 @@ const HomestayInfoTabs = ({ tabsData }: any) => {
             {tabsData.map((tab: any) => {
               return (
                 <Pressable
+                  key={tab.title}
                   pb="$2"
                   borderBottomWidth={activeTab === tab ? 3 : 0}
                   borderColor="$borderLight900"

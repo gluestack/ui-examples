@@ -1,5 +1,5 @@
-import { styled } from '../../styled';
-import { AsForwarder } from '@dank-style/react';
+import { styled } from "../../styled";
+import { AsForwarder } from "@gluestack-style/react";
 
 export default styled(
   AsForwarder,
@@ -32,15 +32,15 @@ export default styled(
       },
     },
     defaultProps: {
-      size: 'md',
+      size: "md",
     },
   },
   {
-    ancestorStyle: ['_icon'],
+    ancestorStyle: ["_icon"],
   },
   {
     propertyTokenMap: {
-      stroke: 'colors',
+      stroke: "colors",
     },
   }
 );

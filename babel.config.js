@@ -1,4 +1,4 @@
-const myBabel = require('@dank-style/babel-plugin-styled-resolver');
+const myBabel = require('@gluestack-style/babel-plugin-styled-resolver');
 const path = require('path');
 
 module.exports = function (api) {

@@ -5,8 +5,6 @@ import Sidebar from "./Sidebar";
 const WebSidebar = () => {
   return (
     <Box
-      maxWidth="$72"
-      w="100%"
       flex={1}
       display="none"
       sx={{
@@ -17,6 +15,9 @@ const WebSidebar = () => {
           },
         },
       }}
+      maxWidth={340}
+      w="100%"
+      pl="$12"
     >
       {/* common sidebar contents for web and mobile */}
       <Sidebar />

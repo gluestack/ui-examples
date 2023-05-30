@@ -1,13 +1,6 @@
-import React, { useCallback } from "react";
-import { StatusBar } from "expo-status-bar";
+import React from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import {
-  Box,
-  Button,
-  GluestackUIProvider,
-  Icon,
-  Pressable,
-} from "./gluestack-ui-components";
+import { GluestackUIProvider } from "./gluestack-ui-components";
 import { config } from "./gluestack-ui.config";
 import HomestayPage from "./kitchensink-components/HomestayPage";
 import { useFonts } from "expo-font";
@@ -18,8 +11,7 @@ import {
   Inter_700Bold,
   Inter_900Black,
 } from "@expo-google-fonts/inter";
-import { Motion } from "@legendapp/motion";
-import { Heart } from "lucide-react-native";
+import "./styles.css";
 
 export default function App() {
   const [colorMode, setColorMode]: any = React.useState("light");

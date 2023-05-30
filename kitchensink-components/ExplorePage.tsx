@@ -2,9 +2,9 @@ import React from "react";
 import { Box, HStack } from "../gluestack-ui-components";
 import Banner from "./Banner";
 import Header from "./Header";
-import { ScrollView } from "react-native";
 import WebSidebar from "./WebSidebar";
 import MainContent from "./MainContent";
+import { ScrollView } from "react-native";
 
 const Explorepage = ({
   colorMode,
@@ -23,26 +23,22 @@ const Explorepage = ({
           setSidebarDrawerOpen={setSidebarDrawerOpen}
         />
       </Box>
-      {/* explore page content */}
-      <ScrollView style={{ width: "100%" }}>
-        <Box w="100%">
-          <Box w="100%">
-            <HStack
-              w="100%"
-              sx={{
-                "@md": {
-                  px: "$12",
-                },
-              }}
-            >
-              {/* sidebar for web */}
-              <WebSidebar />
-              {/* main content for explore page */}
-              <MainContent />
-            </HStack>
-          </Box>
+      {/* explore page content for small screen */}
+      <ScrollView style={{ flex: 1 }}>
+        <Box sx={{ "@md": { display: "none" } }}>
+          <MainContent />
         </Box>
       </ScrollView>
+
+      {/* explore page content for large screen */}
+      <HStack w="100%" display="none" sx={{ "@md": { display: "flex" } }}>
+        {/* sidebar for web */}
+        <WebSidebar />
+        <ScrollView style={{ flex: 1 }}>
+          {/* main content for explore page */}
+          <MainContent />
+        </ScrollView>
+      </HStack>
     </>
   );
 };

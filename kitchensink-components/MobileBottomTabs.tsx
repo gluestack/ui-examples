@@ -5,8 +5,6 @@ import {
   Pressable,
   Text,
   VStack,
-  Box,
-  Button,
 } from "../gluestack-ui-components";
 
 const MobileBottomTabs = ({ bottomTabs, setActiveTab, activeTab }: any) => {
@@ -33,27 +31,22 @@ const MobileBottomTabs = ({ bottomTabs, setActiveTab, activeTab }: any) => {
             <VStack alignItems="center">
               <Icon
                 as={tab.icon}
-                states={{ active: activeTab === tab.label }}
-                color="$textLight400"
-                sx={{
-                  ":active": {
-                    color: "$primary500",
-                  },
-                }}
+                color={
+                  activeTab === tab.label ? "$primary500" : "$textLight400"
+                }
                 size={20}
               />
               <Text
-                color="$textLight400"
                 size="xs"
-                states={{ active: activeTab === tab.label }}
+                color={
+                  activeTab === tab.label ? "$textLight900" : "$textLight400"
+                }
                 sx={{
-                  ":active": {
-                    color: "$textLight900",
-                  },
                   _dark: {
-                    ":active": {
-                      color: "$textDark100",
-                    },
+                    color:
+                      activeTab === tab.label
+                        ? "$textDark100"
+                        : "$textLight400",
                   },
                 }}
               >
