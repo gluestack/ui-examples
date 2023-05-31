@@ -1,5 +1,10 @@
 /* styles.css */
 
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 8px;

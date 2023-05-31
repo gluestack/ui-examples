@@ -35,12 +35,12 @@ const bottomTabs = [
 ];
 
 const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
-  useEffect(() => {
-    if (Platform.OS === "web") {
-      document.body.style.overflow = "hidden";
-      document.body.style.height = "100%";
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (Platform.OS === "web") {
+  //     document.body.style.overflow = "hidden";
+  //     document.body.style.height = "100%";
+  //   }
+  // }, []);
 
   const [activeTab, setActiveTab] = React.useState("Explore");
   const [sidebarDrawerOpen, setSidebarDrawerOpen] = React.useState(false);

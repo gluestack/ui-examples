@@ -1,5 +1,4 @@
 import React from "react";
-import { ScrollView } from "react-native";
 import { Box } from "../gluestack-ui-components";
 import HomestayInformationFold from "./HomestayInformationFold";
 import MainContentHeader from "./MainContentHeader";

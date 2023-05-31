@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  ActivityIndicator,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import { GluestackUIProvider, Spinner } from "./gluestack-ui-components";
 import { config } from "./gluestack-ui.config";
 import HomestayPage from "./kitchensink-components/HomestayPage";
@@ -17,7 +11,8 @@ import {
   Inter_700Bold,
   Inter_900Black,
 } from "@expo-google-fonts/inter";
-import "./styles.css";
+
+import "./styles";
 
 export default function App() {
   const [colorMode, setColorMode]: any = React.useState("light");

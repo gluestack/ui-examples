@@ -23,19 +23,15 @@ const Explorepage = ({
           setSidebarDrawerOpen={setSidebarDrawerOpen}
         />
       </Box>
-      {/* explore page content for small screen */}
       <ScrollView style={{ flex: 1 }}>
         <Box sx={{ "@md": { display: "none" } }}>
           <MainContent />
         </Box>
       </ScrollView>
 
-      {/* explore page content for large screen */}
       <HStack w="100%" display="none" sx={{ "@md": { display: "flex" } }}>
-        {/* sidebar for web */}
         <WebSidebar />
         <ScrollView style={{ flex: 1 }}>
-          {/* main content for explore page */}
           <MainContent />
         </ScrollView>
       </HStack>

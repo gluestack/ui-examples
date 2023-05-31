@@ -1,19 +1,17 @@
 import React from "react";
 import { Fab, Icon } from "../gluestack-ui-components";
-import { Box } from "../gluestack-ui-components";
 import { Moon, Sun } from "lucide-react-native";
-import Root from "../gluestack-ui-components/core/Fab/styled-components/Root";
 
 const MobileModeChangeButton = ({ colorMode, toggleColorMode }: any) => {
   return (
     <>
       <Fab
         sx={{
-          "@lg": {
+          "@md": {
             display: "none",
           },
           "@base": {
-            bottom: "$20",
+            bottom: "$4",
             right: "$4",
           },
         }}
