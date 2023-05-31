@@ -9,7 +9,12 @@ import { ScrollView } from "react-native";
 const Explorepage = ({
   colorMode,
   toggleColorMode,
-  setSidebarDrawerOpen,
+  modalVisible,
+  setModalVisible,
+  modalFormStep,
+  setModalFormStep,
+  activeTab,
+  setActiveTab,
 }: any) => {
   return (
     <>
@@ -17,22 +22,32 @@ const Explorepage = ({
         {/* top banner */}
         <Banner />
         {/* header */}
-        <Header
-          colorMode={colorMode}
-          toggleColorMode={toggleColorMode}
-          setSidebarDrawerOpen={setSidebarDrawerOpen}
-        />
+        <Header colorMode={colorMode} toggleColorMode={toggleColorMode} />
       </Box>
       <ScrollView style={{ flex: 1 }}>
         <Box sx={{ "@md": { display: "none" } }}>
-          <MainContent />
+          <MainContent
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+            modalFormStep={modalFormStep}
+            setModalFormStep={setModalFormStep}
+            setActiveTab={setActiveTab}
+            activeTab={activeTab}
+          />
         </Box>
       </ScrollView>
 
       <HStack w="100%" display="none" sx={{ "@md": { display: "flex" } }}>
         <WebSidebar />
         <ScrollView style={{ flex: 1 }}>
-          <MainContent />
+          <MainContent
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+            modalFormStep={modalFormStep}
+            setModalFormStep={setModalFormStep}
+            setActiveTab={setActiveTab}
+            activeTab={activeTab}
+          />
         </ScrollView>
       </HStack>
     </>

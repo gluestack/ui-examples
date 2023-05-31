@@ -12,14 +12,14 @@ import {
 import Sidebar from "./Sidebar";
 import { ScrollView, View } from "react-native";
 
-const MobileSidebar = ({ sidebarDrawerOpen, setSidebarDrawerOpen }: any) => {
+const MobileSidebar = ({ activeTab, setActiveTab }: any) => {
   const handleClose = () => {
-    setSidebarDrawerOpen(false);
+    setActiveTab("Home");
   };
   const [fullPageActionsheet, setFullPageActionsheet] = React.useState(false);
   return (
     <Box w="100%" flex={1}>
-      <Actionsheet isOpen={sidebarDrawerOpen} onClose={handleClose}>
+      <Actionsheet isOpen={activeTab === "Filter"} onClose={handleClose}>
         <Actionsheet.Backdrop />
         <Actionsheet.Content maxHeight={fullPageActionsheet ? "100%" : "80%"}>
           <Box h="100%" w="100%">
@@ -42,11 +42,7 @@ const MobileSidebar = ({ sidebarDrawerOpen, setSidebarDrawerOpen }: any) => {
 
             <HStack justifyContent="space-between" py="$3" px="$4" w="100%">
               <Text>Filters</Text>
-              <Pressable
-                onPress={() => {
-                  setSidebarDrawerOpen(false);
-                }}
-              >
+              <Pressable onPress={handleClose}>
                 <Icon as={CloseIcon} />
               </Pressable>
             </HStack>

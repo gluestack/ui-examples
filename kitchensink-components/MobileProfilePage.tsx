@@ -22,8 +22,11 @@ import {
   User,
 } from "lucide-react-native";
 import { ScrollView } from "react-native";
+import LogoutAlertDialog from "./LogoutAlertDialog";
 
 const MobileProfilePage = () => {
+  const [openLogoutAlertDialog, setOpenLogoutAlertDialog] =
+    React.useState(false);
   return (
     <ScrollView>
       <VStack px="$5" py="$4" space="lg" flex={1}>
@@ -36,8 +39,12 @@ const MobileProfilePage = () => {
         <Divider />
         <SupportSection />
         <Divider />
-        <LogoutButton />
+        <LogoutButton
+          openLogoutAlertDialog={openLogoutAlertDialog}
+          setOpenLogoutAlertDialog={setOpenLogoutAlertDialog}
+        />
       </VStack>
+      <LogoutAlertDialog setOpenLogoutAlertDialog={setOpenLogoutAlertDialog} />
     </ScrollView>
   );
 };
@@ -149,9 +156,15 @@ const SupportSection = () => {
   );
 };
 
-const LogoutButton = () => {
+const LogoutButton = ({ setOpenLogoutAlertDialog }: any) => {
   return (
-    <Button action="secondary" variant="outline">
+    <Button
+      action="secondary"
+      variant="outline"
+      onPress={() => {
+        setOpenLogoutAlertDialog(true);
+      }}
+    >
       <Button.Text>Logout</Button.Text>
     </Button>
   );

@@ -4,7 +4,14 @@ import HomestayInformationFold from "./HomestayInformationFold";
 import MainContentHeader from "./MainContentHeader";
 import NewThisWeekFold from "./NewThisWeekFold";
 
-const MainContent = () => {
+const MainContent = ({
+  modalVisible,
+  setModalVisible,
+  modalFormStep,
+  setModalFormStep,
+  setActiveTab,
+  activeTab,
+}: any) => {
   return (
     <Box
       sx={{ "@md": { maxHeight: "calc(100vh - 144px)", pr: "$16", pl: "$8" } }}
@@ -12,7 +19,14 @@ const MainContent = () => {
     >
       <Box>
         {/* explore page main content header */}
-        <MainContentHeader />
+        <MainContentHeader
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+          modalFormStep={modalFormStep}
+          setModalFormStep={setModalFormStep}
+          setActiveTab={setActiveTab}
+          activeTab={activeTab}
+        />
         {/* explore page new this week fold 1 */}
         <NewThisWeekFold />
         {/* explore page homestay info fold 2 */}
