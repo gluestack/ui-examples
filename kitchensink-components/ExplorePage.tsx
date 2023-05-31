@@ -24,7 +24,7 @@ const Explorepage = ({
         {/* header */}
         <Header colorMode={colorMode} toggleColorMode={toggleColorMode} />
       </Box>
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView>
         <Box sx={{ "@md": { display: "none" } }}>
           <MainContent
             modalVisible={modalVisible}

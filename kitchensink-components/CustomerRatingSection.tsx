@@ -46,7 +46,7 @@ const CustomerRatingSection = () => {
               <Checkbox.Label>
                 <Icon
                   as={Star}
-                  size="sm"
+                  size={12}
                   color="$black"
                   sx={{ _dark: { color: "$white" } }}
                   fill="currentColor"

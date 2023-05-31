@@ -20,7 +20,7 @@ const FiltersAppliedSection = () => {
       p="$4"
       borderColor="$borderLight100"
       sx={{
-        _dark: { borderColor: "$borderDark900" },
+        _dark: { borderColor: "$borderDark800" },
       }}
     >
       <HStack justifyContent="space-between">

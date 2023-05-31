@@ -50,55 +50,6 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
   const [modalVisible, setModalVisible] = React.useState(false);
   const [modalFormStep, setModalFormStep] = React.useState(0);
 
-  function TabContent(activeTab: string) {
-    switch (activeTab) {
-      case "Home":
-        return (
-          <Explorepage
-            colorMode={colorMode}
-            toggleColorMode={toggleColorMode}
-            modalVisible={modalVisible}
-            setModalVisible={setModalVisible}
-            modalFormStep={modalFormStep}
-            setModalFormStep={setModalFormStep}
-            setActiveTab={setActiveTab}
-            activeTab={activeTab}
-          />
-        );
-      case "Profile":
-        return <MobileProfilePage />;
-      case "Filter":
-        return (
-          <MobileSidebar setActiveTab={setActiveTab} activeTab={activeTab} />
-        );
-      case "Listing":
-        return (
-          <Explorepage
-            colorMode={colorMode}
-            toggleColorMode={toggleColorMode}
-            modalVisible={modalVisible || activeTab === "Listing"}
-            setModalVisible={setModalVisible}
-            modalFormStep={modalFormStep}
-            setModalFormStep={setModalFormStep}
-            setActiveTab={setActiveTab}
-            activeTab={activeTab}
-          />
-        );
-      default:
-        return (
-          <Explorepage
-            colorMode={colorMode}
-            toggleColorMode={toggleColorMode}
-            modalVisible={modalVisible}
-            setModalVisible={setModalVisible}
-            modalFormStep={modalFormStep}
-            setModalFormStep={setModalFormStep}
-            setActiveTab={setActiveTab}
-            activeTab={activeTab}
-          />
-        );
-    }
-  }
   return (
     <Box
       flex={1}
@@ -118,7 +69,23 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
 
       <Box flex={1}>
         {/* profile page for mobile */}
-        {TabContent(activeTab)}
+        {activeTab === "Profile" ? (
+          <MobileProfilePage />
+        ) : (
+          <>
+            <Explorepage
+              colorMode={colorMode}
+              toggleColorMode={toggleColorMode}
+              modalVisible={modalVisible || activeTab === "Listing"}
+              setModalVisible={setModalVisible}
+              modalFormStep={modalFormStep}
+              setModalFormStep={setModalFormStep}
+              setActiveTab={setActiveTab}
+              activeTab={activeTab}
+            />
+            <MobileSidebar setActiveTab={setActiveTab} activeTab={activeTab} />
+          </>
+        )}
         <MobileModeChangeButton
           colorMode={colorMode}
           toggleColorMode={toggleColorMode}
