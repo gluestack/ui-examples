@@ -115,10 +115,6 @@ const ListYourPlaceModal = ({
         <Modal.Content>
           <Modal.Header>
             <HStack alignItems="center">
-              <ModalBackButton
-                modalFormStep={modalFormStep}
-                setModalFormStep={setModalFormStep}
-              />
               <Heading size="sm" fontWeight="$semibold">
                 List your place
               </Heading>
@@ -138,20 +134,6 @@ const ListYourPlaceModal = ({
         </Modal.Content>
       </Modal>
     </Box>
-  );
-};
-
-const ModalBackButton = ({ modalFormStep, setModalFormStep }: any) => {
-  return (
-    <Pressable
-      mr="$2"
-      disabled={modalFormStep === 0 ? true : false}
-      onPress={() => {
-        if (modalFormStep > 0) setModalFormStep(modalFormStep - 1);
-      }}
-    >
-      <Icon as={ArrowLeft} />
-    </Pressable>
   );
 };
 
@@ -338,24 +320,14 @@ const ModalContent1 = ({
   );
 };
 
-const ModalContent2 = ({
-  setModalVisible,
-  setModalFormStep,
-  toast,
-  activeTab,
-  setActiveTab,
-}: any) => {
+const ModalContent2 = ({ setModalFormStep }: any) => {
   return (
     <VStack space="md">
       <AmenitiesSection />
-      <HStack space="md" w="100%">
-        <Box flex={1}>
-          <PreviousStepperButton setModalFormStep={setModalFormStep} step={2} />
-        </Box>
-        <Box flex={1}>
-          <NextStepperButton setModalFormStep={setModalFormStep} step={2} />
-        </Box>
-      </HStack>
+      <VStack space="sm" w="100%">
+        <NextStepperButton setModalFormStep={setModalFormStep} step={2} />
+        <PreviousStepperButton setModalFormStep={setModalFormStep} step={2} />
+      </VStack>
     </VStack>
   );
 };
