@@ -12,6 +12,6 @@ module.exports = function (api) {
           configPath: path.join(__dirname, './gluestack-ui.config.ts'),
         },
       ],
-    ]
+    ],
   };
 };
