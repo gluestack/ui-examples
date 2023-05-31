@@ -43,7 +43,7 @@
     "@gluestack-ui/tooltip": "latest",
     "@gluestack-ui/vstack": "latest",
     "@gluestack/ui-next-adapter": "latest",
-    "@legendapp/motion": "^2.2.0",
+    "@legendapp/motion": "latest",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",

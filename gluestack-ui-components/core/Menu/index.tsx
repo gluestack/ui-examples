@@ -1,6 +1,6 @@
-import { createMenu } from "@gluestack-ui/menu";
-import { Root, Item, Label, Backdrop } from "./styled-components";
-import { styled } from "../styled";
+import { createMenu } from '@gluestack-ui/menu';
+import { Root, Item, Label, Backdrop } from './styled-components';
+import { styled } from '../styled';
 export const Menu = createMenu({
   Root,
   Item,

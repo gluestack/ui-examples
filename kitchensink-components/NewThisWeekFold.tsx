@@ -108,24 +108,25 @@ const NewThisWeekFold = () => {
           /> */}
         </HStack>
       </ScrollView>
-      <Box
-        display="none"
-        sx={{
-          "@md": {
-            display: "flex",
-          },
-        }}
-      >
-        <ScrollLeft handleScrollLeft={handleScrollLeft} />
-        <ScrollRight handleScrollRight={handleScrollRight} />
-      </Box>
+      <ScrollLeft handleScrollLeft={handleScrollLeft} />
+      <ScrollRight handleScrollRight={handleScrollRight} />
     </Box>
   );
 };
 
 const ScrollLeft = ({ handleScrollLeft }: any) => {
   return (
-    <Center position="absolute" left="$0" h="100%">
+    <Center
+      position="absolute"
+      left="$0"
+      h="100%"
+      display="none"
+      sx={{
+        "@md": {
+          display: "flex",
+        },
+      }}
+    >
       <Pressable
         p="$1"
         ml="$3"
@@ -167,7 +168,17 @@ const ScrollLeft = ({ handleScrollLeft }: any) => {
 
 const ScrollRight = ({ handleScrollRight }: any) => {
   return (
-    <Center position="absolute" right="$0" h="100%">
+    <Center
+      position="absolute"
+      right="$0"
+      h="100%"
+      display="none"
+      sx={{
+        "@md": {
+          display: "flex",
+        },
+      }}
+    >
       <Pressable
         p="$1"
         mr="$3"

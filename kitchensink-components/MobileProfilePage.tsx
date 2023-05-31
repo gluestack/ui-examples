@@ -44,7 +44,10 @@ const MobileProfilePage = () => {
           setOpenLogoutAlertDialog={setOpenLogoutAlertDialog}
         />
       </VStack>
-      <LogoutAlertDialog setOpenLogoutAlertDialog={setOpenLogoutAlertDialog} />
+      <LogoutAlertDialog
+        setOpenLogoutAlertDialog={setOpenLogoutAlertDialog}
+        openLogoutAlertDialog={openLogoutAlertDialog}
+      />
     </ScrollView>
   );
 };

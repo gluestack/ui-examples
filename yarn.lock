@@ -2622,7 +2622,7 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@legendapp/motion@^2.2.0":
+"@legendapp/motion@^2.2.0", "@legendapp/motion@latest":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@legendapp/motion/-/motion-2.2.0.tgz#276a9de237f586acab0a03429b8c3cf693926dad"
   integrity sha512-cmg1SsCzmaBV8FD0Xmh8q9gNgKrCRYVzSRtfuujNPuOw0Wz8aXdSUQO1viS3KYrafA5uX7IWhYsml9OoYRIpgA==

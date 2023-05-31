@@ -326,7 +326,7 @@ const ModalContent2 = ({ setModalFormStep }: any) => {
       <AmenitiesSection />
       <VStack space="sm" w="100%">
         <NextStepperButton setModalFormStep={setModalFormStep} step={2} />
-        <PreviousStepperButton setModalFormStep={setModalFormStep} step={2} />
+        <PreviousStepperButton setModalFormStep={setModalFormStep} step={0} />
       </VStack>
     </VStack>
   );
