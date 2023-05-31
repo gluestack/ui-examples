@@ -16,14 +16,17 @@ const bottomTabs = [
   {
     icon: Heart,
     label: "Wishlist",
+    disabled: true,
   },
   {
     icon: Globe,
     label: "Trips",
+    disabled: true,
   },
   {
     icon: MessageCircle,
     label: "Inbox",
+    disabled: true,
   },
   {
     icon: User,
@@ -65,23 +68,26 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
         />
       ) : (
         <>
-          {activeTab === "Explore" && (
-            // explore page
-            <Explorepage
+          <Box flex={1}>
+            {activeTab === "Explore" && (
+              // explore page
+              <Explorepage
+                colorMode={colorMode}
+                toggleColorMode={toggleColorMode}
+                setSidebarDrawerOpen={setSidebarDrawerOpen}
+              />
+            )}
+            {/* profile page for mobile */}
+            {activeTab === "Profile" && <MobileProfilePage />}
+            <MobileModeChangeButton
               colorMode={colorMode}
               toggleColorMode={toggleColorMode}
-              setSidebarDrawerOpen={setSidebarDrawerOpen}
             />
-          )}
-          {/* profile page for mobile */}
-          {activeTab === "Profile" && <MobileProfilePage />}
-          <MobileModeChangeButton
-            colorMode={colorMode}
-            toggleColorMode={toggleColorMode}
-          />
+          </Box>
           {/* mobile bottom tabs */}
           <Box
-            h={80}
+            h={72}
+            alignItems="center"
             w="100%"
             sx={{
               "@md": {

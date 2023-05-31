@@ -17,6 +17,7 @@ const userMenuItems = [
 const UserProfile = () => {
   return (
     <Menu
+      placement="bottom right"
       trigger={({ ...triggerProps }) => {
         return (
           <Pressable {...triggerProps}>

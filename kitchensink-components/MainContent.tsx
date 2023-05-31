@@ -8,7 +8,7 @@ import NewThisWeekFold from "./NewThisWeekFold";
 const MainContent = () => {
   return (
     <Box
-      sx={{ "@md": { maxHeight: "calc(100vh - 144px)", pr: "$8" } }}
+      sx={{ "@md": { maxHeight: "calc(100vh - 144px)", pr: "$16", pl: "$8" } }}
       flex={1}
     >
       <Box>

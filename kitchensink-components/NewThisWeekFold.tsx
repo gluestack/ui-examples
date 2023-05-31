@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import {
   Box,
-  Button,
   HStack,
   Image,
   Center,
   Icon,
+  Pressable,
 } from "../gluestack-ui-components";
 import { ScrollView } from "react-native";
 import { ChevronLeft, ChevronRight, Scroll } from "lucide-react-native";
@@ -73,7 +73,7 @@ const NewThisWeekFold = () => {
   };
 
   return (
-    <Box px="$5" w="100%">
+    <Box w="100%">
       <ScrollView
         horizontal
         style={{ width: "100%" }}
@@ -108,33 +108,93 @@ const NewThisWeekFold = () => {
           /> */}
         </HStack>
       </ScrollView>
-      <Center position="absolute" left="$0" h="100%">
-        <Button
-          action="secondary"
-          variant="outline"
-          px="$1"
-          py="$1"
-          ml={6}
-          borderRadius="$full"
-          onPress={handleScrollLeft}
-        >
-          <Icon as={ChevronLeft} size="lg" color="$secondary200" />
-        </Button>
-      </Center>
-      <Center position="absolute" right="$0" h="100%">
-        <Button
-          action="secondary"
-          variant="outline"
-          px="$1"
-          py="$1"
-          mr={6}
-          borderRadius="$full"
-          onPress={handleScrollRight}
-        >
-          <Icon as={ChevronRight} size="lg" color="$secondary200" />
-        </Button>
-      </Center>
+      <ScrollLeft handleScrollLeft={handleScrollLeft} />
+      <ScrollRight handleScrollRight={handleScrollRight} />
     </Box>
+  );
+};
+
+const ScrollLeft = ({ handleScrollLeft }: any) => {
+  return (
+    <Center position="absolute" left="$0" h="100%">
+      <Pressable
+        p="$1"
+        ml="$3"
+        borderRadius="$full"
+        borderColor="$borderLight300"
+        borderWidth="$1"
+        bg="$backgroundLight50"
+        sx={{
+          "@md": {
+            ml: -16,
+          },
+          ":hover": {
+            bg: "$backgroundLight100",
+          },
+          _dark: {
+            bg: "$backgroundDark900",
+            borderColor: "$borderDark600",
+            ":hover": {
+              bg: "$backgroundDark800",
+            },
+          },
+        }}
+        onPress={handleScrollLeft}
+      >
+        <Icon
+          as={ChevronLeft}
+          size="lg"
+          color="$backgroundLight700"
+          sx={{
+            _dark: {
+              color: "$backgroundDark300",
+            },
+          }}
+        />
+      </Pressable>
+    </Center>
+  );
+};
+
+const ScrollRight = ({ handleScrollRight }: any) => {
+  return (
+    <Center position="absolute" right="$0" h="100%">
+      <Pressable
+        p="$1"
+        mr="$3"
+        borderRadius="$full"
+        borderColor="$borderLight300"
+        borderWidth="$1"
+        bg="$backgroundLight50"
+        sx={{
+          "@md": {
+            mr: -16,
+          },
+          ":hover": {
+            bg: "$backgroundLight100",
+          },
+          _dark: {
+            bg: "$backgroundDark900",
+            borderColor: "$borderDark600",
+            ":hover": {
+              bg: "$backgroundDark800",
+            },
+          },
+        }}
+        onPress={handleScrollRight}
+      >
+        <Icon
+          as={ChevronRight}
+          size="lg"
+          color="$backgroundLight700"
+          sx={{
+            _dark: {
+              color: "$backgroundDark300",
+            },
+          }}
+        />
+      </Pressable>
+    </Center>
   );
 };
 

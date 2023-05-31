@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Badge,
   Box,
@@ -18,8 +18,8 @@ const FiltersAppliedSection = () => {
       borderWidth="$1"
       borderRadius="$md"
       p="$4"
+      borderColor="$borderLight100"
       sx={{
-        _light: { borderColor: "$borderLight100" },
         _dark: { borderColor: "$borderDark900" },
       }}
     >

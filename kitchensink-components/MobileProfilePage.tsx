@@ -1,9 +1,7 @@
 import React from "react";
 
 import {
-  Box,
   HStack,
-  Switch,
   Text,
   Heading,
   Avatar,
@@ -23,21 +21,24 @@ import {
   Tablets,
   User,
 } from "lucide-react-native";
+import { ScrollView } from "react-native";
 
 const MobileProfilePage = () => {
   return (
-    <VStack px="$5" py="$4" space="lg" flex={1}>
-      <Heading>Profile</Heading>
-      <ProfileCard />
-      <Divider />
-      <PersonalInfoSection />
-      <Divider />
-      <HostingSection />
-      <Divider />
-      <SupportSection />
-      <Divider />
-      <LogoutButton />
-    </VStack>
+    <ScrollView>
+      <VStack px="$5" py="$4" space="lg" flex={1}>
+        <Heading>Profile</Heading>
+        <ProfileCard />
+        <Divider />
+        <PersonalInfoSection />
+        <Divider />
+        <HostingSection />
+        <Divider />
+        <SupportSection />
+        <Divider />
+        <LogoutButton />
+      </VStack>
+    </ScrollView>
   );
 };
 

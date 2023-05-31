@@ -73,7 +73,7 @@ const tabsData = [
 
 const HomestayInformationFold = () => {
   return (
-    <Box pb="$8">
+    <Box pb="$8" px="$4" sx={{ "@md": { px: 0 } }}>
       <HomestayInfoTabs tabsData={tabsData} />
       <TabPanelData />
     </Box>
@@ -91,7 +91,7 @@ const HomestayInfoTabs = ({ tabsData }: any) => {
         _dark: { borderColor: "$borderDark900" },
       }}
     >
-      <Box py="$5" px="$5">
+      <Box py="$5">
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <HStack space="lg">
             {tabsData.map((tab: any) => {
@@ -156,7 +156,6 @@ const TabPanelData = () => {
           flexDirection: "row",
         },
       }}
-      px="$5"
     >
       {homestayInfoData.map((image: any, index: any) => {
         return (
@@ -166,7 +165,8 @@ const TabPanelData = () => {
             my="$2"
             sx={{
               "@lg": {
-                mx: "$2",
+                ml: index === 0 ? "$0" : "$2",
+                mr: index === homestayInfoData.length - 1 ? "$0" : "$2",
                 my: "$0",
               },
             }}
@@ -227,7 +227,7 @@ const TabPanelData = () => {
                 </Motion.View>
               </AnimatePresence>
             </Pressable>
-            <HStack justifyContent="space-between" py="$2" px="$1">
+            <HStack justifyContent="space-between" py="$2">
               <VStack space="$sm" flex={1}>
                 <Text
                   fontWeight="$semibold"

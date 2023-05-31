@@ -10,12 +10,13 @@ import {
 const MobileBottomTabs = ({ bottomTabs, setActiveTab, activeTab }: any) => {
   return (
     <HStack
+      alignContent="center"
       position="absolute"
       bottom={0}
       justifyContent="space-between"
       w="100%"
       py="$3"
-      px="$4"
+      px="$6"
       sx={{
         "@md": { display: "none" },
       }}
@@ -27,6 +28,7 @@ const MobileBottomTabs = ({ bottomTabs, setActiveTab, activeTab }: any) => {
             onPress={() => {
               setActiveTab(tab.label);
             }}
+            disabled={activeTab === tab.label || tab.disabled}
           >
             <VStack alignItems="center">
               <Icon

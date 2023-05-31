@@ -12,7 +12,7 @@ import {
   Input,
   Toast,
   useToast,
-  Progress,
+  // Progress,
   FormControl,
   Select,
   TextArea,
@@ -51,7 +51,7 @@ const MainContentHeader = () => {
   const [modalFormStep, setModalFormStep] = React.useState(0);
 
   return (
-    <Box pt="$6" pb="$2.5" px="$5">
+    <Box pt="$6" pb="$2.5" px="$4" sx={{ "@md": { px: 0 } }}>
       <HStack w="100%" alignItems="center" justifyContent="space-between">
         {/* Hidden for mobile screens */}
         <Heading
@@ -167,11 +167,11 @@ const ListYourPlaceModal = ({
               <Icon as={CloseIcon} sx={{ w: 16, h: 16 }} />
             </Modal.CloseButton>
           </Modal.Header>
-          <Modal.Body pt="$0">
+          <Modal.Body>
             <VStack space="md">
-              <Progress value={(modalFormStep / 3) * 100} size="sm">
+              {/* <Progress value={(modalFormStep / 3) * 100} size="sm">
                 <Progress.FilledTrack />
-              </Progress>
+              </Progress> */}
               {getModalStepContent(modalFormStep)}
             </VStack>
           </Modal.Body>
@@ -238,6 +238,20 @@ const SaveForLaterButton = ({ setModalVisible, toast }: any) => {
   );
 };
 
+const PreviousStepperButton = ({ setModalFormStep, step }: any) => {
+  return (
+    <Button
+      action="secondary"
+      variant="outline"
+      onPress={() => {
+        setModalFormStep(step);
+      }}
+    >
+      <Button.Text>Back</Button.Text>
+    </Button>
+  );
+};
+
 const RenderToast = ({ description, title, id }: any) => {
   return (
     <Toast action="success" id={id} top={150}>
@@ -293,40 +307,48 @@ const ModalContent1 = ({ setModalVisible, setModalFormStep, toast }: any) => {
   return (
     <VStack space="md">
       <VStack space="sm">
-        <Text>I want to ...</Text>
-        <HStack space="sm">
-          <Button variant="outline" rounded="$full" size="xs">
-            <Button.Text>Sell</Button.Text>
-          </Button>
-          <Button
-            variant="outline"
-            action="secondary"
-            rounded="$full"
-            size="xs"
-          >
-            <Button.Text>Rent/Lease</Button.Text>
-          </Button>
-        </HStack>
+        <FormControl>
+          <FormControl.Label>
+            <FormControl.Label.Text>I want to...</FormControl.Label.Text>
+          </FormControl.Label>
+          <HStack space="sm">
+            <Button variant="outline" rounded="$full" size="xs">
+              <Button.Text>Sell</Button.Text>
+            </Button>
+            <Button
+              variant="outline"
+              action="secondary"
+              rounded="$full"
+              size="xs"
+            >
+              <Button.Text>Rent/Lease</Button.Text>
+            </Button>
+          </HStack>
+        </FormControl>
       </VStack>
       <VStack space="md">
         <VStack space="sm">
-          <Text>Property is...</Text>
-          <Radio.Group value={values} onChange={setValues}>
-            <HStack space="md">
-              <Radio value="Residential" size="sm">
-                <Radio.Indicator>
-                  <Radio.Icon />
-                </Radio.Indicator>
-                <Radio.Label>Residential</Radio.Label>
-              </Radio>
-              <Radio value="Commercial" size="sm">
-                <Radio.Indicator>
-                  <Radio.Icon />
-                </Radio.Indicator>
-                <Radio.Label>Commercial</Radio.Label>
-              </Radio>
-            </HStack>
-          </Radio.Group>
+          <FormControl>
+            <FormControl.Label>
+              <FormControl.Label.Text>Property is...</FormControl.Label.Text>
+            </FormControl.Label>
+            <Radio.Group value={values} onChange={setValues}>
+              <HStack space="md">
+                <Radio value="Residential" size="sm">
+                  <Radio.Indicator>
+                    <Radio.Icon />
+                  </Radio.Indicator>
+                  <Radio.Label>Residential</Radio.Label>
+                </Radio>
+                <Radio value="Commercial" size="sm">
+                  <Radio.Indicator>
+                    <Radio.Icon />
+                  </Radio.Indicator>
+                  <Radio.Label>Commercial</Radio.Label>
+                </Radio>
+              </HStack>
+            </Radio.Group>
+          </FormControl>
         </VStack>
         <HStack flexWrap="wrap" space="sm">
           {propertyType.map((item, index) => (
@@ -342,10 +364,7 @@ const ModalContent1 = ({ setModalVisible, setModalFormStep, toast }: any) => {
           ))}
         </HStack>
       </VStack>
-      <VStack space="sm">
-        <NextStepperButton setModalFormStep={setModalFormStep} step={1} />
-        <SaveForLaterButton setModalVisible={setModalVisible} toast={toast} />
-      </VStack>
+      <NextStepperButton setModalFormStep={setModalFormStep} step={1} />
     </VStack>
   );
 };
@@ -354,8 +373,14 @@ const ModalContent2 = ({ setModalVisible, setModalFormStep, toast }: any) => {
   return (
     <VStack space="md">
       <AmenitiesSection />
-      <NextStepperButton setModalFormStep={setModalFormStep} step={2} />
-      <SaveForLaterButton setModalVisible={setModalVisible} toast={toast} />
+      <HStack space="md" w="100%">
+        <Box flex={1}>
+          <PreviousStepperButton setModalFormStep={setModalFormStep} step={2} />
+        </Box>
+        <Box flex={1}>
+          <NextStepperButton setModalFormStep={setModalFormStep} step={2} />
+        </Box>
+      </HStack>
     </VStack>
   );
 };
@@ -394,27 +419,29 @@ const AmenitiesSection = () => {
   ];
   return (
     <VStack space="sm">
-      <Text fontWeight="$semibold" size="md">
-        Ammenities
-      </Text>
-      <Checkbox.Group value={values} onChange={setValues}>
-        {sidebarFiltersAmmenities.map((ammenity: any, index: any) => {
-          return (
-            <Checkbox
-              value={ammenity.value}
-              justifyContent="flex-start"
-              size="sm"
-              my="$2"
-              key={ammenity.value}
-            >
-              <Checkbox.Indicator>
-                <Checkbox.Icon as={CheckIcon} />
-              </Checkbox.Indicator>
-              <Checkbox.Label>{ammenity.label}</Checkbox.Label>
-            </Checkbox>
-          );
-        })}
-      </Checkbox.Group>
+      <FormControl>
+        <FormControl.Label>
+          <FormControl.Label.Text>Ammenities</FormControl.Label.Text>
+        </FormControl.Label>
+        <Checkbox.Group value={values} onChange={setValues}>
+          {sidebarFiltersAmmenities.map((ammenity: any, index: any) => {
+            return (
+              <Checkbox
+                value={ammenity.value}
+                justifyContent="flex-start"
+                size="sm"
+                my="$2"
+                key={ammenity.value}
+              >
+                <Checkbox.Indicator>
+                  <Checkbox.Icon as={CheckIcon} />
+                </Checkbox.Indicator>
+                <Checkbox.Label>{ammenity.label}</Checkbox.Label>
+              </Checkbox>
+            );
+          })}
+        </Checkbox.Group>
+      </FormControl>
     </VStack>
   );
 };
@@ -426,7 +453,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
         <FormControl.Label>
           <FormControl.Label.Text>Title</FormControl.Label.Text>
         </FormControl.Label>
-        <Input>
+        <Input w="100%">
           <Input.Input placeholder="Enter property name" />
         </Input>
       </FormControl>
@@ -440,33 +467,41 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
         </TextArea>
       </FormControl>
       <VStack space="sm">
-        <Text>Contact me...</Text>
-        <HStack space="sm">
-          {/* select: example */}
-          <Select defaultValue="+91" width="$16">
-            <Select.Trigger>
-              <Select.Input />
-              <Select.Icon>
-                <Icon as={ChevronDown} />
-              </Select.Icon>
-            </Select.Trigger>
-            <Select.Portal>
-              <Select.Backdrop />
-              <Select.Content>
-                <Select.DragIndicatorWrapper>
-                  <Select.DragIndicator />
-                </Select.DragIndicatorWrapper>
-                {phoneNumberCodes.map((item, index) => (
-                  <Select.Item label={`${item.code}`} value={`${item.code}`} />
-                ))}
-              </Select.Content>
-            </Select.Portal>
-          </Select>
-          {/* input: example */}
-          <Input flex={1}>
-            <Input.Input placeholder="Phone number" />
-          </Input>
-        </HStack>
+        <FormControl>
+          <FormControl.Label>
+            <FormControl.Label.Text>Contact me...</FormControl.Label.Text>
+          </FormControl.Label>
+          <HStack space="sm">
+            {/* select: example */}
+
+            <Select defaultValue="+91" w="$20">
+              <Select.Trigger w="$20">
+                <Select.Input />
+                <Select.Icon>
+                  <Icon as={ChevronDown} />
+                </Select.Icon>
+              </Select.Trigger>
+              <Select.Portal>
+                <Select.Backdrop />
+                <Select.Content>
+                  <Select.DragIndicatorWrapper>
+                    <Select.DragIndicator />
+                  </Select.DragIndicatorWrapper>
+                  {phoneNumberCodes.map((item, index) => (
+                    <Select.Item
+                      label={`${item.code}`}
+                      value={`${item.code}`}
+                    />
+                  ))}
+                </Select.Content>
+              </Select.Portal>
+            </Select>
+            {/* input: example */}
+            <Input flex={1}>
+              <Input.Input placeholder="Phone number" />
+            </Input>
+          </HStack>
+        </FormControl>
         <VStack space="sm">
           <PostNowButton setModalVisible={setModalVisible} toast={toast} />
           <SaveForLaterButton setModalVisible={setModalVisible} toast={toast} />

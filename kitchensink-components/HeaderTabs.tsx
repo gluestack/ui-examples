@@ -28,8 +28,8 @@ const HeaderTabs = () => {
             },
           }}
           onPress={() => setSelectedTab("Anywhere")}
-          px="$2"
-          py="$1"
+          px="$3"
+          py="$1.5"
         >
           <Text size="sm" fontWeight="$medium">
             Anywhere
@@ -37,8 +37,8 @@ const HeaderTabs = () => {
         </Pressable>
         <Pressable
           rounded="$full"
-          px="$2"
-          py="$1"
+          px="$3"
+          py="$1.5"
           bg={selectedTab === "Anyweek" ? "$backgroundLight100" : "transparent"}
           sx={{
             _dark: {
@@ -56,8 +56,8 @@ const HeaderTabs = () => {
         </Pressable>
         <Pressable
           rounded="$full"
-          px="$2"
-          py="$1"
+          px="$3"
+          py="$1.5"
           bg={
             selectedTab === "Add guests" ? "$backgroundLight100" : "transparent"
           }
