@@ -11,7 +11,7 @@ import {
   Inter_700Bold,
   Inter_900Black,
 } from "@expo-google-fonts/inter";
-// import "./styles";
+import "./styles";
 
 export default function App() {
   const [colorMode, setColorMode] = React.useState("light");
