@@ -8,13 +8,11 @@ import {
   Home,
   MessageCircle,
   User,
-  Filter,
-  PlayCircle,
+  SlidersHorizontal,
 } from "lucide-react-native";
 import MobileProfilePage from "./MobileProfilePage";
 import Explorepage from "./ExplorePage";
 import MobileSidebar from "./MobileSidebar";
-import ListYourPlaceModal from "./ListYourPlaceModal";
 
 const bottomTabs = [
   {
@@ -22,7 +20,7 @@ const bottomTabs = [
     label: "Home",
   },
   {
-    icon: Filter,
+    icon: SlidersHorizontal,
     label: "Filter",
   },
   {

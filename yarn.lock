@@ -2063,10 +2063,10 @@
     "@babel/traverse" "^7.20.5"
     lodash.merge "^4.6.2"
 
-"@gluestack-style/react@latest":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@gluestack-style/react/-/react-0.1.4.tgz#d1f506a6bd8dff560a9642b30725246e68cc084a"
-  integrity sha512-pN3jddZs9ERwR4rlK4kR2dnxgRti8gEuzu6zJVNbci7nxaKNBLWQtUnC7IxCGeHqtmXzqjsCiuGWlXsNno+L0g==
+"@gluestack-style/react@0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@gluestack-style/react/-/react-0.1.8.tgz#1bafa7aa9bde6312734a8bc51062018802f4106e"
+  integrity sha512-uV9iPKglCYwwE7wiMoOWWzvoOvjuFnJBLdoazmHZSXIgx2vHPmTWYPdihtIel7Al0jF+7uNIkMUBQBlfX3HSRw==
   dependencies:
     inline-style-prefixer "^6.0.1"
     normalize-css-color "^1.0.2"
@@ -2223,7 +2223,7 @@
     "@react-native-aria/interactions" "^0.2.8"
     react-native-svg "13.4.0"
 
-"@gluestack-ui/menu@0.2.4":
+"@gluestack-ui/menu@latest":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@gluestack-ui/menu/-/menu-0.2.4.tgz#b535be6dbdbeb4668b38839c917dd3c628081b39"
   integrity sha512-27HsrH6XrhsnKLcCmSIxhPeoBEavmd7qe2brHkfTXnsNRtw363eSlvFDeFMvKus7umSAEM2+WnusedKOIAFZIQ==

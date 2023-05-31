@@ -58,7 +58,7 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
         borderColor="$borderLight100"
       >
         <Input variant="rounded" size="sm" w="100%">
-          <Input.Input placeholder="Anywhere • Any week • Add guests" px="$2" />
+          <Input.Input placeholder="Anywhere • Any week • Add guests" />
           <Input.Icon bg="$primary500" borderRadius="$full" p="$1.5" m="$1.5">
             <Icon as={SearchIcon} size="xs" color="$white" />
           </Input.Icon>

@@ -29,6 +29,7 @@ const MobileBottomTabs = ({ bottomTabs, setActiveTab, activeTab }: any) => {
               setActiveTab(tab.label);
             }}
             disabled={activeTab === tab.label || tab.disabled}
+            opacity={tab.disabled ? 0.5 : 1}
           >
             <VStack alignItems="center">
               <Icon

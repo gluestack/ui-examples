@@ -15,11 +15,7 @@ const LogoutAlertDialog = ({
   const handleClose = () => {
     setOpenLogoutAlertDialog(false);
   };
-  console.log(
-    "openLogoutAlertDialog",
-    openLogoutAlertDialog,
-    setOpenLogoutAlertDialog
-  );
+
   return (
     <AlertDialog isOpen={openLogoutAlertDialog} onClose={handleClose}>
       <AlertDialog.Backdrop />
