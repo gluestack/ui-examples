@@ -45,7 +45,7 @@ const UserProfile = () => {
           return (
             <Pressable {...triggerProps}>
               <Avatar size="sm" bg="$backgroundLight600">
-                <Avatar.FallbackText>H S</Avatar.FallbackText>
+                <Avatar.FallbackText>Henry Stan</Avatar.FallbackText>
                 <Avatar.Image
                   source={
                     {
@@ -53,7 +53,14 @@ const UserProfile = () => {
                     }
                   }
                 />
-                <Avatar.Badge bg="$primary500" />
+                <Avatar.Badge
+                  bg="$primary500"
+                  sx={{
+                    _dark: {
+                      borderColor: "$backgroundDark900",
+                    },
+                  }}
+                />
               </Avatar>
             </Pressable>
           );

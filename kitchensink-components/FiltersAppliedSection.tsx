@@ -20,7 +20,7 @@ const FiltersAppliedSection = () => {
       p="$4"
       borderColor="$borderLight100"
       sx={{
-        _dark: { borderColor: "$borderDark800" },
+        _dark: { borderColor: "$borderDark900" },
       }}
     >
       <HStack justifyContent="space-between">
@@ -28,6 +28,7 @@ const FiltersAppliedSection = () => {
           Filters applied
         </Text>
         <Button
+          display={appliedFilters.length === 0 ? "none" : "flex"}
           p={0}
           variant="link"
           size="xs"

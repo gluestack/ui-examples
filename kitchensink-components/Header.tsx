@@ -49,13 +49,8 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
           "@md": {
             display: "none",
           },
-          _dark: {
-            borderColor: "$borderDark900",
-          },
         }}
         w="100%"
-        borderBottomWidth={1}
-        borderColor="$borderLight100"
       >
         <Input variant="rounded" size="sm" w="100%">
           <Input.Input placeholder="Anywhere • Any week • Add guests" />

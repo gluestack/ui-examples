@@ -603,7 +603,7 @@ export const config = {
         primary100: "#FFE4E6",
         primary200: "#FECDD3",
         primary300: "#FDA4AF",
-        primary400: "#FB7185",
+        primary400: "#EE596F",
         primary500: "#F43F5E",
         primary600: "#E11d48",
         primary700: "#BE123C",

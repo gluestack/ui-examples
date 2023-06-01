@@ -1,11 +1,5 @@
-import React, { useEffect } from "react";
-import {
-  Box,
-  Text,
-  HStack,
-  Actionsheet,
-  Center,
-} from "../gluestack-ui-components";
+import React from "react";
+import { Box, Actionsheet, Heading } from "../gluestack-ui-components";
 import Sidebar from "./Sidebar";
 import { ScrollView, View } from "react-native";
 
@@ -17,14 +11,20 @@ const MobileSidebar = ({ activeTab, setActiveTab }: any) => {
     <Box w="100%" flex={1}>
       <Actionsheet isOpen={activeTab === "Filter"} onClose={handleClose}>
         <Actionsheet.Backdrop />
-        <Actionsheet.Content>
+        <Actionsheet.Content
+          sx={{
+            _dark: {
+              bg: "$backgroundDark950",
+            },
+          }}
+        >
           <Box h="100%" w="100%">
             <Actionsheet.DragIndicatorWrapper>
               <Actionsheet.DragIndicator />
             </Actionsheet.DragIndicatorWrapper>
-            <HStack justifyContent="space-between" py="$3" px="$4" w="100%">
-              <Text>Filters</Text>
-            </HStack>
+            {/* <Heading size="md" px="$4" py="$4">
+              Customize your search
+            </Heading> */}
             <Actionsheet.ScrollView>
               <Box w="100%">
                 <Sidebar />

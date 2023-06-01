@@ -109,6 +109,7 @@ const ListYourPlaceModal = ({
           setModalVisible(false);
           setActiveTab("Home");
         }}
+        avoidKeyboard
       >
         <Modal.Backdrop />
         <Modal.Content>

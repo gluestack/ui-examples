@@ -57,7 +57,7 @@ const ProfileCard = () => {
     <HStack justifyContent="space-between" alignItems="center">
       <HStack space="md">
         <Avatar bg="$blue600">
-          <Avatar.FallbackText>Amit Trivedi</Avatar.FallbackText>
+          <Avatar.FallbackText>Henry Stan</Avatar.FallbackText>
           <Avatar.Image
             source={
               {
@@ -67,7 +67,7 @@ const ProfileCard = () => {
           />
         </Avatar>
         <VStack>
-          <Text>Amit Trivedi</Text>
+          <Text>Henry Stan</Text>
           <Link>
             <Text color="$textLight500" size="sm">
               Show Profile

@@ -72,6 +72,13 @@ const NewThisWeekFold = () => {
     setScrollPosition(newScrollPosition);
   };
 
+  const checkContentAtLeft = () => {
+    if (scrollPosition > 0) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <Box w="100%">
       <ScrollView
@@ -79,8 +86,12 @@ const NewThisWeekFold = () => {
         style={{ width: "100%" }}
         showsHorizontalScrollIndicator={false}
         ref={scrollViewRef}
+        scrollEventThrottle={16}
+        onScroll={(event) => {
+          setScrollPosition(event.nativeEvent.contentOffset.x);
+        }}
       >
-        <HStack space="md" width="100%">
+        <HStack space="md" width="100%" px="$4" sx={{ "@md": { px: "$0" } }}>
           {data.map((image, index) => {
             return (
               <Box key={index} flex={1}>
@@ -108,13 +119,16 @@ const NewThisWeekFold = () => {
           /> */}
         </HStack>
       </ScrollView>
-      <ScrollLeft handleScrollLeft={handleScrollLeft} />
+      <ScrollLeft
+        handleScrollLeft={handleScrollLeft}
+        disabled={!checkContentAtLeft()}
+      />
       <ScrollRight handleScrollRight={handleScrollRight} />
     </Box>
   );
 };
 
-const ScrollLeft = ({ handleScrollLeft }: any) => {
+const ScrollLeft = ({ handleScrollLeft, disabled }: any) => {
   return (
     <Center
       position="absolute"
@@ -150,6 +164,7 @@ const ScrollLeft = ({ handleScrollLeft }: any) => {
           },
         }}
         onPress={handleScrollLeft}
+        disabled={disabled}
       >
         <Icon
           as={ChevronLeft}
