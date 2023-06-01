@@ -12,7 +12,7 @@ import {
 } from "lucide-react-native";
 import MobileProfilePage from "./MobileProfilePage";
 import Explorepage from "./ExplorePage";
-import MobileSidebar from "./MobileSidebar";
+import MobileSidebarActionsheet from "./MobileSidebarActionsheet";
 
 const bottomTabs = [
   {
@@ -48,6 +48,7 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
 
   const [activeTab, setActiveTab] = React.useState("Home");
   const [modalVisible, setModalVisible] = React.useState(false);
+  const [actionsheetVisible, setActionsheetVisible] = React.useState(false);
 
   return (
     <Box
@@ -80,7 +81,10 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
               setActiveTab={setActiveTab}
               activeTab={activeTab}
             />
-            <MobileSidebar setActiveTab={setActiveTab} activeTab={activeTab} />
+            <MobileSidebarActionsheet
+              actionsheetVisible={actionsheetVisible}
+              setActionsheetVisible={setActionsheetVisible}
+            />
           </>
         )}
         <MobileModeChangeButton
@@ -106,7 +110,10 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
           activeTab={activeTab}
           setActiveTab={setActiveTab}
           bottomTabs={bottomTabs}
+          modalVisible={modalVisible}
           setModalVisible={setModalVisible}
+          actionsheetVisible={actionsheetVisible}
+          setActionsheetVisible={setActionsheetVisible}
         />
       </Box>
     </Box>

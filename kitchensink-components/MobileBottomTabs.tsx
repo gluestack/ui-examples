@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   HStack,
   Icon,
@@ -9,10 +9,21 @@ import {
 
 const MobileBottomTabs = ({
   bottomTabs,
-  setActiveTab,
   activeTab,
+  setActiveTab,
+  modalVisible,
   setModalVisible,
+  actionsheetVisible,
+  setActionsheetVisible,
 }: any) => {
+  useEffect(() => {
+    if (modalVisible === false) {
+      setActiveTab("Home");
+    }
+    if (actionsheetVisible === false) {
+      setActiveTab("Home");
+    }
+  }, [modalVisible]);
   return (
     <HStack
       alignContent="center"
@@ -31,11 +42,12 @@ const MobileBottomTabs = ({
           <Pressable
             key={tab.label}
             onPress={() => {
-              console.log("hello1");
               setActiveTab(tab.label);
               if (tab.label === "Listing") {
-                console.log("hello2");
                 setModalVisible(true);
+              }
+              if (tab.label === "Filter") {
+                setActionsheetVisible(true);
               }
             }}
             disabled={tab.disabled}

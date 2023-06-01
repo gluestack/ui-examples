@@ -3,13 +3,16 @@ import { Box, Actionsheet, Heading } from "../gluestack-ui-components";
 import Sidebar from "./Sidebar";
 import { ScrollView, View } from "react-native";
 
-const MobileSidebar = ({ activeTab, setActiveTab }: any) => {
+const MobileSidebarActionsheet = ({
+  actionsheetVisible,
+  setActionsheetVisible,
+}: any) => {
   const handleClose = () => {
-    setActiveTab("Home");
+    setActionsheetVisible(false);
   };
   return (
     <Box w="100%" flex={1}>
-      <Actionsheet isOpen={activeTab === "Filter"} onClose={handleClose}>
+      <Actionsheet isOpen={actionsheetVisible} onClose={handleClose}>
         <Actionsheet.Backdrop />
         <Actionsheet.Content
           sx={{
@@ -22,9 +25,6 @@ const MobileSidebar = ({ activeTab, setActiveTab }: any) => {
             <Actionsheet.DragIndicatorWrapper>
               <Actionsheet.DragIndicator />
             </Actionsheet.DragIndicatorWrapper>
-            {/* <Heading size="md" px="$4" py="$4">
-              Customize your search
-            </Heading> */}
             <Actionsheet.ScrollView>
               <Box w="100%">
                 <Sidebar />
@@ -36,4 +36,4 @@ const MobileSidebar = ({ activeTab, setActiveTab }: any) => {
     </Box>
   );
 };
-export default MobileSidebar;
+export default MobileSidebarActionsheet;
