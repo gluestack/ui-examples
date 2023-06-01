@@ -43,6 +43,7 @@ const propertyType = [
   "Independent Floor/Builder Floor",
   "Plot / Land",
 ];
+const sellOrRentOptions = ["Sell", "Rent/Lease"];
 
 const handleClose = (setModalVisible: any, setActiveTab: any) => {
   setModalVisible(false);
@@ -254,6 +255,21 @@ const ModalContent1 = ({
   setActiveTab,
 }: any) => {
   const [values, setValues]: any = React.useState("Residential");
+  const [selectedSellOrRentOption, setSelectedSellOrRentOption] = useState(
+    sellOrRentOptions[0]
+  );
+  const [selectedPropertyTypeOptions, setSelectedPropertyTypeOptions]: any =
+    useState([]);
+
+  const handlePropertyTypeSelection = (item: any) => {
+    if (selectedPropertyTypeOptions.includes(item)) {
+      setSelectedPropertyTypeOptions(
+        selectedPropertyTypeOptions.filter((option: string) => option !== item)
+      );
+    } else {
+      setSelectedPropertyTypeOptions([...selectedPropertyTypeOptions, item]);
+    }
+  };
   return (
     <VStack space="md">
       <VStack space="sm">
@@ -262,17 +278,23 @@ const ModalContent1 = ({
             <FormControl.Label.Text>I want to...</FormControl.Label.Text>
           </FormControl.Label>
           <HStack space="sm">
-            <Button variant="outline" rounded="$full" size="xs">
-              <Button.Text>Sell</Button.Text>
-            </Button>
-            <Button
-              variant="outline"
-              action="secondary"
-              rounded="$full"
-              size="xs"
-            >
-              <Button.Text>Rent/Lease</Button.Text>
-            </Button>
+            {sellOrRentOptions.map((item, index) => (
+              <Button
+                key={index}
+                action={
+                  item === selectedSellOrRentOption ? "primary" : "secondary"
+                }
+                rounded="$full"
+                variant="outline"
+                size="xs"
+                mb="$2"
+                onPress={() => {
+                  setSelectedSellOrRentOption(item);
+                }}
+              >
+                <Button.Text>{item}</Button.Text>
+              </Button>
+            ))}
           </HStack>
         </FormControl>
       </VStack>
@@ -301,14 +323,21 @@ const ModalContent1 = ({
           </FormControl>
         </VStack>
         <HStack flexWrap="wrap" space="sm">
-          {propertyType.map((item, index) => (
+          {propertyType.map((item: string, index: any) => (
             <Button
               key={index}
-              action="secondary"
+              action={
+                selectedPropertyTypeOptions.includes(item)
+                  ? "primary"
+                  : "secondary"
+              }
               rounded="$full"
               variant="outline"
               size="xs"
               mb="$2"
+              onPress={() => {
+                handlePropertyTypeSelection(item);
+              }}
             >
               <Button.Text>{item}</Button.Text>
             </Button>
@@ -387,7 +416,10 @@ const ModalContent3 = ({
             </Select>
             {/* input: example */}
             <Input flex={1}>
-              <Input.Input placeholder="Phone number" />
+              <Input.Input
+                placeholder="Phone number"
+                keyboardType="number-pad"
+              />
             </Input>
           </HStack>
         </FormControl>
