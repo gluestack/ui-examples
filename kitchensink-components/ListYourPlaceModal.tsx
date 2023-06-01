@@ -4,7 +4,6 @@ import {
   Modal,
   useToast,
   VStack,
-  Pressable,
   Icon,
   Center,
   Spinner,
@@ -18,8 +17,8 @@ import {
   TextArea,
   Select,
   Toast,
+  ChevronDownIcon,
 } from "../gluestack-ui-components";
-import { ArrowLeft, ChevronDown } from "lucide-react-native";
 import {
   CheckCircleIcon,
   CloseIcon,
@@ -365,12 +364,10 @@ const ModalContent3 = ({
           <HStack space="sm">
             {/* select: example */}
 
-            <Select defaultValue="+91" w="$20">
-              <Select.Trigger w="$20">
+            <Select defaultValue="+91" w="$24">
+              <Select.Trigger>
                 <Select.Input />
-                <Select.Icon>
-                  <Icon as={ChevronDown} />
-                </Select.Icon>
+                <Select.Icon as={ChevronDownIcon} mr="$3" />
               </Select.Trigger>
               <Select.Portal>
                 <Select.Backdrop />

@@ -1,8 +1,9 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { GluestackUIProvider, Spinner } from "./gluestack-ui-components";
+import { GluestackUIProvider } from "./gluestack-ui-components";
 import { config } from "./gluestack-ui.config";
 import HomestayPage from "./kitchensink-components/HomestayPage";
+import { SSRProvider } from "@react-native-aria/utils";
 import { useFonts } from "expo-font";
 import {
   Inter_400Regular,
@@ -49,10 +50,12 @@ export default function App() {
         {/* gluestack-ui provider */}
         <GluestackUIProvider config={config.theme} colorMode={colorMode}>
           {/* main app page */}
-          <HomestayPage
-            colorMode={colorMode}
-            toggleColorMode={toggleColorMode}
-          />
+          <SSRProvider>
+            <HomestayPage
+              colorMode={colorMode}
+              toggleColorMode={toggleColorMode}
+            />
+          </SSRProvider>
         </GluestackUIProvider>
       </SafeAreaView>
     </>
