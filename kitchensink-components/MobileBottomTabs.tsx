@@ -7,7 +7,12 @@ import {
   VStack,
 } from "../gluestack-ui-components";
 
-const MobileBottomTabs = ({ bottomTabs, setActiveTab, activeTab }: any) => {
+const MobileBottomTabs = ({
+  bottomTabs,
+  setActiveTab,
+  activeTab,
+  setModalVisible,
+}: any) => {
   return (
     <HStack
       alignContent="center"
@@ -26,9 +31,14 @@ const MobileBottomTabs = ({ bottomTabs, setActiveTab, activeTab }: any) => {
           <Pressable
             key={tab.label}
             onPress={() => {
+              console.log("hello1");
               setActiveTab(tab.label);
+              if (tab.label === "Listing") {
+                console.log("hello2");
+                setModalVisible(true);
+              }
             }}
-            disabled={activeTab === tab.label || tab.disabled}
+            disabled={tab.disabled}
             opacity={tab.disabled ? 0.5 : 1}
           >
             <VStack alignItems="center">

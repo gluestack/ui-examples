@@ -25,6 +25,36 @@ import {
   CheckIcon,
 } from "../gluestack-ui-components/core/Icons/Icons";
 
+const sidebarFiltersAmmenities = [
+  {
+    label: "Wifi",
+    value: "wifi",
+  },
+  {
+    label: "Washing machine",
+    value: "washing-machine",
+  },
+  {
+    label: "Air conditioning",
+    value: "air-conditioning",
+  },
+  {
+    label: "Kitchen",
+    value: "kitchen",
+  },
+  {
+    label: "Dryer",
+    value: "dryer",
+  },
+  {
+    label: "Iron",
+    value: "iron",
+  },
+  {
+    label: "Hair Dryer",
+    value: "hair-dryer",
+  },
+];
 const phoneNumberCodes = [
   { code: "+1", country: "USA" },
   { code: "+44", country: "UK" },
@@ -45,22 +75,17 @@ const propertyType = [
 ];
 const sellOrRentOptions = ["Sell", "Rent/Lease"];
 
-const handleClose = (setModalVisible: any, setActiveTab: any) => {
+const handleClose = (setModalVisible: any) => {
   setModalVisible(false);
-  setActiveTab("Home");
 };
 
-const ListYourPlaceModal = ({
-  modalVisible,
-  setModalVisible,
-  modalFormStep,
-  setModalFormStep,
-  activeTab,
-  setActiveTab,
-}: any) => {
+const ListYourPlaceModal = ({ modalVisible, setModalVisible }: any) => {
+  const [modalFormStep, setModalFormStep] = React.useState(0);
+
   useEffect(() => {
     setModalFormStep(0);
   }, []);
+
   const toast = useToast();
   const getModalStepContent = (step: number) => {
     switch (step) {
@@ -71,8 +96,6 @@ const ListYourPlaceModal = ({
             setModalVisible={setModalVisible}
             setModalFormStep={setModalFormStep}
             toast={toast}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
           />
         );
       case 1:
@@ -82,8 +105,6 @@ const ListYourPlaceModal = ({
             setModalVisible={setModalVisible}
             setModalFormStep={setModalFormStep}
             toast={toast}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
           />
         );
       case 2:
@@ -93,8 +114,6 @@ const ListYourPlaceModal = ({
             setModalVisible={setModalVisible}
             setModalFormStep={setModalFormStep}
             toast={toast}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
           />
         );
     }
@@ -105,10 +124,9 @@ const ListYourPlaceModal = ({
       {/* Modal: example */}
       <Modal
         size="md"
-        isOpen={modalVisible || activeTab === "Listing"}
+        isOpen={modalVisible}
         onClose={() => {
           setModalVisible(false);
-          setActiveTab("Home");
         }}
         avoidKeyboard
       >
@@ -125,12 +143,7 @@ const ListYourPlaceModal = ({
             </Modal.CloseButton>
           </Modal.Header>
           <Modal.Body>
-            <VStack space="md">
-              {/* <Progress value={(modalFormStep / 3) * 100} size="sm">
-                <Progress.FilledTrack />
-              </Progress> */}
-              {getModalStepContent(modalFormStep)}
-            </VStack>
+            <VStack space="md">{getModalStepContent(modalFormStep)}</VStack>
           </Modal.Body>
         </Modal.Content>
       </Modal>
@@ -138,20 +151,19 @@ const ListYourPlaceModal = ({
   );
 };
 
-const SaveForLaterButton = ({ setModalVisible, toast, setActiveTab }: any) => {
+const SaveForLaterButton = ({ setModalVisible, toast }: any) => {
   const [showSpinner, setShowSpinner] = useState(false);
 
   const handleSaveForLater = () => {
-    handleClose(setModalVisible, setActiveTab);
+    handleClose(setModalVisible);
     // toast example
     toast.show({
       placement: "top",
       render: ({ id }: any) => {
         return (
           <RenderToast
-            description="Form has been successfully saved!"
-            title="Success!"
-            id={id}
+            description="Your property listing has been successfully saved."
+            nativeId={id}
           />
         );
       },
@@ -162,7 +174,7 @@ const SaveForLaterButton = ({ setModalVisible, toast, setActiveTab }: any) => {
     <Box h="$12" w="100%">
       {showSpinner ? (
         <Center>
-          <Spinner size="lg" />
+          <Spinner size="large" color="$primary500" />
         </Center>
       ) : (
         <Button
@@ -173,7 +185,7 @@ const SaveForLaterButton = ({ setModalVisible, toast, setActiveTab }: any) => {
             setTimeout(() => {
               handleSaveForLater();
               setShowSpinner(false);
-            }, 3000);
+            }, 2000);
           }}
         >
           <Button.Text>Save for Later</Button.Text>
@@ -221,22 +233,20 @@ const NextStepperButton = ({ setModalFormStep, step }: any) => {
   );
 };
 
-const PostNowButton = ({ setModalVisible, toast, setActiveTab }: any) => {
+const PostNowButton = ({ setModalVisible, toast }: any) => {
   return (
     <Button
       onPress={() => {
-        handleClose(setModalVisible, setActiveTab);
+        handleClose(setModalVisible);
         toast.show({
           placement: "top",
-          render: () => {
+          render: ({ id }: any) => {
             return (
-              <Toast action="success" top={150}>
-                <HStack alignItems="center" space="xs">
-                  <Icon as={CheckCircleIcon} />
-                  <Toast.Title>Boom!</Toast.Title>
-                  <Toast.Description>Your property listed.</Toast.Description>
-                </HStack>
-              </Toast>
+              <RenderToast
+                description="Your property has been listed."
+                title="Congratulations!"
+                nativeId={id}
+              />
             );
           },
         });
@@ -247,13 +257,7 @@ const PostNowButton = ({ setModalVisible, toast, setActiveTab }: any) => {
   );
 };
 
-const ModalContent1 = ({
-  setModalVisible,
-  setModalFormStep,
-  toast,
-  activeTab,
-  setActiveTab,
-}: any) => {
+const ModalContent1 = ({ setModalFormStep, toast }: any) => {
   const [values, setValues]: any = React.useState("Residential");
   const [selectedSellOrRentOption, setSelectedSellOrRentOption] = useState(
     sellOrRentOptions[0]
@@ -361,12 +365,7 @@ const ModalContent2 = ({ setModalFormStep }: any) => {
   );
 };
 
-const ModalContent3 = ({
-  setModalVisible,
-  toast,
-  setActiveTab,
-  activeTab,
-}: any) => {
+const ModalContent3 = ({ setModalVisible, toast }: any) => {
   return (
     <VStack space="md">
       <FormControl>
@@ -418,22 +417,14 @@ const ModalContent3 = ({
             <Input flex={1}>
               <Input.Input
                 placeholder="Phone number"
-                keyboardType="number-pad"
+                // keyboardType="number-pad"
               />
             </Input>
           </HStack>
         </FormControl>
         <VStack space="sm">
-          <PostNowButton
-            setModalVisible={setModalVisible}
-            toast={toast}
-            setActiveTab={setActiveTab}
-          />
-          <SaveForLaterButton
-            setModalVisible={setModalVisible}
-            toast={toast}
-            setActiveTab={setActiveTab}
-          />
+          <PostNowButton setModalVisible={setModalVisible} toast={toast} />
+          <SaveForLaterButton setModalVisible={setModalVisible} toast={toast} />
         </VStack>
       </VStack>
     </VStack>
@@ -442,36 +433,6 @@ const ModalContent3 = ({
 
 const AmenitiesSection = () => {
   const [values, setValues] = React.useState(["wifi", "air-conditioning"]);
-  const sidebarFiltersAmmenities = [
-    {
-      label: "Wifi",
-      value: "wifi",
-    },
-    {
-      label: "Washing machine",
-      value: "washing-machine",
-    },
-    {
-      label: "Air conditioning",
-      value: "air-conditioning",
-    },
-    {
-      label: "Kitchen",
-      value: "kitchen",
-    },
-    {
-      label: "Dryer",
-      value: "dryer",
-    },
-    {
-      label: "Iron",
-      value: "iron",
-    },
-    {
-      label: "Hair Dryer",
-      value: "hair-dryer",
-    },
-  ];
   return (
     <VStack space="sm">
       <FormControl>
@@ -479,7 +440,7 @@ const AmenitiesSection = () => {
           <FormControl.Label.Text>Ammenities</FormControl.Label.Text>
         </FormControl.Label>
         <Checkbox.Group value={values} onChange={setValues}>
-          {sidebarFiltersAmmenities.map((ammenity: any, index: any) => {
+          {sidebarFiltersAmmenities.map((ammenity: any) => {
             return (
               <Checkbox
                 value={ammenity.value}

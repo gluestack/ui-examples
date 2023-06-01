@@ -48,7 +48,6 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
 
   const [activeTab, setActiveTab] = React.useState("Home");
   const [modalVisible, setModalVisible] = React.useState(false);
-  const [modalFormStep, setModalFormStep] = React.useState(0);
 
   return (
     <Box
@@ -76,10 +75,8 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
             <Explorepage
               colorMode={colorMode}
               toggleColorMode={toggleColorMode}
-              modalVisible={modalVisible || activeTab === "Listing"}
+              modalVisible={modalVisible}
               setModalVisible={setModalVisible}
-              modalFormStep={modalFormStep}
-              setModalFormStep={setModalFormStep}
               setActiveTab={setActiveTab}
               activeTab={activeTab}
             />
@@ -109,6 +106,7 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
           activeTab={activeTab}
           setActiveTab={setActiveTab}
           bottomTabs={bottomTabs}
+          setModalVisible={setModalVisible}
         />
       </Box>
     </Box>

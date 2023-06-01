@@ -11,8 +11,6 @@ const Explorepage = ({
   toggleColorMode,
   modalVisible,
   setModalVisible,
-  modalFormStep,
-  setModalFormStep,
   activeTab,
   setActiveTab,
 }: any) => {
@@ -29,8 +27,6 @@ const Explorepage = ({
           <MainContent
             modalVisible={modalVisible}
             setModalVisible={setModalVisible}
-            modalFormStep={modalFormStep}
-            setModalFormStep={setModalFormStep}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
           />
@@ -43,8 +39,6 @@ const Explorepage = ({
           <MainContent
             modalVisible={modalVisible}
             setModalVisible={setModalVisible}
-            modalFormStep={modalFormStep}
-            setModalFormStep={setModalFormStep}
             setActiveTab={setActiveTab}
             activeTab={activeTab}
           />

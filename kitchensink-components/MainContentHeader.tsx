@@ -6,8 +6,6 @@ import ListYourPlaceModal from "./ListYourPlaceModal";
 const MainContentHeader = ({
   modalVisible,
   setModalVisible,
-  modalFormStep,
-  setModalFormStep,
   setActiveTab,
   activeTab,
 }: any) => {
@@ -51,8 +49,6 @@ const MainContentHeader = ({
         <ListYourPlaceModal
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
-          modalFormStep={modalFormStep}
-          setModalFormStep={setModalFormStep}
           setActiveTab={setActiveTab}
           activeTab={activeTab}
         />

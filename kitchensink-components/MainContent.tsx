@@ -7,8 +7,6 @@ import NewThisWeekFold from "./NewThisWeekFold";
 const MainContent = ({
   modalVisible,
   setModalVisible,
-  modalFormStep,
-  setModalFormStep,
   setActiveTab,
   activeTab,
 }: any) => {
@@ -22,8 +20,6 @@ const MainContent = ({
         <MainContentHeader
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
-          modalFormStep={modalFormStep}
-          setModalFormStep={setModalFormStep}
           setActiveTab={setActiveTab}
           activeTab={activeTab}
         />
