@@ -1,46 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Pressable } from "react-native";
 import { Avatar, Menu } from "../gluestack-ui-components";
 import LogoutAlertDialog from "./LogoutAlertDialog";
 
+const userMenuItems = [
+  {
+    title: "Messages",
+  },
+  {
+    title: "Notifications",
+  },
+  {
+    title: "Trips",
+  },
+  {
+    title: "Wishlists",
+  },
+  {
+    title: "Post your home",
+  },
+  {
+    title: "Host an experience",
+  },
+  {
+    title: "Accounts",
+  },
+  {
+    title: "Help",
+  },
+  {
+    title: "Log out",
+  },
+];
 const UserProfile = () => {
-  const [openLogoutAlertDialog, setOpenLogoutAlertDialog] =
-    React.useState(false);
-  const userMenuItems = [
-    {
-      title: "Messages",
-    },
-    {
-      title: "Notifications",
-    },
-    {
-      title: "Trips",
-    },
-    {
-      title: "Wishlists",
-    },
-    {
-      title: "Post your home",
-    },
-    {
-      title: "Host an experience",
-    },
-    {
-      title: "Accounts",
-    },
-    {
-      title: "Help",
-    },
-    {
-      title: "Log out",
-    },
-  ];
-
+  const [openLogoutAlertDialog, setOpenLogoutAlertDialog] = useState(false);
   return (
     <>
       <Menu
         offset={10}
         placement="bottom right"
+        selectionMode="single"
+        // @ts-ignore
+        onSelectionChange={(e: any) => {
+          if (e.currentKey === "Log out") {
+            setOpenLogoutAlertDialog(true);
+          }
+        }}
         trigger={({ ...triggerProps }) => {
           return (
             <Pressable {...triggerProps}>
