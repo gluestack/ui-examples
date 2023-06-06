@@ -55,7 +55,11 @@ const AmenitiesSection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Ammenities</Heading>
-      <Checkbox.Group value={values} onChange={setValues}>
+      <Checkbox.Group
+        value={values}
+        onChange={setValues}
+        accessibilityLabel="ammenities"
+      >
         {sidebarFiltersAmmenities.map((ammenity: any, index: any) => {
           if (index > 4 && !viewAllComponents) return null;
           return (
@@ -69,7 +73,7 @@ const AmenitiesSection = () => {
               <Checkbox.Indicator>
                 <Checkbox.Icon as={CheckIcon} />
               </Checkbox.Indicator>
-              <Checkbox.Label>{ammenity.label}</Checkbox.Label>
+              <Checkbox.Label ml="$2">{ammenity.label}</Checkbox.Label>
             </Checkbox>
           );
         })}

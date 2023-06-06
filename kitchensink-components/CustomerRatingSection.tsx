@@ -34,7 +34,11 @@ const CustomerRatingSection = () => {
   return (
     <VStack w="100%" space="md">
       <Heading size="sm">Customer Ratings</Heading>
-      <Checkbox.Group value={values} onChange={setValues}>
+      <Checkbox.Group
+        value={values}
+        onChange={setValues}
+        accessibilityLabel="rating"
+      >
         {sidebarFiltersCustomerRatings.map((placeType: any, index: any) => {
           return (
             <Checkbox value={placeType.value} size="sm" my="$2" key={index}>
@@ -43,7 +47,7 @@ const CustomerRatingSection = () => {
                   <CheckIcon />
                 </Checkbox.Icon>
               </Checkbox.Indicator>
-              <Checkbox.Label>
+              <Checkbox.Label ml="$2">
                 <Icon
                   as={Star}
                   size={12}

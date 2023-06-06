@@ -2063,10 +2063,10 @@
     "@babel/traverse" "^7.20.5"
     lodash.merge "^4.6.2"
 
-"@gluestack-style/react@0.1.11":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@gluestack-style/react/-/react-0.1.11.tgz#f7ed5213b31425a5ec8536694d43d2b283e6f6c5"
-  integrity sha512-QNkyBVgrHQxtiMmZeg2iFce2bGHPgqGRUNMcd3OQOCdLa3+uFuisbbo5XJZL96ZtvExwFPh0itTU5oJ877LsUQ==
+"@gluestack-style/react@0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@gluestack-style/react/-/react-0.1.14.tgz#b021092860d41068b2c58fb141fe82f80424ab6d"
+  integrity sha512-Ec3FEcSkgbrLFXVW0OZffjkPH0uk0dTkjhAm3gFS8vsDKYPVKyzmpRV04AarwC8+J4lHswicaJLyzPCDF4d9dA==
   dependencies:
     inline-style-prefixer "^6.0.1"
     normalize-css-color "^1.0.2"
@@ -2124,9 +2124,9 @@
     react-native-svg "13.4.0"
 
 "@gluestack-ui/button@latest":
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/@gluestack-ui/button/-/button-0.1.12.tgz#45495e92107cb6e9178e56122d2b64fbb71badf3"
-  integrity sha512-kd9+Gahd08p+Lc+aV3We20GzXgbHKl4kBe1iPtB/Bn/Bt6+9oeLvzvtqRkgXlykWrnkHrPWNOaujyrzlkJxKSw==
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@gluestack-ui/button/-/button-0.1.13.tgz#469e9b6eabdf5949ff0b04a0898b01e6e4817ad0"
+  integrity sha512-Q0J/fyo7l7jyRLzOyXEOFYlAIcaHyORs3rIf05ZT5qw6mAkhOnqNcpVSHt+gFOEx7WOhenzsVNT4Ki8Z5cC9zw==
   dependencies:
     "@gluestack-ui/react-native-aria" "0.1.2"
     "@gluestack-ui/utils" "0.1.3"
@@ -9464,6 +9464,14 @@ react-native-svg@13.4.0:
   version "13.4.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.4.0.tgz#82399ba0956c454144618aa581e2d748dd3f010a"
   integrity sha512-B3TwK+H0+JuRhYPzF21AgqMt4fjhCwDZ9QUtwNstT5XcslJBXC0FoTkdZo8IEb1Sv4suSqhZwlAY6lwOv3tHag==
+  dependencies:
+    css-select "^5.1.0"
+    css-tree "^1.1.3"
+
+react-native-svg@latest:
+  version "13.9.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.9.0.tgz#8df8a690dd00362601f074dec5d3a86dd0f99c7f"
+  integrity sha512-Ey18POH0dA0ob/QiwCBVrxIiwflhYuw0P0hBlOHeY4J5cdbs8ngdKHeWC/Kt9+ryP6fNoEQ1PUgPYw2Bs/rp5Q==
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"

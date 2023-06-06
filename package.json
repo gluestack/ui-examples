@@ -1,5 +1,5 @@
 {
-  "name": "cli-test-expo",
+  "name": "ui-kitchensink",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start --dev-client",
@@ -12,7 +12,7 @@
     "@expo/html-elements": "latest",
     "@expo/webpack-config": "18.1.0",
     "@gluestack-style/animation-plugin": "latest",
-    "@gluestack-style/react": "0.1.11",
+    "@gluestack-style/react": "0.1.14",
     "@gluestack-ui/actionsheet": "latest",
     "@gluestack-ui/alert": "latest",
     "@gluestack-ui/alert-dialog": "latest",
@@ -61,7 +61,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.8",
-    "react-native-svg": "13.4.0",
+    "react-native-svg": "latest",
     "webpack": "5.83.1"
   },
   "devDependencies": {

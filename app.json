@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cli-test-expo",
-    "slug": "cli-test-expo",
+    "name": "ui-kitchensink",
+    "slug": "ui-kitchensink",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,7 +16,7 @@
     "ios": {
       "supportsTablet": true,
       "jsEngine": "jsc",
-      "bundleIdentifier": "com.meenumakkar.cli-test-expo"
+      "bundleIdentifier": "com.meenumakkar.ui-kitchensink"
     },
     "android": {
       "adaptiveIcon": {

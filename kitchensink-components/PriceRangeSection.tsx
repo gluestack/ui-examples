@@ -63,7 +63,12 @@ const PriceRangeSection = () => {
           </Tooltip.Content>
         </Tooltip>
       </Slider>
-      <Checkbox.Group value={values} onChange={setValues} mt="$3">
+      <Checkbox.Group
+        value={values}
+        onChange={setValues}
+        mt="$3"
+        accessibilityLabel="price filter"
+      >
         {sidebarFiltersPriceRange.map((priceRange: any) => {
           return (
             <Checkbox
@@ -77,7 +82,7 @@ const PriceRangeSection = () => {
                   <CheckIcon />
                 </Checkbox.Icon>
               </Checkbox.Indicator>
-              <Checkbox.Label>{priceRange.label}</Checkbox.Label>
+              <Checkbox.Label ml="$2">{priceRange.label}</Checkbox.Label>
             </Checkbox>
           );
         })}

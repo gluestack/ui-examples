@@ -1,5 +1,11 @@
 import React from "react";
-import { Heading, Radio, Text, VStack } from "../gluestack-ui-components";
+import {
+  CircleIcon,
+  Heading,
+  Radio,
+  Text,
+  VStack,
+} from "../gluestack-ui-components";
 
 const SortBySection = () => {
   const sidebarFiltersCustomerRatings = [
@@ -36,9 +42,9 @@ const SortBySection = () => {
               key={placeType.value}
             >
               <Radio.Indicator>
-                <Radio.Icon />
+                <Radio.Icon as={CircleIcon} />
               </Radio.Indicator>
-              <Radio.Label>{placeType.label}</Radio.Label>
+              <Radio.Label ml="$2">{placeType.label}</Radio.Label>
             </Radio>
           );
         })}

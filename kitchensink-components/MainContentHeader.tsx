@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Button, Heading, HStack, Icon } from "../gluestack-ui-components";
 import { List } from "lucide-react-native";
 import ListYourPlaceModal from "./ListYourPlaceModal";
@@ -28,7 +28,7 @@ const MainContentHeader = ({
             setModalVisible(true);
           }}
         >
-          <Icon as={List} w="$4" h="$4" />
+          <Button.Icon as={List} />
           <Button.Text
             pl="$2"
             sx={{

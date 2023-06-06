@@ -1,18 +1,19 @@
 import React from "react";
-import { Box, HStack, Switch, Text } from "../gluestack-ui-components";
+import { Icon } from "../gluestack-ui-components";
+import { Pressable } from "react-native";
+import { Moon, Sun } from "lucide-react-native";
 
 const ToggleMode = ({ colorMode, toggleColorMode }: any) => {
   return (
-    <HStack alignItems="center" space="sm">
-      <Text size="sm" fontWeight="$medium">
-        dark mode
-      </Text>
-      <Switch
-        size="sm"
-        value={colorMode === "dark" ? true : false}
-        onValueChange={toggleColorMode}
+    <Pressable onPress={toggleColorMode}>
+      <Icon
+        as={colorMode === "dark" ? Sun : Moon}
+        size="xl"
+        color="$backgroundLight700"
+        sx={{ _dark: { color: "$backgroundDark300" } }}
+        fill="currentColor"
       />
-    </HStack>
+    </Pressable>
   );
 };
 export default ToggleMode;

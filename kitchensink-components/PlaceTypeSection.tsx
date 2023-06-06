@@ -30,7 +30,11 @@ const PlaceTypeSection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Type of place</Heading>
-      <Checkbox.Group value={values} onChange={setValues}>
+      <Checkbox.Group
+        value={values}
+        onChange={setValues}
+        accessibilityLabel="place-type"
+      >
         {sidebarFiltersPlaceType.map((placeType: any) => {
           return (
             <Checkbox
@@ -45,7 +49,7 @@ const PlaceTypeSection = () => {
                   <CheckIcon />
                 </Checkbox.Icon>
               </Checkbox.Indicator>
-              <Checkbox.Label>{placeType.label}</Checkbox.Label>
+              <Checkbox.Label ml="$2">{placeType.label}</Checkbox.Label>
             </Checkbox>
           );
         })}

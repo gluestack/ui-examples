@@ -23,6 +23,7 @@ import {
   CheckCircleIcon,
   CloseIcon,
   CheckIcon,
+  CircleIcon,
 } from "../gluestack-ui-components/core/Icons/Icons";
 
 const sidebarFiltersAmmenities = [
@@ -312,15 +313,15 @@ const ModalContent1 = ({ setModalFormStep, toast }: any) => {
               <HStack space="md">
                 <Radio value="Residential" size="sm">
                   <Radio.Indicator>
-                    <Radio.Icon />
+                    <Radio.Icon as={CircleIcon} />
                   </Radio.Indicator>
-                  <Radio.Label>Residential</Radio.Label>
+                  <Radio.Label ml="$2">Residential</Radio.Label>
                 </Radio>
                 <Radio value="Commercial" size="sm">
                   <Radio.Indicator>
-                    <Radio.Icon />
+                    <Radio.Icon as={CircleIcon} />
                   </Radio.Indicator>
-                  <Radio.Label>Commercial</Radio.Label>
+                  <Radio.Label ml="$2">Commercial</Radio.Label>
                 </Radio>
               </HStack>
             </Radio.Group>
@@ -388,7 +389,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
       <VStack space="sm">
         <FormControl>
           <FormControl.Label>
-            <FormControl.Label.Text>Contact me...</FormControl.Label.Text>
+            <FormControl.Label.Text>Contact me</FormControl.Label.Text>
           </FormControl.Label>
           <HStack space="sm">
             {/* select: example */}
@@ -439,7 +440,11 @@ const AmenitiesSection = () => {
         <FormControl.Label>
           <FormControl.Label.Text>Ammenities</FormControl.Label.Text>
         </FormControl.Label>
-        <Checkbox.Group value={values} onChange={setValues}>
+        <Checkbox.Group
+          value={values}
+          onChange={setValues}
+          accessibilityLabel="ammenities"
+        >
           {sidebarFiltersAmmenities.map((ammenity: any) => {
             return (
               <Checkbox
@@ -452,7 +457,7 @@ const AmenitiesSection = () => {
                 <Checkbox.Indicator>
                   <Checkbox.Icon as={CheckIcon} />
                 </Checkbox.Indicator>
-                <Checkbox.Label>{ammenity.label}</Checkbox.Label>
+                <Checkbox.Label ml="$2">{ammenity.label}</Checkbox.Label>
               </Checkbox>
             );
           })}

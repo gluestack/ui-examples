@@ -23,7 +23,7 @@ const FiltersAppliedSection = () => {
         _dark: { borderColor: "$borderDark900" },
       }}
     >
-      <HStack justifyContent="space-between">
+      <HStack justifyContent="space-between" alignItems="center">
         <Text size="sm" fontWeight="$medium">
           Filters applied
         </Text>

@@ -5,8 +5,6 @@ import HeaderTabs from "./HeaderTabs";
 import HomestayLogo from "./HomestayLogo";
 import ToggleMode from "./ToggleMode";
 import UserProfile from "./UserProfile";
-import { Filter, SlidersHorizontal } from "lucide-react-native";
-import { Pressable } from "react-native";
 
 const Header = ({ colorMode, toggleColorMode }: any) => {
   return (
@@ -33,7 +31,7 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
         >
           <HomestayLogo />
           <HeaderTabs />
-          <HStack space="md">
+          <HStack space="lg" alignItems="center" pr="$1.5">
             <ToggleMode
               colorMode={colorMode}
               toggleColorMode={toggleColorMode}
@@ -54,8 +52,14 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
       >
         <Input variant="rounded" size="sm" w="100%">
           <Input.Input placeholder="Anywhere • Any week • Add guests" />
-          <Input.Icon bg="$primary500" borderRadius="$full" p="$3" m="$1.5">
-            <Icon as={SearchIcon} size="xs" color="$white" />
+          <Input.Icon
+            bg="$primary500"
+            borderRadius="$full"
+            h="$6"
+            w="$6"
+            m="$1.5"
+          >
+            <Icon as={SearchIcon} color="white" size="xl" />
           </Input.Icon>
         </Input>
       </Box>
