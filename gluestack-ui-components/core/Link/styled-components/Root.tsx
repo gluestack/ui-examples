@@ -3,8 +3,19 @@ import { Pressable } from 'react-native';
 
 export default styled(
   Pressable,
+
   {
-    _text: {
+    'outlineWidth': 0,
+    ':focusVisible': {
+      outlineWidth: 2,
+      outlineColor: '$primary700',
+      outlineStyle: 'solid',
+      _dark: {
+        // @ts-ignore
+        outlineColor: '$primary400',
+      },
+    },
+    '_text': {
       'fontWeight': '$normal',
       'textDecorationLine': 'underline',
       'color': '$info700',
@@ -27,8 +38,17 @@ export default styled(
         ':active': {
           color: '$info300',
         },
+        ':disabled': {
+          opacity: 0.4,
+        },
       },
-      'cursor': 'pointer',
+    },
+    '_web': {
+      ':disabled': {
+        // @ts-ignore
+        pointerEvents: 'all !important',
+        cursor: 'not-allowed',
+      },
     },
   },
   {

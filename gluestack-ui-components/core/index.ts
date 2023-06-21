@@ -29,7 +29,7 @@ export * from "./Spinner";
 export * from "./Switch";
 export * from "./Tabs";
 export * from "./Text";
-export * from "./TextArea";
+export * from "./Textarea";
 export * from "./Toast";
 export * from "./Tooltip";
 export * from "./VStack";

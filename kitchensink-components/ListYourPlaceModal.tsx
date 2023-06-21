@@ -14,7 +14,7 @@ import {
   Heading,
   Radio,
   Checkbox,
-  TextArea,
+  Textarea,
   Select,
   Toast,
   ChevronDownIcon,
@@ -382,9 +382,9 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
           <FormControl.Label.Text>Description</FormControl.Label.Text>
         </FormControl.Label>
         {/* textarea: example */}
-        <TextArea>
-          <TextArea.Input placeholder="Provide description" />
-        </TextArea>
+        <Textarea>
+          <Textarea.Input placeholder="Provide description" />
+        </Textarea>
       </FormControl>
       <VStack space="sm">
         <FormControl>

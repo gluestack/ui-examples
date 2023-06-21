@@ -33,6 +33,8 @@ export default styled(
     ':disabled': {
       opacity: 0.4,
       _web: {
+        // @ts-ignore
+        pointerEvents: 'all !important',
         cursor: 'not-allowed',
       },
     },
@@ -74,7 +76,7 @@ export default styled(
         bg: '$primary500',
       },
       ':active': {
-        bg: '$prinary600',
+        bg: '$primary600',
       },
       ':disabled': {
         opacity: 0.4,
@@ -133,30 +135,29 @@ export default styled(
       },
 
       placement: {
-        'top-right': {
+        'top right': {
           top: '$4',
           right: '$4',
         },
 
-        'top-left': {
+        'top left': {
           top: '$4',
           left: '$4',
         },
 
-        'bottom-right': {
+        'bottom right': {
           bottom: '$4',
           right: '$4',
         },
 
-        'bottom-left': {
+        'bottom left': {
           bottom: '$4',
           left: '$4',
         },
 
-        'top-center': {
+        'top center': {
           top: '$4',
           alignSelf: 'center',
-
           // TODO: fix this, this is correct way, but React Native doesn't support this on Native
           // left: '50%',
           // transform: [
@@ -167,7 +168,7 @@ export default styled(
           // ],
         },
 
-        'bottom-center': {
+        'bottom center': {
           bottom: '$4',
           alignSelf: 'center',
           // TODO: fix this, this is correct way, but React Native doesn't support this on Native
@@ -182,7 +183,7 @@ export default styled(
       },
     },
     'defaultProps': {
-      placement: 'bottom-right',
+      placement: 'bottom right',
       size: 'md',
     },
   },
