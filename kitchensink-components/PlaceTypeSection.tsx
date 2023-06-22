@@ -43,6 +43,7 @@ const PlaceTypeSection = () => {
               my="$2"
               justifyContent="flex-start"
               key={placeType.value}
+              accessibilityLabel={placeType.value}
             >
               <Checkbox.Indicator>
                 <Checkbox.Icon>

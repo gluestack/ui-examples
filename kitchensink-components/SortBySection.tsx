@@ -31,7 +31,11 @@ const SortBySection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Sort by</Heading>
-      <Radio.Group value={values} onChange={setValues}>
+      <Radio.Group
+        value={values}
+        onChange={setValues}
+        accessibilityLabel="sort-by filter"
+      >
         {sidebarFiltersCustomerRatings.map((placeType: any) => {
           return (
             <Radio

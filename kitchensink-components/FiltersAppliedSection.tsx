@@ -48,6 +48,7 @@ const FiltersAppliedSection = () => {
             action="muted"
             mt="$3"
             key={item}
+            alignItems="center"
           >
             <Badge.Text
               textTransform="none"
@@ -59,13 +60,13 @@ const FiltersAppliedSection = () => {
             <Pressable
               ml="$2"
               rounded="$full"
-              p="$1"
-              bg="$backgroundLight400"
-              sx={{
-                _dark: {
-                  bg: "$backgroundDark800",
-                },
-              }}
+              // p="$1"
+              // bg="$backgroundLight400"
+              // sx={{
+              //   _dark: {
+              //     bg: "$backgroundDark800",
+              //   },
+              // }}
               onPress={() => {
                 const newFilters = appliedFilters.filter((item1: any) => {
                   return item1 !== item;
@@ -75,8 +76,8 @@ const FiltersAppliedSection = () => {
             >
               <Icon
                 as={CloseIcon}
-                size="xs"
-                color="$backgroundLight100"
+                size="sm"
+                color="$backgroundLight600"
                 sx={{
                   _dark: { color: "$backgroundDark300" },
                 }}

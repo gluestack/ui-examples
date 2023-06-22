@@ -76,6 +76,7 @@ const PriceRangeSection = () => {
               size="sm"
               my="$2"
               key={priceRange.value}
+              accessibilityLabel={priceRange.value}
             >
               <Checkbox.Indicator>
                 <Checkbox.Icon>

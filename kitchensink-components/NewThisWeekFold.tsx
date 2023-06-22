@@ -9,7 +9,6 @@ import {
 } from "../gluestack-ui-components";
 import { ScrollView } from "react-native";
 import { ChevronLeft, ChevronRight, Scroll } from "lucide-react-native";
-// import { LinearGradient } from "expo-linear-gradient";
 
 const data = [
   {
@@ -48,6 +47,7 @@ const NewThisWeekFold = () => {
   const scrollViewRef = useRef(null);
   const scrollAmount = 400;
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isContentAtRight, setIsContentAtRight] = useState(true);
 
   const handleScrollLeft = () => {
     const newScrollPosition = scrollPosition - scrollAmount;
@@ -79,6 +79,16 @@ const NewThisWeekFold = () => {
     return false;
   };
 
+  const isCloseToRight = (event: any) => {
+    const { contentOffset, layoutMeasurement, contentSize } = event.nativeEvent;
+    const isScrollAtEnd =
+      contentOffset.x + layoutMeasurement.width >= contentSize.width;
+    if (isScrollAtEnd) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <Box w="100%">
       <ScrollView
@@ -86,8 +96,13 @@ const NewThisWeekFold = () => {
         style={{ width: "100%" }}
         showsHorizontalScrollIndicator={false}
         ref={scrollViewRef}
-        scrollEventThrottle={16}
+        scrollEventThrottle={50}
         onScroll={(event) => {
+          if (isCloseToRight(event)) {
+            setIsContentAtRight(false);
+          } else {
+            setIsContentAtRight(true);
+          }
           setScrollPosition(event.nativeEvent.contentOffset.x);
         }}
       >
@@ -101,29 +116,22 @@ const NewThisWeekFold = () => {
                   h="$64"
                   w="$64"
                   // @ts-ignore
-                  borderRadius="$lg"
+                  borderRadius="$md"
                   resizeMode="cover"
                 />
               </Box>
             );
           })}
-          {/* <LinearGradient
-            colors={["transparent", "rgba(0, 0, 0, 0.9)"]} // Adjust the opacity as needed
-            style={{
-              zIndex: -1,
-              position: "absolute",
-              right: 0,
-              height: 192,
-              width: "50%",
-            }}
-          /> */}
         </HStack>
       </ScrollView>
       <ScrollLeft
         handleScrollLeft={handleScrollLeft}
         disabled={!checkContentAtLeft()}
       />
-      <ScrollRight handleScrollRight={handleScrollRight} />
+      <ScrollRight
+        handleScrollRight={handleScrollRight}
+        disabled={!isContentAtRight}
+      />
     </Box>
   );
 };
@@ -162,9 +170,13 @@ const ScrollLeft = ({ handleScrollLeft, disabled }: any) => {
               bg: "$backgroundDark800",
             },
           },
+          opacity: disabled ? 0 : 1,
+          // _web: {
+          //   cursor: "not-allowed",
+          // },
         }}
-        onPress={handleScrollLeft}
         disabled={disabled}
+        onPress={handleScrollLeft}
       >
         <Icon
           as={ChevronLeft}
@@ -181,7 +193,7 @@ const ScrollLeft = ({ handleScrollLeft, disabled }: any) => {
   );
 };
 
-const ScrollRight = ({ handleScrollRight }: any) => {
+const ScrollRight = ({ handleScrollRight, disabled }: any) => {
   return (
     <Center
       position="absolute"
@@ -203,7 +215,7 @@ const ScrollRight = ({ handleScrollRight }: any) => {
         bg="$backgroundLight50"
         sx={{
           "@md": {
-            mr: -16,
+            mr: "-$4",
           },
           ":hover": {
             bg: "$backgroundLight100",
@@ -215,8 +227,10 @@ const ScrollRight = ({ handleScrollRight }: any) => {
               bg: "$backgroundDark800",
             },
           },
+          opacity: disabled ? 0 : 1,
         }}
         onPress={handleScrollRight}
+        disabled={disabled}
       >
         <Icon
           as={ChevronRight}

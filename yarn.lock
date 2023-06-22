@@ -2117,7 +2117,7 @@
     "@react-native-aria/focus" "^0.2.8"
     "@react-native-aria/interactions" "^0.2.10"
 
-"@gluestack-ui/checkbox@latest":
+"@gluestack-ui/checkbox@^0.1.13":
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/@gluestack-ui/checkbox/-/checkbox-0.1.13.tgz#5a0df9547bd337df5f0a9c3f051a63f6de04b733"
   integrity sha512-j5dMcGNv2Tlf1TZyh+UrSo8bYDaJt6L+gu4hvVC6o4P0jw4UVcYdkSgjr0F5laML+hglqgBMoM6IpzSRG4I1zw==

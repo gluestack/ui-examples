@@ -179,7 +179,7 @@ const TabPanelData = () => {
               h="$72"
               w="100%"
               // @ts-ignore
-              borderRadius="$xl"
+              borderRadius="$md"
             />
             <Pressable
               onPress={() => {

@@ -69,6 +69,7 @@ const AmenitiesSection = () => {
               size="sm"
               my="$2"
               key={ammenity.value}
+              accessibilityLabel={ammenity.value}
             >
               <Checkbox.Indicator>
                 <Checkbox.Icon as={CheckIcon} />

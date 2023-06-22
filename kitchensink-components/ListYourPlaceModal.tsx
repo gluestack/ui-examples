@@ -309,7 +309,11 @@ const ModalContent1 = ({ setModalFormStep, toast }: any) => {
             <FormControl.Label>
               <FormControl.Label.Text>Property is...</FormControl.Label.Text>
             </FormControl.Label>
-            <Radio.Group value={values} onChange={setValues}>
+            <Radio.Group
+              value={values}
+              onChange={setValues}
+              accessibilityLabel="place-type"
+            >
               <HStack space="md">
                 <Radio value="Residential" size="sm">
                   <Radio.Indicator>
@@ -408,6 +412,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
                     <Select.Item
                       label={`${item.code}`}
                       value={`${item.code}`}
+                      key={`${item.code}`}
                     />
                   ))}
                 </Select.Content>
@@ -452,6 +457,7 @@ const AmenitiesSection = () => {
                 size="sm"
                 my="$2"
                 key={ammenity.value}
+                accessibilityLabel={ammenity.value}
               >
                 <Checkbox.Indicator>
                   <Checkbox.Icon as={CheckIcon} />

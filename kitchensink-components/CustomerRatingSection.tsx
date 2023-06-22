@@ -41,7 +41,13 @@ const CustomerRatingSection = () => {
       >
         {sidebarFiltersCustomerRatings.map((placeType: any, index: any) => {
           return (
-            <Checkbox value={placeType.value} size="sm" my="$2" key={index}>
+            <Checkbox
+              value={placeType.value}
+              size="sm"
+              my="$2"
+              key={index}
+              accessibilityLabel={placeType.value}
+            >
               <Checkbox.Indicator>
                 <Checkbox.Icon>
                   <CheckIcon />
