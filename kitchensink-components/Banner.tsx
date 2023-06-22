@@ -15,7 +15,7 @@ const Banner = () => {
     >
       <Text size="sm">Show total prices up front</Text>
       <Link href="https://ui.gluestack.io">
-        <Text
+        <Link.Text
           color="$textLight900"
           sx={{
             _dark: { color: "$textDark200" },
@@ -24,7 +24,7 @@ const Banner = () => {
           size="sm"
         >
           Learn more
-        </Text>
+        </Link.Text>
       </Link>
     </HStack>
   );

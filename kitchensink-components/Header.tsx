@@ -59,7 +59,7 @@ const Header = ({ colorMode, toggleColorMode }: any) => {
             w="$6"
             m="$1.5"
           >
-            <Icon as={SearchIcon} color="white" size="xl" />
+            <Icon as={SearchIcon} color="white" size="sm" />
           </Input.Icon>
         </Input>
       </Box>

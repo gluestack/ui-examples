@@ -159,7 +159,7 @@ const TabPanelData = () => {
     >
       {homestayInfoData.map((image: any, index: any) => {
         return (
-          <VStack
+          <Pressable
             flex={1}
             key={index}
             my="$2"
@@ -168,6 +168,9 @@ const TabPanelData = () => {
                 ml: index === 0 ? "$0" : "$2",
                 mr: index === homestayInfoData.length - 1 ? "$0" : "$2",
                 my: "$0",
+              },
+              ":hover": {
+                transform: [{ scale: 1.5 }],
               },
             }}
           >
@@ -312,7 +315,7 @@ const TabPanelData = () => {
                 </Tooltip.Content>
               </Tooltip>
             </HStack>
-          </VStack>
+          </Pressable>
         );
       })}
     </VStack>

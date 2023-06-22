@@ -2117,20 +2117,18 @@
     "@react-native-aria/focus" "^0.2.8"
     "@react-native-aria/interactions" "^0.2.10"
 
-"@gluestack-ui/checkbox@0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@gluestack-ui/checkbox/-/checkbox-0.1.9.tgz#2526d0c6e5f95b1e5823d32363da23ca63e9af07"
-  integrity sha512-mRFATm6u4AmC2PosWDwU+PbPrRorkerRSIfa6SPMIjg/KJjwtmbCuIP+0FNbYXXGddyXytMvjJg4He8uwukIeg==
+"@gluestack-ui/checkbox@latest":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@gluestack-ui/checkbox/-/checkbox-0.1.13.tgz#5a0df9547bd337df5f0a9c3f051a63f6de04b733"
+  integrity sha512-j5dMcGNv2Tlf1TZyh+UrSo8bYDaJt6L+gu4hvVC6o4P0jw4UVcYdkSgjr0F5laML+hglqgBMoM6IpzSRG4I1zw==
   dependencies:
-    "@gluestack-ui/form-control" latest
-    "@gluestack-ui/react-native-aria" latest
-    "@gluestack-ui/utils" latest
-    "@react-aria/visually-hidden" latest
+    "@gluestack-ui/form-control" "^0.1.7"
+    "@gluestack-ui/utils" "^0.1.3"
+    "@react-aria/visually-hidden" "^3.8.1"
     "@react-native-aria/checkbox" "^0.2.3"
-    "@react-native-aria/focus" "^0.2.7"
-    "@react-native-aria/interactions" "^0.2.8"
+    "@react-native-aria/focus" "^0.2.8"
+    "@react-native-aria/interactions" "^0.2.10"
     "@react-stately/checkbox" "3.0.3"
-    react-native-svg "13.4.0"
 
 "@gluestack-ui/divider@latest":
   version "0.1.3"
@@ -2289,7 +2287,7 @@
     "@react-native-aria/interactions" "^0.2.10"
     "@react-native-aria/radio" "^0.2.5"
 
-"@gluestack-ui/react-native-aria@^0.1.2", "@gluestack-ui/react-native-aria@latest":
+"@gluestack-ui/react-native-aria@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@gluestack-ui/react-native-aria/-/react-native-aria-0.1.2.tgz#217b6c329b33844f195d93772c6b3ef97ef8518e"
   integrity sha512-xQppAX88nD+euWoFq4+zM+krYVXEGeJSztxRXbXvNRIHHH/h9/mz6YAJUrxzcNbieqDBF8AGiphFxlxy6WiO1A==
@@ -2297,7 +2295,7 @@
     "@react-native-aria/focus" "^0.2.7"
     react-native-svg "13.4.0"
 
-"@gluestack-ui/select@latest":
+"@gluestack-ui/select@^0.1.9":
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/@gluestack-ui/select/-/select-0.1.9.tgz#41566d8f4a1703904b6a4f87aeeec68a7bcc7c77"
   integrity sha512-4fNIbrTS6OwjqzwwGGuzSNKxnwuOP3rhrHhvMSsdM9dbj71ZW/5gOyrLbX9plJCk0FZFfA9I0BBbBs9HGKLAEA==
@@ -2389,7 +2387,7 @@
     "@react-native-aria/focus" "^0.2.7"
     react-native-svg "13.4.0"
 
-"@gluestack-ui/utils@0.1.4", "@gluestack-ui/utils@^0.1.0", "@gluestack-ui/utils@^0.1.3", "@gluestack-ui/utils@^0.1.4", "@gluestack-ui/utils@latest":
+"@gluestack-ui/utils@0.1.4", "@gluestack-ui/utils@^0.1.0", "@gluestack-ui/utils@^0.1.3", "@gluestack-ui/utils@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@gluestack-ui/utils/-/utils-0.1.4.tgz#53a32aa034da6ea3851209d86798650c58a46800"
   integrity sha512-MpH/nf4CsztLGiUQwmInLDxA8wcQ4HrrAjGXukYov2pGl7T8M9+GYg1KDSUJhSnBKU7UY3VEozkYSYoaxVu93A==
@@ -2886,7 +2884,7 @@
     "@swc/helpers" "^0.4.14"
     clsx "^1.1.1"
 
-"@react-aria/visually-hidden@^3.7.0", "@react-aria/visually-hidden@^3.8.1", "@react-aria/visually-hidden@latest":
+"@react-aria/visually-hidden@^3.7.0", "@react-aria/visually-hidden@^3.8.1":
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/@react-aria/visually-hidden/-/visually-hidden-3.8.1.tgz#f035d3461671ae6f3af534e615df009ca9c08c4a"
   integrity sha512-aojoZXw5iaFDOgqmGuCyaTG9PFqfav5ABXX/W/0Q2YNj6Tb3i6++m2+8RMHlz2b6Dj+rXLiTxa00t7BSgJbUvA==

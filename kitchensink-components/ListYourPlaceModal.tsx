@@ -393,8 +393,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
           </FormControl.Label>
           <HStack space="sm">
             {/* select: example */}
-
-            <Select defaultValue="+91" w="$24">
+            <Select defaultValue="+91" w="$24" placeholder="Select code">
               <Select.Trigger>
                 <Select.Input />
                 <Select.Icon as={ChevronDownIcon} mr="$3" />
