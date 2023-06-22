@@ -15,7 +15,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "jsEngine": "jsc",
+      "jsEngine": "hermes",
       "bundleIdentifier": "com.meenumakkar.ui-kitchensink"
     },
     "android": {
@@ -28,16 +28,16 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {
-      "eas": {
-        "projectId": "a9be6ff8-3243-4ed6-b4fc-2888fd2d743c"
-      }
-    },
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/a9be6ff8-3243-4ed6-b4fc-2888fd2d743c"
+      "url": "https://u.expo.dev/e65da6cb-22b8-414f-988a-ce36cb19270a"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e65da6cb-22b8-414f-988a-ce36cb19270a"
+      }
     }
   }
 }
