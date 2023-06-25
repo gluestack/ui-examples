@@ -170,7 +170,7 @@ const TabPanelData = () => {
                 my: "$0",
               },
               ":hover": {
-                transform: [{ scale: 1.5 }],
+                transform: [{ scale: 1.02 }],
               },
             }}
           >
