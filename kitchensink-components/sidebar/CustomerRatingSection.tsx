@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Checkbox,
-  HStack,
-  Heading,
-  Icon,
-  Text,
-  VStack,
-} from "../gluestack-ui-components";
-import { CheckIcon } from "../gluestack-ui-components/core/Icons/Icons";
+import { Checkbox, Heading, Icon, VStack } from "../../gluestack-ui-components";
+import { CheckIcon } from "../../gluestack-ui-components/core/Icons/Icons";
 import { Star } from "lucide-react-native";
 
 const CustomerRatingSection = () => {

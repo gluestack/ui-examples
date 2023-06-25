@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Pressable } from "react-native";
-import { Avatar, Menu } from "../gluestack-ui-components";
-import LogoutAlertDialog from "./LogoutAlertDialog";
+import { Avatar, Menu } from "../../gluestack-ui-components";
+import LogoutAlertDialog from "../LogoutAlertDialog";
 
 const userMenuItems = [
   {

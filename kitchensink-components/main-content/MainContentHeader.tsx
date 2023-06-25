@@ -1,5 +1,11 @@
 import React from "react";
-import { Box, Button, Heading, HStack, Icon } from "../gluestack-ui-components";
+import {
+  Box,
+  Button,
+  Heading,
+  HStack,
+  Icon,
+} from "../../gluestack-ui-components";
 import { List } from "lucide-react-native";
 import ListYourPlaceModal from "./ListYourPlaceModal";
 

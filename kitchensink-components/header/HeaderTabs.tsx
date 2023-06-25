@@ -1,6 +1,6 @@
 import React from "react";
-import { SearchIcon } from "../gluestack-ui-components/core/Icons/Icons";
-import { HStack, Icon, Pressable, Text } from "../gluestack-ui-components";
+import { SearchIcon } from "../../gluestack-ui-components/core/Icons/Icons";
+import { HStack, Icon, Pressable, Text } from "../../gluestack-ui-components";
 
 const HeaderTabs = () => {
   const [selectedTab, setSelectedTab] = React.useState("Anywhere");

@@ -1,7 +1,6 @@
 import React from "react";
-import { Box, Actionsheet, Heading } from "../gluestack-ui-components";
+import { Box, Actionsheet } from "../gluestack-ui-components";
 import Sidebar from "./Sidebar";
-import { ScrollView, View } from "react-native";
 
 const MobileSidebarActionsheet = ({
   actionsheetVisible,

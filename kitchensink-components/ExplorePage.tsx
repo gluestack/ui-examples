@@ -3,7 +3,7 @@ import { Box, HStack } from "../gluestack-ui-components";
 import Banner from "./Banner";
 import Header from "./Header";
 import WebSidebar from "./WebSidebar";
-import MainContent from "./MainContent";
+import MainContent from "./main-content/MainContent";
 import { ScrollView } from "react-native";
 
 const Explorepage = ({

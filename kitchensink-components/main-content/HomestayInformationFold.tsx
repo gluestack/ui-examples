@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Box,
   HStack,
@@ -9,7 +8,7 @@ import {
   Text,
   Tooltip,
   VStack,
-} from "../gluestack-ui-components";
+} from "../../gluestack-ui-components";
 import { Heart, Star } from "lucide-react-native";
 import { AnimatePresence, Motion } from "@legendapp/motion";
 import { ScrollView } from "react-native";
@@ -17,21 +16,21 @@ import { ScrollView } from "react-native";
 const homestayInfoData = [
   {
     title: "ImageView Inn",
-    src: require("../assets/display/image4.png"),
+    src: require("../../assets/display/image4.png"),
     location: "401 Platte River Rd, Gothenburg, United States",
     price: "$1,481",
     rating: 4.9,
   },
   {
     title: "Spinner Resort",
-    src: require("../assets/display/image5.png"),
+    src: require("../../assets/display/image5.png"),
     location: "1502 Silica Ave, Sacramento California",
     price: "$1,381",
     rating: 4.89,
   },
   {
     title: "DropDown Den",
-    src: require("../assets/display/image6.png"),
+    src: require("../../assets/display/image6.png"),
     location: "2945 Entry Point Blvd, Kissimmee, Florida",
     price: "$2,481",
     rating: 4.6,

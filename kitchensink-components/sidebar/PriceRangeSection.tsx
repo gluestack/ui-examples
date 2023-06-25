@@ -7,8 +7,8 @@ import {
   Tooltip,
   VStack,
   Heading,
-} from "../gluestack-ui-components";
-import { CheckIcon } from "../gluestack-ui-components/core/Icons/Icons";
+} from "../../gluestack-ui-components";
+import { CheckIcon } from "../../gluestack-ui-components/core/Icons/Icons";
 
 const PriceRangeSection = () => {
   const [sliderValue, setSliderValue] = React.useState(3500);

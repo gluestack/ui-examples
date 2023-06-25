@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  Alert,
-  Box,
   Checkbox,
   HStack,
   Heading,
@@ -9,13 +7,12 @@ import {
   Pressable,
   Text,
   VStack,
-} from "../gluestack-ui-components";
+} from "../../gluestack-ui-components";
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-  InfoIcon,
-} from "../gluestack-ui-components/core/Icons/Icons";
+} from "../../gluestack-ui-components/core/Icons/Icons";
 
 const AmenitiesSection = () => {
   const sidebarFiltersAmmenities = [

@@ -3,9 +3,8 @@ import {
   CircleIcon,
   Heading,
   Radio,
-  Text,
   VStack,
-} from "../gluestack-ui-components";
+} from "../../gluestack-ui-components";
 
 const SortBySection = () => {
   const sidebarFiltersCustomerRatings = [

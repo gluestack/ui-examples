@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "../gluestack-ui-components";
+import { Box } from "../../gluestack-ui-components";
 import HomestayInformationFold from "./HomestayInformationFold";
 import MainContentHeader from "./MainContentHeader";
 import NewThisWeekFold from "./NewThisWeekFold";

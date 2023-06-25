@@ -1,13 +1,13 @@
 import React from "react";
 import { ScrollView } from "react-native";
 import { VStack } from "../gluestack-ui-components";
-import AmenitiesSection from "./AmenitiesSection";
-import BookingOptions from "./BookingOptions";
-import CustomerRatingSection from "./CustomerRatingSection";
-import FiltersAppliedSection from "./FiltersAppliedSection";
-import PlaceTypeSection from "./PlaceTypeSection";
-import PriceRangeSection from "./PriceRangeSection";
-import SortBySection from "./SortBySection";
+import AmenitiesSection from "./sidebar/AmenitiesSection";
+import BookingOptions from "./sidebar/BookingOptions";
+import CustomerRatingSection from "./sidebar/CustomerRatingSection";
+import FiltersAppliedSection from "./sidebar/FiltersAppliedSection";
+import PlaceTypeSection from "./sidebar/PlaceTypeSection";
+import PriceRangeSection from "./sidebar/PriceRangeSection";
+import SortBySection from "./sidebar/SortBySection";
 
 const Sidebar = () => {
   return (

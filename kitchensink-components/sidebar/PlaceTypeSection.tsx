@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  Box,
-  Checkbox,
-  HStack,
-  Heading,
-  Text,
-  VStack,
-} from "../gluestack-ui-components";
-import { CheckIcon } from "../gluestack-ui-components/core/Icons/Icons";
+import { Checkbox, Heading, VStack } from "../../gluestack-ui-components";
+import { CheckIcon } from "../../gluestack-ui-components/core/Icons/Icons";
 
 const PlaceTypeSection = () => {
   const sidebarFiltersPlaceType = [

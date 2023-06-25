@@ -18,13 +18,13 @@ import {
   Select,
   Toast,
   ChevronDownIcon,
-} from "../gluestack-ui-components";
+} from "../../gluestack-ui-components";
 import {
   CheckCircleIcon,
   CloseIcon,
   CheckIcon,
   CircleIcon,
-} from "../gluestack-ui-components/core/Icons/Icons";
+} from "../../gluestack-ui-components/core/Icons/Icons";
 
 const sidebarFiltersAmmenities = [
   {

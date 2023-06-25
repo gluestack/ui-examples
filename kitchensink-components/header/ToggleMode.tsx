@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, MoonIcon, SunIcon } from "../gluestack-ui-components";
+import { Icon, MoonIcon, SunIcon } from "../../gluestack-ui-components";
 import { Pressable } from "react-native";
 
 const ToggleMode = ({ colorMode, toggleColorMode }: any) => {

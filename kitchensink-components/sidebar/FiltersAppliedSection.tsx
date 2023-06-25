@@ -7,8 +7,8 @@ import {
   Icon,
   Pressable,
   Text,
-} from "../gluestack-ui-components";
-import { CloseIcon } from "../gluestack-ui-components/core/Icons/Icons";
+} from "../../gluestack-ui-components";
+import { CloseIcon } from "../../gluestack-ui-components/core/Icons/Icons";
 
 const FiltersAppliedSection = () => {
   const filters = ["Private room", "Wifi", "Air conditioning"];

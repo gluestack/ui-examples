@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, HStack, Icon, Input } from "../gluestack-ui-components";
 import { SearchIcon } from "../gluestack-ui-components/core/Icons/Icons";
-import HeaderTabs from "./HeaderTabs";
-import HomestayLogo from "./HomestayLogo";
-import ToggleMode from "./ToggleMode";
-import UserProfile from "./UserProfile";
+import HeaderTabs from "./header/HeaderTabs";
+import HomestayLogo from "./header/HomestayLogo";
+import ToggleMode from "./header/ToggleMode";
+import UserProfile from "./header/UserProfile";
 
 const Header = ({ colorMode, toggleColorMode }: any) => {
   return (
