@@ -190,18 +190,10 @@ const TabPanelData = () => {
                       action="secondary"
                       variant="outline"
                       position="absolute"
-                      top="50%"
-                      left="50%"
+                      top="45%"
                       bg="transparent"
                       borderColor="white"
-                      sx={{
-                        transform: [
-                          // @ts-ignore
-                          { translateX: "-50%" },
-                          // @ts-ignore
-                          { translateY: "-20px" },
-                        ],
-                      }}
+                      alignSelf="center"
                       zIndex={1}
                       display={props.hovered ? "flex" : "none"}
                     >
