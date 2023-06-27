@@ -9,14 +9,22 @@ const Banner = () => {
       space="sm"
       h="$16"
       sx={{
-        _light: { bg: "$backgroundLight100" },
-        _dark: { bg: "$backgroundDark900" },
+        _light: { bg: "$backgroundLight900" },
+        _dark: { bg: "$backgroundDark700" },
       }}
     >
-      <Text size="sm">Show total prices up front</Text>
+      <Text
+        size="sm"
+        color="$textLight0"
+        sx={{
+          _dark: { color: "$textLight0" },
+        }}
+      >
+        Show total prices up front
+      </Text>
       <Link href="https://ui.gluestack.io">
         <Link.Text
-          color="$textLight900"
+          color="$textLight0"
           sx={{
             _dark: { color: "$textDark200" },
           }}

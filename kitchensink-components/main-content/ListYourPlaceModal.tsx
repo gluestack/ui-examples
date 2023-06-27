@@ -315,13 +315,13 @@ const ModalContent1 = ({ setModalFormStep, toast }: any) => {
               accessibilityLabel="place-type"
             >
               <HStack space="md">
-                <Radio value="Residential" size="sm">
+                <Radio value="Residential">
                   <Radio.Indicator>
                     <Radio.Icon as={CircleIcon} />
                   </Radio.Indicator>
                   <Radio.Label ml="$2">Residential</Radio.Label>
                 </Radio>
-                <Radio value="Commercial" size="sm">
+                <Radio value="Commercial">
                   <Radio.Indicator>
                     <Radio.Icon as={CircleIcon} />
                   </Radio.Indicator>
@@ -454,7 +454,6 @@ const AmenitiesSection = () => {
               <Checkbox
                 value={ammenity.value}
                 justifyContent="flex-start"
-                size="sm"
                 my="$2"
                 key={ammenity.value}
                 accessibilityLabel={ammenity.value}

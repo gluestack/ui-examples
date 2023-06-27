@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Box,
+  Button,
   HStack,
   Icon,
   Image,
@@ -9,7 +10,7 @@ import {
   Tooltip,
   VStack,
 } from "../../gluestack-ui-components";
-import { Heart, Star } from "lucide-react-native";
+import { ChevronRight, Heart, Star } from "lucide-react-native";
 import { AnimatePresence, Motion } from "@legendapp/motion";
 import { ScrollView } from "react-native";
 
@@ -170,150 +171,187 @@ const TabPanelData = () => {
               },
               ":hover": {
                 transform: [{ scale: 1.02 }],
+                opacity: 0.9,
               },
             }}
           >
-            <Image
-              source={image.src}
-              h="$72"
-              w="100%"
-              // @ts-ignore
-              borderRadius="$md"
-            />
-            <Pressable
-              onPress={() => {
-                if (likes.includes(image.title)) {
-                  const newLikes = likes.filter(
-                    (like: any) => like !== image.title
-                  );
-                  setLikes(newLikes);
-                  return;
-                } else {
-                  setLikes([...likes, image.title]);
-                }
-              }}
-              position="absolute"
-              top={12}
-              right={36}
-            >
-              <AnimatePresence>
-                <Motion.View
-                  key={likes.includes(image.title) ? "liked" : "unliked"}
-                  initial={{
-                    scale: 1.3,
-                  }}
-                  animate={{
-                    scale: 1,
-                  }}
-                  exit={{
-                    scale: 0.9,
-                  }}
-                  transition={{
-                    type: "spring",
-                    mass: 0.9,
-                    damping: 9,
-                    stiffness: 300,
-                  }}
-                  style={{
-                    position: "absolute",
-                  }}
-                >
-                  <Icon
-                    as={Heart}
-                    size="lg"
-                    color={
-                      likes.includes(image.title) === true ? "red" : "white"
-                    }
-                    fill={likes.includes(image.title) === true ? "red" : "gray"}
-                  />
-                </Motion.View>
-              </AnimatePresence>
-            </Pressable>
-            <HStack justifyContent="space-between" py="$2">
-              <VStack space="$sm" flex={1}>
-                <Text
-                  fontWeight="$semibold"
-                  color="$textLight900"
-                  sx={{
-                    _dark: { color: "$textDark200" },
-                  }}
-                >
-                  {image.title}
-                </Text>
-                <Text
-                  size="sm"
-                  color="$textLight500"
-                  sx={{
-                    _dark: { color: "$textDark500" },
-                  }}
-                >
-                  {image.location}
-                </Text>
-                <HStack>
-                  <Text
-                    size="sm"
-                    fontWeight="$semibold"
-                    color="$textLight900"
-                    sx={{
-                      _dark: { color: "$textDark200" },
+            {(props: any) => {
+              return (
+                <>
+                  <Box h="$72" w="100%">
+                    <Image
+                      source={image.src}
+                      h="$72"
+                      w="100%"
+                      // @ts-ignore
+                      borderRadius="$md"
+                    />
+                    <Button
+                      action="secondary"
+                      variant="outline"
+                      position="absolute"
+                      top="50%"
+                      left="50%"
+                      bg="transparent"
+                      borderColor="white"
+                      sx={{
+                        transform: [
+                          // @ts-ignore
+                          { translateX: "-50%" },
+                          // @ts-ignore
+                          { translateY: "-20px" },
+                        ],
+                      }}
+                      zIndex={1}
+                      display={props.hovered ? "flex" : "none"}
+                    >
+                      <Button.Text color="white">Explore</Button.Text>
+                      <Button.Icon as={ChevronRight} color="white" />
+                    </Button>
+                  </Box>
+                  <Pressable
+                    onPress={() => {
+                      if (likes.includes(image.title)) {
+                        const newLikes = likes.filter(
+                          (like: any) => like !== image.title
+                        );
+                        setLikes(newLikes);
+                        return;
+                      } else {
+                        setLikes([...likes, image.title]);
+                      }
                     }}
+                    position="absolute"
+                    top={12}
+                    right={36}
                   >
-                    {image.price}
-                  </Text>
-                  <Text
-                    size="sm"
-                    pl="$1"
-                    color="$textLight900"
-                    sx={{
-                      _dark: { color: "$textDark200" },
-                    }}
-                  >
-                    night
-                  </Text>
-                </HStack>
-              </VStack>
-              <Tooltip
-                trigger={(triggerProps: any) => {
-                  return (
-                    <Pressable {...triggerProps}>
-                      <HStack alignItems="center">
+                    <AnimatePresence>
+                      <Motion.View
+                        key={likes.includes(image.title) ? "liked" : "unliked"}
+                        initial={{
+                          scale: 1.3,
+                        }}
+                        animate={{
+                          scale: 1,
+                        }}
+                        exit={{
+                          scale: 0.9,
+                        }}
+                        transition={{
+                          type: "spring",
+                          mass: 0.9,
+                          damping: 9,
+                          stiffness: 300,
+                        }}
+                        style={{
+                          position: "absolute",
+                        }}
+                      >
                         <Icon
-                          as={Star}
-                          size={12}
-                          fill="currentColor"
-                          sx={{
-                            _dark: { color: "$backgroundDark50" },
-                            _light: { color: "black" },
-                          }}
+                          as={Heart}
+                          size="lg"
+                          color={
+                            likes.includes(image.title) === true
+                              ? "red"
+                              : "white"
+                          }
+                          fill={
+                            likes.includes(image.title) === true
+                              ? "red"
+                              : "gray"
+                          }
                         />
+                      </Motion.View>
+                    </AnimatePresence>
+                  </Pressable>
+                  <HStack justifyContent="space-between" py="$2">
+                    <VStack space="$sm" flex={1}>
+                      <Text
+                        fontWeight="$semibold"
+                        color="$textLight900"
+                        sx={{
+                          _dark: { color: "$textDark200" },
+                        }}
+                      >
+                        {image.title}
+                      </Text>
+                      <Text
+                        size="sm"
+                        color="$textLight500"
+                        sx={{
+                          _dark: { color: "$textDark500" },
+                        }}
+                      >
+                        {image.location}
+                      </Text>
+                      <HStack>
                         <Text
-                          pl="$1"
                           size="sm"
+                          fontWeight="$semibold"
+                          color="$textLight900"
                           sx={{
-                            _light: { color: "$textLight900" },
                             _dark: { color: "$textDark200" },
                           }}
                         >
-                          {image.rating}
+                          {image.price}
+                        </Text>
+                        <Text
+                          size="sm"
+                          pl="$1"
+                          color="$textLight900"
+                          sx={{
+                            _dark: { color: "$textDark200" },
+                          }}
+                        >
+                          night
                         </Text>
                       </HStack>
-                    </Pressable>
-                  );
-                }}
-              >
-                <Tooltip.Content>
-                  <Text
-                    sx={{
-                      color: "$white",
-                      px: "$2",
-                      py: "$1",
-                    }}
-                  >
-                    Ratings
-                  </Text>
-                </Tooltip.Content>
-              </Tooltip>
-            </HStack>
+                    </VStack>
+                    <Tooltip
+                      trigger={(triggerProps: any) => {
+                        return (
+                          <Pressable {...triggerProps}>
+                            <HStack alignItems="center">
+                              <Icon
+                                as={Star}
+                                size={12}
+                                fill="currentColor"
+                                sx={{
+                                  _dark: { color: "$backgroundDark50" },
+                                  _light: { color: "black" },
+                                }}
+                              />
+                              <Text
+                                pl="$1"
+                                size="sm"
+                                sx={{
+                                  _light: { color: "$textLight900" },
+                                  _dark: { color: "$textDark200" },
+                                }}
+                              >
+                                {image.rating}
+                              </Text>
+                            </HStack>
+                          </Pressable>
+                        );
+                      }}
+                    >
+                      <Tooltip.Content>
+                        <Text
+                          sx={{
+                            color: "$white",
+                            px: "$2",
+                            py: "$1",
+                          }}
+                        >
+                          Ratings
+                        </Text>
+                      </Tooltip.Content>
+                    </Tooltip>
+                  </HStack>
+                </>
+              );
+            }}
           </Pressable>
         );
       })}
