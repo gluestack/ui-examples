@@ -24,7 +24,7 @@ const homestayInfoData = [
   },
   {
     title: "Spinner Resort",
-    src: require("../../assets/display/image5.png"),
+    src: require("../../assets/display/image11.png"),
     location: "1502 Silica Ave, Sacramento California",
     price: "$1,381",
     rating: 4.89,
@@ -169,22 +169,24 @@ const TabPanelData = () => {
                 mr: index === homestayInfoData.length - 1 ? "$0" : "$2",
                 my: "$0",
               },
-              ":hover": {
-                transform: [{ scale: 1.02 }],
-                opacity: 0.9,
-              },
+              // ":hover": {
+              //   transform: [{ scale: 1.02 }],
+              //   opacity: 0.9,
+              // },
             }}
           >
             {(props: any) => {
               return (
                 <>
-                  <Box h="$72" w="100%">
+                  <Box h="$72" w="100%" overflow="hidden">
                     <Image
                       source={image.src}
                       h="$72"
                       w="100%"
                       // @ts-ignore
                       borderRadius="$md"
+                      transform={[{ scale: props.hovered ? 1.02 : 1 }]}
+                      opacity={props.hovered ? 0.9 : 1}
                     />
                     <Button
                       action="secondary"

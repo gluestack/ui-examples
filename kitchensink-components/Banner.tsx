@@ -10,7 +10,7 @@ const Banner = () => {
       h="$16"
       sx={{
         _light: { bg: "$backgroundLight900" },
-        _dark: { bg: "$backgroundDark700" },
+        _dark: { bg: "$backgroundDark800" },
       }}
     >
       <Text

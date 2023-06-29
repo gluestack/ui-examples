@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { View } from 'react-native';
 import { styled } from '../../styled';
 
@@ -121,7 +122,7 @@ export default styled(
       size: {
         sm: {
           px: '$1',
-          py: 2,
+          py: '$0.5',
           _icon: {
             size: 'xs',
           },
@@ -132,7 +133,7 @@ export default styled(
         },
         md: {
           px: '$1',
-          py: 2,
+          py: '$0.5',
           _icon: {
             size: 'xs',
           },
@@ -142,7 +143,7 @@ export default styled(
           },
         },
         lg: {
-          px: '6px',
+          px: '$1.5',
           py: '$1',
           _icon: {
             size: 'xs',
