@@ -169,25 +169,21 @@ const TabPanelData = () => {
                 mr: index === homestayInfoData.length - 1 ? "$0" : "$2",
                 my: "$0",
               },
-              // ":hover": {
-              //   transform: [{ scale: 1.02 }],
-              //   opacity: 0.9,
-              // },
             }}
           >
             {(props: any) => {
               return (
                 <>
-                  <Box h="$72" w="100%" overflow="hidden">
-                    <Image
-                      source={image.src}
-                      h="$72"
-                      w="100%"
-                      // @ts-ignore
-                      borderRadius="$md"
-                      transform={[{ scale: props.hovered ? 1.02 : 1 }]}
-                      opacity={props.hovered ? 0.9 : 1}
-                    />
+                  <Box w="100%">
+                    <Box overflow="hidden" borderRadius="$md" h="$72">
+                      <Image
+                        source={image.src}
+                        h="$72"
+                        w="100%"
+                        transform={[{ scale: props.hovered ? 1.04 : 1 }]}
+                        opacity={props.hovered ? 0.9 : 1}
+                      />
+                    </Box>
                     <Button
                       action="secondary"
                       variant="outline"
