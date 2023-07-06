@@ -11,6 +11,7 @@ import {
   Pressable,
   Divider,
   Button,
+  Image,
 } from "../gluestack-ui-components";
 import {
   Blinds,
@@ -59,11 +60,9 @@ const ProfileCard = () => {
         <Avatar bg="$blue600">
           <Avatar.FallbackText>Henry Stan</Avatar.FallbackText>
           <Avatar.Image
-            source={
-              {
-                // uri: "https://images.unsplash.com/photo-1494790108377-be9c29b2933",
-              }
-            }
+            source={{
+              uri: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+            }}
           />
         </Avatar>
         <VStack>

@@ -33,4 +33,3 @@ export * from "./Textarea";
 export * from "./Toast";
 export * from "./Tooltip";
 export * from "./VStack";
-export * from "./styled";

@@ -93,12 +93,13 @@ const HomestayInfoTabs = ({ tabsData }: any) => {
     >
       <Box py="$5">
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <HStack space="lg">
+          <HStack space="lg" mx="$0.5">
             {tabsData.map((tab: any) => {
               return (
                 <Pressable
                   key={tab.title}
-                  pb="$2"
+                  my="$0.5"
+                  py="$1"
                   borderBottomWidth={activeTab === tab ? 3 : 0}
                   borderColor="$borderLight900"
                   sx={{
@@ -159,7 +160,7 @@ const TabPanelData = () => {
     >
       {homestayInfoData.map((image: any, index: any) => {
         return (
-          <Pressable
+          <Box
             flex={1}
             key={index}
             my="$2"
@@ -171,10 +172,10 @@ const TabPanelData = () => {
               },
             }}
           >
-            {(props: any) => {
-              return (
-                <>
-                  <Box w="100%">
+            <Pressable w="100%">
+              {(props: any) => {
+                return (
+                  <>
                     <Box overflow="hidden" borderRadius="$md" h="$72">
                       <Image
                         source={image.src}
@@ -184,6 +185,15 @@ const TabPanelData = () => {
                         opacity={props.hovered ? 0.9 : 1}
                       />
                     </Box>
+                    {props.hovered && (
+                      <Box
+                        position="absolute"
+                        bg="$backgroundDark950"
+                        opacity={0.3}
+                        w="100%"
+                        h="100%"
+                      />
+                    )}
                     <Button
                       action="secondary"
                       variant="outline"
@@ -192,157 +202,159 @@ const TabPanelData = () => {
                       bg="transparent"
                       borderColor="white"
                       alignSelf="center"
-                      zIndex={1}
+                      zIndex={5}
                       display={props.hovered ? "flex" : "none"}
                     >
                       <Button.Text color="white">Explore</Button.Text>
                       <Button.Icon as={ChevronRight} color="white" />
                     </Button>
-                  </Box>
-                  <Pressable
-                    onPress={() => {
-                      if (likes.includes(image.title)) {
-                        const newLikes = likes.filter(
-                          (like: any) => like !== image.title
-                        );
-                        setLikes(newLikes);
-                        return;
-                      } else {
-                        setLikes([...likes, image.title]);
-                      }
+                  </>
+                );
+              }}
+            </Pressable>
+            <Pressable
+              onPress={() => {
+                if (likes.includes(image.title)) {
+                  const newLikes = likes.filter(
+                    (like: any) => like !== image.title
+                  );
+                  setLikes(newLikes);
+                  return;
+                } else {
+                  setLikes([...likes, image.title]);
+                }
+              }}
+              position="absolute"
+              top={12}
+              right={16}
+              h="$6"
+              w="$6"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <AnimatePresence>
+                <Motion.View
+                  key={likes.includes(image.title) ? "liked" : "unliked"}
+                  initial={{
+                    scale: 1.3,
+                  }}
+                  animate={{
+                    scale: 1,
+                  }}
+                  exit={{
+                    scale: 0.9,
+                  }}
+                  transition={{
+                    type: "spring",
+                    mass: 0.9,
+                    damping: 9,
+                    stiffness: 300,
+                  }}
+                  style={{
+                    position: "absolute",
+                  }}
+                >
+                  <Icon
+                    as={Heart}
+                    size="lg"
+                    color={
+                      likes.includes(image.title) === true ? "red" : "white"
+                    }
+                    fill={likes.includes(image.title) === true ? "red" : "gray"}
+                  />
+                </Motion.View>
+              </AnimatePresence>
+            </Pressable>
+            <HStack
+              justifyContent="space-between"
+              py="$2"
+              alignItems="flex-start"
+            >
+              <VStack space="$sm" flex={1}>
+                <Text
+                  fontWeight="$semibold"
+                  color="$textLight900"
+                  sx={{
+                    _dark: { color: "$textDark200" },
+                  }}
+                >
+                  {image.title}
+                </Text>
+                <Text
+                  size="sm"
+                  color="$textLight500"
+                  sx={{
+                    _dark: { color: "$textDark500" },
+                  }}
+                >
+                  {image.location}
+                </Text>
+                <HStack>
+                  <Text
+                    size="sm"
+                    fontWeight="$semibold"
+                    color="$textLight900"
+                    sx={{
+                      _dark: { color: "$textDark200" },
                     }}
-                    position="absolute"
-                    top={12}
-                    right={36}
                   >
-                    <AnimatePresence>
-                      <Motion.View
-                        key={likes.includes(image.title) ? "liked" : "unliked"}
-                        initial={{
-                          scale: 1.3,
-                        }}
-                        animate={{
-                          scale: 1,
-                        }}
-                        exit={{
-                          scale: 0.9,
-                        }}
-                        transition={{
-                          type: "spring",
-                          mass: 0.9,
-                          damping: 9,
-                          stiffness: 300,
-                        }}
-                        style={{
-                          position: "absolute",
-                        }}
-                      >
+                    {image.price}
+                  </Text>
+                  <Text
+                    size="sm"
+                    pl="$1"
+                    color="$textLight900"
+                    sx={{
+                      _dark: { color: "$textDark200" },
+                    }}
+                  >
+                    night
+                  </Text>
+                </HStack>
+              </VStack>
+              <Tooltip
+                trigger={(triggerProps: any) => {
+                  return (
+                    <Pressable {...triggerProps}>
+                      <HStack alignItems="center" justifyContent="flex-start">
                         <Icon
-                          as={Heart}
-                          size="lg"
-                          color={
-                            likes.includes(image.title) === true
-                              ? "red"
-                              : "white"
-                          }
-                          fill={
-                            likes.includes(image.title) === true
-                              ? "red"
-                              : "gray"
-                          }
+                          as={Star}
+                          size={12}
+                          fill="currentColor"
+                          sx={{
+                            _dark: { color: "$backgroundDark50" },
+                            _light: { color: "black" },
+                          }}
                         />
-                      </Motion.View>
-                    </AnimatePresence>
-                  </Pressable>
-                  <HStack justifyContent="space-between" py="$2">
-                    <VStack space="$sm" flex={1}>
-                      <Text
-                        fontWeight="$semibold"
-                        color="$textLight900"
-                        sx={{
-                          _dark: { color: "$textDark200" },
-                        }}
-                      >
-                        {image.title}
-                      </Text>
-                      <Text
-                        size="sm"
-                        color="$textLight500"
-                        sx={{
-                          _dark: { color: "$textDark500" },
-                        }}
-                      >
-                        {image.location}
-                      </Text>
-                      <HStack>
                         <Text
-                          size="sm"
-                          fontWeight="$semibold"
-                          color="$textLight900"
-                          sx={{
-                            _dark: { color: "$textDark200" },
-                          }}
-                        >
-                          {image.price}
-                        </Text>
-                        <Text
-                          size="sm"
                           pl="$1"
-                          color="$textLight900"
+                          size="sm"
                           sx={{
+                            _light: { color: "$textLight900" },
                             _dark: { color: "$textDark200" },
                           }}
                         >
-                          night
+                          {image.rating}
                         </Text>
                       </HStack>
-                    </VStack>
-                    <Tooltip
-                      trigger={(triggerProps: any) => {
-                        return (
-                          <Pressable {...triggerProps}>
-                            <HStack alignItems="center">
-                              <Icon
-                                as={Star}
-                                size={12}
-                                fill="currentColor"
-                                sx={{
-                                  _dark: { color: "$backgroundDark50" },
-                                  _light: { color: "black" },
-                                }}
-                              />
-                              <Text
-                                pl="$1"
-                                size="sm"
-                                sx={{
-                                  _light: { color: "$textLight900" },
-                                  _dark: { color: "$textDark200" },
-                                }}
-                              >
-                                {image.rating}
-                              </Text>
-                            </HStack>
-                          </Pressable>
-                        );
-                      }}
-                    >
-                      <Tooltip.Content>
-                        <Text
-                          sx={{
-                            color: "$white",
-                            px: "$2",
-                            py: "$1",
-                          }}
-                        >
-                          Ratings
-                        </Text>
-                      </Tooltip.Content>
-                    </Tooltip>
-                  </HStack>
-                </>
-              );
-            }}
-          </Pressable>
+                    </Pressable>
+                  );
+                }}
+              >
+                <Tooltip.Content>
+                  <Text
+                    sx={{
+                      color: "$white",
+                      px: "$2",
+                      py: "$1",
+                    }}
+                  >
+                    Ratings
+                  </Text>
+                </Tooltip.Content>
+              </Tooltip>
+            </HStack>
+          </Box>
         );
       })}
     </VStack>
