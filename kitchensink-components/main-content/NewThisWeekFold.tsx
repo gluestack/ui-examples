@@ -21,14 +21,23 @@ const data = [
     src: require("../../assets/display/image3.png"),
   },
   {
-    src: require("../../assets/display/image7.png"),
+    src: require("../../assets/display/image4.png"),
   },
+  // {
+  //   src: require("../../assets/display/image5.png"),
+  // },
+  {
+    src: require("../../assets/display/image6.png"),
+  },
+  // {
+  //   src: require("../../assets/display/image7.png"),
+  // },
   {
     src: require("../../assets/display/image8.png"),
   },
-  {
-    src: require("../../assets/display/image9.png"),
-  },
+  // {
+  //   src: require("../../assets/display/image9.png"),
+  // },
   {
     src: require("../../assets/display/image10.png"),
   },
@@ -39,8 +48,14 @@ const data = [
     src: require("../../assets/display/image12.png"),
   },
   {
+    src: require("../../assets/display/image13.png"),
+  },
+  {
     src: require("../../assets/display/image14.png"),
   },
+  // {
+  //   src: require("../../assets/display/image15.png"),
+  // },
 ];
 
 const NewThisWeekFold = () => {
