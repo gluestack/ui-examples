@@ -17,9 +17,7 @@ const data = [
   {
     src: require("../../assets/display/image2.png"),
   },
-  {
-    src: require("../../assets/display/image3.png"),
-  },
+
   {
     src: require("../../assets/display/image4.png"),
   },
@@ -40,6 +38,9 @@ const data = [
   // },
   {
     src: require("../../assets/display/image10.png"),
+  },
+  {
+    src: require("../../assets/display/image3.png"),
   },
   {
     src: require("../../assets/display/image11.png"),
