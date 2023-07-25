@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 import {
   HStack,
   Icon,
   Pressable,
   Text,
   VStack,
-} from '../gluestack-ui-components';
-import ListYourPlaceModal from './main-content/ListYourPlaceModal';
-import MobileSidebarActionsheet from './MobileSidebarActionsheet';
+} from "../gluestack-ui-components";
+import ListYourPlaceModal from "./main-content/ListYourPlaceModal";
+import MobileSidebarActionsheet from "./MobileSidebarActionsheet";
 
 const MobileBottomTabs = ({
   bottomTabs,
@@ -21,17 +21,17 @@ any) => {
   const [modalVisible, setModalVisible] = React.useState(false);
   const [actionsheetVisible, setActionsheetVisible] = React.useState(false);
 
-  React.useEffect(() => {
-    if (modalVisible === false) {
-      setActiveTab('Home');
-    }
-  }, [modalVisible]);
+  // React.useEffect(() => {
+  //   if (modalVisible === false) {
+  //     // setActiveTab("Home");
+  //   }
+  // }, [modalVisible]);
 
-  React.useEffect(() => {
-    if (actionsheetVisible === false) {
-      setActiveTab('Home');
-    }
-  }, [actionsheetVisible]);
+  // React.useEffect(() => {
+  //   if (actionsheetVisible === false) {
+  //     // setActiveTab("Home");
+  //   }
+  // }, [actionsheetVisible]);
 
   return (
     <>
@@ -44,7 +44,7 @@ any) => {
         py="$3"
         px="$6"
         sx={{
-          '@md': { display: 'none' },
+          "@md": { display: "none" },
         }}
       >
         {bottomTabs.map((tab: any) => {
@@ -52,11 +52,13 @@ any) => {
             <Pressable
               key={tab.label}
               onPress={() => {
-                setActiveTab(tab.label);
-                if (tab.label === 'Listing') {
+                if (tab.label !== "Listing" && tab.label !== "Filter") {
+                  setActiveTab(tab.label);
+                }
+                if (tab.label === "Listing") {
                   setModalVisible(true);
                 }
-                if (tab.label === 'Filter') {
+                if (tab.label === "Filter") {
                   setActionsheetVisible(true);
                 }
               }}
@@ -67,21 +69,21 @@ any) => {
                 <Icon
                   as={tab.icon}
                   color={
-                    activeTab === tab.label ? '$primary500' : '$textLight400'
+                    activeTab === tab.label ? "$primary500" : "$textLight400"
                   }
                   size={20}
                 />
                 <Text
                   size="xs"
                   color={
-                    activeTab === tab.label ? '$textLight900' : '$textLight400'
+                    activeTab === tab.label ? "$textLight900" : "$textLight400"
                   }
                   sx={{
                     _dark: {
                       color:
                         activeTab === tab.label
-                          ? '$textDark100'
-                          : '$textLight400',
+                          ? "$textDark100"
+                          : "$textLight400",
                     },
                   }}
                 >

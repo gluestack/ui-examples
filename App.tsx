@@ -1,32 +1,32 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
-import { Button, GluestackUIProvider } from './gluestack-ui-components';
-import { config } from './gluestack-ui.config';
-import { SSRProvider } from '@react-native-aria/utils';
-import { useFonts } from 'expo-font';
+import React from "react";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { Button, GluestackUIProvider } from "./gluestack-ui-components";
+import { config } from "./gluestack-ui.config";
+import { SSRProvider } from "@react-native-aria/utils";
+import { useFonts } from "expo-font";
 import {
   Inter_400Regular,
   Inter_500Medium,
   Inter_600SemiBold,
   Inter_700Bold,
   Inter_900Black,
-} from '@expo-google-fonts/inter';
-import './styles';
-import HomestayPage from './kitchensink-components/HomestayPage';
+} from "@expo-google-fonts/inter";
+import "./styles";
+import HomestayPage from "./kitchensink-components/HomestayPage";
 
 type ThemeContextType = {
-  colorMode?: 'dark' | 'light';
+  colorMode?: "dark" | "light";
   toggleColorMode?: () => void;
 };
 
 export const ThemeContext = React.createContext<ThemeContextType>({
-  colorMode: 'light',
+  colorMode: "light",
   toggleColorMode: () => {},
 });
 
 export default function App() {
-  const [colorMode, setColorMode] = React.useState<'dark' | 'light'>('light');
+  const [colorMode, setColorMode] = React.useState<"dark" | "light">("light");
 
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
@@ -42,7 +42,7 @@ export default function App() {
 
   const toggleColorMode = async () => {
     // colorMode === 'light' ? setColorMode('dark') : setColorMode('light');
-    setColorMode((prev) => (prev === 'light' ? 'dark' : 'light'));
+    setColorMode((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   return (
@@ -50,14 +50,14 @@ export default function App() {
       {/* top SafeAreaView */}
       <SafeAreaView
         style={{
-          backgroundColor: colorMode === 'light' ? '#E5E5E5' : '#262626',
+          backgroundColor: colorMode === "light" ? "#E5E5E5" : "#262626",
         }}
       />
       {/* bottom SafeAreaView */}
       <SafeAreaView
         style={{
           ...styles.container,
-          backgroundColor: colorMode === 'light' ? 'white' : '#171717',
+          backgroundColor: colorMode === "light" ? "white" : "#171717",
         }}
       >
         {/* gluestack-ui provider */}
@@ -83,6 +83,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
 });

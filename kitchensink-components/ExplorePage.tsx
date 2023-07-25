@@ -1,10 +1,10 @@
-import React from 'react';
-import { Box, HStack } from '../gluestack-ui-components';
-import Banner from './Banner';
-import Header from './Header';
-import WebSidebar from './WebSidebar';
-import MainContent from './main-content/MainContent';
-import { ScrollView } from 'react-native';
+import React from "react";
+import { Box, HStack } from "../gluestack-ui-components";
+import Banner from "./Banner";
+import Header from "./Header";
+import WebSidebar from "./WebSidebar";
+import MainContent from "./main-content/MainContent";
+import { ScrollView } from "react-native";
 
 const Explorepage = ({
   // modalVisible,
@@ -17,7 +17,7 @@ const Explorepage = ({
       <Box
         w="100%"
         sx={{
-          display: activeTab === 'Home' ? 'flex' : 'none',
+          display: activeTab !== "Profile" ? "flex" : "none",
         }}
       >
         {/* top banner */}
@@ -28,9 +28,9 @@ const Explorepage = ({
       <ScrollView>
         <Box
           sx={{
-            'display': activeTab === 'Home' ? 'flex' : 'none',
+            display: activeTab !== "Profile" ? "flex" : "none",
 
-            '@md': { display: 'none' },
+            "@md": { display: "none" },
           }}
         >
           <MainContent
@@ -42,7 +42,7 @@ const Explorepage = ({
         </Box>
       </ScrollView>
 
-      <HStack w="100%" display="none" sx={{ '@md': { display: 'flex' } }}>
+      <HStack w="100%" display="none" sx={{ "@md": { display: "flex" } }}>
         <WebSidebar />
         <ScrollView style={{ flex: 1 }}>
           <MainContent

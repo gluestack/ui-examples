@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "kitchensink-app",
-    "slug": "kitchensink-app",
+    "slug": "kitchensink",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "jsEngine": "hermes",
@@ -32,7 +34,13 @@
       "policy": "sdkVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/72e83d84-acc2-4675-a0a8-95d0f5fea5b4"
-    }
+      "url": "https://u.expo.dev/1736440c-dcb1-40ae-b400-ecc99660229a"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1736440c-dcb1-40ae-b400-ecc99660229a"
+      }
+    },
+    "owner": "rayan1810"
   }
 }
