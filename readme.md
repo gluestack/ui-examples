@@ -18,6 +18,8 @@ npm install
 yarn
 ```
 
+> **In the file app.json, Please remove the _extra_ and _owner_ property from the file**
+
 Run the KitchenSink app:
 ```bash
 expo start
