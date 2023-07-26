@@ -1,0 +1,1 @@
+{"version":3,"names":["combineContextAndProps","context","props"],"sourceRoot":"../../src","sources":["combineContextAndProps.ts"],"mappings":"AAAA,OAAO,MAAMA,sBAAsB,GAAGA,CAACC,OAAY,EAAEC,KAAU,KAAK;EAClE,OAAO;IACL,GAAGD,OAAO;IACV,GAAGC;EACL,CAAC;AACH,CAAC"}

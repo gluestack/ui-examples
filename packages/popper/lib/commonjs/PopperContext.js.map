@@ -1,0 +1,1 @@
+{"version":3,"names":["_utils","require","PopperProvider","usePopperContext","createContext","exports"],"sourceRoot":"../../src","sources":["PopperContext.ts"],"mappings":";;;;;;AAAA,IAAAA,MAAA,GAAAC,OAAA;AACO,MAAM,CAACC,cAAc,EAAEC,gBAAgB,CAAC,GAC7C,IAAAC,oBAAa,EAAM,eAAe,CAAC;AAACC,OAAA,CAAAF,gBAAA,GAAAA,gBAAA;AAAAE,OAAA,CAAAH,cAAA,GAAAA,cAAA"}

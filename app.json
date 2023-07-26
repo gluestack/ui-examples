@@ -12,9 +12,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "jsEngine": "hermes",
@@ -35,12 +33,6 @@
     },
     "updates": {
       "url": "https://u.expo.dev/1736440c-dcb1-40ae-b400-ecc99660229a"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "1736440c-dcb1-40ae-b400-ecc99660229a"
-      }
-    },
-    "owner": "rayan1810"
+    }
   }
 }

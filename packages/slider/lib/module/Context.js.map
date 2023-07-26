@@ -1,0 +1,1 @@
+{"version":3,"names":["React","SliderContext","createContext"],"sourceRoot":"../../src","sources":["Context.ts"],"mappings":"AAAA,OAAOA,KAAK,MAAM,OAAO;AAEzB,OAAO,MAAMC,aAAa,gBAAGD,KAAK,CAACE,aAAa,CAAM,CAAC,CAAC,CAAC"}

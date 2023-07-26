@@ -1,0 +1,1 @@
+{"version":3,"names":["createContext","TabProvider","useTab"],"sourceRoot":"../../src","sources":["TabProvider.tsx"],"mappings":"AAAA,SAASA,aAAa,QAAQ,qBAAqB;AAEnD,OAAO,MAAM,CAACC,WAAW,EAAEC,MAAM,CAAC,GAAGF,aAAa,CAAM,YAAY,CAAC"}

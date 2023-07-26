@@ -1,0 +1,1 @@
+{"version":3,"names":["_utils","require","CheckboxProvider","useCheckbox","createContext","exports"],"sourceRoot":"../../src","sources":["CheckboxProvider.tsx"],"mappings":";;;;;;AAAA,IAAAA,MAAA,GAAAC,OAAA;AAEO,MAAM,CAACC,gBAAgB,EAAEC,WAAW,CAAC,GAC1C,IAAAC,oBAAa,EAAM,iBAAiB,CAAC;AAACC,OAAA,CAAAF,WAAA,GAAAA,WAAA;AAAAE,OAAA,CAAAH,gBAAA,GAAAA,gBAAA"}

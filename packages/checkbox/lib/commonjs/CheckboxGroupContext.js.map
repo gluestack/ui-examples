@@ -1,0 +1,1 @@
+{"version":3,"names":["_utils","require","CheckboxGroupProvider","useCheckboxGroup","createContext","exports"],"sourceRoot":"../../src","sources":["CheckboxGroupContext.tsx"],"mappings":";;;;;;AAAA,IAAAA,MAAA,GAAAC,OAAA;AAEO,MAAM,CAACC,qBAAqB,EAAEC,gBAAgB,CAAC,GAAG,IAAAC,oBAAa,EACpE,sBACF,CAAC;AAACC,OAAA,CAAAF,gBAAA,GAAAA,gBAAA;AAAAE,OAAA,CAAAH,qBAAA,GAAAA,qBAAA"}

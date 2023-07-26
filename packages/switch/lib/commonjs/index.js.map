@@ -1,0 +1,1 @@
+{"version":3,"names":["_Switch","require","createSwitch","_ref","Root","Switch","SwitchMain","displayName"],"sourceRoot":"../../src","sources":["index.tsx"],"mappings":";;;;;;AACA,IAAAA,OAAA,GAAAC,OAAA;AAGO,SAASC,YAAYA,CAAAC,IAAA,EAIzB;EAAA,IAJuC;IACxCC;EAGF,CAAC,GAAAD,IAAA;EACC,MAAME,MAAM,GAAG,IAAAC,cAAU,EAACF,IAAI,CAAC;EAE/BC,MAAM,CAACE,WAAW,GAAG,QAAQ;EAC7B,OAAOF,MAAM;AACf"}

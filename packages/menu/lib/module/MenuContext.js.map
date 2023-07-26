@@ -1,0 +1,1 @@
+{"version":3,"names":["createContext","MenuContext","onClose","showBackdrop"],"sourceRoot":"../../src","sources":["MenuContext.ts"],"mappings":"AAAA,SAASA,aAAa,QAAQ,OAAO;AAErC,OAAO,MAAMC,WAAW,gBAAGD,aAAa,CAAC;EACvCE,OAAO,EAAEA,CAAA,KAAM,CAAC,CAAC;EACjBC,YAAY,EAAE;AAChB,CAAC,CAAC"}

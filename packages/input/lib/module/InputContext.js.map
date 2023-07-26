@@ -1,0 +1,1 @@
+{"version":3,"names":["createContext","InputProvider","useInput"],"sourceRoot":"../../src","sources":["InputContext.tsx"],"mappings":"AACA,SAASA,aAAa,QAAQ,qBAAqB;AAEnD,OAAO,MAAM,CAACC,aAAa,EAAEC,QAAQ,CAAC,GACpCF,aAAa,CAAe,cAAc,CAAC"}
