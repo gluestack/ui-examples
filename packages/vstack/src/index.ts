@@ -1,16 +1,13 @@
-import { VStack as VStackMain } from "./VStack";
-import { View } from "react-native";
+import { VStack as VStackMain } from './VStack';
 
-export function createVStack<VStackProps, VStackSpacerProps>({
+export function createVStack<VStackProps>({
   Root,
-  Spacer,
-}: {
+}: // Spacer,
+{
   Root: React.ComponentType<VStackProps>;
-  Spacer: React.ComponentType<VStackSpacerProps>;
 }) {
-  return View;
-  const VStack = VStackMain(Root, Spacer);
+  const VStack = VStackMain(Root);
 
-  VStack.displayName = "VStack";
+  VStack.displayName = 'VStack';
   return VStack;
 }

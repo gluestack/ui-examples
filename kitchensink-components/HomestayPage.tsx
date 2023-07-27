@@ -157,6 +157,11 @@ const HomestayPage = () => {
           <Text>GlueStack UI</Text>
         </Box>
       ) : ( */}
+      <MobileBottomTabs
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        bottomTabs={bottomTabs}
+      />
       <Box
         flex={1}
         sx={{
@@ -199,13 +204,7 @@ const HomestayPage = () => {
           }}
           borderTopWidth="$1"
           borderColor="$borderLight50"
-        >
-          <MobileBottomTabs
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-            bottomTabs={bottomTabs}
-          />
-        </Box>
+        ></Box>
       </Box>
       {/* )} */}
     </>

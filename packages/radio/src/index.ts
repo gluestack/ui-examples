@@ -1,9 +1,9 @@
-import { Radio as RadioMain } from './Radio';
-import { RadioIcon } from './RadioIcon';
-import { RadioIndicator } from './RadioIndicator';
-import { RadioLabel } from './RadioLabel';
-import { RadioGroup } from './RadioGroup';
-import type { IRadioComponentType } from './types';
+import { Radio as RadioMain } from "./Radio";
+import { RadioIcon } from "./RadioIcon";
+import { RadioIndicator } from "./RadioIndicator";
+import { RadioLabel } from "./RadioLabel";
+import { RadioGroup } from "./RadioGroup";
+import type { IRadioComponentType } from "./types";
 
 export const createRadio = <
   RadioProps,
@@ -24,16 +24,16 @@ export const createRadio = <
   Indicator: React.ComponentType<IndicatorProps>;
   Label: React.ComponentType<LabelProps>;
 }) => {
-  const Radio = RadioMain(Root) as any;
-  Radio.Group = RadioGroup(Group);
-  Radio.Label = RadioLabel(Label);
-  Radio.Icon = RadioIcon(Icon);
-  Radio.Indicator = RadioIndicator(Indicator);
-  Radio.displayName = 'Radio';
-  Radio.Group.displayName = 'Radio.Group';
-  Radio.Label.displayName = 'Radio.Label';
-  Radio.Icon.displayName = 'Radio.Icon';
-  Radio.Indicator.displayName = 'Radio.Indicator';
+  const Radio = Root as any;
+  Radio.Group = Group;
+  Radio.Label = Label;
+  Radio.Icon = Icon;
+  Radio.Indicator = Indicator;
+  Radio.displayName = "Radio";
+  Radio.Group.displayName = "Radio.Group";
+  Radio.Label.displayName = "Radio.Label";
+  Radio.Icon.displayName = "Radio.Icon";
+  Radio.Indicator.displayName = "Radio.Indicator";
 
   return Radio as IRadioComponentType<
     RadioProps,

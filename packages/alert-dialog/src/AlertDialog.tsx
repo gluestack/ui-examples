@@ -1,12 +1,13 @@
-import React, { forwardRef } from 'react';
-import { View } from 'react-native';
-import { AlertDialogContext } from './Context';
-import { Overlay } from '@gluestack-ui/overlay';
-import type { IAlertDialogProps } from './types';
+//@ts-nocheck
+import React, { forwardRef } from "react";
+import { View } from "react-native";
+import { AlertDialogContext } from "./Context";
+import { Overlay } from "@gluestack-ui/overlay";
+import type { IAlertDialogProps } from "./types";
 import {
   useControllableState,
   useKeyboardBottomInset,
-} from '@gluestack-ui/hooks';
+} from "@gluestack-ui/hooks";
 
 export const AlertDialog = <T,>(StyledAlertDialog: React.ComponentType<T>) =>
   forwardRef(
@@ -15,14 +16,7 @@ export const AlertDialog = <T,>(StyledAlertDialog: React.ComponentType<T>) =>
         children,
         isOpen,
         onClose,
-        defaultIsOpen = false,
-        initialFocusRef,
-        finalFocusRef,
-        avoidKeyboard = false,
         closeOnOverlayClick = true,
-        isKeyboardDismissable = true,
-        animationPreset = 'fade',
-        unmountOnExit = true,
         ...props
       }: T & IAlertDialogProps,
       ref?: any
@@ -31,7 +25,6 @@ export const AlertDialog = <T,>(StyledAlertDialog: React.ComponentType<T>) =>
 
       const [visible, setVisible] = useControllableState({
         value: isOpen,
-        defaultValue: defaultIsOpen,
         onChange: (val: any) => {
           if (!val) onClose && onClose();
         },
@@ -40,9 +33,8 @@ export const AlertDialog = <T,>(StyledAlertDialog: React.ComponentType<T>) =>
         <View
           style={{
             // @ts-ignore
-            pointerEvents: 'box-none',
-            width: '100%',
-            height: avoidKeyboard ? bottomInset : undefined,
+            pointerEvents: "box-none",
+            width: "100%",
           }}
         />
       );
@@ -55,35 +47,18 @@ export const AlertDialog = <T,>(StyledAlertDialog: React.ComponentType<T>) =>
       const contextValue = React.useMemo(() => {
         return {
           handleClose,
-          initialFocusRef,
-          finalFocusRef,
+
           closeOnOverlayClick,
-          avoidKeyboard,
           bottomInset,
           visible,
         };
-      }, [
-        handleClose,
-        initialFocusRef,
-        closeOnOverlayClick,
-        finalFocusRef,
-        avoidKeyboard,
-        bottomInset,
-        visible,
-      ]);
+      }, [handleClose, closeOnOverlayClick, bottomInset, visible]);
 
       return (
-        <Overlay
-          isOpen={visible}
-          onRequestClose={handleClose}
-          isKeyboardDismissable={isKeyboardDismissable}
-          animationPreset={animationPreset}
-          unmountOnExit={unmountOnExit}
-        >
+        <Overlay isOpen={visible} onRequestClose={handleClose}>
           <AlertDialogContext.Provider value={contextValue}>
             <StyledAlertDialog {...(props as T)} ref={ref}>
               {children}
-              {avoidKeyboard ? avoidKeyboardSpacer : null}
             </StyledAlertDialog>
           </AlertDialogContext.Provider>
         </Overlay>

@@ -1,7 +1,7 @@
-import React, { forwardRef } from 'react';
-import { useFormControl } from '@gluestack-ui/form-control';
-import { useInput } from './InputContext';
-import { mergeRefs } from '@gluestack-ui/utils';
+import React, { forwardRef } from "react";
+import { useFormControl } from "@gluestack-ui/form-control";
+import { useInput } from "./InputContext";
+import { mergeRefs } from "@gluestack-ui/utils";
 
 export const Input = (StyledInput: any) =>
   forwardRef(
@@ -9,10 +9,10 @@ export const Input = (StyledInput: any) =>
       {
         children,
         onKeyPress,
-        type = 'text',
-        accessibilityLabel = 'Input Field',
+        type = "text",
+        accessibilityLabel = "Input Field",
         accessibilityHint,
-        accessibilityRole = 'text',
+        accessibilityRole = "text",
         ...props
       }: any,
       ref?: any
@@ -27,20 +27,20 @@ export const Input = (StyledInput: any) =>
         isFocusVisible,
         inputFieldRef,
         isRequired,
-      } = useInput('InputContext');
+      } = useInput("InputContext");
 
-      const inputProps = useFormControl({
-        isDisabled: props.isDisabled,
-        isInvalid: props.isInvalid,
-        isReadOnly: props.isReadOnly,
-        isRequired: props.isRequired,
-        nativeID: props.nativeID,
-      });
+      // const inputProps = useFormControl({
+      //   isDisabled: props.isDisabled,
+      //   isInvalid: props.isInvalid,
+      //   isReadOnly: props.isReadOnly,
+      //   isRequired: props.isRequired,
+      //   nativeID: props.nativeID,
+      // });
 
-      const handleFocus = (focusState: boolean, callback: any) => {
-        setIsFocused(focusState);
-        callback();
-      };
+      // const handleFocus = (focusState: boolean, callback: any) => {
+      //   setIsFocused(focusState);
+      //   callback();
+      // };
 
       const mergedref = mergeRefs([ref, inputFieldRef]);
 
@@ -54,19 +54,19 @@ export const Input = (StyledInput: any) =>
             required: isRequired,
             hover: isHovered,
             focusVisible: isFocusVisible,
-            disabled: isDisabled || inputProps.isDisabled,
+            // disabled: isDisabled || inputProps.isDisabled,
           }}
-          disabled={isDisabled || inputProps.isDisabled}
-          secureTextEntry={type === 'password'}
+          // disabled={isDisabled || inputProps.isDisabled}
+          secureTextEntry={type === "password"}
           accessible
           accessibilityLabel={accessibilityLabel}
           accessibilityHint={accessibilityHint}
           accessibilityRole={accessibilityRole}
-          accessibilityRequired={isRequired || inputProps.isRequired}
-          accessibilityInvalid={isInvalid || inputProps.isInvalid}
+          // accessibilityRequired={isRequired || inputProps.isRequired}
+          // accessibilityInvalid={isInvalid || inputProps.isInvalid}
           accessibilityState={{
-            invalid: isInvalid || inputProps.isInvalid,
-            disabled: isDisabled || inputProps.isDisabled,
+            // invalid: isInvalid || inputProps.isInvalid,
+            // disabled: isDisabled || inputProps.isDisabled,
             selected: isFocused,
           }}
           accessibilityElementsHidden={isDisabled}
@@ -75,18 +75,18 @@ export const Input = (StyledInput: any) =>
             e.persist();
             onKeyPress && onKeyPress(e);
           }}
-          onFocus={(e: any) => {
-            handleFocus(
-              true,
-              props?.onFocus ? () => props?.onFocus(e) : () => {}
-            );
-          }}
-          onBlur={(e: any) => {
-            handleFocus(
-              false,
-              props?.onBlur ? () => props?.onBlur(e) : () => {}
-            );
-          }}
+          // onFocus={(e: any) => {
+          //   handleFocus(
+          //     true,
+          //     props?.onFocus ? () => props?.onFocus(e) : () => {}
+          //   );
+          // }}
+          // onBlur={(e: any) => {
+          //   handleFocus(
+          //     false,
+          //     props?.onBlur ? () => props?.onBlur(e) : () => {}
+          //   );
+          // }}
           ref={mergedref}
         >
           {children}

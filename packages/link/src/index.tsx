@@ -1,11 +1,11 @@
-import { Link as LinkMain } from './Link';
-import { LinkText } from './LinkText';
-import { useLink } from './useLink';
+import { Link as LinkMain } from "./Link";
+import { LinkText } from "./LinkText";
+import { useLink } from "./useLink";
 import type {
   InterfaceLinkProps,
   IUseLinkProp,
   ILinkComponentType,
-} from './types';
+} from "./types";
 
 const createLink = <Root, TextProps>({
   Root,
@@ -14,10 +14,10 @@ const createLink = <Root, TextProps>({
   Root: React.ComponentType<Root>;
   Text: React.ComponentType<TextProps>;
 }) => {
-  const Link = LinkMain(Root) as any;
+  const Link = Root as any;
   //ts-ignore
-  Link.Text = LinkText(Text);
-  Link.Text.displayName = 'Link.Text';
+  Link.Text = Text;
+  Link.Text.displayName = "Link.Text";
   return Link as ILinkComponentType<Root, TextProps>;
 };
 

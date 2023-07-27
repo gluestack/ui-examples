@@ -27,6 +27,7 @@ import {
   CheckIcon,
   CircleIcon,
 } from "../../gluestack-ui-components/core/Icons/Icons";
+import Sidebar from "../Sidebar";
 
 const sidebarFiltersAmmenities = [
   {
@@ -146,7 +147,7 @@ const ListYourPlaceModal = ({ modalVisible, setModalVisible }: any) => {
         <Modal.Body>
           <VStack space="md">
             {/* <ModalContent1 /> */}
-            {getModalStepContent(modalFormStep)}
+            <Sidebar />
           </VStack>
         </Modal.Body>
       </Modal.Content>

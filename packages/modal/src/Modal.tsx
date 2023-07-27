@@ -1,94 +1,63 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { forwardRef } from 'react';
-import { View } from 'react-native';
+// @ts-nocheck
+import React, { forwardRef } from "react";
+import { View } from "react-native";
 import {
   useControllableState,
   useKeyboardBottomInset,
-} from '@gluestack-ui/hooks';
-import { ModalContext } from './Context';
-import { Overlay } from '@gluestack-ui/overlay';
+} from "@gluestack-ui/hooks";
+import { ModalContext } from "./Context";
+import { Overlay } from "@gluestack-ui/overlay";
 
 const Modal = (StyledModal: any) =>
-  forwardRef(
-    (
-      {
-        children,
-        isOpen,
-        onClose,
-        defaultIsOpen,
-        initialFocusRef,
-        finalFocusRef,
-        avoidKeyboard,
-        closeOnOverlayClick = true,
-        isKeyboardDismissable = true,
-        unmountOnExit = true,
-        ...props
-      }: any,
-      ref?: any
-    ) => {
-      const bottomInset = useKeyboardBottomInset();
+  forwardRef(({ children, isOpen, onClose, ...props }: any, ref?: any) => {
+    const bottomInset = useKeyboardBottomInset();
 
-      const { useRNModal, ...remainingProps } = props;
+    const { useRNModal, ...remainingProps } = props;
 
-      const [visible, setVisible] = useControllableState({
-        value: defaultIsOpen ?? isOpen,
-        onChange: (val) => {
-          if (!val) onClose && onClose();
-        },
-      });
+    const [visible, setVisible] = useControllableState({
+      value: isOpen,
+      onChange: (val) => {
+        if (!val) onClose && onClose();
+      },
+    });
 
-      const handleClose = React.useCallback(() => {
-        setVisible(false);
-      }, [setVisible]);
+    const handleClose = React.useCallback(() => {
+      setVisible(false);
+    }, [setVisible]);
 
-      const avoidKeyboardSpacer = (
-        <View
-          style={{
-            // @ts-ignore
-            pointerEvents: 'box-none',
-            width: '100%',
-            height: avoidKeyboard ? bottomInset : undefined,
-          }}
-        />
-      );
+    const avoidKeyboardSpacer = (
+      <View
+        style={{
+          // @ts-ignore
+          pointerEvents: "box-none",
+          width: "100%",
+        }}
+      />
+    );
 
-      const contextValue = React.useMemo(() => {
-        return {
-          handleClose,
-          initialFocusRef,
-          finalFocusRef,
-          closeOnOverlayClick,
-          visible,
-          avoidKeyboard,
-          bottomInset,
-        };
-      }, [
+    const contextValue = React.useMemo(() => {
+      return {
         handleClose,
-        initialFocusRef,
-        closeOnOverlayClick,
-        finalFocusRef,
-        avoidKeyboard,
-        bottomInset,
+        closeOnOverlayClick: true,
         visible,
-      ]);
+        bottomInset,
+      };
+    }, [handleClose, bottomInset, visible]);
 
-      return (
-        <Overlay
-          isOpen={visible}
-          onRequestClose={handleClose}
-          isKeyboardDismissable={isKeyboardDismissable}
-          useRNModal={useRNModal}
-          unmountOnExit={unmountOnExit}
-        >
-          <ModalContext.Provider value={contextValue}>
-            <StyledModal {...remainingProps} ref={ref}>
-              {children}
-              {avoidKeyboard ? avoidKeyboardSpacer : null}
-            </StyledModal>
-          </ModalContext.Provider>
-        </Overlay>
-      );
-    }
-  );
+    return (
+      <Overlay
+        isOpen={visible}
+        onRequestClose={handleClose}
+        useRNModal={useRNModal}
+      >
+        <ModalContext.Provider value={contextValue}>
+          <StyledModal {...remainingProps} ref={ref}>
+            {children}
+          </StyledModal>
+        </ModalContext.Provider>
+      </Overlay>
+    );
+  });
 
 export default Modal;

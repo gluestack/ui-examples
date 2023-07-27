@@ -1,8 +1,8 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import { useFocusRing } from '@react-native-aria/focus';
+import { useFocusRing, useFocus } from '@react-native-aria/focus';
 import React, { forwardRef, createContext } from 'react';
 import { composeEventHandlers } from '@gluestack-ui/utils';
-import { useFocus, useHover, useIsPressed } from '@gluestack-ui/react-native-aria';
+import { usePress, useHover } from '@react-native-aria/interactions';
 export const ActionsheetContext = /*#__PURE__*/createContext({});
 export function ActionsheetItem(StyledActionsheetItem) {
   return /*#__PURE__*/forwardRef((_ref, ref) => {
@@ -21,9 +21,11 @@ export function ActionsheetItem(StyledActionsheetItem) {
       focusProps: focusRingProps
     } = useFocusRing();
     const {
-      pressableProps,
+      pressProps,
       isPressed
-    } = useIsPressed();
+    } = usePress({
+      isDisabled
+    });
     const {
       isFocused,
       focusProps
@@ -35,8 +37,8 @@ export function ActionsheetItem(StyledActionsheetItem) {
     return /*#__PURE__*/React.createElement(StyledActionsheetItem, _extends({
       ref: ref,
       disabled: isDisabled,
-      onPressIn: composeEventHandlers(props === null || props === void 0 ? void 0 : props.onPressIn, pressableProps.onPressIn),
-      onPressOut: composeEventHandlers(props === null || props === void 0 ? void 0 : props.onPressOut, pressableProps.onPressOut)
+      onPressIn: composeEventHandlers(props === null || props === void 0 ? void 0 : props.onPressIn, pressProps.onPressIn),
+      onPressOut: composeEventHandlers(props === null || props === void 0 ? void 0 : props.onPressOut, pressProps.onPressOut)
       // @ts-ignore - web only
       ,
       onHoverIn: composeEventHandlers(props === null || props === void 0 ? void 0 : props.onHoverIn, hoverProps.onHoverIn)

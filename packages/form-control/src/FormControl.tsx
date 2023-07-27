@@ -1,23 +1,25 @@
-import React, { forwardRef } from 'react';
-import { useFormControlProvider, FormControlContext } from './useFormControl';
-import type { IFormControlProps } from './types';
+import React, { forwardRef } from "react";
+import { useFormControlProvider, FormControlContext } from "./useFormControl";
+import type { IFormControlProps } from "./types";
 
 const FormControl = <T,>(StyledFormControlBox: React.ComponentType<T>) =>
   forwardRef(({ ...props }: T & IFormControlProps, ref?: any) => {
     const { htmlProps, ...context } = useFormControlProvider(props);
 
-    const { isDisabled, isInvalid, ...remainingProps } = context;
+    // const { isDisabled, isInvalid, ...remainingProps } = context;
 
     return (
       <FormControlContext.Provider value={context}>
         <StyledFormControlBox
           ref={ref}
-          {...remainingProps}
+          // {...remainingProps}
           {...htmlProps}
-          states={{
-            disabled: isDisabled,
-            invalid: isInvalid,
-          }}
+          states={
+            {
+              // disabled: isDisabled,
+              // invalid: isInvalid,
+            }
+          }
         />
       </FormControlContext.Provider>
     );

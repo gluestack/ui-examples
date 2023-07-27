@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "jsEngine": "hermes",
@@ -32,7 +34,13 @@
       "policy": "sdkVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/1736440c-dcb1-40ae-b400-ecc99660229a"
-    }
+      "url": "https://u.expo.dev/8001ba3a-0b7b-4c5a-a0c7-e73afa069279"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8001ba3a-0b7b-4c5a-a0c7-e73afa069279"
+      }
+    },
+    "owner": "ankit-tailor"
   }
 }

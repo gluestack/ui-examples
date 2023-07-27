@@ -1,16 +1,13 @@
-import { HStack as HStackMain } from "./HStack";
-import { View } from "react-native";
-export function createHStack<StyledHStackProps, StyledHStackSpacerProps>({
+import { HStack as HStackMain } from './HStack';
+
+export function createHStack<StyledHStackProps>({
   Root,
-  Spacer,
 }: {
   Root: React.ComponentType<StyledHStackProps>;
-  Spacer: React.ComponentType<StyledHStackSpacerProps>;
 }) {
-  return View;
-  const HStack = HStackMain(Root, Spacer);
+  const HStack = HStackMain(Root);
 
-  HStack.displayName = "HStack";
+  HStack.displayName = 'HStack';
 
   return HStack;
 }

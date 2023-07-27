@@ -1,7 +1,7 @@
-import { InputIcon } from './InputIcon';
-import { InputGroup } from './InputGroup';
-import { Input as InputMain } from './Input';
-import type { IInputComponentType } from './types';
+import { InputIcon } from "./InputIcon";
+import { InputGroup } from "./InputGroup";
+import { Input as InputMain } from "./Input";
+import type { IInputComponentType } from "./types";
 
 export const createInput = <Root, Icon, Input>({
   Root,
@@ -12,13 +12,13 @@ export const createInput = <Root, Icon, Input>({
   Icon: React.ComponentType<Icon>;
   Input: React.ComponentType<Input>;
 }) => {
-  const InputField = InputGroup(Root) as any;
-  InputField.Icon = InputIcon(Icon);
-  InputField.Input = InputMain(Input);
+  const InputField = Root as any;
+  InputField.Icon = Icon;
+  InputField.Input = Input;
 
-  InputField.displayName = 'InputField';
-  InputField.Icon.displayName = 'InputField.Icon';
-  InputField.Input.displayName = 'InputField.Input';
+  InputField.displayName = "InputField";
+  InputField.Icon.displayName = "InputField.Icon";
+  InputField.Input.displayName = "InputField.Input";
 
   return InputField as IInputComponentType<Root, Icon, Input>;
 };

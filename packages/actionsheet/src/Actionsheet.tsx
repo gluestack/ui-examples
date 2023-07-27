@@ -1,10 +1,10 @@
-import React, { forwardRef } from 'react';
-import { Platform } from 'react-native';
-import { useControllableState } from '@gluestack-ui/hooks';
-import { Overlay } from '@gluestack-ui/overlay';
-import { ActionsheetContext } from './context';
-import { StyleSheet } from 'react-native';
-import type { IActionsheetProps } from './types';
+import React, { forwardRef } from "react";
+import { Platform } from "react-native";
+import { useControllableState } from "@gluestack-ui/hooks";
+import { Overlay } from "@gluestack-ui/overlay";
+import { ActionsheetContext } from "./context";
+import { StyleSheet } from "react-native";
+import type { IActionsheetProps } from "./types";
 
 export function Actionsheet<T>(StyledActionsheet: React.ComponentType<T>) {
   return forwardRef(
@@ -14,23 +14,19 @@ export function Actionsheet<T>(StyledActionsheet: React.ComponentType<T>) {
         isOpen,
         onClose,
         onOpen,
-        defaultIsOpen = false,
-        trapFocus = true,
         closeOnOverlayClick = true,
-        isKeyboardDismissable = true,
-        useRNModal,
-        initialFocusRef,
-        finalFocusRef,
         unmountOnExit = true,
+        snapPoints = [50],
+        // @ts-ignore
+        _experimentalOverlay = true,
         ...props
       }: T & IActionsheetProps,
       ref?: any
     ) => {
-      const overlayStyle = Platform.OS === 'web' ? { position: 'fixed' } : {};
+      const overlayStyle = Platform.OS === "web" ? { position: "fixed" } : {};
 
       const [visible, setVisible] = useControllableState({
         value: isOpen,
-        defaultValue: defaultIsOpen,
         onChange: (val) => {
           if (val === false) {
             onClose && onClose();
@@ -41,7 +37,6 @@ export function Actionsheet<T>(StyledActionsheet: React.ComponentType<T>) {
       });
       const [backdropVisible, setBackdropVisible] = useControllableState({
         value: isOpen,
-        defaultValue: defaultIsOpen,
       });
       const handleClose = React.useCallback(() => {
         setVisible(false);
@@ -58,9 +53,7 @@ export function Actionsheet<T>(StyledActionsheet: React.ComponentType<T>) {
           visible,
           backdropVisible: backdropVisible,
           handleCloseBackdrop,
-          trapFocus,
-          initialFocusRef,
-          finalFocusRef,
+          snapPoints,
         };
       }, [
         handleClose,
@@ -68,17 +61,27 @@ export function Actionsheet<T>(StyledActionsheet: React.ComponentType<T>) {
         closeOnOverlayClick,
         visible,
         backdropVisible,
-        trapFocus,
-        initialFocusRef,
-        finalFocusRef,
+        snapPoints,
       ]);
+
+      if (!_experimentalOverlay) {
+        return (
+          <ActionsheetContext.Provider value={contextValue}>
+            <StyledActionsheet
+              ref={ref}
+              style={[StyleSheet.absoluteFill]}
+              {...(props as T)}
+            >
+              {children}
+            </StyledActionsheet>
+          </ActionsheetContext.Provider>
+        );
+      }
 
       return (
         <Overlay
           isOpen={visible}
           onRequestClose={handleClose}
-          isKeyboardDismissable={isKeyboardDismissable}
-          useRNModal={useRNModal}
           // @ts-ignore
           style={overlayStyle}
           unmountOnExit={unmountOnExit}

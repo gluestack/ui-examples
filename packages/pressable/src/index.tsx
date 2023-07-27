@@ -1,12 +1,12 @@
-import { default as PressableMain } from './Pressable';
+import { default as PressableMain } from "./Pressable";
 
 export function createPressable<PressableProps>({
   Root,
 }: {
   Root: React.ComponentType<PressableProps>;
 }) {
-  const Pressable = PressableMain(Root);
+  const Pressable = Root;
 
-  Pressable.displayName = 'Pressable';
+  Pressable.displayName = "Pressable";
   return Pressable;
 }
