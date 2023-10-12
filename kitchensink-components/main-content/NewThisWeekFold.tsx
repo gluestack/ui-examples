@@ -6,9 +6,9 @@ import {
   Center,
   Icon,
   Pressable,
-} from "../../gluestack-ui-components";
+} from "@gluestack-ui/themed";
 import { ScrollView } from "react-native";
-import { ChevronLeft, ChevronRight, Scroll } from "lucide-react-native";
+import { ChevronLeft, ChevronRight } from "lucide-react-native";
 
 const data = [
   {

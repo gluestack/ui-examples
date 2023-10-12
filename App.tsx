@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { GluestackUIProvider } from "./gluestack-ui-components";
+import { GluestackUIProvider } from "@gluestack-ui/themed";
 import { config } from "./gluestack-ui.config";
 import HomestayPage from "./kitchensink-components/HomestayPage";
 import { SSRProvider } from "@react-native-aria/utils";
@@ -14,8 +14,18 @@ import {
 } from "@expo-google-fonts/inter";
 import "./styles";
 
+type ThemeContextType = {
+  colorMode?: "dark" | "light";
+  toggleColorMode?: () => void;
+};
+
+export const ThemeContext = React.createContext<ThemeContextType>({
+  colorMode: "light",
+  toggleColorMode: () => {},
+});
+
 export default function App() {
-  const [colorMode, setColorMode] = React.useState("light");
+  const [colorMode, setColorMode] = React.useState<"dark" | "light">("light");
 
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
@@ -30,8 +40,9 @@ export default function App() {
   }
 
   const toggleColorMode = async () => {
-    colorMode === "light" ? setColorMode("dark") : setColorMode("light");
+    setColorMode((prev) => (prev === "light" ? "dark" : "light"));
   };
+
   return (
     <>
       {/* top SafeAreaView */}
@@ -48,14 +59,13 @@ export default function App() {
         }}
       >
         {/* gluestack-ui provider */}
-        <GluestackUIProvider config={config.theme} colorMode={colorMode}>
-          {/* main app page */}
-          <SSRProvider>
-            <HomestayPage
-              colorMode={colorMode}
-              toggleColorMode={toggleColorMode}
-            />
-          </SSRProvider>
+        <GluestackUIProvider config={config} colorMode={colorMode}>
+          <ThemeContext.Provider value={{ colorMode, toggleColorMode }}>
+            {/* main app page */}
+            <SSRProvider>
+              <HomestayPage />
+            </SSRProvider>
+          </ThemeContext.Provider>
         </GluestackUIProvider>
       </SafeAreaView>
     </>

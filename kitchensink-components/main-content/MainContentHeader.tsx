@@ -2,19 +2,16 @@ import React from "react";
 import {
   Box,
   Button,
+  ButtonIcon,
+  ButtonText,
   Heading,
   HStack,
-  Icon,
-} from "../../gluestack-ui-components";
+} from "@gluestack-ui/themed";
 import { List } from "lucide-react-native";
 import ListYourPlaceModal from "./ListYourPlaceModal";
 
-const MainContentHeader = ({
-  modalVisible,
-  setModalVisible,
-  setActiveTab,
-  activeTab,
-}: any) => {
+const MainContentHeader = ({ setActiveTab, activeTab }: any) => {
+  const [modalVisible, setModalVisible] = React.useState(false);
   return (
     <Box pt="$6" pb="$2.5" px="$4" sx={{ "@md": { px: 0 } }}>
       <HStack w="100%" alignItems="center" justifyContent="space-between">
@@ -34,8 +31,8 @@ const MainContentHeader = ({
             setModalVisible(true);
           }}
         >
-          <Button.Icon as={List} />
-          <Button.Text
+          <ButtonIcon as={List} />
+          <ButtonText
             pl="$2"
             sx={{
               _light: {
@@ -47,7 +44,7 @@ const MainContentHeader = ({
             }}
           >
             List your place
-          </Button.Text>
+          </ButtonText>
         </Button>
       </HStack>
       {modalVisible && (

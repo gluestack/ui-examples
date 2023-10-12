@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Actionsheet } from "../gluestack-ui-components";
+import {
+  Box,
+  Actionsheet,
+  ActionsheetDragIndicatorWrapper,
+  ActionsheetDragIndicator,
+  ActionsheetScrollView,
+  ActionsheetBackdrop,
+  ActionsheetContent,
+} from "@gluestack-ui/themed";
 import Sidebar from "./Sidebar";
 
 const MobileSidebarActionsheet = ({
@@ -10,29 +18,27 @@ const MobileSidebarActionsheet = ({
     setActionsheetVisible(false);
   };
   return (
-    <Box w="100%" flex={1}>
-      <Actionsheet isOpen={actionsheetVisible} onClose={handleClose}>
-        <Actionsheet.Backdrop />
-        <Actionsheet.Content
-          sx={{
-            _dark: {
-              bg: "$backgroundDark950",
-            },
-          }}
-        >
-          <Box h="100%" w="100%">
-            <Actionsheet.DragIndicatorWrapper>
-              <Actionsheet.DragIndicator />
-            </Actionsheet.DragIndicatorWrapper>
-            <Actionsheet.ScrollView>
-              <Box w="100%">
-                <Sidebar />
-              </Box>
-            </Actionsheet.ScrollView>
-          </Box>
-        </Actionsheet.Content>
-      </Actionsheet>
-    </Box>
+    <Actionsheet isOpen={actionsheetVisible} onClose={handleClose}>
+      <ActionsheetBackdrop />
+      <ActionsheetContent
+        sx={{
+          _dark: {
+            bg: "$backgroundDark950",
+          },
+        }}
+      >
+        <Box h="100%" w="100%">
+          <ActionsheetDragIndicatorWrapper>
+            <ActionsheetDragIndicator />
+          </ActionsheetDragIndicatorWrapper>
+          <ActionsheetScrollView>
+            <Box w="100%">
+              <Sidebar />
+            </Box>
+          </ActionsheetScrollView>
+        </Box>
+      </ActionsheetContent>
+    </Actionsheet>
   );
 };
 export default MobileSidebarActionsheet;

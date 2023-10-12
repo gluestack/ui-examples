@@ -6,7 +6,14 @@ import {
   Icon,
   Button,
   CloseIcon,
-} from "../gluestack-ui-components";
+  AlertDialogBackdrop,
+  AlertDialogContent,
+  ButtonText,
+  AlertDialogHeader,
+  AlertDialogCloseButton,
+  AlertDialogBody,
+  AlertDialogFooter,
+} from "@gluestack-ui/themed";
 
 const LogoutAlertDialog = ({
   openLogoutAlertDialog,
@@ -18,31 +25,31 @@ const LogoutAlertDialog = ({
 
   return (
     <AlertDialog isOpen={openLogoutAlertDialog} onClose={handleClose}>
-      <AlertDialog.Backdrop />
-      <AlertDialog.Content>
-        <AlertDialog.Header>
+      <AlertDialogBackdrop />
+      <AlertDialogContent>
+        <AlertDialogHeader>
           <Heading>Logout</Heading>
-          <AlertDialog.CloseButton>
+          <AlertDialogCloseButton>
             <Icon as={CloseIcon} />
-          </AlertDialog.CloseButton>
-        </AlertDialog.Header>
-        <AlertDialog.Body>
+          </AlertDialogCloseButton>
+        </AlertDialogHeader>
+        <AlertDialogBody>
           <Text>Are you sure, you want to logout?</Text>
-        </AlertDialog.Body>
-        <AlertDialog.Footer>
+        </AlertDialogBody>
+        <AlertDialogFooter>
           <Button
             variant="outline"
             action="secondary"
             onPress={handleClose}
             mr="$3"
           >
-            <Button.Text>Cancel</Button.Text>
+            <ButtonText>Cancel</ButtonText>
           </Button>
           <Button action="negative" onPress={handleClose}>
-            <Button.Text>Logout</Button.Text>
+            <ButtonText>Logout</ButtonText>
           </Button>
-        </AlertDialog.Footer>
-      </AlertDialog.Content>
+        </AlertDialogFooter>
+      </AlertDialogContent>
     </AlertDialog>
   );
 };

@@ -6,14 +6,14 @@ import {
   Tooltip,
   VStack,
   Heading,
+  CheckboxGroup,
   SliderTrack,
   SliderFilledTrack,
-  SliderThumb,
   CheckboxIndicator,
   CheckboxLabel,
-  CheckIcon,
   CheckboxIcon,
 } from "@gluestack-ui/themed";
+import { CheckIcon } from "@gluestack-ui/themed";
 
 const PriceRangeSection = () => {
   const [sliderValue, setSliderValue] = React.useState(3500);
@@ -60,7 +60,7 @@ const PriceRangeSection = () => {
         <Tooltip
           placement="bottom"
           trigger={(triggerProps: any) => {
-            return <SliderThumb {...triggerProps} />;
+            return <Slider.Thumb {...triggerProps} />;
           }}
         >
           <Tooltip.Content>
@@ -68,7 +68,7 @@ const PriceRangeSection = () => {
           </Tooltip.Content>
         </Tooltip>
       </Slider>
-      <Checkbox.Group
+      <CheckboxGroup
         value={values}
         onChange={setValues}
         mt="$3"
@@ -90,7 +90,7 @@ const PriceRangeSection = () => {
             </Checkbox>
           );
         })}
-      </Checkbox.Group>
+      </CheckboxGroup>
     </VStack>
   );
 };

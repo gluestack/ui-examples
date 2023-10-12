@@ -1,18 +1,20 @@
 import React from "react";
 import {
   Checkbox,
+  CheckboxGroup,
+  CheckboxIcon,
+  CheckboxIndicator,
+  CheckboxLabel,
   HStack,
   Heading,
   Icon,
   Pressable,
   Text,
   VStack,
-} from "../../gluestack-ui-components";
-import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-} from "../../gluestack-ui-components/core/Icons/Icons";
+} from "@gluestack-ui/themed";
 
 const AmenitiesSection = () => {
   const sidebarFiltersAmmenities = [
@@ -52,7 +54,7 @@ const AmenitiesSection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Ammenities</Heading>
-      <Checkbox.Group
+      <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="ammenities"
@@ -68,14 +70,14 @@ const AmenitiesSection = () => {
               key={ammenity.value}
               accessibilityLabel={ammenity.value}
             >
-              <Checkbox.Indicator>
-                <Checkbox.Icon as={CheckIcon} />
-              </Checkbox.Indicator>
-              <Checkbox.Label ml="$2">{ammenity.label}</Checkbox.Label>
+              <CheckboxIndicator>
+                <CheckboxIcon as={CheckIcon} />
+              </CheckboxIndicator>
+              <CheckboxLabel ml="$2">{ammenity.label}</CheckboxLabel>
             </Checkbox>
           );
         })}
-      </Checkbox.Group>
+      </CheckboxGroup>
       {viewAllComponents ? (
         <Pressable
           onPress={() => {

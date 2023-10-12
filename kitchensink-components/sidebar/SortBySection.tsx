@@ -3,8 +3,12 @@ import {
   CircleIcon,
   Heading,
   Radio,
+  RadioGroup,
+  RadioIndicator,
+  RadioLabel,
   VStack,
-} from "../../gluestack-ui-components";
+} from "@gluestack-ui/themed";
+import { RadioIcon } from "@gluestack-ui/themed";
 
 const SortBySection = () => {
   const sidebarFiltersCustomerRatings = [
@@ -30,7 +34,7 @@ const SortBySection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Sort by</Heading>
-      <Radio.Group
+      <RadioGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="sort-by filter"
@@ -44,14 +48,14 @@ const SortBySection = () => {
               my="$2"
               key={placeType.value}
             >
-              <Radio.Indicator>
-                <Radio.Icon as={CircleIcon} />
-              </Radio.Indicator>
-              <Radio.Label ml="$2">{placeType.label}</Radio.Label>
+              <RadioIndicator>
+                <RadioIcon as={CircleIcon} />
+              </RadioIndicator>
+              <RadioLabel ml="$2">{placeType.label}</RadioLabel>
             </Radio>
           );
         })}
-      </Radio.Group>
+      </RadioGroup>
     </VStack>
   );
 };

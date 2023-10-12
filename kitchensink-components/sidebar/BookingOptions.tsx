@@ -6,7 +6,7 @@ import {
   Switch,
   Text,
   VStack,
-} from "../../gluestack-ui-components";
+} from "@gluestack-ui/themed";
 
 const BookingOptions = () => {
   const [selfCheckIn, setSelfCheckIn] = React.useState(false);

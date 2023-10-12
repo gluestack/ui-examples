@@ -1,12 +1,9 @@
-import React from "react";
-import {
-  Icon,
-  MoonIcon,
-  SunIcon,
-  Pressable,
-} from "../../gluestack-ui-components";
+import React, { useContext } from "react";
+import { Icon, MoonIcon, SunIcon, Pressable } from "@gluestack-ui/themed";
+import { ThemeContext } from "../../App";
 
-const ToggleMode = ({ colorMode, toggleColorMode }: any) => {
+const ToggleMode = () => {
+  const { colorMode, toggleColorMode } = useContext(ThemeContext);
   return (
     <Pressable onPress={toggleColorMode}>
       <Icon

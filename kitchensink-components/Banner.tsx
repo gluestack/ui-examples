@@ -1,5 +1,5 @@
 import React from "react";
-import { HStack, Link, Text } from "../gluestack-ui-components";
+import { HStack, Link, LinkText, Text } from "@gluestack-ui/themed";
 
 const Banner = () => {
   return (
@@ -23,7 +23,7 @@ const Banner = () => {
         Show total prices up front
       </Text>
       <Link href="https://ui.gluestack.io">
-        <Link.Text
+        <LinkText
           color="$textLight0"
           sx={{
             _dark: { color: "$textDark200" },
@@ -32,7 +32,7 @@ const Banner = () => {
           size="sm"
         >
           Learn more
-        </Link.Text>
+        </LinkText>
       </Link>
     </HStack>
   );

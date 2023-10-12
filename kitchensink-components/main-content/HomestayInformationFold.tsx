@@ -9,7 +9,7 @@ import {
   Text,
   Tooltip,
   VStack,
-} from "../../gluestack-ui-components";
+} from "@gluestack-ui/themed";
 import { ChevronRight, Heart, Star } from "lucide-react-native";
 import { AnimatePresence, Motion } from "@legendapp/motion";
 import { ScrollView } from "react-native";
@@ -183,6 +183,7 @@ const TabPanelData = () => {
                         w="100%"
                         transform={[{ scale: props.hovered ? 1.04 : 1 }]}
                         opacity={props.hovered ? 0.9 : 1}
+                        alt="Explore"
                       />
                     </Box>
                     {props.hovered && (

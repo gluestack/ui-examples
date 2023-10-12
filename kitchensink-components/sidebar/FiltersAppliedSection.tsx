@@ -1,14 +1,15 @@
 import React from "react";
 import {
   Badge,
+  BadgeText,
   Box,
   Button,
   HStack,
   Icon,
   Pressable,
   Text,
-} from "../../gluestack-ui-components";
-import { CloseIcon } from "../../gluestack-ui-components/core/Icons/Icons";
+} from "@gluestack-ui/themed";
+import { CloseIcon } from "@gluestack-ui/themed";
 
 const FiltersAppliedSection = () => {
   const filters = ["Private room", "Wifi", "Air conditioning"];
@@ -50,13 +51,13 @@ const FiltersAppliedSection = () => {
             key={item}
             alignItems="center"
           >
-            <Badge.Text
+            <BadgeText
               textTransform="none"
               color="black"
               sx={{ _dark: { color: "$backgroundDark300" } }}
             >
               {item}
-            </Badge.Text>
+            </BadgeText>
             <Pressable
               ml="$2"
               rounded="$full"

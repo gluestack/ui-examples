@@ -11,8 +11,8 @@ import {
   Pressable,
   Divider,
   Button,
-  Image,
-} from "../gluestack-ui-components";
+  ButtonText,
+} from "@gluestack-ui/themed";
 import {
   Blinds,
   ChevronRight,
@@ -25,11 +25,11 @@ import {
 import { ScrollView } from "react-native";
 import LogoutAlertDialog from "./LogoutAlertDialog";
 
-const MobileProfilePage = () => {
+const MobileProfilePage = ({ isActive }: any) => {
   const [openLogoutAlertDialog, setOpenLogoutAlertDialog] =
     React.useState(false);
   return (
-    <ScrollView>
+    <ScrollView style={{ display: isActive ? "flex" : "none" }}>
       <VStack px="$5" py="$4" space="lg" flex={1}>
         <Heading>Profile</Heading>
         <ProfileCard />
@@ -167,7 +167,7 @@ const LogoutButton = ({ setOpenLogoutAlertDialog }: any) => {
         setOpenLogoutAlertDialog(true);
       }}
     >
-      <Button.Text>Logout</Button.Text>
+      <ButtonText>Logout</ButtonText>
     </Button>
   );
 };

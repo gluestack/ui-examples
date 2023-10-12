@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { StatusBar, Platform } from "react-native";
-import { Box } from "../gluestack-ui-components";
+import { Box } from "@gluestack-ui/themed";
 import MobileBottomTabs from "./MobileBottomTabs";
 import MobileModeChangeButton from "./MobileModeChangeButton";
 import {
@@ -38,7 +38,7 @@ const bottomTabs = [
   },
 ];
 
-const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
+const HomestayPage = () => {
   useEffect(() => {
     if (Platform.OS === "web") {
       document.body.style.overflow = "hidden";
@@ -47,76 +47,48 @@ const HomestayPage = ({ colorMode, toggleColorMode }: any) => {
   }, []);
 
   const [activeTab, setActiveTab] = React.useState("Home");
-  const [modalVisible, setModalVisible] = React.useState(false);
-  const [actionsheetVisible, setActionsheetVisible] = React.useState(false);
 
   return (
-    <Box
-      flex={1}
-      sx={{
-        _light: { bg: "white" },
-        _dark: { bg: "$backgroundDark950" },
-      }}
-    >
-      <StatusBar
-        // @ts-ignore
-        style={
-          {
-            // backgroundColor: colorMode === "light" ? "#E5E5E5" : "#262626",
-          }
-        }
-      />
-
-      <Box flex={1}>
-        {/* profile page for mobile */}
-        {activeTab === "Profile" ? (
-          <MobileProfilePage />
-        ) : (
-          <>
-            <Explorepage
-              colorMode={colorMode}
-              toggleColorMode={toggleColorMode}
-              modalVisible={modalVisible}
-              setModalVisible={setModalVisible}
-              setActiveTab={setActiveTab}
-              activeTab={activeTab}
-            />
-            <MobileSidebarActionsheet
-              actionsheetVisible={actionsheetVisible}
-              setActionsheetVisible={setActionsheetVisible}
-            />
-          </>
-        )}
-        <MobileModeChangeButton
-          colorMode={colorMode}
-          toggleColorMode={toggleColorMode}
-        />
-      </Box>
-      {/* mobile bottom tabs */}
+    <>
       <Box
-        h={72}
-        alignItems="center"
-        w="100%"
+        flex={1}
         sx={{
-          "@md": {
-            display: "none",
-          },
-          _dark: { borderColor: "$borderDark900" },
+          _light: { bg: "white" },
+          _dark: { bg: "$backgroundDark950" },
         }}
-        borderTopWidth="$1"
-        borderColor="$borderLight50"
       >
-        <MobileBottomTabs
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          bottomTabs={bottomTabs}
-          modalVisible={modalVisible}
-          setModalVisible={setModalVisible}
-          actionsheetVisible={actionsheetVisible}
-          setActionsheetVisible={setActionsheetVisible}
-        />
+        <StatusBar />
+
+        <Box flex={1}>
+          <MobileProfilePage isActive={activeTab === "Profile"} />
+
+          <Explorepage setActiveTab={setActiveTab} activeTab={activeTab} />
+
+          <MobileModeChangeButton />
+        </Box>
+        {/* mobile bottom tabs */}
+        <Box
+          h={72}
+          alignItems="center"
+          w="100%"
+          sx={{
+            "@md": {
+              display: "none",
+            },
+            _dark: { borderColor: "$borderDark900" },
+          }}
+          borderTopWidth="$1"
+          borderColor="$borderLight50"
+        >
+          <MobileBottomTabs
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            bottomTabs={bottomTabs}
+          />
+        </Box>
       </Box>
-    </Box>
+      {/* )} */}
+    </>
   );
 };
 export default HomestayPage;

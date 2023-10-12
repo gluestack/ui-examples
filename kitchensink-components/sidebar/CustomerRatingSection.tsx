@@ -1,6 +1,15 @@
 import React from "react";
-import { Checkbox, Heading, Icon, VStack } from "../../gluestack-ui-components";
-import { CheckIcon } from "../../gluestack-ui-components/core/Icons/Icons";
+import {
+  Checkbox,
+  CheckboxGroup,
+  CheckboxIcon,
+  CheckboxIndicator,
+  CheckboxLabel,
+  Heading,
+  Icon,
+  VStack,
+} from "@gluestack-ui/themed";
+import { CheckIcon } from "@gluestack-ui/themed";
 import { Star } from "lucide-react-native";
 
 const CustomerRatingSection = () => {
@@ -27,7 +36,7 @@ const CustomerRatingSection = () => {
   return (
     <VStack w="100%" space="md">
       <Heading size="sm">Customer Ratings</Heading>
-      <Checkbox.Group
+      <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="rating"
@@ -41,12 +50,10 @@ const CustomerRatingSection = () => {
               key={index}
               accessibilityLabel={placeType.value}
             >
-              <Checkbox.Indicator>
-                <Checkbox.Icon>
-                  <CheckIcon />
-                </Checkbox.Icon>
-              </Checkbox.Indicator>
-              <Checkbox.Label ml="$2">
+              <CheckboxIndicator>
+                <CheckboxIcon as={CheckIcon} />
+              </CheckboxIndicator>
+              <CheckboxLabel ml="$2">
                 <Icon
                   as={Star}
                   size={12}
@@ -55,11 +62,11 @@ const CustomerRatingSection = () => {
                   fill="currentColor"
                 />{" "}
                 {placeType.label}
-              </Checkbox.Label>
+              </CheckboxLabel>
             </Checkbox>
           );
         })}
-      </Checkbox.Group>
+      </CheckboxGroup>
     </VStack>
   );
 };

@@ -1,6 +1,14 @@
 import React from "react";
-import { Checkbox, Heading, VStack } from "../../gluestack-ui-components";
-import { CheckIcon } from "../../gluestack-ui-components/core/Icons/Icons";
+import {
+  Checkbox,
+  CheckboxGroup,
+  CheckboxIcon,
+  CheckboxIndicator,
+  CheckboxLabel,
+  Heading,
+  VStack,
+  CheckIcon,
+} from "@gluestack-ui/themed";
 
 const PlaceTypeSection = () => {
   const sidebarFiltersPlaceType = [
@@ -23,7 +31,7 @@ const PlaceTypeSection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Type of place</Heading>
-      <Checkbox.Group
+      <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="place-type"
@@ -38,16 +46,14 @@ const PlaceTypeSection = () => {
               key={placeType.value}
               accessibilityLabel={placeType.value}
             >
-              <Checkbox.Indicator>
-                <Checkbox.Icon>
-                  <CheckIcon />
-                </Checkbox.Icon>
-              </Checkbox.Indicator>
-              <Checkbox.Label ml="$2">{placeType.label}</Checkbox.Label>
+              <CheckboxIndicator>
+                <CheckboxIcon as={CheckIcon}></CheckboxIcon>
+              </CheckboxIndicator>
+              <CheckboxLabel ml="$2">{placeType.label}</CheckboxLabel>
             </Checkbox>
           );
         })}
-      </Checkbox.Group>
+      </CheckboxGroup>
     </VStack>
   );
 };
