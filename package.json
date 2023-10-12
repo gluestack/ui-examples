@@ -11,7 +11,7 @@
     "@expo-google-fonts/inter": "^0.2.3",
     "@expo/html-elements": "latest",
     "@expo/webpack-config": "18.1.0",
-    "@gluestack-style/react": "^1.0.4",
+    "@gluestack-style/react": "^1.0.5",
     "@gluestack-ui/themed": "latest",
     "@legendapp/motion": "latest",
     "expo": "~48.0.18",

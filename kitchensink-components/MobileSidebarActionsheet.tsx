@@ -18,7 +18,11 @@ const MobileSidebarActionsheet = ({
     setActionsheetVisible(false);
   };
   return (
-    <Actionsheet isOpen={actionsheetVisible} onClose={handleClose}>
+    <Actionsheet
+      isOpen={actionsheetVisible}
+      onClose={handleClose}
+      snapPoints={[80]}
+    >
       <ActionsheetBackdrop />
       <ActionsheetContent
         sx={{
