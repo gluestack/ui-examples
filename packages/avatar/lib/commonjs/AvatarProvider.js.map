@@ -1,1 +1,0 @@
-{"version":3,"names":["_utils","require","AvatarProvider","useAvatar","createContext","exports"],"sourceRoot":"../../src","sources":["AvatarProvider.tsx"],"mappings":";;;;;;AAAA,IAAAA,MAAA,GAAAC,OAAA;AAEO,MAAM,CAACC,cAAc,EAAEC,SAAS,CAAC,GAAG,IAAAC,oBAAa,EAAM,eAAe,CAAC;AAACC,OAAA,CAAAF,SAAA,GAAAA,SAAA;AAAAE,OAAA,CAAAH,cAAA,GAAAA,cAAA"}
