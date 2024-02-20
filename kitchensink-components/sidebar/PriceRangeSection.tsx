@@ -58,9 +58,10 @@ const PriceRangeSection = () => {
           <SliderFilledTrack />
         </SliderTrack>
         <Tooltip
-          placement="bottom"
+          pointerEvents={"none"}
+          placement="top"
           trigger={(triggerProps: any) => {
-            return <SliderThumb {...triggerProps} />;
+            return <SliderThumb {...triggerProps} pointerEvents={"auto"} />;
           }}
         >
           <Tooltip.Content>
