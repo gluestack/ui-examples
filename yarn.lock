@@ -2219,7 +2219,7 @@
     "@react-native-aria/utils" "^0.2.10"
     "@react-stately/checkbox" "^3.4.2"
 
-"@gluestack-ui/config@^1.1.11":
+"@gluestack-ui/config@^1.1.5":
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/@gluestack-ui/config/-/config-1.1.5.tgz#771b4a5df2645f99b1426be244b7d2310cf76114"
   integrity sha512-/ZJ0LK2rhbNLuFQELIEwnoIe3by80wIsIlxcJdfFfB0gAoTNCTq8b2EizRgrZWmoIJcFhj/KtI2ZtnqJp2jBqw==
@@ -6410,7 +6410,7 @@ expo-updates@~0.16.4:
     fbemitter "^3.0.0"
     resolve-from "^5.0.0"
 
-expo@~50.0.18:
+expo@~50.0.7:
   version "50.0.7"
   resolved "https://registry.yarnpkg.com/expo/-/expo-50.0.7.tgz#d32e6f05e03e7b97d53571f5b3a453a1c4d72fde"
   integrity sha512-lTqIrKOUTKHLdTuAaJzZihi1v7F8Ix1dOXVWMpToDy9zPC/s+fet0fbyXdFUxYsCUyuEDIB9tvejrTYZk8Hm0Q==
