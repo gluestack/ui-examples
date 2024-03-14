@@ -26,7 +26,8 @@
       "package": "com.meenumakkar.clitestexpo"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "runtimeVersion": {
       "policy": "sdkVersion"

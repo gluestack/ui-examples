@@ -8,7 +8,7 @@ import {
   Heading,
   VStack,
   CheckIcon,
-} from "@gluestack-ui/themed";
+} from "../../components";
 
 const PlaceTypeSection = () => {
   const sidebarFiltersPlaceType = [
@@ -31,7 +31,7 @@ const PlaceTypeSection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Type of place</Heading>
-      <CheckboxGroup
+      {/* <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="place-type"
@@ -41,19 +41,18 @@ const PlaceTypeSection = () => {
             <Checkbox
               value={placeType.value}
               size="sm"
-              my="$2"
-              justifyContent="flex-start"
               key={placeType.value}
               accessibilityLabel={placeType.value}
+              className="my-2 justify-start"
             >
               <CheckboxIndicator>
                 <CheckboxIcon as={CheckIcon}></CheckboxIcon>
               </CheckboxIndicator>
-              <CheckboxLabel ml="$2">{placeType.label}</CheckboxLabel>
+              <CheckboxLabel>{placeType.label}</CheckboxLabel>
             </Checkbox>
           );
         })}
-      </CheckboxGroup>
+      </CheckboxGroup> */}
     </VStack>
   );
 };

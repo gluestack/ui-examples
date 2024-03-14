@@ -1,15 +1,13 @@
 import React from "react";
+import { Heading, Icon, VStack } from "../../components";
 import {
   Checkbox,
   CheckboxGroup,
   CheckboxIcon,
   CheckboxIndicator,
   CheckboxLabel,
-  Heading,
-  Icon,
-  VStack,
+  CheckIcon,
 } from "@gluestack-ui/themed";
-import { CheckIcon } from "@gluestack-ui/themed";
 import { Star } from "lucide-react-native";
 
 const CustomerRatingSection = () => {
@@ -34,9 +32,9 @@ const CustomerRatingSection = () => {
   const [values, setValues] = React.useState(["wifi", "air-conditioning"]);
 
   return (
-    <VStack w="100%" space="md">
+    <VStack space="md" className="w-full">
       <Heading size="sm">Customer Ratings</Heading>
-      <CheckboxGroup
+      {/* <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="rating"
@@ -66,7 +64,7 @@ const CustomerRatingSection = () => {
             </Checkbox>
           );
         })}
-      </CheckboxGroup>
+      </CheckboxGroup> */}
     </VStack>
   );
 };

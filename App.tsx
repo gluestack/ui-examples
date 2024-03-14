@@ -1,6 +1,7 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { GluestackUIProvider } from "@gluestack-ui/themed";
+import { GluestackUIProvider as ThemedProvider } from "@gluestack-ui/themed";
+import { GluestackUIProvider as NativewindProvider } from "./components/gluestack-ui-provider";
 import { config } from "./gluestack-ui.config";
 import HomestayPage from "./kitchensink-components/HomestayPage";
 import { SSRProvider } from "@react-native-aria/utils";
@@ -54,19 +55,18 @@ export default function App() {
       {/* bottom SafeAreaView */}
       <SafeAreaView
         style={{
-          ...styles.container,
           backgroundColor: colorMode === "light" ? "white" : "#171717",
         }}
       >
-        {/* gluestack-ui provider */}
-        <GluestackUIProvider config={config} colorMode={colorMode}>
-          <ThemeContext.Provider value={{ colorMode, toggleColorMode }}>
-            {/* main app page */}
-            <SSRProvider>
-              <HomestayPage />
-            </SSRProvider>
-          </ThemeContext.Provider>
-        </GluestackUIProvider>
+        <NativewindProvider>
+          <ThemedProvider config={config} colorMode={colorMode}>
+            <ThemeContext.Provider value={{ colorMode, toggleColorMode }}>
+              <SSRProvider>
+                <HomestayPage />
+              </SSRProvider>
+            </ThemeContext.Provider>
+          </ThemedProvider>
+        </NativewindProvider>
       </SafeAreaView>
     </>
   );

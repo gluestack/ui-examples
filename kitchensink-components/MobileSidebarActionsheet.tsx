@@ -1,6 +1,6 @@
 import React from "react";
+import { Box } from "../components";
 import {
-  Box,
   Actionsheet,
   ActionsheetDragIndicatorWrapper,
   ActionsheetDragIndicator,
@@ -31,12 +31,12 @@ const MobileSidebarActionsheet = ({
           },
         }}
       >
-        <Box h="100%" w="100%">
+        <Box className="h-full w-full">
           <ActionsheetDragIndicatorWrapper>
             <ActionsheetDragIndicator />
           </ActionsheetDragIndicatorWrapper>
           <ActionsheetScrollView>
-            <Box w="100%">
+            <Box className="w-full">
               <Sidebar />
             </Box>
           </ActionsheetScrollView>

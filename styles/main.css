@@ -1,33 +1,42 @@
 /* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  overflow: hidden;
-  height: 100%;
+  /* overflow: hidden;
+  height: 100%; */
+  @apply overflow-hidden h-full;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 8px;
+  /* width: 6px;
+  height: 8px; */
+  @apply w-1.5 h-2;
 }
 
 ::-webkit-scrollbar-corner,
 ::-webkit-scrollbar-track {
-  background: transparent;
+  /* background: transparent; */
+  @apply bg-transparent;
 }
 
 .gs-dark ::-webkit-scrollbar-thumb {
-  background-color: #525252;
+  /* background-color: #525252;
   border-radius: 20px;
-  border: 3px solid transparent;
+  border: 3px solid transparent; */
+  @apply bg-[#525252] rounded-[20px] border-[3px] border-solid border-transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #dbdbdb;
+  /* background-color: #dbdbdb;
   border-radius: 20px;
-  border: 3px solid transparent;
+  border: 3px solid transparent; */
+  @apply bg-[#dbdbdb] rounded-[20px] border-[3px] border-solid border-transparent;
 }
 
 ::-webkit-scrollbar-corner,
 ::-webkit-scrollbar-track {
-  background: transparent;
+  /* background: transparent; */
+  @apply bg-transparent;
 }

@@ -1,82 +1,43 @@
 import React from "react";
-import { SearchIcon } from "@gluestack-ui/themed";
-import { HStack, Icon, Pressable, Text } from "@gluestack-ui/themed";
+import { SearchIcon } from "../../components";
+import { HStack, Icon, Pressable, Text } from "../../components";
 
 const HeaderTabs = () => {
   const [selectedTab, setSelectedTab] = React.useState("Anywhere");
   return (
-    <HStack h="$20" alignItems="center" justifyContent="space-between">
-      <HStack
-        rounded="$full"
-        p="$1.5"
-        alignItems="center"
-        borderWidth={1}
-        borderColor="$borderLight200"
-        sx={{ _dark: { borderColor: "$borderDark900" } }}
-      >
+    <HStack className="h-20 items-center justify-between">
+      <HStack className="rounded-full p-1.5 items-center border border-outline-200">
         <Pressable
-          rounded="$full"
-          bg={
-            selectedTab === "Anywhere" ? "$backgroundLight100" : "transparent"
-          }
-          sx={{
-            _dark: {
-              bg:
-                selectedTab === "Anywhere"
-                  ? "$backgroundDark700"
-                  : "transparent",
-            },
-          }}
+          className={`rounded-full px-3 py-1.5 ${
+            selectedTab === "Anywhere" ? "bg-background-100" : "bg-transparent"
+          }`}
           onPress={() => setSelectedTab("Anywhere")}
-          px="$3"
-          py="$1.5"
         >
-          <Text size="sm" fontWeight="$medium">
+          <Text size="sm" className="font-medium">
             Anywhere
           </Text>
         </Pressable>
         <Pressable
-          rounded="$full"
-          px="$3"
-          py="$1.5"
-          bg={selectedTab === "Anyweek" ? "$backgroundLight100" : "transparent"}
-          sx={{
-            _dark: {
-              bg:
-                selectedTab === "Anyweek"
-                  ? "$backgroundDark700"
-                  : "transparent",
-            },
-          }}
+          className={`rounded-full px-3 py-1.5 ${
+            selectedTab === "Anyweek" ? "bg-background-100" : "bg-transparent"
+          }`}
           onPress={() => setSelectedTab("Anyweek")}
         >
-          <Text size="sm" fontWeight="$medium">
+          <Text size="sm" className="font-medium">
             Anyweek
           </Text>
         </Pressable>
-        <Pressable
-          rounded="$full"
-          px="$3"
-          py="$1.5"
-          bg={
-            selectedTab === "Add guests" ? "$backgroundLight100" : "transparent"
-          }
-          sx={{
-            _dark: {
-              bg:
-                selectedTab === "Add guests"
-                  ? "$backgroundDark700"
-                  : "transparent",
-            },
-          }}
+        <Pressable className={`rounded-full px-3 py-1.5 ${
+            selectedTab === "Add guests" ? "bg-background-100" : "bg-transparent"
+          }`}
           onPress={() => setSelectedTab("Add guests")}
         >
-          <Text size="sm" fontWeight="$medium">
+          <Text size="sm" className="font-medium">
             Add guests
           </Text>
         </Pressable>
-        <Pressable ml="$3" p="$2" bg="$primary500" rounded="$full">
-          <Icon as={SearchIcon} color="white" w="$4" h="$4" />
+        <Pressable className='ml-3 p-2 bg-primary-500 rounded-full'>
+          <Icon as={SearchIcon} className='w-4 h-4 text-white' />
         </Pressable>
       </HStack>
     </HStack>

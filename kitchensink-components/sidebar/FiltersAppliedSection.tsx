@@ -8,66 +8,42 @@ import {
   Icon,
   Pressable,
   Text,
-} from "@gluestack-ui/themed";
-import { CloseIcon } from "@gluestack-ui/themed";
+  CloseIcon,
+  ButtonText,
+} from "../../components";
 
 const FiltersAppliedSection = () => {
   const filters = ["Private room", "Wifi", "Air conditioning"];
   const [appliedFilters, setAppliedFilters]: any = React.useState(filters);
   return (
-    <Box
-      borderWidth="$1"
-      borderRadius="$md"
-      p="$4"
-      borderColor="$borderLight100"
-      sx={{
-        _dark: { borderColor: "$borderDark900" },
-      }}
-    >
-      <HStack justifyContent="space-between" alignItems="center">
-        <Text size="sm" fontWeight="$medium">
+    <Box className="border rounded-md p-4 border-outline-100">
+      <HStack className="justify-between items-center">
+        <Text size="sm" className="font-medium">
           Filters applied
         </Text>
         <Button
-          display={appliedFilters.length === 0 ? "none" : "flex"}
-          p={0}
           variant="link"
-          size="xs"
+          size="sm"
           onPress={() => {
             setAppliedFilters([]);
           }}
+          className={`${appliedFilters.length === 0 ? "hidden" : "flex"} p-0`}
         >
-          <Button.Text>Clear all</Button.Text>
+          <ButtonText>Clear all</ButtonText>
         </Button>
       </HStack>
       <HStack flexWrap="wrap" space="sm">
         {appliedFilters.map((item: any) => (
           <Badge
-            rounded="$full"
-            px="$2.5"
-            py="$2"
             action="muted"
-            mt="$3"
             key={item}
-            alignItems="center"
+            className="rounded-full px-2.5 py-2 mt-3 items-center"
           >
-            <BadgeText
-              textTransform="none"
-              color="black"
-              sx={{ _dark: { color: "$backgroundDark300" } }}
-            >
+            <BadgeText className="normal-case text-background-300">
               {item}
             </BadgeText>
             <Pressable
-              ml="$2"
-              rounded="$full"
-              // p="$1"
-              // bg="$backgroundLight400"
-              // sx={{
-              //   _dark: {
-              //     bg: "$backgroundDark800",
-              //   },
-              // }}
+              className="ml-2 rounded-full"
               onPress={() => {
                 const newFilters = appliedFilters.filter((item1: any) => {
                   return item1 !== item;
@@ -78,10 +54,7 @@ const FiltersAppliedSection = () => {
               <Icon
                 as={CloseIcon}
                 size="sm"
-                color="$backgroundLight600"
-                sx={{
-                  _dark: { color: "$backgroundDark300" },
-                }}
+                className='text-background-600'
               />
             </Pressable>
           </Badge>

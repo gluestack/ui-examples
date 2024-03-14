@@ -3,7 +3,6 @@ import {
   Checkbox,
   Slider,
   Text,
-  Tooltip,
   VStack,
   Heading,
   SliderTrack,
@@ -13,7 +12,9 @@ import {
   CheckboxLabel,
   CheckIcon,
   CheckboxIcon,
-} from "@gluestack-ui/themed";
+  CheckboxGroup,
+} from "../../components";
+import { Tooltip } from "@gluestack-ui/themed";
 
 const PriceRangeSection = () => {
   const [sliderValue, setSliderValue] = React.useState(3500);
@@ -47,12 +48,12 @@ const PriceRangeSection = () => {
       <Slider
         minValue={800}
         maxValue={5000}
-        w="100%"
         size="sm"
         value={sliderValue}
         onChange={(value: any) => {
           handleChange(value);
         }}
+        className="w-full"
       >
         <SliderTrack>
           <SliderFilledTrack />
@@ -65,33 +66,33 @@ const PriceRangeSection = () => {
           }}
         >
           <Tooltip.Content>
-            <Text color="$white">₹{sliderValue}</Text>
+            <Text className="text-white">₹{sliderValue}</Text>
           </Tooltip.Content>
         </Tooltip>
       </Slider>
-      <Checkbox.Group
+      {/* <CheckboxGroup
         value={values}
         onChange={setValues}
-        mt="$3"
         accessibilityLabel="price filter"
+        className="mt-3"
       >
         {sidebarFiltersPriceRange.map((priceRange: any) => {
           return (
             <Checkbox
               value={priceRange.value}
               size="sm"
-              my="$2"
               key={priceRange.value}
               accessibilityLabel={priceRange.value}
+              className="my-2"
             >
               <CheckboxIndicator>
                 <CheckboxIcon as={CheckIcon} />
               </CheckboxIndicator>
-              <CheckboxLabel ml="$2">{priceRange.label}</CheckboxLabel>
+              <CheckboxLabel>{priceRange.label}</CheckboxLabel>
             </Checkbox>
           );
         })}
-      </Checkbox.Group>
+      </CheckboxGroup> */}
     </VStack>
   );
 };

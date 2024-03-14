@@ -10,10 +10,30 @@
   "dependencies": {
     "@expo-google-fonts/inter": "^0.2.3",
     "@expo/html-elements": "latest",
+    "@expo/metro-runtime": "~3.1.3",
     "@gluestack-style/react": "^1.0.48",
+    "@gluestack-ui/alert": "latest",
+    "@gluestack-ui/avatar": "latest",
+    "@gluestack-ui/button": "latest",
+    "@gluestack-ui/checkbox": "latest",
     "@gluestack-ui/config": "^1.1.5",
+    "@gluestack-ui/divider": "latest",
+    "@gluestack-ui/fab": "latest",
+    "@gluestack-ui/form-control": "latest",
+    "@gluestack-ui/icon": "latest",
+    "@gluestack-ui/image": "latest",
+    "@gluestack-ui/input": "latest",
+    "@gluestack-ui/link": "latest",
+    "@gluestack-ui/nativewind-utils": "latest",
+    "@gluestack-ui/progress": "latest",
+    "@gluestack-ui/radio": "latest",
+    "@gluestack-ui/slider": "latest",
+    "@gluestack-ui/spinner": "latest",
+    "@gluestack-ui/switch": "latest",
+    "@gluestack-ui/textarea": "latest",
     "@gluestack-ui/themed": "^1.1.8",
     "@legendapp/motion": "latest",
+    "clsx": "^2.1.0",
     "expo": "~50.0.7",
     "expo-app-loading": "^2.1.1",
     "expo-crypto": "^12.8.1",
@@ -24,11 +44,15 @@
     "expo-status-bar": "~1.4.4",
     "expo-updates": "~0.16.4",
     "install": "^0.13.0",
-    "lucide-react-native": "^0.161.0",
-    "react": "18.2.0",
+    "lucide-react-native": "latest",
+    "nativewind": "latest",
+    "react": "latest",
     "react-dom": "18.2.0",
-    "react-native": "0.73.2",
-    "react-native-svg": "14.1.0"
+    "react-native": "latest",
+    "react-native-reanimated": "^3.8.0",
+    "react-native-svg": "latest",
+    "tailwindcss": "^3.4.1",
+    "@gluestack-ui/nativewind-utils/tva": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -43,6 +67,9 @@
     "postcss-loader": "^7.3.2",
     "react-native-web": "~0.18.11",
     "typescript": "^5.1.3"
+  },
+  "resolutions": {
+    "@gluestack-ui/utils": "0.1.12"
   },
   "private": true
 }

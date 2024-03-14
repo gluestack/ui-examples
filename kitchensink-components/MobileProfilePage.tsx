@@ -12,7 +12,10 @@ import {
   Divider,
   Button,
   ButtonText,
-} from "@gluestack-ui/themed";
+  AvatarFallbackText,
+  AvatarImage,
+  LinkText,
+} from "../components";
 import {
   Blinds,
   ChevronRight,
@@ -30,7 +33,7 @@ const MobileProfilePage = ({ isActive }: any) => {
     React.useState(false);
   return (
     <ScrollView style={{ display: isActive ? "flex" : "none" }}>
-      <VStack px="$5" py="$4" space="lg" flex={1}>
+      <VStack className="px-5 py-4 flex-1" space="lg">
         <Heading>Profile</Heading>
         <ProfileCard />
         <Divider />
@@ -58,8 +61,8 @@ const ProfileCard = () => {
     <HStack justifyContent="space-between" alignItems="center">
       <HStack space="md">
         <Avatar bg="$blue600">
-          <Avatar.FallbackText>Henry Stan</Avatar.FallbackText>
-          <Avatar.Image
+          <AvatarFallbackText>Henry Stan</AvatarFallbackText>
+          <AvatarImage
             source={{
               uri: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
             }}
@@ -68,9 +71,9 @@ const ProfileCard = () => {
         <VStack>
           <Text>Henry Stan</Text>
           <Link>
-            <Text color="$textLight500" size="sm">
+            <LinkText size="sm" className="text-typography-500">
               Show Profile
-            </Text>
+            </LinkText>
           </Link>
         </VStack>
       </HStack>
@@ -84,7 +87,7 @@ const ProfileCard = () => {
 const PersonalInfoSection = () => {
   return (
     <VStack space="md">
-      <HStack justifyContent="space-between">
+      <HStack className="justify-between">
         <HStack space="md">
           <Icon as={User} />
           <Text>Personal Info</Text>
@@ -93,7 +96,7 @@ const PersonalInfoSection = () => {
           <Icon as={ChevronRight} />
         </Pressable>
       </HStack>
-      <HStack justifyContent="space-between">
+      <HStack className="justify-between">
         <HStack space="md">
           <Icon as={Settings} />
           <Text>Account</Text>
@@ -110,7 +113,7 @@ const HostingSection = () => {
   return (
     <VStack space="md">
       <Heading>Hosting</Heading>
-      <HStack justifyContent="space-between">
+      <HStack className="justify-between">
         <HStack space="md">
           <Icon as={Blinds} />
           <Text>Host a home</Text>
@@ -119,7 +122,7 @@ const HostingSection = () => {
           <Icon as={ChevronRight} />
         </Pressable>
       </HStack>
-      <HStack justifyContent="space-between">
+      <HStack className="justify-between">
         <HStack space="md">
           <Icon as={Tablets} />
           <Text>Host an experience</Text>
@@ -136,7 +139,7 @@ const SupportSection = () => {
   return (
     <VStack space="md">
       <Heading>Support</Heading>
-      <HStack justifyContent="space-between">
+      <HStack className="justify-between">
         <HStack space="md">
           <Icon as={HeartHandshake} />
           <Text>Get Help</Text>
@@ -145,7 +148,7 @@ const SupportSection = () => {
           <Icon as={ChevronRight} />
         </Pressable>
       </HStack>
-      <HStack justifyContent="space-between">
+      <HStack className="justify-between">
         <HStack space="md">
           <Icon as={Headphones} />
           <Text>Contact Support</Text>

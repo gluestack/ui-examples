@@ -14,7 +14,7 @@ import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-} from "@gluestack-ui/themed";
+} from "../../components";
 
 const AmenitiesSection = () => {
   const sidebarFiltersAmmenities = [
@@ -54,7 +54,7 @@ const AmenitiesSection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Ammenities</Heading>
-      <CheckboxGroup
+      {/* <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="ammenities"
@@ -64,28 +64,27 @@ const AmenitiesSection = () => {
           return (
             <Checkbox
               value={ammenity.value}
-              justifyContent="flex-start"
               size="sm"
-              my="$2"
               key={ammenity.value}
               accessibilityLabel={ammenity.value}
+              className="justify-start my-2"
             >
               <CheckboxIndicator>
                 <CheckboxIcon as={CheckIcon} />
               </CheckboxIndicator>
-              <CheckboxLabel ml="$2">{ammenity.label}</CheckboxLabel>
+              <CheckboxLabel>{ammenity.label}</CheckboxLabel>
             </Checkbox>
           );
         })}
-      </CheckboxGroup>
+      </CheckboxGroup> */}
       {viewAllComponents ? (
         <Pressable
           onPress={() => {
             setViewAllComponents(false);
           }}
         >
-          <HStack justifyContent="space-between">
-            <Text size="sm" fontWeight="$medium">
+          <HStack className="justify-between">
+            <Text size="sm" className="font-medium">
               Show less
             </Text>
             <Icon as={ChevronUpIcon} size="sm" />
@@ -97,8 +96,8 @@ const AmenitiesSection = () => {
             setViewAllComponents(true);
           }}
         >
-          <HStack justifyContent="space-between">
-            <Text size="sm" fontWeight="$medium">
+          <HStack className="justify-between">
+            <Text size="sm" className="font-medium">
               Show more
             </Text>
             <Icon as={ChevronDownIcon} size="sm" />

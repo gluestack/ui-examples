@@ -7,8 +7,8 @@ import {
   RadioIndicator,
   RadioLabel,
   VStack,
-} from "@gluestack-ui/themed";
-import { RadioIcon } from "@gluestack-ui/themed";
+  RadioIcon,
+} from "../../components";
 
 const SortBySection = () => {
   const sidebarFiltersCustomerRatings = [
@@ -43,15 +43,14 @@ const SortBySection = () => {
           return (
             <Radio
               value={placeType.value}
-              justifyContent="flex-start"
               size="sm"
-              my="$2"
               key={placeType.value}
+              className='justify-start my-2'
             >
               <RadioIndicator>
                 <RadioIcon as={CircleIcon} />
               </RadioIndicator>
-              <RadioLabel ml="$2">{placeType.label}</RadioLabel>
+              <RadioLabel>{placeType.label}</RadioLabel>
             </Radio>
           );
         })}

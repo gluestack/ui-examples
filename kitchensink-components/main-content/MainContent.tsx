@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@gluestack-ui/themed";
+import { Box } from "../../components";
 import HomestayInformationFold from "./HomestayInformationFold";
 import MainContentHeader from "./MainContentHeader";
 import NewThisWeekFold from "./NewThisWeekFold";
@@ -11,10 +11,7 @@ const MainContent = ({
   activeTab,
 }: any) => {
   return (
-    <Box
-      sx={{ "@md": { maxHeight: "calc(100vh - 144px)", pr: "$16", pl: "$8" } }}
-      flex={1}
-    >
+    <Box className="flex-1 md:max-h-calc(100vh - 144px) pr-16 pl-8">
       <Box>
         {/* explore page main content header */}
         <MainContentHeader

@@ -12,8 +12,8 @@ import {
   CheckboxIndicator,
   CheckboxLabel,
   CheckboxIcon,
-} from "@gluestack-ui/themed";
-import { CheckIcon } from "@gluestack-ui/themed";
+  CheckIcon
+} from "../../components";
 
 const PriceRangeSection = () => {
   const [sliderValue, setSliderValue] = React.useState(3500);

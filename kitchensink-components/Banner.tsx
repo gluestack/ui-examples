@@ -1,36 +1,17 @@
 import React from "react";
-import { HStack, Link, LinkText, Text } from "@gluestack-ui/themed";
+import { HStack, Link, LinkText, Text } from "../components";
 
 const Banner = () => {
   return (
     <HStack
-      justifyContent="center"
-      alignItems="center"
+      className="justify-center items-center h-16 bg-background-900"
       space="sm"
-      h="$16"
-      sx={{
-        _light: { bg: "$backgroundLight900" },
-        _dark: { bg: "$backgroundDark800" },
-      }}
     >
-      <Text
-        size="sm"
-        color="$textLight0"
-        sx={{
-          _dark: { color: "$textLight0" },
-        }}
-      >
+      <Text className="text-typography-0 " size="sm">
         Show total prices up front
       </Text>
       <Link href="https://ui.gluestack.io">
-        <LinkText
-          color="$textLight0"
-          sx={{
-            _dark: { color: "$textDark200" },
-          }}
-          fontWeight="$semibold"
-          size="sm"
-        >
+        <LinkText className="text-typography-0 font-semibold" size="sm">
           Learn more
         </LinkText>
       </Link>

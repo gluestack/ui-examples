@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Fab, FabIcon } from "@gluestack-ui/themed";
+import { Fab, FabIcon } from "../components";
 import { Moon, Sun } from "lucide-react-native";
 import { ThemeContext } from "../App";
 
@@ -8,16 +8,8 @@ const MobileModeChangeButton = () => {
   return (
     <>
       <Fab
-        sx={{
-          "@md": {
-            display: "none",
-          },
-          "@base": {
-            bottom: "$4",
-            right: "$4",
-          },
-        }}
         onPress={toggleColorMode}
+        className='md:hidden bottom-4 right-4'
       >
         <FabIcon as={colorMode === "light" ? Moon : Sun} fill="currentColor" />
       </Fab>

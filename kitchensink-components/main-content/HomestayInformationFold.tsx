@@ -7,9 +7,11 @@ import {
   Image,
   Pressable,
   Text,
-  Tooltip,
   VStack,
-} from "@gluestack-ui/themed";
+  ButtonText,
+  ButtonIcon,
+} from "../../components";
+import { Tooltip } from "@gluestack-ui/themed";
 import { ChevronRight, Heart, Star } from "lucide-react-native";
 import { AnimatePresence, Motion } from "@legendapp/motion";
 import { ScrollView } from "react-native";
@@ -73,7 +75,7 @@ const tabsData = [
 
 const HomestayInformationFold = () => {
   return (
-    <Box pb="$8" px="$4" sx={{ "@md": { px: 0 } }}>
+    <Box className="pb-8 px-4 md:px-0">
       <HomestayInfoTabs tabsData={tabsData} />
       <TabPanelData />
     </Box>
@@ -83,57 +85,30 @@ const HomestayInformationFold = () => {
 const HomestayInfoTabs = ({ tabsData }: any) => {
   const [activeTab, setActiveTab] = React.useState(tabsData[0]);
   return (
-    <Box
-      borderBottomWidth={1}
-      borderColor="$borderLight50"
-      sx={{
-        "@md": { borderColor: "transparent", borderBottomWidth: 0 },
-        _dark: { borderColor: "$borderDark900" },
-      }}
-    >
-      <Box py="$5">
+    <Box className="border border-outline-50 md:border-b-0 md:border-transparent">
+      <Box className="py-5">
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <HStack space="lg" mx="$0.5">
+          <HStack space="lg" className="mx-0.5">
             {tabsData.map((tab: any) => {
               return (
                 <Pressable
                   key={tab.title}
-                  my="$0.5"
-                  py="$1"
-                  borderBottomWidth={activeTab === tab ? 3 : 0}
-                  borderColor="$borderLight900"
-                  sx={{
-                    ":hover": {
-                      borderBottomWidth: 3,
-                      borderColor:
-                        activeTab === tab
-                          ? "$borderLight900"
-                          : "$borderLight200",
-                    },
-                    _dark: {
-                      borderColor: "$borderDark100",
-                      ":hover": {
-                        borderColor:
-                          activeTab === tab
-                            ? "$borderDark100"
-                            : "$borderDark700",
-                      },
-                    },
-                  }}
+                  className={`my-0.5 py-1 ${
+                    activeTab === tab ? "border-b-[3px]" : "border-b-0"
+                  } border-outline-900 hover:border-b-[3px] ${
+                    activeTab === tab
+                      ? "hover:border-outline-900"
+                      : "hover:border-outline-200"
+                  } `}
                   onPress={() => setActiveTab(tab)}
                 >
                   <Text
                     size="sm"
-                    color={
-                      activeTab === tab ? "$textLight900" : "$textLight600"
-                    }
-                    sx={{
-                      _dark: {
-                        color:
-                          activeTab === tab ? "$textDark50" : "$textDark400",
-                      },
-                    }}
-                    fontWeight="$medium"
+                    className={`${
+                      activeTab === tab
+                        ? "text-typography-900"
+                        : "text-typography-600"
+                    } font-medium`}
                   >
                     {tab.title}
                   </Text>
@@ -150,64 +125,39 @@ const HomestayInfoTabs = ({ tabsData }: any) => {
 const TabPanelData = () => {
   const [likes, setLikes]: any = React.useState([]);
   return (
-    <VStack
-      justifyContent="space-between"
-      sx={{
-        "@lg": {
-          flexDirection: "row",
-        },
-      }}
-    >
+    <VStack className="justify-between lg:flex-row">
       {homestayInfoData.map((image: any, index: any) => {
         return (
           <Box
-            flex={1}
             key={index}
-            my="$2"
-            sx={{
-              "@lg": {
-                ml: index === 0 ? "$0" : "$2",
-                mr: index === homestayInfoData.length - 1 ? "$0" : "$2",
-                my: "$0",
-              },
-            }}
+            className={`flex-1 my-2 lg:my-0 ${
+              index === 0 ? "lg:ml-0" : "lg:ml-2"
+            } ${index === homestayInfoData.length - 1 ? "lg:mr-0" : "lg:mr-2"}`}
           >
-            <Pressable w="100%">
+            <Pressable className="w-full">
               {(props: any) => {
                 return (
                   <>
-                    <Box overflow="hidden" borderRadius="$md" h="$72">
+                    <Box className="overflow-hidden rounded-md h-72">
                       <Image
                         source={image.src}
-                        h="$72"
-                        w="100%"
+                        className="h-72 w-full"
                         transform={[{ scale: props.hovered ? 1.04 : 1 }]}
                         opacity={props.hovered ? 0.9 : 1}
                         alt="Explore"
                       />
                     </Box>
                     {props.hovered && (
-                      <Box
-                        position="absolute"
-                        bg="$backgroundDark950"
-                        opacity={0.3}
-                        w="100%"
-                        h="100%"
-                      />
+                      <Box className="absolute bg-background-950 opacity-30 w-full h-full" />
                     )}
                     <Button
                       action="secondary"
                       variant="outline"
-                      position="absolute"
-                      top="45%"
-                      bg="transparent"
-                      borderColor="white"
-                      alignSelf="center"
-                      zIndex={5}
                       display={props.hovered ? "flex" : "none"}
+                      className="absolute top-[45%] bg-transparent border-white self-center z-50"
                     >
-                      <Button.Text color="white">Explore</Button.Text>
-                      <Button.Icon as={ChevronRight} color="white" />
+                      <ButtonText className="text-white">Explore</ButtonText>
+                      <ButtonIcon as={ChevronRight} className="text-white" />
                     </Button>
                   </>
                 );
@@ -225,13 +175,7 @@ const TabPanelData = () => {
                   setLikes([...likes, image.title]);
                 }
               }}
-              position="absolute"
-              top={12}
-              right={16}
-              h="$6"
-              w="$6"
-              justifyContent="center"
-              alignItems="center"
+              className="absolute top-12 right-16 h-6 w-6 justify-center items-center"
             >
               <AnimatePresence>
                 <Motion.View
@@ -258,57 +202,29 @@ const TabPanelData = () => {
                   <Icon
                     as={Heart}
                     size="lg"
-                    color={
-                      likes.includes(image.title) === true ? "red" : "white"
-                    }
                     fill={likes.includes(image.title) === true ? "red" : "gray"}
+                    className={`${
+                      likes.includes(image.title) === true
+                        ? "text-red-500"
+                        : "text-white"
+                    }`}
                   />
                 </Motion.View>
               </AnimatePresence>
             </Pressable>
-            <HStack
-              justifyContent="space-between"
-              py="$2"
-              alignItems="flex-start"
-            >
-              <VStack space="$sm" flex={1}>
-                <Text
-                  fontWeight="$semibold"
-                  color="$textLight900"
-                  sx={{
-                    _dark: { color: "$textDark200" },
-                  }}
-                >
+            <HStack className="justify-between py-2 items-start">
+              <VStack space="sm" className="flex-1">
+                <Text className="font-semibold text-typography-900">
                   {image.title}
                 </Text>
-                <Text
-                  size="sm"
-                  color="$textLight500"
-                  sx={{
-                    _dark: { color: "$textDark500" },
-                  }}
-                >
+                <Text size="sm" className="text-typography-500">
                   {image.location}
                 </Text>
                 <HStack>
-                  <Text
-                    size="sm"
-                    fontWeight="$semibold"
-                    color="$textLight900"
-                    sx={{
-                      _dark: { color: "$textDark200" },
-                    }}
-                  >
+                  <Text size="sm" className="font-semibold text-typography-900">
                     {image.price}
                   </Text>
-                  <Text
-                    size="sm"
-                    pl="$1"
-                    color="$textLight900"
-                    sx={{
-                      _dark: { color: "$textDark200" },
-                    }}
-                  >
+                  <Text size="sm" className="pl-1 text-typography-900">
                     night
                   </Text>
                 </HStack>
@@ -317,24 +233,14 @@ const TabPanelData = () => {
                 trigger={(triggerProps: any) => {
                   return (
                     <Pressable {...triggerProps}>
-                      <HStack alignItems="center" justifyContent="flex-start">
+                      <HStack className="items-center flex-start">
                         <Icon
                           as={Star}
                           size={12}
                           fill="currentColor"
-                          sx={{
-                            _dark: { color: "$backgroundDark50" },
-                            _light: { color: "black" },
-                          }}
+                          className="text-background-50"
                         />
-                        <Text
-                          pl="$1"
-                          size="sm"
-                          sx={{
-                            _light: { color: "$textLight900" },
-                            _dark: { color: "$textDark200" },
-                          }}
-                        >
+                        <Text size="sm" className="pl-1 text-typography-900">
                           {image.rating}
                         </Text>
                       </HStack>
@@ -343,15 +249,7 @@ const TabPanelData = () => {
                 }}
               >
                 <Tooltip.Content>
-                  <Text
-                    sx={{
-                      color: "$white",
-                      px: "$2",
-                      py: "$1",
-                    }}
-                  >
-                    Ratings
-                  </Text>
+                  <Text className="text-white px-2 py-1">Ratings</Text>
                 </Tooltip.Content>
               </Tooltip>
             </HStack>

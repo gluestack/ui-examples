@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, HStack } from "@gluestack-ui/themed";
+import { Box, HStack } from "../components";
 import Banner from "./Banner";
 import Header from "./Header";
 import WebSidebar from "./WebSidebar";
@@ -9,12 +9,7 @@ import { ScrollView } from "react-native";
 const Explorepage = ({ activeTab, setActiveTab }: any) => {
   return (
     <>
-      <Box
-        w="100%"
-        sx={{
-          display: activeTab !== "Profile" ? "flex" : "none",
-        }}
-      >
+      <Box className={`w-full ${activeTab != "Profile" ? "flex" : "hidden"}`}>
         {/* top banner */}
         <Banner />
         {/* header */}
@@ -22,17 +17,13 @@ const Explorepage = ({ activeTab, setActiveTab }: any) => {
       </Box>
       <ScrollView>
         <Box
-          sx={{
-            display: activeTab !== "Profile" ? "flex" : "none",
-
-            "@md": { display: "none" },
-          }}
+          className={`${activeTab !== "Profile" ? "flex" : "hidden"} md:hidden`}
         >
           <MainContent setActiveTab={setActiveTab} activeTab={activeTab} />
         </Box>
       </ScrollView>
 
-      <HStack w="100%" display="none" sx={{ "@md": { display: "flex" } }}>
+      <HStack className="w-full hidden md:flex">
         <WebSidebar />
         <ScrollView style={{ flex: 1 }}>
           <MainContent setActiveTab={setActiveTab} activeTab={activeTab} />

@@ -1,33 +1,41 @@
 import React, { useEffect, useState } from "react";
 import {
   Box,
-  Modal,
-  useToast,
-  ToastDescription,
-  ToastTitle,
   VStack,
   Icon,
   Center,
   Spinner,
   HStack,
-  FormControl,
   Input,
   Button,
   Heading,
   Radio,
   Checkbox,
   Textarea,
-  Select,
-  Toast,
   ChevronDownIcon,
   CheckCircleIcon,
   CloseIcon,
   CheckIcon,
   CircleIcon,
-  FormControlLabelText,
-  FormControlLabel,
   InputField,
   TextareaInput,
+  CheckboxGroup,
+  CheckboxIndicator,
+  CheckboxLabel,
+  CheckboxIcon,
+  ButtonText,
+  RadioIndicator,
+  RadioLabel,
+  RadioIcon,
+  RadioGroup,
+} from "../../components";
+import {
+  Modal,
+  useToast,
+  ToastDescription,
+  ToastTitle,
+  Select,
+  Toast,
   SelectTrigger,
   SelectDragIndicatorWrapper,
   SelectDragIndicator,
@@ -36,21 +44,18 @@ import {
   SelectInput,
   SelectContent,
   SelectPortal,
-  CheckboxGroup,
-  CheckboxIndicator,
-  CheckboxLabel,
-  CheckboxIcon,
-  ButtonText,
   ModalBody,
   ModalCloseButton,
   ModalHeader,
   ModalBackdrop,
   ModalContent,
-  RadioIndicator,
-  RadioLabel,
-  RadioIcon,
-  RadioGroup,
 } from "@gluestack-ui/themed";
+import {
+  FormControl,
+  FormControlLabelText,
+  FormControlLabel,
+} from "@gluestack-ui/themed";
+import colors from "tailwindcss/colors";
 
 const sidebarFiltersAmmenities = [
   {
@@ -166,7 +171,7 @@ const ListYourPlaceModal = ({ modalVisible, setModalVisible }: any) => {
               </Heading>
             </HStack>
             <ModalCloseButton>
-              <Icon as={CloseIcon} sx={{ w: 16, h: 16 }} />
+              <Icon as={CloseIcon} className="w-16 h-16" />
             </ModalCloseButton>
           </ModalHeader>
           <ModalBody>
@@ -198,10 +203,10 @@ const SaveForLaterButton = ({ setModalVisible, toast }: any) => {
   };
 
   return (
-    <Box h="$12" w="100%">
+    <Box className="h-12 w-full">
       {showSpinner ? (
         <Center>
-          <Spinner size="large" color="$primary500" />
+          <Spinner size="large" color={colors.primary[500]} />
         </Center>
       ) : (
         <Button
@@ -215,7 +220,7 @@ const SaveForLaterButton = ({ setModalVisible, toast }: any) => {
             }, 2000);
           }}
         >
-          <Button.Text>Save for Later</Button.Text>
+          <ButtonText>Save for Later</ButtonText>
         </Button>
       )}
     </Box>
@@ -231,7 +236,7 @@ const PreviousStepperButton = ({ setModalFormStep, step }: any) => {
         setModalFormStep(step);
       }}
     >
-      <Button.Text>Back</Button.Text>
+      <ButtonText>Back</ButtonText>
     </Button>
   );
 };
@@ -239,7 +244,7 @@ const PreviousStepperButton = ({ setModalFormStep, step }: any) => {
 const RenderToast = ({ description, title, id }: any) => {
   return (
     <Toast action="success" id={id} top={150}>
-      <HStack alignItems="center" space="xs">
+      <HStack space="xs" className="items-center">
         <Icon as={CheckCircleIcon} />
         <ToastTitle>{title}</ToastTitle>
         <ToastDescription>{description}</ToastDescription>
@@ -315,15 +320,14 @@ const ModalContent1 = ({ setModalFormStep, toast }: any) => {
                 action={
                   item === selectedSellOrRentOption ? "primary" : "secondary"
                 }
-                rounded="$full"
                 variant="outline"
-                size="xs"
-                mb="$2"
+                size="sm"
                 onPress={() => {
                   setSelectedSellOrRentOption(item);
                 }}
+                className="rounded-full mb-2"
               >
-                <Button.Text>{item}</Button.Text>
+                <ButtonText>{item}</ButtonText>
               </Button>
             ))}
           </HStack>
@@ -345,19 +349,19 @@ const ModalContent1 = ({ setModalFormStep, toast }: any) => {
                   <RadioIndicator>
                     <RadioIcon as={CircleIcon} />
                   </RadioIndicator>
-                  <RadioLabel ml="$2">Residential</RadioLabel>
+                  <RadioLabel>Residential</RadioLabel>
                 </Radio>
                 <Radio value="Commercial">
                   <RadioIndicator>
                     <RadioIcon as={CircleIcon} />
                   </RadioIndicator>
-                  <Radio.Label ml="$2">Commercial</Radio.Label>
+                  <RadioLabel>Commercial</RadioLabel>
                 </Radio>
               </HStack>
             </RadioGroup>
           </FormControl>
         </VStack>
-        <HStack flexWrap="wrap" space="sm">
+        <HStack space="sm" className="flex-wrap">
           {propertyType.map((item: string, index: any) => (
             <Button
               key={index}
@@ -366,13 +370,12 @@ const ModalContent1 = ({ setModalFormStep, toast }: any) => {
                   ? "primary"
                   : "secondary"
               }
-              rounded="$full"
               variant="outline"
-              size="xs"
-              mb="$2"
+              size="sm"
               onPress={() => {
                 handlePropertyTypeSelection(item);
               }}
+              className="rounded-full mb-2"
             >
               <ButtonText>{item}</ButtonText>
             </Button>
@@ -388,7 +391,7 @@ const ModalContent2 = ({ setModalFormStep }: any) => {
   return (
     <VStack space="md">
       <AmenitiesSection />
-      <VStack space="sm" w="100%">
+      <VStack space="sm" className="w-full">
         <NextStepperButton setModalFormStep={setModalFormStep} step={2} />
         <PreviousStepperButton setModalFormStep={setModalFormStep} step={0} />
       </VStack>
@@ -403,7 +406,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
         <FormControlLabel>
           <FormControlLabelText>Title</FormControlLabelText>
         </FormControlLabel>
-        <Input w="100%">
+        <Input className="w-full">
           <InputField placeholder="Enter property name" />
         </Input>
       </FormControl>
@@ -445,7 +448,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
               </SelectPortal>
             </Select>
             {/* input: example */}
-            <Input flex={1}>
+            <Input className="flex-1">
               <InputField
                 placeholder="Phone number"
                 // keyboardType="number-pad"
@@ -470,7 +473,7 @@ const AmenitiesSection = () => {
         <FormControlLabel>
           <FormControlLabelText>Ammenities</FormControlLabelText>
         </FormControlLabel>
-        <CheckboxGroup
+        {/* <CheckboxGroup
           value={values}
           onChange={setValues}
           accessibilityLabel="ammenities"
@@ -479,19 +482,18 @@ const AmenitiesSection = () => {
             return (
               <Checkbox
                 value={ammenity.value}
-                justifyContent="flex-start"
-                my="$2"
+                className="my-2 justify-start"
                 key={ammenity.value}
                 accessibilityLabel={ammenity.value}
               >
                 <CheckboxIndicator>
                   <CheckboxIcon as={CheckIcon} />
                 </CheckboxIndicator>
-                <CheckboxLabel ml="$2">{ammenity.label}</CheckboxLabel>
+                <CheckboxLabel>{ammenity.label}</CheckboxLabel>
               </Checkbox>
             );
           })}
-        </CheckboxGroup>
+        </CheckboxGroup> */}
       </FormControl>
     </VStack>
   );

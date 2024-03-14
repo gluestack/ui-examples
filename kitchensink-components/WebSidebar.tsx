@@ -1,24 +1,10 @@
 import React from "react";
-import { Box } from "@gluestack-ui/themed";
+import { Box } from "../components";
 import Sidebar from "./Sidebar";
 
 const WebSidebar = () => {
   return (
-    <Box
-      flex={1}
-      display="none"
-      sx={{
-        "@md": {
-          display: "flex",
-          _web: {
-            maxHeight: "calc(100vh - 144px)",
-          },
-        },
-      }}
-      maxWidth={340}
-      w="100%"
-      pl="$12"
-    >
+    <Box className="flex-1 hidden md:flex md:web:max-h-calc(100vh-144px) max-w-[340px] w-full pl-12">
       {/* common sidebar contents for web and mobile */}
       <Sidebar />
     </Box>

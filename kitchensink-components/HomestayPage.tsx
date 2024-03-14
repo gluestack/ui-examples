@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { StatusBar, Platform } from "react-native";
-import { Box } from "@gluestack-ui/themed";
+import { Box } from "../components";
 import MobileBottomTabs from "./MobileBottomTabs";
 import MobileModeChangeButton from "./MobileModeChangeButton";
 import {
@@ -50,16 +50,10 @@ const HomestayPage = () => {
 
   return (
     <>
-      <Box
-        flex={1}
-        sx={{
-          _light: { bg: "white" },
-          _dark: { bg: "$backgroundDark950" },
-        }}
-      >
+      <Box className="flex-1 bg-background-100">
         <StatusBar />
 
-        <Box flex={1}>
+        <Box className="flex-1">
           <MobileProfilePage isActive={activeTab === "Profile"} />
 
           <Explorepage setActiveTab={setActiveTab} activeTab={activeTab} />
@@ -67,19 +61,7 @@ const HomestayPage = () => {
           <MobileModeChangeButton />
         </Box>
         {/* mobile bottom tabs */}
-        <Box
-          h={72}
-          alignItems="center"
-          w="100%"
-          sx={{
-            "@md": {
-              display: "none",
-            },
-            _dark: { borderColor: "$borderDark900" },
-          }}
-          borderTopWidth="$1"
-          borderColor="$borderLight50"
-        >
+        <Box className="h-72 items-center w-full flex md:hidden border-t border-outline-50">
           <MobileBottomTabs
             activeTab={activeTab}
             setActiveTab={setActiveTab}

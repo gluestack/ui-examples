@@ -1,14 +1,16 @@
 import React from "react";
 import {
-  AlertDialog,
   Text,
   Heading,
   Icon,
   Button,
   CloseIcon,
+  ButtonText,
+} from "../components";
+import {
+  AlertDialog,
   AlertDialogBackdrop,
   AlertDialogContent,
-  ButtonText,
   AlertDialogHeader,
   AlertDialogCloseButton,
   AlertDialogBody,
@@ -41,7 +43,7 @@ const LogoutAlertDialog = ({
             variant="outline"
             action="secondary"
             onPress={handleClose}
-            mr="$3"
+            className="mr-3"
           >
             <ButtonText>Cancel</ButtonText>
           </Button>
