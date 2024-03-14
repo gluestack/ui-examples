@@ -5,7 +5,7 @@ import { ThemeContext } from "../../App";
 const ToggleMode = () => {
   const { colorMode, toggleColorMode } = useContext(ThemeContext);
   return (
-    <Button className='p-0 bg-transparent' onPress={toggleColorMode}>
+    <Button className='p-0 bg-transparent active:bg-transparent hover:bg-transparent' onPress={toggleColorMode}>
       <Icon
         as={colorMode === "dark" ? SunIcon : MoonIcon}
         size="xl"

@@ -9,7 +9,7 @@ const HeaderTabs = () => {
       <HStack className="rounded-full p-1.5 items-center border border-outline-200">
         <Pressable
           className={`rounded-full px-3 py-1.5 ${
-            selectedTab === "Anywhere" ? "bg-background-100" : "bg-transparent"
+            selectedTab === "Anywhere" ? "bg-background-200" : "bg-transparent"
           }`}
           onPress={() => setSelectedTab("Anywhere")}
         >
@@ -19,7 +19,7 @@ const HeaderTabs = () => {
         </Pressable>
         <Pressable
           className={`rounded-full px-3 py-1.5 ${
-            selectedTab === "Anyweek" ? "bg-background-100" : "bg-transparent"
+            selectedTab === "Anyweek" ? "bg-background-200" : "bg-transparent"
           }`}
           onPress={() => setSelectedTab("Anyweek")}
         >
@@ -28,7 +28,7 @@ const HeaderTabs = () => {
           </Text>
         </Pressable>
         <Pressable className={`rounded-full px-3 py-1.5 ${
-            selectedTab === "Add guests" ? "bg-background-100" : "bg-transparent"
+            selectedTab === "Add guests" ? "bg-background-200" : "bg-transparent"
           }`}
           onPress={() => setSelectedTab("Add guests")}
         >

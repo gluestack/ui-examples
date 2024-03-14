@@ -118,14 +118,12 @@ const NewThisWeekFold = () => {
         <HStack space="md" className="w-full px-4 md:px-0">
           {data.map((image, index) => {
             return (
-              <Box key={index} className="flex-1">
+              <Box key={index} className="flex-1 w-64 h-64">
                 <Image
                   source={image.src}
                   alt={"place" + index}
-                  h="$64"
-                  w="$64"
                   // @ts-ignore
-                  borderRadius="$md"
+                  className='rounded-md'
                   resizeMode="cover"
                 />
               </Box>

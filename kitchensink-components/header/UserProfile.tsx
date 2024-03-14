@@ -55,14 +55,14 @@ const UserProfile = () => {
         trigger={({ ...triggerProps }) => {
           return (
             <Pressable {...triggerProps}>
-              <Avatar size="sm" className="bg-background-600">
+              <Avatar size="sm">
                 <AvatarFallbackText>Henry Stan</AvatarFallbackText>
                 <AvatarImage
                   source={{
                     uri: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
                   }}
                 />
-                <AvatarBadge className="bg-primary-500 border-background-900" />
+                <AvatarBadge className="bg-primary-500 border-background-100" />
               </Avatar>
             </Pressable>
           );

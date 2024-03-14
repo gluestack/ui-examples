@@ -171,7 +171,7 @@ const ListYourPlaceModal = ({ modalVisible, setModalVisible }: any) => {
               </Heading>
             </HStack>
             <ModalCloseButton>
-              <Icon as={CloseIcon} className="w-16 h-16" />
+              <Icon as={CloseIcon} className="w-4 h-4" />
             </ModalCloseButton>
           </ModalHeader>
           <ModalBody>

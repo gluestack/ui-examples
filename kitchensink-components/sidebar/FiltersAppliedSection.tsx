@@ -32,14 +32,13 @@ const FiltersAppliedSection = () => {
           <ButtonText>Clear all</ButtonText>
         </Button>
       </HStack>
-      <HStack flexWrap="wrap" space="sm">
+      <HStack space="sm" className='flex-wrap'>
         {appliedFilters.map((item: any) => (
           <Badge
             action="muted"
             key={item}
-            className="rounded-full px-2.5 py-2 mt-3 items-center"
-          >
-            <BadgeText className="normal-case text-background-300">
+            className="rounded-full px-2.5 py-2 mt-3 items-center">
+            <BadgeText className="normal-case text-typography-900">
               {item}
             </BadgeText>
             <Pressable

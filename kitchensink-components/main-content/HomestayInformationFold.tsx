@@ -138,23 +138,25 @@ const TabPanelData = () => {
               {(props: any) => {
                 return (
                   <>
-                    <Box className="overflow-hidden rounded-md h-72">
+                    <Box className="overflow-hidden rounded-md h-72 relative w-full">
                       <Image
                         source={image.src}
-                        className="h-72 w-full"
+                        // className="h-72 w-full"
+
                         transform={[{ scale: props.hovered ? 1.04 : 1 }]}
                         opacity={props.hovered ? 0.9 : 1}
                         alt="Explore"
                       />
                     </Box>
                     {props.hovered && (
-                      <Box className="absolute bg-background-950 opacity-30 w-full h-full" />
+                      <Box className="absolute bg-background-950 opacity-30 w-full h-full cursor-pointer" />
                     )}
                     <Button
                       action="secondary"
                       variant="outline"
-                      display={props.hovered ? "flex" : "none"}
-                      className="absolute top-[45%] bg-transparent border-white self-center z-50"
+                      className={`absolute top-[45%] bg-transparent border-white self-center z-50 ${
+                        props.hovered ? "flex" : "none"
+                      }`}
                     >
                       <ButtonText className="text-white">Explore</ButtonText>
                       <ButtonIcon as={ChevronRight} className="text-white" />
@@ -163,6 +165,7 @@ const TabPanelData = () => {
                 );
               }}
             </Pressable>
+
             <Pressable
               onPress={() => {
                 if (likes.includes(image.title)) {
@@ -175,7 +178,7 @@ const TabPanelData = () => {
                   setLikes([...likes, image.title]);
                 }
               }}
-              className="absolute top-12 right-16 h-6 w-6 justify-center items-center"
+              className="absolute top-3 right-4 h-6 w-6 justify-center items-center"
             >
               <AnimatePresence>
                 <Motion.View
@@ -212,6 +215,7 @@ const TabPanelData = () => {
                 </Motion.View>
               </AnimatePresence>
             </Pressable>
+
             <HStack className="justify-between py-2 items-start">
               <VStack space="sm" className="flex-1">
                 <Text className="font-semibold text-typography-900">
@@ -236,9 +240,9 @@ const TabPanelData = () => {
                       <HStack className="items-center flex-start">
                         <Icon
                           as={Star}
-                          size={12}
+                          size="2xs"
                           fill="currentColor"
-                          className="text-background-50"
+                          className="text-background-900"
                         />
                         <Text size="sm" className="pl-1 text-typography-900">
                           {image.rating}
