@@ -138,17 +138,16 @@ const TabPanelData = () => {
               {(props: any) => {
                 return (
                   <>
-                    <Box className="overflow-hidden rounded-md h-72 relative w-full">
+                    <Box className="overflow-hidden rounded-md">
                       <Image
                         source={image.src}
-                        // className="h-72 w-full"
-
+                        className="w-full h-64"
                         transform={[{ scale: props.hovered ? 1.04 : 1 }]}
                         opacity={props.hovered ? 0.9 : 1}
                         alt="Explore"
                       />
                     </Box>
-                    {props.hovered && (
+                    {/* {props.hovered && (
                       <Box className="absolute bg-background-950 opacity-30 w-full h-full cursor-pointer" />
                     )}
                     <Button
@@ -160,7 +159,7 @@ const TabPanelData = () => {
                     >
                       <ButtonText className="text-white">Explore</ButtonText>
                       <ButtonIcon as={ChevronRight} className="text-white" />
-                    </Button>
+                    </Button> */}
                   </>
                 );
               }}

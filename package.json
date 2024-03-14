@@ -68,8 +68,5 @@
     "react-native-web": "~0.18.11",
     "typescript": "^5.1.3"
   },
-  "resolutions": {
-    "@gluestack-ui/utils": "0.1.12"
-  },
   "private": true
 }

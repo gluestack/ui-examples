@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Box, HStack, Image, Center, Icon, Pressable } from "../../components";
+import { Box, HStack, Center, Image, Icon, Pressable } from "../../components";
 import { ScrollView } from "react-native";
 import { ChevronLeft, ChevronRight } from "lucide-react-native";
 
@@ -118,12 +118,12 @@ const NewThisWeekFold = () => {
         <HStack space="md" className="w-full px-4 md:px-0">
           {data.map((image, index) => {
             return (
-              <Box key={index} className="flex-1 w-64 h-64">
+              <Box key={index} className="flex-1">
                 <Image
                   source={image.src}
                   alt={"place" + index}
                   // @ts-ignore
-                  className='rounded-md'
+                  className='w-64 h-64 rounded-md'
                   resizeMode="cover"
                 />
               </Box>

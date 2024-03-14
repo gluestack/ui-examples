@@ -61,7 +61,7 @@ const HomestayPage = () => {
           <MobileModeChangeButton />
         </Box>
         {/* mobile bottom tabs */}
-        <Box className="h-72 items-center w-full flex md:hidden border-t border-outline-50">
+        <Box className="h-[72px] items-center w-full flex md:hidden border-t border-outline-50">
           <MobileBottomTabs
             activeTab={activeTab}
             setActiveTab={setActiveTab}
