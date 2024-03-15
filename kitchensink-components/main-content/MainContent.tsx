@@ -11,8 +11,7 @@ const MainContent = ({
   activeTab,
 }: any) => {
   return (
-    <Box className="flex-1 md:max-h-calc(100vh - 144px) pr-16 pl-8">
-      <Box>
+    <Box className="flex-1 md:h-[calc(100vh-144px)] pr-16 pl-8 overflow-auto">
         {/* explore page main content header */}
         <MainContentHeader
           modalVisible={modalVisible}
@@ -24,7 +23,6 @@ const MainContent = ({
         <NewThisWeekFold />
         {/* explore page homestay info fold 2 */}
         <HomestayInformationFold />
-      </Box>
     </Box>
   );
 };
