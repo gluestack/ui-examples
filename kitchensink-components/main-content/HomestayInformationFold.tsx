@@ -141,25 +141,21 @@ const TabPanelData = () => {
                     <Box className="overflow-hidden rounded-md">
                       <Image
                         source={image.src}
-                        className="w-full h-64"
-                        transform={[{ scale: props.hovered ? 1.04 : 1 }]}
-                        opacity={props.hovered ? 0.9 : 1}
+                        className={`w-full h-64 ${props.hovered ? 'scale-[1.04] opacity-90' : 'scale-100 opacity-100'}`}
                         alt="Explore"
                       />
                     </Box>
-                    {/* {props.hovered && (
+                    {props.hovered && (
                       <Box className="absolute bg-background-950 opacity-30 w-full h-full cursor-pointer" />
                     )}
-                    <Button
-                      action="secondary"
-                      variant="outline"
-                      className={`absolute top-[45%] bg-transparent border-white self-center z-50 ${
-                        props.hovered ? "flex" : "none"
+                    <Box
+                      className={`absolute top-[45%] bg-transparent rounded border border-white self-center content-center py-1.5 px-4 flex-row ${
+                        props.hovered ? "flex" : "hidden"
                       }`}
                     >
-                      <ButtonText className="text-white">Explore</ButtonText>
-                      <ButtonIcon as={ChevronRight} className="text-white" />
-                    </Button> */}
+                      <Text className="text-white">Explore</Text>
+                      <Icon as={ChevronRight} size='sm' className="text-white self-center" />
+                    </Box>
                   </>
                 );
               }}
