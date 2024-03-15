@@ -147,7 +147,7 @@ const ScrollLeft = ({ handleScrollLeft, disabled }: any) => {
   return (
     <Center className="absolute left-0 h-full hidden md:flex">
       <Pressable
-        className={`p-1 ml-3 rounded-full border-outline-300 border bg-background-50 md:-ml-16 hover:bg-background-100 ${
+        className={`p-1 ml-3 rounded-full border-outline-300 border bg-background-50 md:-ml-[16px] hover:bg-background-100 ${
           disabled ? "opacity-0" : "opacity-100"
         }`}
         disabled={disabled}
