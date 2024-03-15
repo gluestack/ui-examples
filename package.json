@@ -33,6 +33,7 @@
     "@gluestack-ui/textarea": "latest",
     "@gluestack-ui/themed": "^1.1.8",
     "@legendapp/motion": "latest",
+    "@react-aria/utils": "3.22.0",
     "clsx": "^2.1.0",
     "expo": "~50.0.7",
     "expo-app-loading": "^2.1.1",
@@ -51,8 +52,7 @@
     "react-native": "latest",
     "react-native-reanimated": "^3.8.0",
     "react-native-svg": "latest",
-    "tailwindcss": "^3.4.1",
-    "@gluestack-ui/nativewind-utils/tva": "latest"
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -31,7 +31,7 @@ const PlaceTypeSection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Type of place</Heading>
-      {/* <CheckboxGroup
+      <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="place-type"
@@ -52,7 +52,7 @@ const PlaceTypeSection = () => {
             </Checkbox>
           );
         })}
-      </CheckboxGroup> */}
+      </CheckboxGroup>
     </VStack>
   );
 };

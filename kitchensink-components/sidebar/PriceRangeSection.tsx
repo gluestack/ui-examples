@@ -70,7 +70,7 @@ const PriceRangeSection = () => {
           </Tooltip.Content>
         </Tooltip>
       </Slider>
-      {/* <CheckboxGroup
+      <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="price filter"
@@ -92,7 +92,7 @@ const PriceRangeSection = () => {
             </Checkbox>
           );
         })}
-      </CheckboxGroup> */}
+      </CheckboxGroup>
     </VStack>
   );
 };

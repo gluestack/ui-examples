@@ -11,7 +11,6 @@ import {
   VariantProps,
 } from '@gluestack-ui/nativewind-utils';
 import { Platform } from 'react-native';
-import { Check } from 'lucide-react-native';
 
 const UICheckbox = createCheckbox({
   // @ts-ignore
@@ -20,7 +19,7 @@ const UICheckbox = createCheckbox({
       ? withStyleContext(View)
       : withStyleContextAndStates(Pressable),
   Group: withStates(View),
-  Icon: withStates(Check),
+  Icon: withStates(View),
   Label: withStates(Text),
   Indicator: withStates(View),
 });

@@ -34,7 +34,7 @@ const CustomerRatingSection = () => {
   return (
     <VStack space="md" className="w-full">
       <Heading size="sm">Customer Ratings</Heading>
-      {/* <CheckboxGroup
+      <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="rating"
@@ -64,7 +64,7 @@ const CustomerRatingSection = () => {
             </Checkbox>
           );
         })}
-      </CheckboxGroup> */}
+      </CheckboxGroup>
     </VStack>
   );
 };

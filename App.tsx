@@ -55,6 +55,7 @@ export default function App() {
       {/* bottom SafeAreaView */}
       <SafeAreaView
         style={{
+          ...styles.container,
           backgroundColor: colorMode === "light" ? "white" : "#171717",
         }}
       >

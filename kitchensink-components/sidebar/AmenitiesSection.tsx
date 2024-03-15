@@ -54,7 +54,7 @@ const AmenitiesSection = () => {
   return (
     <VStack space="sm">
       <Heading size="sm">Ammenities</Heading>
-      {/* <CheckboxGroup
+      <CheckboxGroup
         value={values}
         onChange={setValues}
         accessibilityLabel="ammenities"
@@ -76,7 +76,7 @@ const AmenitiesSection = () => {
             </Checkbox>
           );
         })}
-      </CheckboxGroup> */}
+      </CheckboxGroup>
       {viewAllComponents ? (
         <Pressable
           onPress={() => {
