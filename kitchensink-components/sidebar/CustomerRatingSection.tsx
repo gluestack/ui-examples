@@ -7,7 +7,7 @@ import {
   CheckboxIndicator,
   CheckboxLabel,
   CheckIcon,
-} from "@gluestack-ui/themed";
+} from "../../components";
 import { Star } from "lucide-react-native";
 
 const CustomerRatingSection = () => {
@@ -44,19 +44,18 @@ const CustomerRatingSection = () => {
             <Checkbox
               value={placeType.value}
               size="sm"
-              my="$2"
               key={index}
               accessibilityLabel={placeType.value}
+              className="my-2"
             >
               <CheckboxIndicator>
                 <CheckboxIcon as={CheckIcon} />
               </CheckboxIndicator>
-              <CheckboxLabel ml="$2">
+              <CheckboxLabel>
                 <Icon
                   as={Star}
-                  size={12}
-                  color="$black"
-                  sx={{ _dark: { color: "$white" } }}
+                  size='2xs'
+                  className='text-black inline mb-1'
                   fill="currentColor"
                 />{" "}
                 {placeType.label}
