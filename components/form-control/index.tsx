@@ -217,7 +217,7 @@ cssInterop(UIFormControl.Error.Text, { className: 'style' });
 cssInterop(UIFormControl.Error.Icon, { className: 'style' });
 cssInterop(UIFormControl.Label, { className: 'style' });
 cssInterop(UIFormControl.Label.Text, { className: 'style' });
-cssInterop(UIFormControl.Label.Astrick, { className: 'style' });
+// cssInterop(UIFormControl.Label.Astrick, { className: 'style' });
 cssInterop(UIFormControl.Helper, { className: 'style' });
 cssInterop(UIFormControl.Helper.Text, { className: 'style' });
 

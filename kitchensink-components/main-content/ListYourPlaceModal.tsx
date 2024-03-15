@@ -28,6 +28,9 @@ import {
   RadioLabel,
   RadioIcon,
   RadioGroup,
+  FormControl,
+  FormControlLabelText,
+  FormControlLabel,
 } from "../../components";
 import {
   Modal,
@@ -49,11 +52,6 @@ import {
   ModalHeader,
   ModalBackdrop,
   ModalContent,
-} from "@gluestack-ui/themed";
-import {
-  FormControl,
-  FormControlLabelText,
-  FormControlLabel,
 } from "@gluestack-ui/themed";
 import colors from "tailwindcss/colors";
 
@@ -473,7 +471,7 @@ const AmenitiesSection = () => {
         <FormControlLabel>
           <FormControlLabelText>Ammenities</FormControlLabelText>
         </FormControlLabel>
-        {/* <CheckboxGroup
+        <CheckboxGroup
           value={values}
           onChange={setValues}
           accessibilityLabel="ammenities"
@@ -493,7 +491,7 @@ const AmenitiesSection = () => {
               </Checkbox>
             );
           })}
-        </CheckboxGroup> */}
+        </CheckboxGroup>
       </FormControl>
     </VStack>
   );

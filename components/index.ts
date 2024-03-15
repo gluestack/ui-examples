@@ -7,7 +7,7 @@ export * from './center';
 export * from './checkbox';
 export * from './divider';
 export * from './fab';
-// export * from './form-control';
+export * from './form-control';
 export * from './gluestack-ui-provider';
 export * from './heading';
 export * from './hstack';
