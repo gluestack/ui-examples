@@ -151,6 +151,10 @@ module.exports = {
           warning: 'var(--color-background-warning)',
           muted: 'var(--color-background-muted)',
           success: 'var(--color-background-success)',
+          info: 'var(--color-background-info)',
+        },
+        muted: {
+          600: 'var(--color-muted-600)',
         },
       },
      fontFamily: {
