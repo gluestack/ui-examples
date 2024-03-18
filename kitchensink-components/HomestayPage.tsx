@@ -50,7 +50,7 @@ const HomestayPage = () => {
 
   return (
     <>
-      <Box className="flex-1 bg-background-100">
+      <Box className="flex-1">
         <StatusBar />
 
         <Box className="flex-1">
