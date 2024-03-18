@@ -100,7 +100,7 @@ const RadioLabel = ({ className, ...props }: any) => {
   );
 };
 
-const RadioIcon = ({ className, as: AsComp, size, ...props }: any, ref) => {
+const RadioIcon = ({ className, as: AsComp, size, ...props }: any) => {
   const { size: parentSize } = useStyleContext();
 
   if (AsComp) {
@@ -115,7 +115,6 @@ const RadioIcon = ({ className, as: AsComp, size, ...props }: any, ref) => {
             size,
             class: className,
           })}
-          ref={ref}
         />
       </UIRadio.Icon>
     );
@@ -130,7 +129,6 @@ const RadioIcon = ({ className, as: AsComp, size, ...props }: any, ref) => {
         size,
         class: className,
       })}
-      ref={ref}
     />
   );
 };
