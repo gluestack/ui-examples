@@ -49,13 +49,13 @@ const CustomerRatingSection = () => {
               className="my-2"
             >
               <CheckboxIndicator>
-                <CheckboxIcon as={CheckIcon} />
+                <CheckboxIcon as={CheckIcon} className='text-white' />
               </CheckboxIndicator>
               <CheckboxLabel>
                 <Icon
                   as={Star}
                   size='2xs'
-                  className='text-black inline mb-1'
+                  className='text-typography-900 inline mb-1'
                   fill="currentColor"
                 />{" "}
                 {placeType.label}

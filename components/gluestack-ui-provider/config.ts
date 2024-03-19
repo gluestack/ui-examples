@@ -151,20 +151,30 @@ export const config = {
 
     /* Muted */
     '--color-muted-600': '#525252',
+
+    /* Boundary for border color */
+    '--color-boundary-0': '#DBDBDB',  
+    
+    /* Content for text color */
+    '--color-content-0': '#FCFCFC',
+    '--color-content-50': '#FCFCFC', 
+
+    /* Shade for background color */
+    '--color-shade-0': '#262626', 
   }),
   dark: vars({
-    '--color-primary-0': '#828282',
-    '--color-primary-50': '#949494',
-    '--color-primary-100': '#9E9E9E',
-    '--color-primary-200': '#B3B3B3',
-    '--color-primary-300': '#C7C7C7',
-    '--color-primary-400': '#E6E6E6',
-    '--color-primary-500': '#F0F0F0',
-    '--color-primary-600': '#FAFAFA',
-    '--color-primary-700': '#FCFCFC',
-    '--color-primary-800': '#FDFDFD',
-    '--color-primary-900': '#FDFCFC',
-    '--color-primary-950': '#FDFCFC',
+    '--color-primary-0': '#ffffff',
+    '--color-primary-50': '#FFF1F2',
+    '--color-primary-100': '#FFE4E6',
+    '--color-primary-200': '#FECDD3',
+    '--color-primary-300': '#FDA4AF',
+    '--color-primary-400': '#EE596F',
+    '--color-primary-500': '#F43F5E',
+    '--color-primary-600': '#EE596F',
+    '--color-primary-700': '#BE123C',
+    '--color-primary-800': '#9F1239',
+    '--color-primary-900': '#881337',
+    '--color-primary-950': '#440A1C',
 
     /* Secondary  */
     '--color-secondary-0': '#0B0C0C',
@@ -301,5 +311,15 @@ export const config = {
 
     /* Muted */
     '--color-muted-600': '#737373',
+
+    /* Boundary for border color */
+    '--color-boundary-0': '#262626',
+
+    /* Content for text color */
+    '--color-content-0': '#FCFCFC',
+    '--color-content-50': '#DBDBDB',
+
+    /* Shade for background color */
+    '--color-shade-0': '#404040',
   }),
 };

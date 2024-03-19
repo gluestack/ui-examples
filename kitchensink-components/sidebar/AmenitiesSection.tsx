@@ -70,7 +70,7 @@ const AmenitiesSection = () => {
               className="justify-start my-2"
             >
               <CheckboxIndicator>
-                <CheckboxIcon as={CheckIcon} />
+                <CheckboxIcon as={CheckIcon} className='text-white' />
               </CheckboxIndicator>
               <CheckboxLabel>{ammenity.label}</CheckboxLabel>
             </Checkbox>

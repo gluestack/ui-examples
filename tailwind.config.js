@@ -156,6 +156,16 @@ module.exports = {
         muted: {
           600: 'var(--color-muted-600)',
         },
+        boundary: {
+          0: 'var(--color-boundary-0)',
+        },
+        content: {
+          0: 'var(--color-content-0)',
+          50: 'var(--color-content-50)',
+        },
+        shade: {
+          0: 'var(--color-shade-0)',
+        },
       },
      fontFamily: {
         heading: undefined,

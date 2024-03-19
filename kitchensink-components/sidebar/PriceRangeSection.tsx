@@ -86,7 +86,7 @@ const PriceRangeSection = () => {
               className="my-2"
             >
               <CheckboxIndicator>
-                <CheckboxIcon as={CheckIcon} />
+                <CheckboxIcon as={CheckIcon} className='text-white' />
               </CheckboxIndicator>
               <CheckboxLabel>{priceRange.label}</CheckboxLabel>
             </Checkbox>

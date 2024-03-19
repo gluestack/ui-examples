@@ -46,7 +46,7 @@ const PlaceTypeSection = () => {
               className="my-2 justify-start"
             >
               <CheckboxIndicator>
-                <CheckboxIcon as={CheckIcon}></CheckboxIcon>
+                <CheckboxIcon as={CheckIcon} className='text-white'></CheckboxIcon>
               </CheckboxIndicator>
               <CheckboxLabel>{placeType.label}</CheckboxLabel>
             </Checkbox>

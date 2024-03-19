@@ -258,7 +258,7 @@ const NextStepperButton = ({ setModalFormStep, step }: any) => {
         setModalFormStep(step);
       }}
     >
-      <ButtonText>Next</ButtonText>
+      <ButtonText className="text-white group-hover/button:text-white">Next</ButtonText>
     </Button>
   );
 };
@@ -282,7 +282,7 @@ const PostNowButton = ({ setModalVisible, toast }: any) => {
         });
       }}
     >
-      <ButtonText>Post Now</ButtonText>
+      <ButtonText className="text-white group-hover/button:text-white">Post Now</ButtonText>
     </Button>
   );
 };
