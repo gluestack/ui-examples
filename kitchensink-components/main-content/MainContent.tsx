@@ -11,7 +11,7 @@ const MainContent = ({
   activeTab,
 }: any) => {
   return (
-    <Box className="flex-1 md:h-[calc(100vh-144px)] md:pr-16 md:pl-8">
+    <Box className="flex-1 md:h-[calc(100vh-144px)] md:pr-16 md:pl-8 overflow-auto">
         {/* explore page main content header */}
         <MainContentHeader
           modalVisible={modalVisible}
