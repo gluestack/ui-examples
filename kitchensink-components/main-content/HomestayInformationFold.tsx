@@ -85,7 +85,7 @@ const HomestayInformationFold = () => {
 const HomestayInfoTabs = ({ tabsData }: any) => {
   const [activeTab, setActiveTab] = React.useState(tabsData[0]);
   return (
-    <Box className="border border-outline-50 md:border-b-0 md:border-transparent">
+    <Box className="border-b border-outline-50 md:border-b-0 md:border-transparent">
       <Box className="py-5">
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <HStack space="lg" className="mx-0.5">

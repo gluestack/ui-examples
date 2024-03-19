@@ -15,6 +15,8 @@ const Explorepage = ({ activeTab, setActiveTab }: any) => {
         {/* header */}
         <Header />
       </Box>
+
+      {/* mobile */}
       <ScrollView>
         <Box
           className={`${activeTab !== "Profile" ? "flex" : "hidden"} md:hidden`}
@@ -23,6 +25,7 @@ const Explorepage = ({ activeTab, setActiveTab }: any) => {
         </Box>
       </ScrollView>
 
+      {/* web */}
       <HStack className="w-full hidden md:flex">
         <WebSidebar />
         {/* <ScrollView style={{ flex: 1 }}> */}

@@ -58,9 +58,9 @@ const MobileProfilePage = ({ isActive }: any) => {
 
 const ProfileCard = () => {
   return (
-    <HStack justifyContent="space-between" alignItems="center">
+    <HStack className='justify-between items-center'>
       <HStack space="md">
-        <Avatar bg="$blue600">
+        <Avatar className='bg-blue-600'>
           <AvatarFallbackText>Henry Stan</AvatarFallbackText>
           <AvatarImage
             source={{
@@ -71,7 +71,7 @@ const ProfileCard = () => {
         <VStack>
           <Text>Henry Stan</Text>
           <Link>
-            <LinkText size="sm" className="text-typography-500">
+            <LinkText size="sm" className="text-typography-500 no-underline hover:text-typography-500 active:text-typography-500">
               Show Profile
             </LinkText>
           </Link>
