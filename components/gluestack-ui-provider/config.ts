@@ -149,9 +149,6 @@ export const config = {
     // '--color-background-muted': 'red',
     '--color-background-info': '#EBF8FE',
 
-    /* Muted */
-    '--color-muted-600': '#525252',
-
     /* Boundary for border color */
     '--color-boundary-0': '#DBDBDB',  
     
@@ -308,9 +305,6 @@ export const config = {
     '--color-background-success': '#1C2B21',
     '--color-background-muted': '#252526',
     '--color-background-info': '#1A282E',
-
-    /* Muted */
-    '--color-muted-600': '#737373',
 
     /* Boundary for border color */
     '--color-boundary-0': '#262626',

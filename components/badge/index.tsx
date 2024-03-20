@@ -36,7 +36,7 @@ const badgeTextStyle = tva({
       warning: 'text-warning-600',
       success: 'text-success-600',
       info: 'text-info-600',
-      muted: 'text-muted-600',
+      muted: 'text-secondary-600',
     },
     size: {
       sm: 'text-2xs',
@@ -77,7 +77,7 @@ const badgeIconStyle = tva({
       warning: 'text-warning-600',
       success: 'text-success-600',
       info: 'text-info-600',
-      muted: 'text-muted-600',
+      muted: 'text-secondary-600',
     },
     size: {
       sm: 'h-3 w-3',
