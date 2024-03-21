@@ -29,6 +29,12 @@ This will start the Expo development server, and you can choose to run the app o
 
 For detailed information on each component and its props, refer to the documentation provided. => https://ui.gluestack.io/docs/getting-started/installation
 
+## Created By GeekyAnts
+
+GeekyAnts is a team of React Native experts who love open-source and solving developer problems. We’ve been working on React Native since 2015 and have designed and built React Native apps for almost 200+ clients across the globe. Our clients include startups to big enterprises! Need help with your React Native app?
+
+[Contact Us](https://geekyants.com/?utm_source=gluestack-ui-home&utm_medium=home-page&utm_campaign=meet-the-creators)
+
 ## Contributing
 We welcome contributions from the community! If you want to report bugs, suggest improvements, or add new features, please create an issue, we will actively look into it.
 
