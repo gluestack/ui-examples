@@ -34,6 +34,7 @@ const MobileBottomTabs = ({ bottomTabs, activeTab, setActiveTab }: any) => {
                 <Icon
                   as={tab.icon}
                   className={`${activeTab === tab.label ? "text-primary-500" : "text-typography-400"}`}
+                  color={activeTab === tab.label ? "#F43F5E" : "#A3A3A3"}
                   size={20}
                 />
                 <Text
