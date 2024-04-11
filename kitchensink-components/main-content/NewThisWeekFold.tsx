@@ -1,7 +1,15 @@
-import React, { useRef, useState } from "react";
-import { Box, HStack, Center, Image, Icon, Pressable } from "../../components/ui";
+import React, { useRef, useState, useContext } from "react";
+import {
+  Box,
+  HStack,
+  Center,
+  Image,
+  Icon,
+  Pressable,
+} from "../../components/ui";
 import { ScrollView } from "react-native";
 import { ChevronLeft, ChevronRight } from "lucide-react-native";
+import { ThemeContext } from "../../App";
 
 const data = [
   {
@@ -123,7 +131,7 @@ const NewThisWeekFold = () => {
                   source={image.src}
                   alt={"place" + index}
                   // @ts-ignore
-                  className='w-64 h-64 rounded-md'
+                  className="w-64 h-64 rounded-md"
                   resizeMode="cover"
                 />
               </Box>
@@ -144,32 +152,46 @@ const NewThisWeekFold = () => {
 };
 
 const ScrollLeft = ({ handleScrollLeft, disabled }: any) => {
+  const { colorMode } = useContext(ThemeContext);
   return (
     <Center className="absolute left-0 h-full hidden md:flex">
       <Pressable
         className={`p-1 ml-3 rounded-full border-outline-300 border bg-background-50 md:-ml-[16px] hover:bg-background-100 ${
-          disabled ? "data-[disabled=true]:opacity-0" : "data-[disabled=true]:opacity-100"
+          disabled
+            ? "data-[disabled=true]:opacity-0"
+            : "data-[disabled=true]:opacity-100"
         }`}
         disabled={disabled}
         onPress={handleScrollLeft}
       >
-        <Icon as={ChevronLeft} size="lg" className="text-background-700" />
+        <Icon
+          as={ChevronLeft}
+          size="lg"
+          color={colorMode === "light" ? "#535252" : "#DCDBDB"}
+        />
       </Pressable>
     </Center>
   );
 };
 
 const ScrollRight = ({ handleScrollRight, disabled }: any) => {
+  const { colorMode } = useContext(ThemeContext);
   return (
     <Center className="absolute right-0 h-full hidden md:flex">
       <Pressable
         className={`p-1 ml-3 rounded-full border-outline-300 border bg-background-50 md:-mr-4 hover:bg-background-100 ${
-          disabled ? "data-[disabled=true]:opacity-0" : "data-[disabled=true]:opacity-100"
+          disabled
+            ? "data-[disabled=true]:opacity-0"
+            : "data-[disabled=true]:opacity-100"
         }`}
         onPress={handleScrollRight}
         disabled={disabled}
       >
-        <Icon as={ChevronRight} size="lg" className="text-background-700" />
+        <Icon
+          as={ChevronRight}
+          size="lg"
+          color={colorMode === "light" ? "#535252" : "#DCDBDB"}
+        />
       </Pressable>
     </Center>
   );

@@ -12,7 +12,6 @@ import {
 } from "lucide-react-native";
 import MobileProfilePage from "./MobileProfilePage";
 import Explorepage from "./ExplorePage";
-import MobileSidebarActionsheet from "./MobileSidebarActionsheet";
 
 const bottomTabs = [
   {

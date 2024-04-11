@@ -152,6 +152,7 @@ module.exports = {
           muted: 'var(--color-background-muted)',
           success: 'var(--color-background-success)',
           info: 'var(--color-background-info)',
+          dark: 'var(--color-background-dark)',
         },
         boundary: {
           0: 'var(--color-boundary-0)',

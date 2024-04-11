@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   HStack,
   Text,
@@ -60,7 +59,7 @@ const ProfileCard = () => {
   return (
     <HStack className='justify-between items-center'>
       <HStack space="md">
-        <Avatar className='bg-blue-600'>
+        <Avatar className='bg-primary-500'>
           <AvatarFallbackText>Henry Stan</AvatarFallbackText>
           <AvatarImage
             source={{

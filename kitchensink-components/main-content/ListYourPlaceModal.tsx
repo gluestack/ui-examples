@@ -31,14 +31,17 @@ import {
   FormControl,
   FormControlLabelText,
   FormControlLabel,
-} from "../../components/ui";
-import {
   Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalHeader,
+  ModalBackdrop,
+  ModalContent,
   useToast,
+  Toast,
   ToastDescription,
   ToastTitle,
   Select,
-  Toast,
   SelectTrigger,
   SelectDragIndicatorWrapper,
   SelectDragIndicator,
@@ -47,12 +50,8 @@ import {
   SelectInput,
   SelectContent,
   SelectPortal,
-  ModalBody,
-  ModalCloseButton,
-  ModalHeader,
-  ModalBackdrop,
-  ModalContent,
-} from "@gluestack-ui/themed";
+  SelectItem,
+} from "../../components/ui";
 import colors from "tailwindcss/colors";
 import { ThemeContext } from "../../App";
 
@@ -436,10 +435,14 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
           </FormControlLabel>
           <HStack space="sm">
             {/* select: example */}
-            <Select defaultValue="+91" w="$24" placeholder="Select code">
+            <Select
+              defaultValue="+91"
+              placeholder="Select code"
+              className="w-24"
+            >
               <SelectTrigger>
                 <SelectInput />
-                <SelectIcon as={ChevronDownIcon} mr="$3" />
+                <SelectIcon as={ChevronDownIcon} className="mr-3" />
               </SelectTrigger>
               <SelectPortal>
                 <SelectBackdrop />
@@ -448,7 +451,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
                     <SelectDragIndicator />
                   </SelectDragIndicatorWrapper>
                   {phoneNumberCodes.map((item, index) => (
-                    <Select.Item
+                    <SelectItem
                       label={`${item.code}`}
                       value={`${item.code}`}
                       key={`${item.code}`}
@@ -457,6 +460,7 @@ const ModalContent3 = ({ setModalVisible, toast }: any) => {
                 </SelectContent>
               </SelectPortal>
             </Select>
+
             {/* input: example */}
             <Input className="flex-1">
               <InputField
@@ -497,7 +501,7 @@ const AmenitiesSection = () => {
                 accessibilityLabel={ammenity.value}
               >
                 <CheckboxIndicator>
-                  <CheckboxIcon as={CheckIcon} color='white' />
+                  <CheckboxIcon as={CheckIcon} color="white" />
                 </CheckboxIndicator>
                 <CheckboxLabel>{ammenity.label}</CheckboxLabel>
               </Checkbox>

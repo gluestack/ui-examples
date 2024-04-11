@@ -147,7 +147,7 @@ export const config = {
     "--color-background-warning": "#FFF4EB",
     "--color-background-success": "#EDFCF2",
     "--color-background-muted": "#F6F6F7",
-    // '--color-background-muted': 'red',
+    '--color-background-dark': '#171717',
     "--color-background-info": "#EBF8FE",
 
     /* Boundary for border color */
@@ -305,6 +305,7 @@ export const config = {
     "--color-background-warning": "#412F23",
     "--color-background-success": "#1C2B21",
     "--color-background-muted": "#252526",
+    '--color-background-dark': '#171717',
     "--color-background-info": "#1A282E",
 
     /* Boundary for border color */

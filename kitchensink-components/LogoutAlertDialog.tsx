@@ -6,8 +6,6 @@ import {
   Button,
   CloseIcon,
   ButtonText,
-} from "../components/ui";
-import {
   AlertDialog,
   AlertDialogBackdrop,
   AlertDialogContent,
@@ -15,7 +13,8 @@ import {
   AlertDialogCloseButton,
   AlertDialogBody,
   AlertDialogFooter,
-} from "@gluestack-ui/themed";
+} from "../components/ui";
+import {} from "@gluestack-ui/themed";
 
 const LogoutAlertDialog = ({
   openLogoutAlertDialog,

@@ -13,8 +13,8 @@ import {
   CheckIcon,
   CheckboxIcon,
   CheckboxGroup,
+  Tooltip,
 } from "../../components/ui";
-import { Tooltip } from "@gluestack-ui/themed";
 
 const PriceRangeSection = () => {
   const [sliderValue, setSliderValue] = React.useState(3500);
@@ -86,7 +86,7 @@ const PriceRangeSection = () => {
               className="my-2"
             >
               <CheckboxIndicator>
-                <CheckboxIcon as={CheckIcon} color='white' />
+                <CheckboxIcon as={CheckIcon} color="white" />
               </CheckboxIndicator>
               <CheckboxLabel>{priceRange.label}</CheckboxLabel>
             </Checkbox>

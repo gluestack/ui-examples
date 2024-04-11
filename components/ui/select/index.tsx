@@ -28,7 +28,7 @@ import { Pressable, View, TextInput, Platform } from 'react-native';
 /** Select Components */
 
 const selectIconStyle = tva({
-  base: 'text-background-500',
+  base: '',
   parentVariants: {
     size: {
       '2xs': 'h-3 w-3',
@@ -198,30 +198,32 @@ const SelectIcon = React.forwardRef(
       size,
       // @ts-ignore
       fill = 'none',
+      color = 'gray',
       ...props
-    }: ISelectIcon & { as?: any },
+    }: ISelectIcon & {
+      as?: any;
+      color?: string;
+      fill?: string;
+      className?: any;
+    },
     ref?: any
   ) => {
     const { size: parentSize } = useStyleContext();
     if (AsComp) {
       return (
-        <View
-          className={selectIconStyle({
-            class: className,
-            parentVariants: {
-              size: parentSize,
-            },
-            size,
-          })}
-        >
           <AsComp
-            height={'100%'}
-            width={'100%'}
             ref={ref}
             fill={fill}
+            color={color}
+            className={selectIconStyle({
+              class: className,
+              parentVariants: {
+                size: parentSize,
+              },
+              size,
+            })}
             {...props}
           />
-        </View>
       );
     }
     return (
@@ -236,6 +238,7 @@ const SelectIcon = React.forwardRef(
         ref={ref}
         //@ts-ignore
         fill={fill}
+        color={color}
         {...props}
       />
     );

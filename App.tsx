@@ -60,13 +60,13 @@ export default function App() {
         }}
       >
         <NativewindProvider mode={colorMode}>
-          <ThemedProvider config={themedConfig} colorMode={colorMode}>
+          {/* <ThemedProvider config={themedConfig} colorMode={colorMode}> */}
             <ThemeContext.Provider value={{ colorMode, toggleColorMode }}>
               <SSRProvider>
                 <HomestayPage />
               </SSRProvider>
             </ThemeContext.Provider>
-          </ThemedProvider>
+          {/* </ThemedProvider> */}
         </NativewindProvider>
       </SafeAreaView>
     </>

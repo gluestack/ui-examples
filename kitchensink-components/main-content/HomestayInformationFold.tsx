@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {
   Box,
   HStack,
@@ -6,12 +6,12 @@ import {
   Image,
   Pressable,
   Text,
-  VStack,
+  VStack, Tooltip
 } from "../../components/ui";
-import { Tooltip } from "@gluestack-ui/themed";
 import { ChevronRight, Heart, Star } from "lucide-react-native";
 import { AnimatePresence, Motion } from "@legendapp/motion";
 import { ScrollView } from "react-native";
+import { ThemeContext } from "../../App";
 
 const homestayInfoData = [
   {
@@ -121,6 +121,7 @@ const HomestayInfoTabs = ({ tabsData }: any) => {
 
 const TabPanelData = () => {
   const [likes, setLikes]: any = React.useState([]);
+  const {colorMode} = useContext(ThemeContext);
   return (
     <VStack className="justify-between lg:flex-row">
       {homestayInfoData.map((image: any, index: any) => {
@@ -229,8 +230,8 @@ const TabPanelData = () => {
                         <Icon
                           as={Star}
                           size="2xs"
-                          fill="currentColor"
-                          className="text-background-900"
+                          fill={colorMode === 'light' ? '#272625' : '#F6F6F6' }
+                          color={colorMode === 'light' ? '#272625' : '#F6F6F6' }
                         />
                         <Text size="sm" className="pl-1 text-typography-900">
                           {image.rating}

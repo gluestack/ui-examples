@@ -5,8 +5,10 @@ import {
   AvatarImage,
   AvatarBadge,
   Pressable,
+  Menu,
+  MenuItem,
+  MenuItemLabel,
 } from "../../components/ui";
-import { Menu, MenuItem, MenuItemLabel } from "@gluestack-ui/themed";
 import LogoutAlertDialog from "../LogoutAlertDialog";
 
 const userMenuItems = [
