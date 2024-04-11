@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { StatusBar, Platform } from "react-native";
-import { Box } from "../components";
+import { Box } from "../components/ui";
 import MobileBottomTabs from "./MobileBottomTabs";
 import MobileModeChangeButton from "./MobileModeChangeButton";
 import {

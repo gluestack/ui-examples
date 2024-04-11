@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Fab, FabIcon } from "../components";
+import { Fab, FabIcon } from "../components/ui";
 import { Moon, Sun } from "lucide-react-native";
 import { ThemeContext } from "../App";
 

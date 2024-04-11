@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, HStack } from "../components";
+import { Box, HStack } from "../components/ui";
 import Banner from "./Banner";
 import Header from "./Header";
 import WebSidebar from "./WebSidebar";
@@ -29,7 +29,7 @@ const Explorepage = ({ activeTab, setActiveTab }: any) => {
       <HStack className="w-full hidden md:flex">
         <WebSidebar />
         {/* <ScrollView style={{ flex: 1 }}> */}
-          <MainContent setActiveTab={setActiveTab} activeTab={activeTab} />
+        <MainContent setActiveTab={setActiveTab} activeTab={activeTab} />
         {/* </ScrollView> */}
       </HStack>
     </>

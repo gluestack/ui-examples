@@ -3,7 +3,7 @@ module.exports = {
   darkMode: 'class',
   content: [
     './kitchensink-components/**/**/*.{html,js,jsx,ts,tsx}',
-    './components/**/*.{html,js,jsx,ts,tsx}',
+    './components/ui/**/*.{html,js,jsx,ts,tsx}',
   ],
   presets: [require('nativewind/preset')],
   theme: {

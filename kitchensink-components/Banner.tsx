@@ -1,5 +1,5 @@
 import React from "react";
-import { HStack, Link, LinkText, Text } from "../components";
+import { HStack, Link, LinkText, Text } from "../components/ui";
 
 const Banner = () => {
   return (

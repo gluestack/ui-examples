@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Icon, MoonIcon, SunIcon, Button } from "../../components";
+import { Icon, MoonIcon, SunIcon, Button } from "../../components/ui";
 import { ThemeContext } from "../../App";
 
 const ToggleMode = () => {

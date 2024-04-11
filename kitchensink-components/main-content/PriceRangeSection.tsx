@@ -13,7 +13,7 @@ import {
   CheckboxLabel,
   CheckboxIcon,
   CheckIcon
-} from "../../components";
+} from "../../components/ui";
 
 const PriceRangeSection = () => {
   const [sliderValue, setSliderValue] = React.useState(3500);

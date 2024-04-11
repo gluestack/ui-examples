@@ -13,7 +13,7 @@ import {
   CheckIcon,
   CheckboxIcon,
   CheckboxGroup,
-} from "../../components";
+} from "../../components/ui";
 import { Tooltip } from "@gluestack-ui/themed";
 
 const PriceRangeSection = () => {
@@ -86,7 +86,7 @@ const PriceRangeSection = () => {
               className="my-2"
             >
               <CheckboxIndicator>
-                <CheckboxIcon as={CheckIcon} className='text-white' />
+                <CheckboxIcon as={CheckIcon} color='white' />
               </CheckboxIndicator>
               <CheckboxLabel>{priceRange.label}</CheckboxLabel>
             </Checkbox>

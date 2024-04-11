@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Box, HStack, Center, Image, Icon, Pressable } from "../../components";
+import { Box, HStack, Center, Image, Icon, Pressable } from "../../components/ui";
 import { ScrollView } from "react-native";
 import { ChevronLeft, ChevronRight } from "lucide-react-native";
 

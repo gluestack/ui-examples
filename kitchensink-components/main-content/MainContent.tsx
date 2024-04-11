@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "../../components";
+import { Box } from "../../components/ui";
 import HomestayInformationFold from "./HomestayInformationFold";
 import MainContentHeader from "./MainContentHeader";
 import NewThisWeekFold from "./NewThisWeekFold";

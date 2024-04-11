@@ -1,5 +1,5 @@
-import React from "react";
-import { Heading, Icon, VStack } from "../../components";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../App";
 import {
   Checkbox,
   CheckboxGroup,
@@ -7,7 +7,10 @@ import {
   CheckboxIndicator,
   CheckboxLabel,
   CheckIcon,
-} from "../../components";
+  Heading,
+  Icon,
+  VStack,
+} from "../../components/ui";
 import { Star } from "lucide-react-native";
 
 const CustomerRatingSection = () => {
@@ -30,6 +33,8 @@ const CustomerRatingSection = () => {
     },
   ];
   const [values, setValues] = React.useState(["wifi", "air-conditioning"]);
+  const { colorMode } = useContext(ThemeContext);
+  console.log("colorMode", colorMode);
 
   return (
     <VStack space="md" className="w-full">
@@ -49,14 +54,14 @@ const CustomerRatingSection = () => {
               className="my-2"
             >
               <CheckboxIndicator>
-                <CheckboxIcon as={CheckIcon} className='text-white' />
+                <CheckboxIcon as={CheckIcon} color="white" />
               </CheckboxIndicator>
-              <CheckboxLabel>
+              <CheckboxLabel className='flex flex-row items-center gap-1'>
                 <Icon
                   as={Star}
-                  size='2xs'
-                  className='text-typography-900 inline mb-1'
-                  fill="currentColor"
+                  size="2xs"
+                  color={colorMode === "light" ? "#262627" : "#F5F5F5"}
+                  fill={colorMode === "light" ? "#262627" : "#F5F5F5"}
                 />{" "}
                 {placeType.label}
               </CheckboxLabel>

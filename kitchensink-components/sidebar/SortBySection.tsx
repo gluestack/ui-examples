@@ -8,7 +8,7 @@ import {
   RadioLabel,
   VStack,
   RadioIcon,
-} from "../../components";
+} from "../../components/ui";
 
 const SortBySection = () => {
   const sidebarFiltersCustomerRatings = [
@@ -48,7 +48,7 @@ const SortBySection = () => {
               className='justify-start my-2'
             >
               <RadioIndicator>
-                <RadioIcon as={CircleIcon} />
+                <RadioIcon as={CircleIcon} color='#E11d48' />
               </RadioIndicator>
               <RadioLabel>{placeType.label}</RadioLabel>
             </Radio>

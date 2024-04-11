@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   Box,
   VStack,
@@ -31,7 +31,7 @@ import {
   FormControl,
   FormControlLabelText,
   FormControlLabel,
-} from "../../components";
+} from "../../components/ui";
 import {
   Modal,
   useToast,
@@ -54,6 +54,7 @@ import {
   ModalContent,
 } from "@gluestack-ui/themed";
 import colors from "tailwindcss/colors";
+import { ThemeContext } from "../../App";
 
 const sidebarFiltersAmmenities = [
   {
@@ -163,8 +164,8 @@ const ListYourPlaceModal = ({ modalVisible, setModalVisible }: any) => {
         <ModalBackdrop />
         <ModalContent>
           <ModalHeader>
-            <HStack alignItems="center">
-              <Heading size="sm" fontWeight="$semibold">
+            <HStack className="items-center">
+              <Heading size="sm" className="font-semibold">
                 List your place
               </Heading>
             </HStack>
@@ -258,7 +259,9 @@ const NextStepperButton = ({ setModalFormStep, step }: any) => {
         setModalFormStep(step);
       }}
     >
-      <ButtonText className="text-white group-hover/button:text-white">Next</ButtonText>
+      <ButtonText className="text-white group-hover/button:text-white">
+        Next
+      </ButtonText>
     </Button>
   );
 };
@@ -282,7 +285,9 @@ const PostNowButton = ({ setModalVisible, toast }: any) => {
         });
       }}
     >
-      <ButtonText className="text-white group-hover/button:text-white">Post Now</ButtonText>
+      <ButtonText className="text-white group-hover/button:text-white">
+        Post Now
+      </ButtonText>
     </Button>
   );
 };
@@ -294,6 +299,7 @@ const ModalContent1 = ({ setModalFormStep, toast }: any) => {
   );
   const [selectedPropertyTypeOptions, setSelectedPropertyTypeOptions]: any =
     useState([]);
+  const { colorMode } = useContext(ThemeContext);
 
   const handlePropertyTypeSelection = (item: any) => {
     if (selectedPropertyTypeOptions.includes(item)) {
@@ -345,13 +351,19 @@ const ModalContent1 = ({ setModalFormStep, toast }: any) => {
               <HStack space="md">
                 <Radio value="Residential">
                   <RadioIndicator>
-                    <RadioIcon as={CircleIcon} />
+                    <RadioIcon
+                      as={CircleIcon}
+                      color={colorMode === "light" ? "#E11d48" : "#EE596F"}
+                    />
                   </RadioIndicator>
                   <RadioLabel>Residential</RadioLabel>
                 </Radio>
                 <Radio value="Commercial">
                   <RadioIndicator>
-                    <RadioIcon as={CircleIcon} />
+                    <RadioIcon
+                      as={CircleIcon}
+                      color={colorMode === "light" ? "#E11d48" : "#EE596F"}
+                    />
                   </RadioIndicator>
                   <RadioLabel>Commercial</RadioLabel>
                 </Radio>
@@ -485,7 +497,7 @@ const AmenitiesSection = () => {
                 accessibilityLabel={ammenity.value}
               >
                 <CheckboxIndicator>
-                  <CheckboxIcon as={CheckIcon} />
+                  <CheckboxIcon as={CheckIcon} color='white' />
                 </CheckboxIndicator>
                 <CheckboxLabel>{ammenity.label}</CheckboxLabel>
               </Checkbox>

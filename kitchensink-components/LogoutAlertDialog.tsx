@@ -6,7 +6,7 @@ import {
   Button,
   CloseIcon,
   ButtonText,
-} from "../components";
+} from "../components/ui";
 import {
   AlertDialog,
   AlertDialogBackdrop,

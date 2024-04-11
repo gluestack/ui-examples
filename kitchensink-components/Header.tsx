@@ -7,7 +7,7 @@ import {
   InputIcon,
   InputSlot,
   SearchIcon,
-} from "../components";
+} from "../components/ui";
 import HeaderTabs from "./header/HeaderTabs";
 import HomestayLogo from "./header/HomestayLogo";
 import ToggleMode from "./header/ToggleMode";

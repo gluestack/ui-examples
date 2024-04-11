@@ -1,6 +1,5 @@
 import React from "react";
-import { SearchIcon } from "../../components";
-import { HStack, Icon, Pressable, Text } from "../../components";
+import { HStack, Icon, Pressable, Text, SearchIcon } from "../../components/ui";
 
 const HeaderTabs = () => {
   const [selectedTab, setSelectedTab] = React.useState("Anywhere");
@@ -27,8 +26,11 @@ const HeaderTabs = () => {
             Anyweek
           </Text>
         </Pressable>
-        <Pressable className={`rounded-full px-3 py-1.5 ${
-            selectedTab === "Add guests" ? "bg-background-100" : "bg-transparent"
+        <Pressable
+          className={`rounded-full px-3 py-1.5 ${
+            selectedTab === "Add guests"
+              ? "bg-background-100"
+              : "bg-transparent"
           }`}
           onPress={() => setSelectedTab("Add guests")}
         >
@@ -36,8 +38,8 @@ const HeaderTabs = () => {
             Add guests
           </Text>
         </Pressable>
-        <Pressable className='ml-3 p-2 bg-primary-500 rounded-full'>
-          <Icon as={SearchIcon} className='w-4 h-4 text-white' />
+        <Pressable className="ml-3 p-2 bg-primary-500 rounded-full">
+          <Icon as={SearchIcon} className="w-4 h-4 text-white" />
         </Pressable>
       </HStack>
     </HStack>

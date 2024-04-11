@@ -1,5 +1,5 @@
 import React from "react";
-import { HStack, Heading, Switch, Text, VStack } from "../../components";
+import { HStack, Heading, Switch, Text, VStack } from "../../components/ui";
 import colors from "tailwindcss/colors";
 
 const BookingOptions = () => {

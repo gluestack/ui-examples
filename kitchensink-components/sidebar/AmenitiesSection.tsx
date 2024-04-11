@@ -14,7 +14,7 @@ import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-} from "../../components";
+} from "../../components/ui";
 
 const AmenitiesSection = () => {
   const sidebarFiltersAmmenities = [
@@ -70,7 +70,7 @@ const AmenitiesSection = () => {
               className="justify-start my-2"
             >
               <CheckboxIndicator>
-                <CheckboxIcon as={CheckIcon} className='text-white' />
+                <CheckboxIcon as={CheckIcon} color='white' />
               </CheckboxIndicator>
               <CheckboxLabel>{ammenity.label}</CheckboxLabel>
             </Checkbox>

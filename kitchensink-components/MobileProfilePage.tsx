@@ -15,7 +15,7 @@ import {
   AvatarFallbackText,
   AvatarImage,
   LinkText,
-} from "../components";
+} from "../components/ui";
 import {
   Blinds,
   ChevronRight,

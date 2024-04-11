@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Box,
   Button,
@@ -6,12 +6,15 @@ import {
   ButtonText,
   Heading,
   HStack,
-} from "../../components";
+} from "../../components/ui";
 import { List } from "lucide-react-native";
 import ListYourPlaceModal from "./ListYourPlaceModal";
+import { ThemeContext } from "../../App";
 
 const MainContentHeader = ({ setActiveTab, activeTab }: any) => {
   const [modalVisible, setModalVisible] = React.useState(false);
+  const { colorMode } = useContext(ThemeContext);
+
   return (
     <Box className="pt-6 pb-2.5 px-4 md:px-0">
       <HStack className="w-full items-center justify-between">
@@ -25,7 +28,10 @@ const MainContentHeader = ({ setActiveTab, activeTab }: any) => {
           }}
           className="hidden md:flex ml-auto "
         >
-          <ButtonIcon as={List} />
+          <ButtonIcon
+            as={List}
+            color={colorMode === "light" ? "#515252" : "#B0B0B0"}
+          />
           <ButtonText className="pl-2 text-typography-800">
             List your place
           </ButtonText>

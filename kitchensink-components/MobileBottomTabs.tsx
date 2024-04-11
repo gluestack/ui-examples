@@ -1,5 +1,5 @@
 import React from "react";
-import { HStack, Icon, Pressable, Text, VStack } from "../components";
+import { HStack, Icon, Pressable, Text, VStack } from "../components/ui";
 import ListYourPlaceModal from "./main-content/ListYourPlaceModal";
 import MobileSidebarActionsheet from "./MobileSidebarActionsheet";
 

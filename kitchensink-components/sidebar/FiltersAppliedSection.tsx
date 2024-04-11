@@ -10,7 +10,7 @@ import {
   Text,
   CloseIcon,
   ButtonText,
-} from "../../components";
+} from "../../components/ui";
 
 const FiltersAppliedSection = () => {
   const filters = ["Private room", "Wifi", "Air conditioning"];

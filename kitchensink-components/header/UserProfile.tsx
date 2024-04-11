@@ -5,7 +5,7 @@ import {
   AvatarImage,
   AvatarBadge,
   Pressable,
-} from "../../components";
+} from "../../components/ui";
 import { Menu, MenuItem, MenuItemLabel } from "@gluestack-ui/themed";
 import LogoutAlertDialog from "../LogoutAlertDialog";
 

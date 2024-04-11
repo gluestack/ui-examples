@@ -1,9 +1,8 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { GluestackUIProvider as ThemedProvider } from "@gluestack-ui/themed";
-import { GluestackUIProvider as NativewindProvider } from "./components/gluestack-ui-provider";
+import { GluestackUIProvider as NativewindProvider } from "./components/ui/gluestack-ui-provider";
 import { config as themedConfig } from "./gluestack-ui.config";
-import { config as nativewindConfig } from "./components/gluestack-ui-provider/config";
 import HomestayPage from "./kitchensink-components/HomestayPage";
 import { SSRProvider } from "@react-native-aria/utils";
 import { useFonts } from "expo-font";

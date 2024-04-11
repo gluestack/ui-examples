@@ -1,16 +1,13 @@
 import React from "react";
 import {
   Box,
-  Button,
   HStack,
   Icon,
   Image,
   Pressable,
   Text,
   VStack,
-  ButtonText,
-  ButtonIcon,
-} from "../../components";
+} from "../../components/ui";
 import { Tooltip } from "@gluestack-ui/themed";
 import { ChevronRight, Heart, Star } from "lucide-react-native";
 import { AnimatePresence, Motion } from "@legendapp/motion";
@@ -146,7 +143,7 @@ const TabPanelData = () => {
                       />
                     </Box>
                     {props.hovered && (
-                      <Box className="absolute bg-background-950 opacity-30 w-full h-full cursor-pointer" />
+                      <Box className="absolute bg-[#181718] opacity-30 w-full h-full cursor-pointer" />
                     )}
                     <Box
                       className={`absolute top-[45%] bg-transparent rounded border border-white self-center content-center py-1.5 px-4 flex-row ${
@@ -154,7 +151,7 @@ const TabPanelData = () => {
                       }`}
                     >
                       <Text className="text-white">Explore</Text>
-                      <Icon as={ChevronRight} size='sm' className="text-white self-center" />
+                      <Icon as={ChevronRight} size='sm' className="self-center" color='white' />
                     </Box>
                   </>
                 );
@@ -201,11 +198,7 @@ const TabPanelData = () => {
                     as={Heart}
                     size="lg"
                     fill={likes.includes(image.title) === true ? "red" : "gray"}
-                    className={`${
-                      likes.includes(image.title) === true
-                        ? "text-red-500"
-                        : "text-white"
-                    }`}
+                    color={likes.includes(image.title) === true ? "red" : "white"}
                   />
                 </Motion.View>
               </AnimatePresence>
