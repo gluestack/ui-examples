@@ -1,5 +1,4 @@
 import React from "react";
-import { Box } from "../components/ui";
 import {
   Actionsheet,
   ActionsheetDragIndicatorWrapper,
@@ -7,7 +6,7 @@ import {
   ActionsheetScrollView,
   ActionsheetBackdrop,
   ActionsheetContent,
-} from "@gluestack-ui/themed";
+} from "../components/ui";
 import Sidebar from "./Sidebar";
 
 const MobileSidebarActionsheet = ({
@@ -18,29 +17,15 @@ const MobileSidebarActionsheet = ({
     setActionsheetVisible(false);
   };
   return (
-    <Actionsheet
-      isOpen={actionsheetVisible}
-      onClose={handleClose}
-      snapPoints={[80]}
-    >
+    <Actionsheet isOpen={actionsheetVisible} onClose={handleClose}>
       <ActionsheetBackdrop />
-      <ActionsheetContent
-        sx={{
-          _dark: {
-            bg: "$backgroundDark950",
-          },
-        }}
-      >
-        <Box className="h-full w-full">
-          <ActionsheetDragIndicatorWrapper>
-            <ActionsheetDragIndicator />
-          </ActionsheetDragIndicatorWrapper>
-          <ActionsheetScrollView>
-            <Box className="w-full">
-              <Sidebar />
-            </Box>
-          </ActionsheetScrollView>
-        </Box>
+      <ActionsheetContent className="h-[80vh] w-full">
+        <ActionsheetDragIndicatorWrapper>
+          <ActionsheetDragIndicator />
+        </ActionsheetDragIndicatorWrapper>
+        <ActionsheetScrollView>
+          <Sidebar />
+        </ActionsheetScrollView>
       </ActionsheetContent>
     </Actionsheet>
   );

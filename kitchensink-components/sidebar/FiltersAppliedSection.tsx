@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {
   Badge,
   BadgeText,
@@ -9,10 +9,12 @@ import {
   Pressable,
   Text,
   CloseIcon,
-  ButtonText,
+  ButtonText
 } from "../../components/ui";
+import { ThemeContext } from "../../App";
 
 const FiltersAppliedSection = () => {
+  const {colorMode} = useContext(ThemeContext);
   const filters = ["Private room", "Wifi", "Air conditioning"];
   const [appliedFilters, setAppliedFilters]: any = React.useState(filters);
   return (
@@ -32,8 +34,9 @@ const FiltersAppliedSection = () => {
           <ButtonText>Clear all</ButtonText>
         </Button>
       </HStack>
+
       <HStack space="sm" className='flex-wrap'>
-        {appliedFilters.map((item: any) => (
+        {appliedFilters?.map((item: any) => (
           <Badge
             action="muted"
             key={item}
@@ -53,7 +56,7 @@ const FiltersAppliedSection = () => {
               <Icon
                 as={CloseIcon}
                 size="sm"
-                className='text-background-600'
+                color={colorMode==='light' ? '#747474' : '#D5D4D4'}
               />
             </Pressable>
           </Badge>

@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import {
   Box,
   HStack,
@@ -6,9 +6,12 @@ import {
   Image,
   Pressable,
   Text,
-  VStack, Tooltip
+  VStack,
+  Tooltip,
+  TooltipContent,
+  TooltipText, StarIcon
 } from "../../components/ui";
-import { ChevronRight, Heart, Star } from "lucide-react-native";
+import { ChevronRight, Heart } from "lucide-react-native";
 import { AnimatePresence, Motion } from "@legendapp/motion";
 import { ScrollView } from "react-native";
 import { ThemeContext } from "../../App";
@@ -121,7 +124,7 @@ const HomestayInfoTabs = ({ tabsData }: any) => {
 
 const TabPanelData = () => {
   const [likes, setLikes]: any = React.useState([]);
-  const {colorMode} = useContext(ThemeContext);
+  const { colorMode } = useContext(ThemeContext);
   return (
     <VStack className="justify-between lg:flex-row">
       {homestayInfoData.map((image: any, index: any) => {
@@ -139,7 +142,11 @@ const TabPanelData = () => {
                     <Box className="overflow-hidden rounded-md">
                       <Image
                         source={image.src}
-                        className={`w-full h-64 ${props.hovered ? 'scale-[1.04] opacity-90' : 'scale-100 opacity-100'}`}
+                        className={`w-full h-64 ${
+                          props.hovered
+                            ? "scale-[1.04] opacity-90"
+                            : "scale-100 opacity-100"
+                        }`}
                         alt="Explore"
                       />
                     </Box>
@@ -152,7 +159,12 @@ const TabPanelData = () => {
                       }`}
                     >
                       <Text className="text-white">Explore</Text>
-                      <Icon as={ChevronRight} size='sm' className="self-center" color='white' />
+                      <Icon
+                        as={ChevronRight}
+                        size="sm"
+                        className="self-center"
+                        color="white"
+                      />
                     </Box>
                   </>
                 );
@@ -199,7 +211,9 @@ const TabPanelData = () => {
                     as={Heart}
                     size="lg"
                     fill={likes.includes(image.title) === true ? "red" : "gray"}
-                    color={likes.includes(image.title) === true ? "red" : "white"}
+                    color={
+                      likes.includes(image.title) === true ? "red" : "white"
+                    }
                   />
                 </Motion.View>
               </AnimatePresence>
@@ -228,10 +242,10 @@ const TabPanelData = () => {
                     <Pressable {...triggerProps}>
                       <HStack className="items-center flex-start">
                         <Icon
-                          as={Star}
-                          size="2xs"
-                          fill={colorMode === 'light' ? '#272625' : '#F6F6F6' }
-                          color={colorMode === 'light' ? '#272625' : '#F6F6F6' }
+                          as={StarIcon}
+                          size="xs"
+                          fill={colorMode === "light" ? "#272625" : "#F6F6F6"}
+                          color={colorMode === "light" ? "#272625" : "#F6F6F6"}
                         />
                         <Text size="sm" className="pl-1 text-typography-900">
                           {image.rating}
@@ -241,9 +255,11 @@ const TabPanelData = () => {
                   );
                 }}
               >
-                <Tooltip.Content>
-                  <Text className="text-white px-2 py-1">Ratings</Text>
-                </Tooltip.Content>
+                <TooltipContent>
+                  <TooltipText className="text-white px-2 py-1">
+                    Ratings
+                  </TooltipText>
+                </TooltipContent>
               </Tooltip>
             </HStack>
           </Box>

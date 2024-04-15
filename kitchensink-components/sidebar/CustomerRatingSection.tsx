@@ -10,8 +10,8 @@ import {
   Heading,
   Icon,
   VStack,
+  StarIcon,
 } from "../../components/ui";
-import { Star } from "lucide-react-native";
 
 const CustomerRatingSection = () => {
   const sidebarFiltersCustomerRatings = [
@@ -34,7 +34,6 @@ const CustomerRatingSection = () => {
   ];
   const [values, setValues] = React.useState(["wifi", "air-conditioning"]);
   const { colorMode } = useContext(ThemeContext);
-  console.log("colorMode", colorMode);
 
   return (
     <VStack space="md" className="w-full">
@@ -56,9 +55,9 @@ const CustomerRatingSection = () => {
               <CheckboxIndicator>
                 <CheckboxIcon as={CheckIcon} color="white" />
               </CheckboxIndicator>
-              <CheckboxLabel className='flex flex-row items-center gap-1'>
+              <CheckboxLabel className="flex flex-row items-center gap-1">
                 <Icon
-                  as={Star}
+                  as={StarIcon}
                   size="2xs"
                   color={colorMode === "light" ? "#262627" : "#F5F5F5"}
                   fill={colorMode === "light" ? "#262627" : "#F5F5F5"}

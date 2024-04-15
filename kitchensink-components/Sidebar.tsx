@@ -11,7 +11,7 @@ import SortBySection from "./sidebar/SortBySection";
 
 const Sidebar = () => {
   return (
-    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flex: 1 }}>
+    <ScrollView>
       <VStack space="xl" className="py-6 px-4">
         <FiltersAppliedSection />
         <VStack space="xl" className="px-2">

@@ -9,6 +9,7 @@ const BookingOptions = () => {
   return (
     <VStack space="md">
       <Heading size="sm">Booking Options</Heading>
+
       <VStack className="w-full">
         <HStack space="lg" className="w-full">
           <VStack className="flex-1">
@@ -30,6 +31,7 @@ const BookingOptions = () => {
           />
         </HStack>
       </VStack>
+
       <VStack className="w-full">
         <HStack space="lg" w="100%">
           <VStack className="flex-1">

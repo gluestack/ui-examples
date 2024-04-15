@@ -1337,7 +1337,7 @@ const UICloseIcon = createIcon({
     </>
   ),
 });
-cssInterop(UIClockIcon, { className: 'style' });
+cssInterop(UICloseIcon, { className: 'style' });
 
 const CloseIcon = React.forwardRef(
   (
@@ -1346,7 +1346,7 @@ const CloseIcon = React.forwardRef(
   ) => {
     if (typeof size === 'number') {
       return (
-        <UIClockIcon
+        <UICloseIcon
           ref={ref}
           {...props}
           fill={fill}

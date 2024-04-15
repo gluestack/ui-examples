@@ -13,7 +13,7 @@ import {
   CheckIcon,
   CheckboxIcon,
   CheckboxGroup,
-  Tooltip,
+  Tooltip, TooltipContent, TooltipText
 } from "../../components/ui";
 
 const PriceRangeSection = () => {
@@ -65,9 +65,9 @@ const PriceRangeSection = () => {
             return <SliderThumb {...triggerProps} pointerEvents={"auto"} />;
           }}
         >
-          <Tooltip.Content>
-            <Text className="text-white">₹{sliderValue}</Text>
-          </Tooltip.Content>
+          <TooltipContent>
+            <TooltipText className="text-white">₹{sliderValue}</TooltipText>
+          </TooltipContent>
         </Tooltip>
       </Slider>
       <CheckboxGroup

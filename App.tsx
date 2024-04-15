@@ -1,10 +1,7 @@
 import React from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
-import { GluestackUIProvider as ThemedProvider } from "@gluestack-ui/themed";
+import { SafeAreaView } from "react-native";
 import { GluestackUIProvider as NativewindProvider } from "./components/ui/gluestack-ui-provider";
-import { config as themedConfig } from "./gluestack-ui.config";
 import HomestayPage from "./kitchensink-components/HomestayPage";
-import { SSRProvider } from "@react-native-aria/utils";
 import { useFonts } from "expo-font";
 import {
   Inter_400Regular,
@@ -13,7 +10,7 @@ import {
   Inter_700Bold,
   Inter_900Black,
 } from "@expo-google-fonts/inter";
-import "./styles";
+import "./styles/main.css";
 
 type ThemeContextType = {
   colorMode?: "dark" | "light";
@@ -48,34 +45,20 @@ export default function App() {
     <>
       {/* top SafeAreaView */}
       <SafeAreaView
-        style={{
-          backgroundColor: colorMode === "light" ? "#E5E5E5" : "#262626",
-        }}
+        className={`${colorMode === "light" ? "bg-[#E5E5E5]" : "bg-[#262626]"}`}
       />
       {/* bottom SafeAreaView */}
       <SafeAreaView
-        style={{
-          ...styles.container,
-          backgroundColor: colorMode === "light" ? "white" : "#171717",
-        }}
+        className={`${
+          colorMode === "light" ? "bg-white" : "bg-[#171717]"
+        } flex-1 overflow-hidden`}
       >
-        <NativewindProvider mode={colorMode}>
-          {/* <ThemedProvider config={themedConfig} colorMode={colorMode}> */}
-            <ThemeContext.Provider value={{ colorMode, toggleColorMode }}>
-              <SSRProvider>
-                <HomestayPage />
-              </SSRProvider>
-            </ThemeContext.Provider>
-          {/* </ThemedProvider> */}
-        </NativewindProvider>
+        <ThemeContext.Provider value={{ colorMode, toggleColorMode }}>
+          <NativewindProvider mode={colorMode}>
+            <HomestayPage />
+          </NativewindProvider>
+        </ThemeContext.Provider>
       </SafeAreaView>
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    overflow: "hidden",
-  },
-});
