@@ -7,6 +7,9 @@ module.exports = {
     './App.{html,js,jsx,ts,tsx}',
   ],
   presets: [require('nativewind/preset')],
+  safelist: [
+    'border-primary-600',
+  ],
   theme: {
     extend: {
       colors: {
@@ -181,4 +184,5 @@ module.exports = {
     },
     plugins: [],
   },
+  
 };
